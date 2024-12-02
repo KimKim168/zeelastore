@@ -29,7 +29,7 @@ export default function MyBelowSlider() {
         >
           <CarouselContent>
             {image.map((src, index) => (
-              <CarouselItem key={index} className="basis-1/2 lg:basis-1/3">
+              <CarouselItem key={index} className="basis-1/2 pl-1 lg:basis-1/3">
                 <div className="p-1">
                   <Card className="rounded-none">
                     <CardContent className="p-0  flex aspect-video items-center justify-center">

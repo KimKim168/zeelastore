@@ -44,7 +44,7 @@ export default function MyCategories() {
                 {iconsWithTitles.map((item, index) => (
                   <CarouselItem
                     key={index}
-                    className="basis-1/2 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
+                    className="basis-1/2 pl-1 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
                   >
                     <div className="p-1 text-center">
                       <Card className="bg-gray-100">

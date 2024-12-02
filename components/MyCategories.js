@@ -30,7 +30,7 @@ export default function MyCategories() {
   ];
   return (
     <>
-      <section className="max-w-screen-2xl mx-auto px-20 py-5">
+      <section className="max-w-screen-2xl mx-auto px-2  xl:px-20 py-5">
         <div>
           <div className="text-lg mb-4">Popular Categories</div>
           <div>
@@ -44,7 +44,7 @@ export default function MyCategories() {
                 {iconsWithTitles.map((item, index) => (
                   <CarouselItem
                     key={index}
-                    className="basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
+                    className="basis-1/2 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
                   >
                     <div className="p-1 text-center">
                       <Card className="bg-gray-100">
@@ -63,8 +63,8 @@ export default function MyCategories() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              {/* <CarouselPrevious />
+              <CarouselNext /> */}
             </Carousel>
           </div>
         </div>

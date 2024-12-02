@@ -5,7 +5,7 @@ export default function MyNewsProduct() {
   return (
     <>
       {" "}
-      <section className="max-w-screen-2xl mx-auto px-20 py-5">
+      <section className="max-w-screen-2xl mx-auto px-2 xl:px-20 py-5">
         <div className="text-lg mb-4">News</div>
         <div className="mb-4 grid gap-4 sm:grid-cols-3 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">
           {/* Produc 1 */}

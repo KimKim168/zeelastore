@@ -63,7 +63,7 @@ export default function MySamsungBrand() {
   ];
   return (
     <>
-      <section className="max-w-screen-2xl  mx-auto px-20 py-5">
+      <section className="max-w-screen-2xl  mx-auto px-2 xl:px-20 py-5 overflow-hidden">
         <p className="text-lg mb-4">Samsungs</p>
         <div className="flex">
           <div className="h-96 w-96 mr-5 hidden xl:flex">
@@ -110,8 +110,8 @@ export default function MySamsungBrand() {
                 ))}
               </CarouselContent>
             </div>
-            <CarouselPrevious />
-            <CarouselNext />
+            {/* <CarouselPrevious />
+            <CarouselNext /> */}
           </Carousel>
         </div>
       </section>

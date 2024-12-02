@@ -22,6 +22,7 @@ import {
   ShoppingCart,
   User,
 } from "lucide-react";
+import MyResponsive from "@/components/MyResponsive";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,14 +42,16 @@ export default function RootLayout({ children }) {
       <body
         className={` ${poppins.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className=" max-w-screen-2xl mx-auto px-20 bg-nav p-2">
+        <header className=" max-w-screen-2xl mx-auto px-2 xl:px-20 bg-nav p-2">
           <nav className="flex justify-between">
             <div className="text-white">
-              <p>Get special 27% Discount on Your first Purchese</p>
+              <p className="text-[10px] sm:text-sm ">
+                Get special 27% Discount on Your first Purchese
+              </p>
             </div>
             {/* Top nav */}
-            <div>
-              <Select defaultValue="English" className="">
+            <div className="hidden md:flex">
+              <Select defaultValue="English">
                 <SelectTrigger className="w-[100px]  rounded-none">
                   <SelectValue />
                 </SelectTrigger>
@@ -84,17 +87,53 @@ export default function RootLayout({ children }) {
             {/* End */}
           </nav>
           <div className="grid grid-cols-12 gap-3 justify-between items-center">
-            <div className="col-span-1">
+            <div className="col-span-8 md:col-span-2">
               <Image
                 src="/assets/images/logo-zela.png"
                 width={200}
                 height={200}
                 alt="logo"
-                className="w-24"
+                className="w-20 md:w-24"
               ></Image>
             </div>
-            <div className="col-span-8">
-              <form className="w-full relative ">
+            <div className="col-span-4 flex items-center md:hidden  justify-end space-x-4">
+              <div className="md:hidden">
+                <Select defaultValue="English">
+                  <SelectTrigger className="w-[100px]  rounded-none">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="English">
+                      <div className="flex">
+                        <Image
+                          src="/assets/images/flageUk.png"
+                          width={20}
+                          height={20}
+                          alt="Flag"
+                          className="w-5"
+                        />
+                        <p className="ml-2">EN</p>
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="Khmer">
+                      <div className="flex">
+                        <Image
+                          src="/assets/images/flageKH.png"
+                          width={20}
+                          height={20}
+                          alt="Flag"
+                          className="w-5"
+                        />
+                        <p className="ml-2">KH</p>
+                      </div>
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <MyResponsive />
+            </div>
+            <div className="hidden md:grid col-span-6 ">
+              <form className="w-full  relative  ">
                 <label
                   htmlFor="default-search"
                   className=" text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -122,7 +161,7 @@ export default function RootLayout({ children }) {
                   <input
                     type="search"
                     id="default-search"
-                    className="block w-full p-3 ps-10 text-sm text-primary border border-gray-300  bg-gray-50 outline-none  focus:ring-[#FFD700]/100 focus:border-[#FFD700]/100 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 "
+                    className="block w-full p-2 text-nowrapw-full p-3 ps-10 text-sm text-primary border border-gray-300  bg-gray-50 outline-none  focus:ring-[#FFD700]/100 focus:border-[#FFD700]/100 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 "
                     placeholder="Search Product..."
                     required
                   />
@@ -137,36 +176,39 @@ export default function RootLayout({ children }) {
                 </div>
               </form>
             </div>
-            <div className="col-span-3 flex justify-between text-nowrap">
-              <div className="text-white flex items-center mr-5">
-                <PhoneCallIcon className="mr-2"></PhoneCallIcon>
+            <div className="hidden md:col-span-4 md:flex space-x-4 text-nowrap justify-end ">
+              <div className="text-white text-sm md:text-[16px] flex items-center ">
+                <PhoneCallIcon className="mr-1 md:mr-2 w-4 md:w-5"></PhoneCallIcon>
                 <p>097 299 7517</p>
               </div>
-              <div className="text-white flex items-center overflow-hidden">
-                <User className="mr-7"></User>
-                <Heart></Heart>
-                <ShoppingCart className="ml-7"></ShoppingCart>
+              <div className="text-white space-x-4 flex items-center overflow-hidden">
+                <User className=" min-w-5"></User>
+                <Heart className=" min-w-5"></Heart>
+                <ShoppingCart className=" min-w-5"></ShoppingCart>
               </div>
             </div>
           </div>
         </header>
         {/* Menu */}
-        <div className="flex justify-between items-center max-w-screen-2xl mx-auto px-20  border-b shadow-md">
-          <ul className="flex flex-col items-center mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-            <li className="bg-menu p-3">
+        <div className="hidden md:flex justify-between text-[10px] sm:text-sm md:text-[16] items-center max-w-screen-2xl mx-auto xl:px-20  border-b shadow-md">
+          <ul className="flex   items-center  font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+            <li className="bg-menu md:p-3 ">
               <a
                 href="#"
-                className="flex block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                className="flex items-center block p-2 text-nowrap text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                 aria-current="page"
               >
-                <AlignJustifyIcon className="mr-2"></AlignJustifyIcon>
+                <AlignJustifyIcon
+                  className="mr-2 w-12 h-12 md:w-20 md:h-20"
+                  style={{ width: "15", height: "15" }}
+                ></AlignJustifyIcon>
                 <span>All Categorys</span>
               </a>
             </li>
             <li>
               <a
                 href="#"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                className="block p-2 text-nowrap text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
                 About
               </a>
@@ -174,7 +216,7 @@ export default function RootLayout({ children }) {
             <li>
               <a
                 href="#"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                className="block p-2 text-nowrap text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Support
               </a>
@@ -183,7 +225,7 @@ export default function RootLayout({ children }) {
             <li>
               <a
                 href="#"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                className="block p-2 text-nowrap text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Contact
               </a>
@@ -211,7 +253,7 @@ export default function RootLayout({ children }) {
                     alt="logo"
                     className="w-24"
                   ></Image>
-                  <p className="w-96">
+                  <p className="w-auto xl:w-96">
                     Ours product is full with responsibility for product
                     problems and caring
                   </p>

@@ -1,42 +1,54 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function MyBelowSlider() {
+  const image = [
+    "/assets/images/image5.png",
+    "/assets/images/image6.png",
+    "/assets/images/image4.png",
+  ];
   return (
     <>
       {" "}
       {/* below slide */}
       <section className="max-w-screen-2xl mx-auto px-2 xl:px-20 ">
-        <div className="grid grid-cols-12 md:flex  justify-between py-4 items-center gap-4">
-          <div className="col-span-12">
-            <Image
-              src="/assets/images/image5.png"
-              width={3000}
-              height={3000}
-              className="md:w-[450px] md:h-[200px] shadow-md aspect-video object-cover "
-              alt="image"
-            />
-          </div>
-          <div className="col-span-12">
-            <Image
-              src="/assets/images/image6.png"
-              width={3000}
-              height={3000}
-              className="md:w-[450px] md:h-[200px] shadow-md aspect-video object-cover "
-              alt="image"
-            />
-          </div>
-          <div className="col-span-12">
-            <Image
-              src="/assets/images/image4.png"
-              width={3000}
-              height={3000}
-              className="md:w-[450px] md:h-[200px] shadow-md aspect-video object-cover "
-              alt="image"
-            />
-          </div>
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full overflow-hidden"
+        >
+          <CarouselContent>
+            {image.map((src, index) => (
+              <CarouselItem key={index} className="basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card className="rounded-none">
+                    <CardContent className="p-0  flex aspect-video items-center justify-center">
+                      <Image
+                        src={src}
+                        alt={`src ${index + 1}`}
+                        width={1000}
+                        height={1000}
+                        className="w-full h-full object-cover"
+                      />
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious varient="outline" />
+          <CarouselNext />
+        </Carousel>
       </section>
       {/*End below slide */}
     </>

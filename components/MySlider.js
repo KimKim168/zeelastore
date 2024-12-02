@@ -16,6 +16,7 @@ export default function MySlider() {
   // Define your image URLs here
   const images = [
     "/assets/images/image3.png",
+    "/assets/images/slide2.png",
     "/assets/images/image2.jpg",
     "/assets/images/image7.webp",
   ];
@@ -44,7 +45,7 @@ export default function MySlider() {
                   alt={`Slide ${index + 1}`}
                   width={1200}
                   height={1200}
-                  className="object-cover w-full aspect-video h-[400px]"
+                  className="object-cover w-full aspect-video md:h-[500px]"
                 />
               </div>
             ))}

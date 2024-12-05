@@ -15,25 +15,26 @@ export default function MySlider() {
 
   // Define your image URLs here
   const images = [
-    "/assets/images/image3.png",
-    "/assets/images/slide2.png",
-    "/assets/images/image2.jpg",
-    "/assets/images/image7.webp",
+    "/assets/images/slide1.png",
+    "/assets/images/slide3.png",
+    "/assets/images/slide4.png",
+    "/assets/images/slide5.png",
+    
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Auto-slide every 3 seconds
+    }, 4000); // Auto-slide every 4 seconds
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
-    <div className="max-w-screen-2xl mt-2 mx-auto px-2 xl:px-20">
+    <div className="max-w-screen-2xl mt-2 mx-auto px-2 xl:px-20 ">
       <Carousel className="w-full" selectedIndex={currentIndex}>
         <CarouselContent>
           <div
-            className="flex transition-transform duration-500"
+            className="flex transition-transform duration-500 relative"
             style={{
               transform: `translateX(-${currentIndex * 100}%)`,
             }}
@@ -43,14 +44,29 @@ export default function MySlider() {
                 <Image
                   src={src}
                   alt={`Slide ${index + 1}`}
-                  width={1200}
-                  height={1200}
-                  className="object-cover w-full aspect-video md:h-[500px]"
+                  width={4000}
+                  height={4000}
+                  className="  w-full aspect-video md:h-[500px]"
                 />
               </div>
             ))}
           </div>
         </CarouselContent>
+
+        {/* Dot Indicators */}
+        <div className="flex justify-center space-x-3 absolute bottom-3 left-1/2 transform -translate-x-1/2 items-center">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`transition-all duration-300 ${
+                currentIndex === index
+                  ? "w-9 h-2 bg-dynamic scale-125 shadow-md"
+                  : "w-3 h-3 bg-gray-400 opacity-70"
+              } rounded-full`}
+            ></div>
+          ))}
+        </div>
+
         {/* Uncomment the buttons if you want manual controls */}
         {/* 
         <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" />

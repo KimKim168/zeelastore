@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,30 +13,30 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
-
 import Link from "next/link";
 import Image from "next/image";
 import MyCounter from "./MyCounter";
 import { Button } from "./ui/button";
-import {
-  Heart,
-  LucideMessageSquareText,
-  PhoneCallIcon,
-  ShoppingCart,
-} from "lucide-react";
-import { FaTelegram } from "react-icons/fa";
-import MySamsungBrand from "./MySamsungBrand";
+import { Heart, ShoppingCart } from "lucide-react";
 import MyNewsProduct from "./MyNewsProduct";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 
 export default function MyProduct() {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const imageUrls = [
-    "/assets/images/product1.png",
-    "/assets/images/product2.png",
+    "/assets/images/product5.png",
+    "/assets/images/product7.png",
+    "/assets/images/product8.png",
+    "/assets/images/product4.png",
+    "/assets/images/product7.png",
+    "/assets/images/product8.png",
   ];
+
+  const handleIndicatorClick = (index) => {
+    setCurrentIndex(index); // Update the displayed image
+  };
+
   return (
     <>
       <section className="max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 mt-5 ">
@@ -56,58 +56,68 @@ export default function MyProduct() {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Phone Holder</BreadcrumbPage>
+                <BreadcrumbPage>Laptop Acer</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </section>
         <section className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
-            <div className=" sm:col-span-12 md:col-span-5 ">
-              <Carousel className="w-full overflow-hidden">
-                <CarouselContent>
-                  {imageUrls.map((src, index) => (
-                    <CarouselItem key={index}>
-                      <div className="p-1 ">
-                        <Card>
-                          <CardContent>
-                            <AspectRatio ratio={1 / 1}>
-                              <Image
-                                src={src}
-                                width={2000}
-                                height={2000}
-                                alt="image"
-                                className=" object-cover"
-                              />
-                            </AspectRatio>
-                          </CardContent>
-                        </Card>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                {/* <CarouselPrevious />
-                <CarouselNext /> */}
-              </Carousel>
-              <div className="flex space-x-3">
+            <div className="sm:col-span-12 md:col-span-5">
+              <div className="relative">
+                {/* Main Carousel */}
+                <Card>
+                  <CardContent>
+                    <AspectRatio ratio={1 / 1}>
+                      <Image
+                        src={imageUrls[currentIndex]} // Display the active image
+                        width={2000}
+                        height={2000}
+                        alt="image"
+                        className="transition-transform duration-500 scale-105"
+                      />
+                    </AspectRatio>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Thumbnails */}
+              <div className="flex gap-6 mt-4">
                 {imageUrls.map((src, index) => (
-                  <div
+                  <button
                     key={index}
-                    className="w-16 md:w-20 p-2 mt-5 border border-gold"
+                    onClick={() => handleIndicatorClick(index)}
+                    className={`w-20  transition-transform duration-300 p-1 rounded-lg ${
+                      currentIndex === index
+                        ? "scale-110 border border-gray-500"
+                        : "opacity-70"
+                    }`}
                   >
                     <Image
                       src={src}
                       width={3000}
                       height={3000}
-                      alt="image"
-                      className="w-full h-full  aspect-square object-cover"
-                    ></Image>
-                  </div>
+                      alt="thumbnail"
+                      className="w-full h-full aspect-square object-cover"
+                    />
+                  </button>
                 ))}
               </div>
             </div>
-            <div className=" sm:col-span-12 md:col-span-7 xl:ml-5">
-              <div className="text-xl">Phone Holder Car Strong Gravity</div>
+            <div className=" sm:col-span-12 space-y-3 md:col-span-7 xl:ml-5">
+              <div className="text-xl">
+                Acer Swift Go (SFG14-71-59SE) Pure Silver
+              </div>
+              <div className="w-96 text-nowrap ">
+                <div className="grid  grid-cols-12 justify-between">
+                  <p className="col-span-6">Shipping :</p>
+                  <p className="col-span-6 w-full">Free</p>
+                </div>
+                <div className="grid w-full grid-cols-12 justify-between">
+                  <p className="col-span-6 ">Brand :</p>
+                  <p cclassName="col-span-6 w-full">Laptop Acer</p>
+                </div>
+              </div>
               <div>
                 <div className="flex gap-3 items-center my-5">
                   <p className="text-sm text-gray-500 line-through">20.00$</p>
@@ -126,6 +136,7 @@ export default function MyProduct() {
                   <p>Buy Now</p>
                 </Button>
               </div>
+              {/* Socail  */}
               <div className="flex items-center gap-5 mt-10">
                 <Link href="#">
                   <Image
@@ -156,6 +167,7 @@ export default function MyProduct() {
                   <p className="text-sm md:text-xl">098 234 5678</p>
                 </Link>
               </div>
+              {/*End Socail */}
               {/* Add to wishlist */}
               <div className="mt-10">
                 <Button variant="outline" className="flex items-center">

@@ -9,8 +9,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import { Eye, StarIcon } from "lucide-react";
 
-export default function MySamsungBrand() {
+export default function MyAppleBrand() {
   const products = [
     {
       id: 1,
@@ -30,27 +31,31 @@ export default function MySamsungBrand() {
     },
     {
       id: 3,
-      image: "/assets/images/image7.webp",
-      alt: "Blueo PVD Stainless Steel Camera Lens Protector",
-      title:
-        "Blueo PVD Stainless Steel Camera Lens Protector for iPhone 15 Pro Max White",
-      price: "$15.59",
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
     },
     {
       id: 4,
-      image: "/assets/images/image8.jpg",
-      alt: "Blueo PVD Stainless Steel Camera Lens Protector",
-      title:
-        "Blueo PVD Stainless Steel Camera Lens Protector for iPhone 15 Pro Max White",
-      price: "$15.59",
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
     },
     {
       id: 5,
-      image: "/assets/images/image7.webp",
-      alt: "Blueo PVD Stainless Steel Camera Lens Protector",
-      title:
-        "Blueo PVD Stainless Steel Camera Lens Protector for iPhone 15 Pro Max White",
-      price: "$15.59",
+      image: "/assets/images/product4.png",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      id: 7,
+      image: "/assets/images/product5.png",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
     },
     {
       id: 6,
@@ -63,55 +68,84 @@ export default function MySamsungBrand() {
   ];
   return (
     <>
-      <section className="max-w-screen-2xl  mx-auto px-2 xl:px-20 py-5 overflow-hidden">
-        <p className="text-lg mb-4">Samsungs</p>
+      <section className="max-w-screen-2xl  mx-auto px-2 xl:px-20 py-5">
+        <div className="flex justify-between  mb-4">
+          <p className="text-lg ">Samsungs</p>
+          <a className="text-lg ">View More</a>
+        </div>
+
         <div className="flex">
-          <div className="h-96 w-96 mr-5 hidden xl:flex">
+          {/* <div className="aspect-square w-96 mr-5 hidden xl:flex">
             <Image
               src="/assets/images/apple2.webp"
               width={5000}
               height={5000}
-              className="h-96 w-96 shadow-md aspect-square object-cover "
+              className="aspect-square object-cover "
               alt="image"
             />
-          </div>
+          </div> */}
           <Carousel className="w-full">
-            <div className="mb-4 ">
-              <CarouselContent className="-ml-1">
-                {products.map((product, id) => (
+            <div>
+              <CarouselContent className="">
+                {products.map((item, id) => (
                   <CarouselItem
                     key={id}
-                    className="pl-1 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 "
+                    className="pl-1 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
                   >
                     {/* Product Card */}
-                    <div className="rounded-lg border border-b-[#FFD700] border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
-                      <div className="h-56 w-full">
-                        <a href="#">
+                    <div className=" border mx-2 aspect-square border-blue bg-white p-4  dark:border-gray-700 dark:bg-gray-800">
+                      <div className="aspect-square">
+                        <a href="/products">
                           <img
-                            className="mx-auto h-full"
-                            src={product.image}
-                            alt={product.alt || "Product image"}
+                            className="mx-auto h-full dark:hidden transition-transform duration-300 hover:scale-110"
+                            src={item.image}
+                            alt="product"
                           />
                         </a>
                       </div>
                       <div className="pt-6">
                         <a
-                          href="#"
-                          className="text-sm line-clamp-2 leading-tight text-gray-900 hover:underline dark:text-white"
+                          href="/products"
+                          className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white"
                         >
-                          {product.title}
+                          {item.title}
                         </a>
-                        <p className="mt-4 bg-yellow-400 p-1 text-center text-lg shadow-md">
-                          {product.price}
-                        </p>
+                        <div className="flex text-sm mt-4 justify-between items-center">
+                          <div className="text-color">{item.price}</div>
+                          <div className="flex items-center">
+                            <Eye width="16" />
+                            <p>{item.view}</p>
+                          </div>
+                        </div>
+                        <div className="flex mt-3">
+                          <p className="text-blue">Rate:</p>
+                          <div className="flex overflow-hidden">
+                            <StarIcon
+                              width="16"
+                              className="ml-2 text-yellow-400"
+                            />
+                            <StarIcon
+                              width="16"
+                              className="ml-2 text-yellow-400"
+                            />
+                            <StarIcon
+                              width="16"
+                              className="ml-2 text-yellow-400"
+                            />
+                            <StarIcon
+                              width="16"
+                              className="ml-2 text-yellow-400"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
             </div>
-            {/* <CarouselPrevious />
-            <CarouselNext /> */}
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
         </div>
       </section>

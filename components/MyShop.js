@@ -531,80 +531,212 @@ export default function MyShop() {
                         {/* End Categories */}
 
                         {/* Filter by Brand */}
-                        <div>
-                          <p className="text-xl font-bold text-black text-start mt-5 mb-4">
-                            Filter by Brand
-                          </p>
-                          <Accordion
-                            type="single"
-                            collapsible
-                            className="text-start"
-                          >
-                            <AccordionItem value="item-1" className=" pb-4 ">
-                              <Link
-                                href="#"
-                                className="hover:underline text-sm  "
-                              >
-                                Apple
-                              </Link>
-                            </AccordionItem>
-                            <AccordionItem value="item-2" className=" py-4">
-                              <Link
-                                href="#"
-                                className="hover:underline text-sm "
-                              >
-                                Samsung
-                              </Link>
-                            </AccordionItem>
-                            <AccordionItem value="item-3" className=" py-4">
-                              <Link
-                                href="#"
-                                className="hover:underline text-sm "
-                              >
-                                Xiaomi
-                              </Link>
-                            </AccordionItem>
-                            <AccordionItem value="item-4" className=" py-4">
-                              <Link
-                                href="#"
-                                className="hover:underline text-sm "
-                              >
-                                ANKER
-                              </Link>
-                            </AccordionItem>
-                            <AccordionItem value="item-5" className=" py-4">
-                              <Link
-                                href="#"
-                                className="hover:underline text-sm "
-                              >
-                                IMILAB
-                              </Link>
-                            </AccordionItem>
-                            <AccordionItem value="item-6" className=" py-4">
-                              <Link
-                                href="#"
-                                className="hover:underline text-sm "
-                              >
-                                Usams
-                              </Link>
-                            </AccordionItem>
-                            <AccordionItem value="item-7" className=" py-4">
-                              <Link
-                                href="#"
-                                className="hover:underline text-sm "
-                              >
-                                UGREEN
-                              </Link>
-                            </AccordionItem>
-                            <AccordionItem value="item-8" className=" py-4">
-                              <Link
-                                href="#"
-                                className="hover:underline text-sm "
-                              >
-                                Blueo
-                              </Link>
-                            </AccordionItem>
-                          </Accordion>
+                        <div className="mt-10">
+                            <p className="text-2xl text-center  p-4 bg-nav text-white">
+                              Lastest Products
+                            </p>
+                            <div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product3.jpg"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product7.png"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product6.jpg"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product1.png"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product5.png"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product3.jpg"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product4.png"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product3.jpg"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product3.jpg"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="grid grid-cols-12 p-3 border-b">
+                                <div className="col-span-5">
+                                  <Image
+                                    src="/assets/images/product3.jpg"
+                                    width={3000}
+                                    height={3000}
+                                    alt="image"
+                                    className="h-20 object-contain aspect-square "
+                                  />
+                                </div>
+                                <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                                  <p>Acer Aspire 3( A315-58-P3S9)</p>
+                                  <p className="font-semibold">
+                                    Price:{" "}
+                                    <span className="text-color ml-3 xl:ml-5">
+                                      $766
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                         {/* End Filter by Brand */}
 

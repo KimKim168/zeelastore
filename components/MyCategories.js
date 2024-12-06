@@ -25,7 +25,7 @@ export default function MyCategories() {
       <section className="max-w-screen-2xl mx-auto px-2 xl:px-20 py-5">
         <div>
           <div className="text-lg mb-4">Categories</div>
-          <div className="flex overflow-x-auto py-4  scroll-smooth scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500">
+          <div className="flex overflow-x-auto py-4 items-center  scroll-smooth scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500">
             {imagesWithTitles.map((item, index) => (
               <Link href="/shop ">
                 <div
@@ -36,7 +36,7 @@ export default function MyCategories() {
                     src={item.image}
                     width={3000}
                     height={3000}
-                    className=" w-[40px] md:w-[70px] md:h-[70px] mb-2  object-cover"
+                    className=" w-[40px] h-[35px] md:w-[70px] md:h-[70px] mb-2  object-cover"
                     alt={item.title}
                   />
                   <p className="text-center text-sm md:text-xl">{item.title}</p>

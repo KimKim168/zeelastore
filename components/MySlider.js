@@ -19,7 +19,6 @@ export default function MySlider() {
     "/assets/images/slide3.png",
     "/assets/images/slide4.png",
     "/assets/images/slide5.png",
-    
   ];
 
   useEffect(() => {
@@ -46,7 +45,7 @@ export default function MySlider() {
                   alt={`Slide ${index + 1}`}
                   width={4000}
                   height={4000}
-                  className="  w-full aspect-video md:h-[500px]"
+                  className="  w-full object-cover aspect-video md:h-[500px]"
                 />
               </div>
             ))}
@@ -60,8 +59,8 @@ export default function MySlider() {
               key={index}
               className={`transition-all duration-300 ${
                 currentIndex === index
-                  ? "w-9 h-2 bg-dynamic scale-125 shadow-md"
-                  : "w-3 h-3 bg-gray-400 opacity-70"
+                  ? "h-1 w-4 sm:w-9 sm:h-2 bg-dynamic scale-125 shadow-md"
+                  : "h-1 w-2 sm:w-3 sm:h-3 bg-gray-400 opacity-70"
               } rounded-full`}
             ></div>
           ))}

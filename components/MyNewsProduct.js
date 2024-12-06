@@ -7,7 +7,7 @@ export default function MyNewsProduct() {
     {
       image: "/assets/images/product3.jpg",
       title: "Acer Revo Base RN66 RMN:ARNP1",
-      price: "$30",
+      price: "$190",
       view: "20",
     },
     {
@@ -31,7 +31,7 @@ export default function MyNewsProduct() {
     {
       image: "/assets/images/product3.jpg",
       title: "Acer Revo Base RN66 RMN:ARNP1",
-      price: "$30",
+      price: "$300",
       view: "20",
     },
     {
@@ -104,20 +104,24 @@ export default function MyNewsProduct() {
                 >
                   {item.title}
                 </a>
-                <div className="flex text-sm mt-4 justify-between items-center">
-                  <div className="text-color">{item.price}</div>
-                  <div className="flex items-center">
-                    <Eye width="16" />
-                    <p>{item.view}</p>
+                <div className="grid grid-cols-12  text-sm mt-4 overflow-hidden justify-between items-center">
+                  <div className="text-color col-span-6 overflow-hidden text-sm md:text-lg">
+                    {item.price}
+                  </div>
+                  <div className="col-span-6 ">
+                    <div className="flex items-center justify-end">
+                      <Eye width="16" />
+                      <p>{item.view}</p>
+                    </div>
                   </div>
                 </div>
                 <div className="flex mt-3">
-                  <p className="text-blue">Rate:</p>
-                  <div className="flex ">
-                    <StarIcon width="16" className="ml-2 text-yellow-400" />
-                    <StarIcon width="16" className="ml-2 text-yellow-400" />
-                    <StarIcon width="16" className="ml-2 text-yellow-400" />
-                    <StarIcon width="16" className="ml-2 text-yellow-400" />
+                  <p className="text-blue mr-1">Rate:</p>
+                  <div className="flex overflow-hidden">
+                    <StarIcon width="16" className="md:ml-2 text-yellow-400" />
+                    <StarIcon width="16" className="md:ml-2 text-yellow-400" />
+                    <StarIcon width="16" className="md:ml-2 text-yellow-400" />
+                    <StarIcon width="16" className="md:ml-2 text-yellow-400" />
                   </div>
                 </div>
               </div>

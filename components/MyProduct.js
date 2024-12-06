@@ -18,7 +18,13 @@ import Link from "next/link";
 import Image from "next/image";
 import MyCounter from "./MyCounter";
 import { Button } from "./ui/button";
-import { Heart, ShoppingCart } from "lucide-react";
+import {
+  Heart,
+  ShoppingCart,
+  StarIcon,
+  VideoIcon,
+  Youtube,
+} from "lucide-react";
 import MyNewsProduct from "./MyNewsProduct";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 
@@ -56,7 +62,9 @@ export default function MyProduct() {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Laptop Acer</BreadcrumbPage>
+                <BreadcrumbPage className="text-blue">
+                  Laptop Acer
+                </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -104,78 +112,149 @@ export default function MyProduct() {
                 ))}
               </div>
             </div>
-            <div className=" sm:col-span-12 space-y-3 md:col-span-7 xl:ml-5">
-              <div className="text-xl">
+            <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">
+              <div className="text-lg md:text-xl font-semibold">
                 Acer Swift Go (SFG14-71-59SE) Pure Silver
               </div>
-              <div className="w-96 text-nowrap ">
-                <div className="grid  grid-cols-12 justify-between">
-                  <p className="col-span-6">Shipping :</p>
-                  <p className="col-span-6 w-full">Free</p>
-                </div>
-                <div className="grid w-full grid-cols-12 justify-between">
-                  <p className="col-span-6 ">Brand :</p>
-                  <p cclassName="col-span-6 w-full">Laptop Acer</p>
-                </div>
+              <div className="max-w-96 mt-4">
+                <ul className="space-y-4 text-sm md:text-lg">
+                  <li>
+                    <ul className="grid grid-cols-12 justify-between gap-5">
+                      <li className=" col-span-6">Shipping:</li>
+                      <li className="text-color col-span-6"> Free</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul className="grid grid-cols-12 justify-between gap-5">
+                      <li className=" col-span-6">Brand:</li>
+                      <li className="text-color col-span-6">Monitor</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul className="grid grid-cols-12 justify-between gap-5">
+                      <li className=" col-span-6">Product View :</li>
+                      <li className="text-color col-span-6">20</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul className="grid grid-cols-12 justify-between gap-5">
+                      <li className=" col-span-6">Rate :</li>
+                      <li className=" col-span-6">
+                        <div className="flex overflow-hidden">
+                          <StarIcon width="16" className=" text-yellow-400" />
+                          <StarIcon
+                            width="16"
+                            className="ml-2 text-yellow-400"
+                          />
+                          <StarIcon
+                            width="16"
+                            className="ml-2 text-yellow-400"
+                          />
+                          <StarIcon
+                            width="16"
+                            className="ml-2 text-yellow-400"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul className="grid grid-cols-12 font-semibold text-color justify-between text-lg md:text-xl">
+                      <li className=" col-span-6">Price:</li>
+                      <li className="text-color col-span-6">$150</li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
-              <div>
-                <div className="flex gap-3 items-center my-5">
-                  <p className="text-sm text-gray-500 line-through">20.00$</p>
-                  <p className="text-xl">15.00$</p>
-                </div>
-                <div>
-                  Regular fit, round neckline, short sleeves. Made of extra long
-                  staple pima cotton.
-                </div>
-              </div>
+
               <hr className="border-black mt-5 w-auto"></hr>
-              <div className="flex items-center gap-5 mt-10 ">
+
+              <div className="flex items-center gap-2 md:gap-5 mt-5 ">
                 <MyCounter></MyCounter>
                 <Button className="w-full ">
                   <ShoppingCart></ShoppingCart>
                   <p>Buy Now</p>
                 </Button>
+                {/* Socail  */}
+                <div className="flex items-center gap-2 md:gap-3 ">
+                  <Link href="#">
+                    <Image
+                      src="/assets/images/telegram.png"
+                      width={3000}
+                      height={3000}
+                      className="w-10 md:w-14"
+                      alt="image"
+                    />
+                  </Link>
+                  <Link href="#">
+                    <Image
+                      src="/assets/images/facebook.png"
+                      width={3000}
+                      height={3000}
+                      className="w-10 md:w-14"
+                      alt="image"
+                    />
+                  </Link>
+                  <Link href="#" className="flex items-center gap-1">
+                    <Image
+                      src="/assets/images/call.png"
+                      width={3000}
+                      height={3000}
+                      className="w-10 md:w-14"
+                      alt="image"
+                    />
+                    {/* <p className="text-sm md:text-xl">098 234 5678</p> */}
+                  </Link>
+                </div>
+                {/*End Socail */}
               </div>
-              {/* Socail  */}
-              <div className="flex items-center gap-5 mt-10">
-                <Link href="#">
-                  <Image
-                    src="/assets/images/telegram.png"
-                    width={3000}
-                    height={3000}
-                    className="w-10 md:w-14"
-                    alt="image"
-                  />
-                </Link>
-                <Link href="#">
-                  <Image
-                    src="/assets/images/facebook.png"
-                    width={3000}
-                    height={3000}
-                    className="w-10 md:w-14"
-                    alt="image"
-                  />
-                </Link>
-                <Link href="#" className="flex items-center gap-1">
-                  <Image
-                    src="/assets/images/call.png"
-                    width={3000}
-                    height={3000}
-                    className="w-10 md:w-14"
-                    alt="image"
-                  />
-                  <p className="text-sm md:text-xl">098 234 5678</p>
-                </Link>
-              </div>
-              {/*End Socail */}
+
               {/* Add to wishlist */}
-              <div className="mt-10">
-                <Button variant="outline" className="flex items-center">
-                  <Heart></Heart>
-                  <p>Add to wishlist</p>
-                </Button>
-              </div>
+              <dvi className="mt-5 flex space-x-2">
+                <div>
+                  <Button
+                    variant="outline"
+                    className="flex items-center justify-center"
+                  >
+                    <Heart></Heart>
+                    <p>Add to wishlist</p>
+                  </Button>
+                </div>
+                <div>
+                  <Button
+                    variant="outline"
+                    className="flex items-center justify-center"
+                  >
+                    <VideoIcon />
+                    <p>Video</p>
+                  </Button>
+                </div>
+                <div>
+                  <Button
+                    variant="outline"
+                    className="flex items-center justify-center"
+                  >
+                    <Youtube />
+                    <p>Youtube</p>
+                  </Button>
+                </div>
+              </dvi>
               {/*End Add to wishlist */}
+              <div className="mt-5">
+                <p className="text-xl mb-3">Specification</p>
+                <div>
+                  <ul className="list-disc list-inside text-gray-900 space-y-2">
+                    <li>Backlight Technology : LED</li>
+                    <li>Panel Technology : VA</li>
+                    <li>Display type : LED-backlit LCD monitor</li>
+                    <li>Display Size : 32-inches FHD (1920 x 1080) 144 Hz</li>
+                    <li>Aspect Ratio : 16:9 Widescreen</li>
+                    <li>Brightness : 250 cd/m²</li>
+                    <li>Interface : DisplayPort, HDMI</li>
+                    <li>Dimensions: 20.8 x 71.1 x 52.6 Centimeters</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>

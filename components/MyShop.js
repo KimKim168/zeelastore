@@ -24,18 +24,94 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
+import Image from "next/image";
+import { Eye, StarIcon } from "lucide-react";
 import MyPriceFilter from "./MyPriceFilter";
 import { Button } from "./ui/button";
-import { Settings2 } from "lucide-react";
+import { ArrowRight, Settings2 } from "lucide-react";
 import MyPriceFilterMobile from "./MyPriceFilterMobile";
 
 export default function MyShop() {
+  const imageUrls = [
+    {
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product4.png",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product5.png",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product4.png",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product5.png",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+    {
+      image: "/assets/images/product3.jpg",
+      title: "Acer Revo Base RN66 RMN:ARNP1",
+      price: "$30",
+      view: "20",
+    },
+  ];
   return (
     <>
       <section className="max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 mt-5 ">
-        <p className="text-center font-bold text-2xl bg-gray-300 p-4 mb-4 ">
+        {/* <p className="text-center font-bold text-2xl bg-gray-300 p-4 mb-4 ">
           Shop
-        </p>
+        </p> */}
         {/* Header */}
         <section>
           <div className="flex justify-between items-center">
@@ -49,11 +125,12 @@ export default function MyShop() {
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
-                    <BreadcrumbPage>Shop</BreadcrumbPage>
+                    <BreadcrumbPage className="text-blue">Shop</BreadcrumbPage>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
             </div>
+            {/* Small screen */}
             <div className="md:hidden">
               <Sheet>
                 <SheetTrigger>
@@ -62,13 +139,13 @@ export default function MyShop() {
                     <p>Filters</p>
                   </Button>
                 </SheetTrigger>
-                <SheetContent>
+                <SheetContent className="p-4 ">
                   <SheetHeader>
                     <SheetDescription>
-                      <div className="h-[calc(100vh-100px)] pr-5 overflow-y-auto">
+                      <div className="h-[calc(100vh-100px)] mt-7 pr-2 overflow-y-auto">
                         {/* Categories */}
                         <div>
-                          <p className="text-xl font-bold text-black text-start mt-4">
+                          <p className="text-xl font-bold bg-nav p-4 text-center text-white">
                             Categories
                           </p>
                           <Accordion
@@ -77,60 +154,375 @@ export default function MyShop() {
                             className="text-start"
                           >
                             <AccordionItem value="item-1">
-                              <AccordionTrigger>
-                                Phone Accessories
+                              <AccordionTrigger className="text-sm xl:text-base text-blue">
+                                Laptop Computer
                               </AccordionTrigger>
                               <AccordionContent>
-                                <Link href="#" className="hover:underline">
-                                  Charger
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Laptop Acer</p>
                                 </Link>
                               </AccordionContent>
                               <AccordionContent>
-                                <Link href="#" className="hover:underline">
-                                  Case
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Laptop Asus</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Laptop Dell</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Laptop MSI</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Laptop Apple</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Acer</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Laptop Lenovo</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Laptop HP</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Brand MSI</p>
                                 </Link>
                               </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-2">
-                              <AccordionTrigger>
-                                Security Camera
+                              <AccordionTrigger className="text-sm xl:text-base text-blue">
+                                Desktop Computer
                               </AccordionTrigger>
                               <AccordionContent>
-                                <Link href="#" className="hover:underline">
-                                  Charger
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Brand Dell </p>
                                 </Link>
                               </AccordionContent>
                               <AccordionContent>
-                                <Link href="#" className="hover:underline">
-                                  Case
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Brand Acer </p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Desktop Clone </p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Brand IBM </p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Brand HP </p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p>Brand HP</p>
                                 </Link>
                               </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-3">
-                              <AccordionTrigger>
-                                Computer Accessory
+                              <AccordionTrigger className="text-sm xl:text-base text-blue">
+                                Workstation Computer
                               </AccordionTrigger>
                               <AccordionContent>
-                                <Link href="#" className="hover:underline">
-                                  Charger
-                                </Link>
-                              </AccordionContent>
-                              <AccordionContent>
-                                <Link href="#" className="hover:underline">
-                                  Case
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Dell Precision </p>
                                 </Link>
                               </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-4">
-                              <AccordionTrigger>Xiaomi</AccordionTrigger>
+                              <AccordionTrigger className="text-sm xl:text-base text-blue">
+                                Server Computer
+                              </AccordionTrigger>
                               <AccordionContent>
-                                <Link href="#" className="hover:underline">
-                                  Charger
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Dell PowerEdge</p>
+                                </Link>
+                              </AccordionContent>
+                            </AccordionItem>
+                            <AccordionItem value="item-5">
+                              <AccordionTrigger className="text-sm xl:text-base text-blue">
+                                Accessories
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Flash</p>
                                 </Link>
                               </AccordionContent>
                               <AccordionContent>
-                                <Link href="#" className="hover:underline">
-                                  Case
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> External HDD</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> RAM</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Hard disk</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Speaker</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Keyboard & Mouse</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Modem</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Fax</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Inks</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Power Bank</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Other Products</p>
+                                </Link>
+                              </AccordionContent>
+                              <AccordionContent>
+                                <Link
+                                  href="#"
+                                  className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                                >
+                                  <ArrowRight
+                                    width={15}
+                                    className=" hover:text-color"
+                                  />
+                                  <p> Toner</p>
                                 </Link>
                               </AccordionContent>
                             </AccordionItem>
@@ -227,66 +619,305 @@ export default function MyShop() {
                 </SheetContent>
               </Sheet>
             </div>
+            {/*End Small screen */}
           </div>
         </section>
         {/*End Header */}
 
+        {/* Content */}
         <section className="mt-10">
           <div className="grid grid-cols-12 gap-3">
+            {/* Left Content */}
             <div className="hidden md:grid col-span-3 ">
               {/* Category */}
-              <div className=" border shadow-md p-6">
-                <p className="text-2xl text-center mb-4">Categories</p>
-                <Accordion type="single" collapsible>
+              <div className=" border shadow-md">
+                <p className="text-2xl text-center  p-4 bg-nav text-white">
+                  Categories
+                </p>
+                <Accordion type="single" className="px-4" collapsible>
                   <AccordionItem value="item-1">
-                    <AccordionTrigger>Phone Accessories</AccordionTrigger>
+                    <AccordionTrigger className="text-sm xl:text-base text-blue">
+                      Laptop Computer
+                    </AccordionTrigger>
                     <AccordionContent>
-                      <Link href="#" className="hover:underline">
-                        Charger
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Laptop Acer</p>
                       </Link>
                     </AccordionContent>
                     <AccordionContent>
-                      <Link href="#" className="hover:underline">
-                        Case
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Laptop Asus</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Laptop Dell</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Laptop MSI</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Laptop Apple</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Acer</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Laptop Lenovo</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Laptop HP</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Brand MSI</p>
                       </Link>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2">
-                    <AccordionTrigger>Security Camera</AccordionTrigger>
+                    <AccordionTrigger className="text-sm xl:text-base text-blue">
+                      Desktop Computer
+                    </AccordionTrigger>
                     <AccordionContent>
-                      <Link href="#" className="hover:underline">
-                        Charger
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Brand Dell </p>
                       </Link>
                     </AccordionContent>
                     <AccordionContent>
-                      <Link href="#" className="hover:underline">
-                        Case
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Brand Acer </p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Desktop Clone </p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Brand IBM </p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Brand HP </p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p>Brand HP</p>
                       </Link>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-3">
-                    <AccordionTrigger>Computer Accessory</AccordionTrigger>
+                    <AccordionTrigger className="text-sm xl:text-base text-blue">
+                      Workstation Computer
+                    </AccordionTrigger>
                     <AccordionContent>
-                      <Link href="#" className="hover:underline">
-                        Charger
-                      </Link>
-                    </AccordionContent>
-                    <AccordionContent>
-                      <Link href="#" className="hover:underline">
-                        Case
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Dell Precision </p>
                       </Link>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-4">
-                    <AccordionTrigger>Xiaomi</AccordionTrigger>
+                    <AccordionTrigger className="text-sm xl:text-base text-blue">
+                      Server Computer
+                    </AccordionTrigger>
                     <AccordionContent>
-                      <Link href="#" className="hover:underline">
-                        Charger
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Dell PowerEdge</p>
+                      </Link>
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-5">
+                    <AccordionTrigger className="text-sm xl:text-base text-blue">
+                      Accessories
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Flash</p>
                       </Link>
                     </AccordionContent>
                     <AccordionContent>
-                      <Link href="#" className="hover:underline">
-                        Case
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> External HDD</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> RAM</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Hard disk</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Speaker</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Keyboard & Mouse</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Modem</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Fax</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Inks</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Power Bank</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Other Products</p>
+                      </Link>
+                    </AccordionContent>
+                    <AccordionContent>
+                      <Link
+                        href="#"
+                        className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                      >
+                        <ArrowRight width={15} className=" hover:text-color" />
+                        <p> Toner</p>
                       </Link>
                     </AccordionContent>
                   </AccordionItem>
@@ -294,53 +925,195 @@ export default function MyShop() {
               </div>
               {/*End Category */}
 
-              {/* Brand */}
-              <div className=" border shadow-md p-6 mt-10">
-                <p className="text-2xl text-center mb-4">Filter by Brand</p>
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="item-1" className=" mb-4">
-                    <Link href="#" className="hover:underline text-sm ">
-                      Apple
-                    </Link>
-                  </AccordionItem>
-                  <AccordionItem value="item-1" className=" mb-4">
-                    <Link href="#" className="hover:underline text-sm ">
-                      Samsung
-                    </Link>
-                  </AccordionItem>
-                  <AccordionItem value="item-1" className=" mb-4">
-                    <Link href="#" className="hover:underline text-sm ">
-                      Xiaomi
-                    </Link>
-                  </AccordionItem>
-                  <AccordionItem value="item-1" className=" mb-4">
-                    <Link href="#" className="hover:underline text-sm ">
-                      ANKER
-                    </Link>
-                  </AccordionItem>
-                  <AccordionItem value="item-1" className=" mb-4">
-                    <Link href="#" className="hover:underline text-sm ">
-                      IMILAB
-                    </Link>
-                  </AccordionItem>
-                  <AccordionItem value="item-1" className=" mb-4">
-                    <Link href="#" className="hover:underline text-sm ">
-                      Usams
-                    </Link>
-                  </AccordionItem>
-                  <AccordionItem value="item-1" className=" mb-4">
-                    <Link href="#" className="hover:underline text-sm ">
-                      UGREEN
-                    </Link>
-                  </AccordionItem>
-                  <AccordionItem value="item-1" className=" mb-4">
-                    <Link href="#" className="hover:underline text-sm ">
-                      Blueo
-                    </Link>
-                  </AccordionItem>
-                </Accordion>
+              {/* Lastest Products */}
+              <div className=" border shadow-md mt-10">
+                <p className="text-2xl text-center  p-4 bg-nav text-white">
+                  Lastest Products
+                </p>
+                <div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product3.jpg"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product7.png"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product6.jpg"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product1.png"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product5.png"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product3.jpg"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product4.png"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product3.jpg"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product3.jpg"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-12 p-3 border-b">
+                    <div className="col-span-5">
+                      <Image
+                        src="/assets/images/product3.jpg"
+                        width={3000}
+                        height={3000}
+                        alt="image"
+                        className="h-20 object-contain aspect-square "
+                      />
+                    </div>
+                    <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+                      <p>Acer Aspire 3( A315-58-P3S9)</p>
+                      <p className="font-semibold">
+                        Price:{" "}
+                        <span className="text-color ml-3 xl:ml-5">$766</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              {/*End Brand */}
+              {/*End Lastest Products */}
 
               {/* Filter price */}
               <div>
@@ -348,301 +1121,71 @@ export default function MyShop() {
               </div>
               {/*End Filter price */}
             </div>
-            <div className="col-span-12 md:col-span-9">
-              <div className="mb-4 grid gap-4 sm:grid-cols-3 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
-                {/* Produc 1 */}
+            {/*End Left Content */}
 
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/image7.webp"
-                        alt=""
-                      />
-                    </a>
+            {/* Right Content */}
+            <div className="col-span-12 md:col-span-9">
+              <div className="mb-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
+                {imageUrls.map((item, index) => (
+                  <div
+                    key={index}
+                    className="border aspect-square border-blue bg-white p-4 dark:border-gray-700 dark:bg-gray-800"
+                  >
+                    <div className="aspect-square w-full">
+                      <a href="/products">
+                        <img
+                          className="mx-auto h-full dark:hidden transition-transform duration-300 hover:scale-110"
+                          src={item.image}
+                          alt="product"
+                        />
+                      </a>
+                    </div>
+                    <div className="pt-6">
+                      <a
+                        href="/products"
+                        className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white"
+                      >
+                        {item.title}
+                      </a>
+                      <div className="flex text-sm mt-4 justify-between items-center">
+                        <div className="text-color text-sm md:text-lg">
+                          {item.price}
+                        </div>
+                        <div className="flex items-center">
+                          <Eye width="16" />
+                          <p>{item.view}</p>
+                        </div>
+                      </div>
+                      <div className="flex mt-3">
+                        <p className="text-blue mr-1">Rate:</p>
+                        <div className="flex overflow-hidden">
+                          <StarIcon
+                            width="16"
+                            className="md:ml-2 text-yellow-400"
+                          />
+                          <StarIcon
+                            width="16"
+                            className="md:ml-2 text-yellow-400"
+                          />
+                          <StarIcon
+                            width="16"
+                            className="md:ml-2 text-yellow-400"
+                          />
+                          <StarIcon
+                            width="16"
+                            className="md:ml-2 text-yellow-400"
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 2 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/image8.jpg"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 3 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/imag7.webp"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 1 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/image7.webp"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 2 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/image8.jpg"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 3 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/imag7.webp"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 1 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/image7.webp"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 2 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/image8.jpg"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 3 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/imag7.webp"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 1 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/image7.webp"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 2 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/image8.jpg"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
-                {/* Produc 3 */}
-                <div className="rounded-lg border border-b-[#FFD700]   border-gray-200 bg-white p-6  dark:border-gray-700 dark:bg-gray-800">
-                  <div className="h-56 w-full">
-                    <a href="/products">
-                      <img
-                        className="mx-auto h-full dark:hidden"
-                        src="/assets/images/imag7.webp"
-                        alt=""
-                      />
-                    </a>
-                  </div>
-                  <div className="pt-6">
-                    <a
-                      href="/products"
-                      className="text-sm line-clamp-2  leading-tight text-gray-900 hover:underline dark:text-white"
-                    >
-                      product image Blueo PVD Stainless Steel Camera Lens
-                      Protector for iPhone 15 Pro Max White
-                    </a>
-                    <p className="bg-gold text-lg mt-4 shadow-md p-1   text-center">
-                      $15.59
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
+            {/*End Right Content */}
           </div>
         </section>
+        {/*End Content */}
       </section>
     </>
   );

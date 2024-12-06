@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
         className={` ${poppins.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className=" bg-nav ">
-          <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20  p-2">
+          <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20 p-3">
             <nav className="flex justify-between">
               <div className="text-white">
                 <p className="text-[10px] sm:text-sm ">
@@ -190,7 +190,7 @@ export default function RootLayout({ children }) {
           </div>
         </header>
         {/* Menu */}
-        <div className="w-full  border shadow-sm">
+        <div className="w-full  border-b shadow-sm">
           <div className="hidden md:flex justify-between text-[10px] sm:text-sm md:text-[16] items-center max-w-screen-2xl mx-auto xl:px-20 ">
             <ul className="flex   items-center  font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li className="bg-menu md:p-3 ">
@@ -277,8 +277,8 @@ export default function RootLayout({ children }) {
 
         <footer className="bg-nav mt-56">
           <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-            <div className="md:flex md:justify-between">
-              <div className="mb-6 text-white md:mb-0">
+            <div className="md:grid grid-cols-12 ">
+              <div className="col-span-5 mb-6 text-white md:mb-0">
                 <a href="/" className="flex flex-col   ">
                   <Image
                     src="/assets/images/logo.png"
@@ -293,84 +293,190 @@ export default function RootLayout({ children }) {
                   </p>
                 </a>
               </div>
-              <div>
-                <div>
-                  <h2 className="mb-6 text-sm font-semibold text-white  dark:text-white">
-                    Our family brand product
-                  </h2>
-                  <div className="grid grid-cols-4 gap-3">
-                    <div className="col-span-1">
-                      <Image
-                        src="/assets/images/brand1.jpg"
-                        width={2000}
-                        height={2000}
-                        alt=" brand product"
-                        className="w-36 h-24 "
-                      />
-                    </div>
-                    <div className="col-span-1">
-                      <Image
-                        src="/assets/images/brand2.jpg"
-                        width={2000}
-                        height={2000}
-                        alt=" brand product"
-                        className="w-36 h-24"
-                      />
-                    </div>
-                    <div className="col-span-1">
-                      <Image
-                        src="/assets/images/brand3.jpg"
-                        width={2000}
-                        height={2000}
-                        alt=" brand product"
-                        className="w-36 h-24 "
-                      />
-                    </div>
-                    <div className="col-span-1">
-                      <Image
-                        src="/assets/images/brand4.png"
-                        width={2000}
-                        height={2000}
-                        alt=" brand product"
-                        className="w-36 h-24 "
-                      />
-                    </div>
-                    <div className="col-span-1">
-                      <Image
-                        src="/assets/images/brand5.png"
-                        width={2000}
-                        height={2000}
-                        alt=" brand product"
-                        className="w-36 h-24 "
-                      />
-                    </div>
-                    <div className="col-span-1">
-                      <Image
-                        src="/assets/images/brand6.png"
-                        width={2000}
-                        height={2000}
-                        alt=" brand product"
-                        className="w-36 h-24 "
-                      />
-                    </div>
-                    <div className="col-span-1">
-                      <Image
-                        src="/assets/images/brand8.jpg"
-                        width={2000}
-                        height={2000}
-                        alt=" brand product"
-                        className="w-36 h-24 "
-                      />
-                    </div>
-                    <div className="col-span-1">
-                      <Image
-                        src="/assets/images/brand10.jpg"
-                        width={2000}
-                        height={2000}
-                        alt=" brand product"
-                        className="w-36 h-24 "
-                      />
-                    </div>
+              <div className="col-span-7">
+                <h2 className="mb-4 text-sm text-center md:text-start font-semibold text-white  dark:text-white">
+                  Our family brand product
+                </h2>
+                <div className="grid grid-cols-4 sm:grid-cols-6 xl:grid-cols-8 gap-3 ">
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand1.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand2.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover"
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand3.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand4.png"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand5.png"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand6.png"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand8.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand10.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand11.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand12.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand13.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand14.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand15.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand16.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand17.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand18.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand19.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand20.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand21.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
+                  </div>
+                  <div className="col-span-1 ">
+                    <Image
+                      src="/assets/images/brand22.jpg"
+                      width={2000}
+                      height={2000}
+                      alt=" brand product"
+                      className="aspect-video object-cover "
+                    />
                   </div>
                 </div>
               </div>

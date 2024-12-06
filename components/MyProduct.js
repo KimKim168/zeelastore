@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import MyNewsProduct from "./MyNewsProduct";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
+import MyVideoCard from "./MyVideoCard";
 
 export default function MyProduct() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -164,46 +165,76 @@ export default function MyProduct() {
                       <li className="text-color col-span-6">$150</li>
                     </ul>
                   </li>
+                  <li>
+                    <div>
+                      <Button
+                        variant="outline"
+                        className="flex items-center justify-center"
+                      >
+                        <Heart></Heart>
+                        <p>Add to wishlist</p>
+                      </Button>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
               <hr className="border-black mt-5 w-auto"></hr>
 
               <div className="flex items-center gap-2 md:gap-5 mt-5 ">
-                <MyCounter></MyCounter>
-                <Button className="w-full ">
+                {/* <Button className="w-full ">
                   <ShoppingCart></ShoppingCart>
                   <p>Buy Now</p>
-                </Button>
+                </Button> */}
                 {/* Socail  */}
                 <div className="flex items-center gap-2 md:gap-3 ">
-                  <Link href="#">
+                  <Link
+                    href="https://telegram.org/"
+                    target="_blank"
+                    className="border p-1 sm:p-2 flex justify-center items-center gap-1 rounded-md"
+                  >
                     <Image
                       src="/assets/images/telegram.png"
                       width={3000}
                       height={3000}
-                      className="w-10 md:w-14"
+                      className="w-5 md:w-10 xl:w-12"
                       alt="image"
                     />
+                    <p className="text-[10px] sm:text-sm xl:text-[16px]">
+                      order With Telegram
+                    </p>
                   </Link>
-                  <Link href="#">
+                  <Link
+                    href="https://www.messenger.com/"
+                    target="_blank"
+                    className="border p-1 sm:p-2 flex justify-center items-center gap-1 rounded-md"
+                  >
                     <Image
-                      src="/assets/images/facebook.png"
+                      src="/assets/images/messager.jpg"
                       width={3000}
                       height={3000}
-                      className="w-10 md:w-14"
+                      className="w-5 md:w-10 xl:w-12"
                       alt="image"
                     />
+                    <p className="text-[10px] sm:text-sm xl:text-[16px]">
+                      order With Messenger
+                    </p>
                   </Link>
-                  <Link href="#" className="flex items-center gap-1">
+                  <Link
+                    href="#"
+                    target="_blank"
+                    className="border p-1 sm:p-2 flex justify-center items-center gap-1 rounded-md"
+                  >
                     <Image
                       src="/assets/images/call.png"
                       width={3000}
                       height={3000}
-                      className="w-10 md:w-14"
+                      className="w-5 md:w-10 xl:w-12"
                       alt="image"
                     />
-                    {/* <p className="text-sm md:text-xl">098 234 5678</p> */}
+                    <p className="text-[10px] sm:text-sm xl:text-[16px]">
+                      order By Calling
+                    </p>
                   </Link>
                 </div>
                 {/*End Socail */}
@@ -211,50 +242,34 @@ export default function MyProduct() {
 
               {/* Add to wishlist */}
               <dvi className="mt-5 flex space-x-2">
-                <div>
-                  <Button
-                    variant="outline"
-                    className="flex items-center justify-center"
-                  >
-                    <Heart></Heart>
-                    <p>Add to wishlist</p>
-                  </Button>
+                <div className="grid  grid-cols-2 md:grid-cols-3 gap-3">
+                  <MyVideoCard
+                    thumbnailSrc="/assets/images/product9.jpg"
+                    altText="Anker Charger Video Thumbnail"
+                  />
+                  <MyVideoCard
+                    thumbnailSrc="/assets/images/product8.png"
+                    altText="Anker Charger Video Thumbnail"
+                  />
                 </div>
-                <div>
-                  <Button
-                    variant="outline"
-                    className="flex items-center justify-center"
-                  >
-                    <VideoIcon />
-                    <p>Video</p>
-                  </Button>
-                </div>
-                <div>
-                  <Button
-                    variant="outline"
-                    className="flex items-center justify-center"
-                  >
-                    <Youtube />
-                    <p>Youtube</p>
-                  </Button>
-                </div>
+                <div></div>
               </dvi>
               {/*End Add to wishlist */}
-              <div className="mt-5">
-                <p className="text-xl mb-3">Specification</p>
-                <div>
-                  <ul className="list-disc list-inside text-gray-900 space-y-2">
-                    <li>Backlight Technology : LED</li>
-                    <li>Panel Technology : VA</li>
-                    <li>Display type : LED-backlit LCD monitor</li>
-                    <li>Display Size : 32-inches FHD (1920 x 1080) 144 Hz</li>
-                    <li>Aspect Ratio : 16:9 Widescreen</li>
-                    <li>Brightness : 250 cd/m²</li>
-                    <li>Interface : DisplayPort, HDMI</li>
-                    <li>Dimensions: 20.8 x 71.1 x 52.6 Centimeters</li>
-                  </ul>
-                </div>
-              </div>
+            </div>
+          </div>
+          <div className="mt-10">
+            <p className="text-xl text-blue mb-3">Specification</p>
+            <div>
+              <ul className="list-disc list-inside text-gray-900 space-y-2">
+                <li>Backlight Technology : LED</li>
+                <li>Panel Technology : VA</li>
+                <li>Display type : LED-backlit LCD monitor</li>
+                <li>Display Size : 32-inches FHD (1920 x 1080) 144 Hz</li>
+                <li>Aspect Ratio : 16:9 Widescreen</li>
+                <li>Brightness : 250 cd/m²</li>
+                <li>Interface : DisplayPort, HDMI</li>
+                <li>Dimensions: 20.8 x 71.1 x 52.6 Centimeters</li>
+              </ul>
             </div>
           </div>
         </section>

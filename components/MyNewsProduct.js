@@ -81,7 +81,12 @@ export default function MyNewsProduct() {
   return (
     <>
       <section className="max-w-screen-2xl mx-auto px-2 xl:px-20 py-5">
-        <div className="text-lg mb-4">News</div>
+        <div className="border-l-4 border-blue-bold ">
+          <div className="flex justify-between border-b-2 mx-1 pb-2 px-2  border-blue-bold  mb-4">
+            <p className="text-lg ">News</p>
+            <a className="text-lg ">View More</a>
+          </div>
+        </div>
         <div className="mb-4 grid gap-4 grid-cols-2 md:grid-cols-3 md:mb-8  xl:grid-cols-6">
           {imageUrls.map((item, index) => (
             <div

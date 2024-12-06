@@ -60,29 +60,6 @@ body {
   background-color: #555; /* Thumb color when hovered */
 }
 
-/*End Scroll */
-/* Shank image */
-/* global.css or styles.css */
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-  75% {
-    transform: translateX(-5px);
-  }
-}
-
-.shake-animation {
-  animation: shake 0.5s ease-in-out;
-}
-
 /*End Shank image */
 @layer base {
   :root {

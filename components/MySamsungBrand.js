@@ -72,9 +72,11 @@ export default function MyAppleBrand() {
   return (
     <>
       <section className="max-w-screen-2xl  mx-auto px-2 xl:px-20 py-5">
-        <div className="flex justify-between  mb-4">
-          <p className="text-lg ">Samsungs</p>
-          <a className="text-lg ">View More</a>
+      <div className="border-l-4 border-blue-bold mx-2">
+          <div className="flex justify-between border-b-2 mx-1 pb-2 px-2  border-blue-bold  mb-4">
+            <p className="text-lg ">Laptop Acer</p>
+            <a className="text-lg ">View More</a>
+          </div>
         </div>
 
         <div className="flex">

@@ -12,9 +12,9 @@ import {
 
 export default function MyBelowSlider() {
   const image = [
-    "/assets/images/image5.png",
-    "/assets/images/image6.png",
-    "/assets/images/image4.png",
+    "/assets/images/product5.png",
+    "/assets/images/product9.jpg",
+    "/assets/images/product10.png",
   ];
   return (
     <>
@@ -29,16 +29,19 @@ export default function MyBelowSlider() {
         >
           <CarouselContent>
             {image.map((src, index) => (
-              <CarouselItem key={index} className="basis-1/2 pl-0 lg:basis-1/3 ">
+              <CarouselItem
+                key={index}
+                className="basis-1/2 pl-0 lg:basis-1/3 "
+              >
                 <div className="p-1">
                   <Card className="rounded-none ">
-                    <CardContent className="p-0 flex aspect-video items-center justify-center">
+                    <CardContent className="p-0 flex  items-center justify-center">
                       <Image
                         src={src}
                         alt={`src ${index + 1}`}
-                        width={1000}
-                        height={1000}
-                        className="w-full h-full object-cover"
+                        width={400}
+                        height={400}
+                        className="aspect-[16/10] object-scale-down"
                       />
                     </CardContent>
                   </Card>

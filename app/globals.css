@@ -23,7 +23,7 @@ body {
   border-color: #05148e;
 }
 .bg-skySlate{
-  background-color: #87b3ae1c;
+  background-color: #87b3ae;
 }
 .border-blue {
   border-color: #688abb;
@@ -37,7 +37,7 @@ body {
   background-color: #483d8b;
 }
 .bg-menu {
-  background-color: #e73051;
+  background-color: #ff002f;
 }
 .bg-dynamic {
   background-color: #1c49dc;
@@ -46,7 +46,7 @@ body {
 /* Scroll */
 /* Customize the scrollbar */
 ::-webkit-scrollbar {
-  height: 3px; /* Height for horizontal scrollbar */
+  height: 2px; /* Height for horizontal scrollbar */
 }
 
 ::-webkit-scrollbar-track {
@@ -54,7 +54,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1c49dc; /* Thumb color */
+  background-color: #05148e; /* Thumb color */
   border-radius: 1px;
 }
 

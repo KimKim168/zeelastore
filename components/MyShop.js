@@ -1256,7 +1256,7 @@ export default function MyShop() {
             {/*End Left Content */}
 
             {/* Right Content */}
-            <div className="col-span-12 md:col-span-9">
+            <div className="col-span-12 md:col-span-9 ">
               <div className="mb-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
                 {imageUrls.map((item, index) => (
                   <div

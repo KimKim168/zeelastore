@@ -41,7 +41,7 @@ export default function MyBelowSlider() {
                         alt={`src ${index + 1}`}
                         width={400}
                         height={400}
-                        className="aspect-[16/10] object-scale-down"
+                        className="aspect-[16/9] object-scale-down"
                       />
                     </CardContent>
                   </Card>

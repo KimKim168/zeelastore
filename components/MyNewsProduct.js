@@ -102,25 +102,26 @@ export default function MyNewsProduct() {
                   />
                 </a>
               </div>
-              <div className="pt-6">
+              <div className="pt-2">
                 <a
                   href="/products"
                   className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white"
                 >
                   {item.title}
                 </a>
-                <div className="grid grid-cols-12  text-sm mt-4 overflow-hidden justify-between items-center">
-                  <div className="text-color col-span-6 overflow-hidden text-sm md:text-lg">
-                    {item.price}
+                <div className=" text-sm mt-1 overflow-hidden justify-between items-center">
+                  <div className="text-color grid grid-cols-12 justify-between overflow-hidden text-sm md:text-lg">
+                    <p className="col-span-6">Price:</p>
+                    <p className="col-span-6 text-end">{item.price}</p>
                   </div>
-                  <div className="col-span-6 ">
+                  {/* <div className="col-span-6 ">
                     <div className="flex items-center justify-end">
                       <Eye width="16" />
                       <p>{item.view}</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="flex mt-3">
+                {/* <div className="flex mt-3">
                   <p className="text-blue mr-1">Rate:</p>
                   <div className="flex overflow-hidden">
                     <StarIcon width="16" className="md:ml-2 text-yellow-400" />
@@ -128,7 +129,7 @@ export default function MyNewsProduct() {
                     <StarIcon width="16" className="md:ml-2 text-yellow-400" />
                     <StarIcon width="16" className="md:ml-2 text-yellow-400" />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

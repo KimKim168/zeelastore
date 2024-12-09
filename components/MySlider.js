@@ -34,6 +34,7 @@ export default function MySlider() {
         <CarouselContent>
           <div
             className="flex transition-transform duration-500 relative"
+            
             style={{
               transform: `translateX(-${currentIndex * 100}%)`,
             }}
@@ -45,7 +46,7 @@ export default function MySlider() {
                   alt={`Slide ${index + 1}`}
                   width={4000}
                   height={4000}
-                  className="  w-full object-cover aspect-video md:h-[500px]"
+                  className="w-full object-cover aspect-[21/9]"
                 />
               </div>
             ))}

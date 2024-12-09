@@ -15,19 +15,21 @@ export default function Home() {
       {/* above slide */}
       <MyBelowSlider></MyBelowSlider>
       {/*End above slide */}
-      {/* Category */}
-      <MyCategories></MyCategories>
-      {/*End Category */}
 
-      {/* Card */}
-      <MyNewsProduct></MyNewsProduct>
-      {/*End Card */}
-      {/*Product Card */}
-      <MyAppleBrand></MyAppleBrand>
-      {/*End product Card */}
-      {/*Product Card */}
-      <MySamsungBrand></MySamsungBrand>
-      {/*End product Card */}
+      <div className="bg-skySlate pb-10">
+        {/* Category */}
+        <MyCategories></MyCategories>
+        {/*End Category */}
+        {/* Card */}
+        <MyNewsProduct></MyNewsProduct>
+        {/*End Card */}
+        {/*Product Card */}
+        <MyAppleBrand></MyAppleBrand>
+        {/*End product Card */}
+        {/*Product Card */}
+        <MySamsungBrand></MySamsungBrand>
+        {/*End product Card */}
+      </div>
     </>
   );
 }

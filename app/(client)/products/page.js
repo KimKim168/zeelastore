@@ -15,8 +15,8 @@ export default function MyProduct() {
         <div className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
             <div className="sm:col-span-12 md:col-span-5">
-              <MyGallery />
-              For Image
+              {/* <MyGallery /> */}
+              Error 1 
             </div>
 
             <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">

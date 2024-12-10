@@ -215,12 +215,12 @@ export default function MyProduct() {
               </div>
 
               {/* Add to wishlist */}
-              <dvi className="mt-5 flex space-x-2">
+              <div className="mt-5 flex space-x-2">
                 <div>
                   <MyVideoCard />
                 </div>
                 <div></div>
-              </dvi>
+              </div>
               {/*End Add to wishlist */}
             </div>
           </div>

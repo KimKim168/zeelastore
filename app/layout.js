@@ -1,10 +1,8 @@
-"use client";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Koulen, Siemreap, Poppins } from "next/font/google";
 
 import Image from "next/image";
-
 
 import MyHeader from "@/components/my-header";
 import MyNavigation from "@/components/my-navigation";
@@ -45,8 +43,8 @@ export default function RootLayout({ children }) {
                 <a href="/" className="flex flex-col   ">
                   <Image
                     src="/assets/images/logo.png"
-                    width={200}
-                    height={200}
+                    width={3000}
+                    height={3000}
                     alt="logo"
                     className="w-24"
                   ></Image>
@@ -64,8 +62,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand1.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -73,8 +71,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand2.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover"
                     />
@@ -82,8 +80,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand3.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -91,8 +89,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand4.png"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -100,8 +98,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand5.png"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -109,8 +107,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand6.png"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -118,8 +116,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand8.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -127,8 +125,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand10.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -136,8 +134,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand11.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -145,8 +143,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand12.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -154,8 +152,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand13.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -163,8 +161,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand14.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -172,8 +170,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand15.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -181,8 +179,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand16.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -190,8 +188,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand17.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -199,8 +197,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand18.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -208,8 +206,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand19.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -217,8 +215,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand20.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -226,8 +224,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand21.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />
@@ -235,8 +233,8 @@ export default function RootLayout({ children }) {
                   <div className="col-span-1 ">
                     <Image
                       src="/assets/images/brand22.jpg"
-                      width={2000}
-                      height={2000}
+                      width={3000}
+                      height={3000}
                       alt=" brand product"
                       className="aspect-video object-cover "
                     />

@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-// import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.css";
 
 import Link from "next/link";

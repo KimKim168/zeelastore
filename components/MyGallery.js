@@ -84,7 +84,7 @@ const MyGallery = ({
               </CarouselItem>
             ))}
           </CarouselContent>
-          <MyCarouselButton />
+          {/* <MyCarouselButton /> */}
         </Carousel>
       )}
     </div>

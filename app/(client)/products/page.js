@@ -20,9 +20,9 @@ export default function MyProduct() {
             </div>
 
             <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">
-              <div className="text-lg md:text-xl font-semibold">
+              <p className="text-lg md:text-xl font-semibold">
                 Acer Swift Go (SFG14-71-59SE) Pure Silver
-              </div>
+              </p>
               <div className="max-w-96 mt-4">
                 <ul className="space-y-2 text-sm md:text-lg">
                   <li>
@@ -72,15 +72,13 @@ export default function MyProduct() {
                     </ul>
                   </li>
                   <li>
-                    <div>
-                      <Button
-                        variant="outline"
-                        className="flex items-center justify-center"
-                      >
-                        <Heart />
-                        <p>Add to wishlist</p>
-                      </Button>
-                    </div>
+                    <Button
+                      variant="outline"
+                      className="flex items-center justify-center"
+                    >
+                      <Heart />
+                      <p>Add to wishlist</p>
+                    </Button>
                   </li>
                 </ul>
               </div>
@@ -106,9 +104,9 @@ export default function MyProduct() {
                       className="w-7 xl:w-10"
                       alt="image"
                     />
-                    <p className="text-[10px] sm:text-[10px] xl:text-[13px]">
+                    <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
                       Order With Telegram
-                    </p>
+                    </span>
                   </Link>
                   <Link
                     href="https://www.messenger.com/"
@@ -122,9 +120,9 @@ export default function MyProduct() {
                       className="w-7 xl:w-10"
                       alt="image"
                     />
-                    <p className="text-[10px] sm:text-[10px] xl:text-[13px]">
+                    <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
                       Order With Messenger
-                    </p>
+                    </span>
                   </Link>
                   <Link
                     href="https://web.whatsapp.com/"
@@ -138,9 +136,9 @@ export default function MyProduct() {
                       className="w-7 xl:w-10"
                       alt="image"
                     />
-                    <p className="text-[10px] sm:text-[10px] xl:text-[13px]">
+                    <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
                       Order With whatsapp
-                    </p>
+                    </span>
                   </Link>
                   <Link
                     href="#"
@@ -154,9 +152,9 @@ export default function MyProduct() {
                       className="w-7 xl:w-10"
                       alt="image"
                     />
-                    <p className="text-[10px] sm:text-[10px] xl:text-[13px]">
+                    <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
                       Order By Calling
-                    </p>
+                    </span>
                   </Link>
                 </div>
                 {/*End Socail */}
@@ -171,7 +169,7 @@ export default function MyProduct() {
             </div>
           </div>
           {/* Content utttom */}
-          <DescriptionTab />
+          {/* <DescriptionTab /> */}
           {/*End Content utttom */}
         </div>
       </section>

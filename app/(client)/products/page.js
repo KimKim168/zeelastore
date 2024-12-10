@@ -6,7 +6,6 @@ import "glightbox/dist/css/glightbox.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Heart } from "lucide-react";
-import MyGallery from "@/components/MyGallery";
 import { Button } from "@/components/ui/button";
 import MyVideoCard from "@/components/MyVideoCard";
 import MyNewsProduct from "@/components/MyNewsProduct";
@@ -14,15 +13,6 @@ import MyBreadCrumb from "@/components/my-bread-crumb";
 import DescriptionTab from "@/components/products/description-tab";
 
 export default function MyProduct() {
-  const imageUrls = [
-    "/assets/images/product5.png",
-    "/assets/images/product7.png",
-    "/assets/images/product8.png",
-    "/assets/images/product4.png",
-    "/assets/images/product7.png",
-    "/assets/images/product8.png",
-  ];
-
   return (
     <>
       <section className="max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 mt-5 ">
@@ -30,7 +20,7 @@ export default function MyProduct() {
         <section className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
             <div className="sm:col-span-12 md:col-span-5">
-              <MyGallery />
+              {/* <MyGallery /> */}
             </div>
 
             <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">

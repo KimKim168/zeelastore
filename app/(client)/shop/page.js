@@ -1,8 +1,6 @@
 import MyCategoryComponent from "@/components/my-accordion-category";
-import MyBreadCrumb from "@/components/my-bread-crumb-shop";
 import MyDualRangPrice from "@/components/my-dual-range-price";
 import MylastestProduct from "@/components/my-lastest-product";
-import MyShop from "@/components/my-filter";
 
 import React from "react";
 import Filter from "@/components/my-filter";
@@ -85,8 +83,8 @@ function page() {
   return (
     <div className="max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 mt-5 xl:mt-10 ">
       <section>
-        <div >
-          <Filter/>
+        <div>
+          <Filter />
         </div>
       </section>
       <section className="mt-5 ">

@@ -5,22 +5,11 @@ import {
   Sheet,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import Link from "next/link";
-import Image from "next/image";
 import { Button } from "./ui/button";
-import { ArrowRight, Settings2 } from "lucide-react";
-import MyPriceFilterMobile from "./MyPriceFilterMobile";
+import { Settings2 } from "lucide-react";
 import MyBreadCrumb from "./my-bread-crumb-shop";
 import MyCategoryComponent from "./my-accordion-category";
 import MylastestProduct from "./my-lastest-product";

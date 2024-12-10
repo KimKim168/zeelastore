@@ -132,7 +132,7 @@ const MyHeader = () => {
                   <input
                     type="search"
                     id="default-search"
-                    className="block w-full p-2 text-nowrapw-full ps-10 text-sm text-primary border border-gray-300  bg-gray-50 outline-none  focus:ring-[#FFD700]/100 focus:border-[#FFD700]/100 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 "
+                    className="block w-full p-3 text-nowrapw-full ps-10 text-sm text-primary border border-gray-300  bg-gray-50 outline-none  focus:ring-[#FFD700]/100 focus:border-[#FFD700]/100 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 "
                     placeholder="Search Product..."
                     required
                   />

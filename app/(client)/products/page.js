@@ -1,8 +1,12 @@
+"use client";
 import React from "react";
+// import GLightbox from "glightbox";
+import "glightbox/dist/css/glightbox.css";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Heart } from "lucide-react";
-// import MyGallery from "@/components/MyGallery";
+import MyGallery from "@/components/MyGallery";
 import { Button } from "@/components/ui/button";
 import MyVideoCard from "@/components/MyVideoCard";
 import MyNewsProduct from "@/components/MyNewsProduct";
@@ -17,7 +21,7 @@ export default function MyProduct() {
         <section className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
             <div className="sm:col-span-12 md:col-span-5">
-              {/* <MyGallery /> */}
+              <MyGallery />
             </div>
 
             <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">
@@ -176,7 +180,7 @@ export default function MyProduct() {
         </section>
         <hr className="border-black md:w-96 mx-auto mt-5"></hr>
       </section>
-      <div className="bg-skySlate">
+      <div>
         <MyNewsProduct />
       </div>
     </>

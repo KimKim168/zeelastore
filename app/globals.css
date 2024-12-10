@@ -23,7 +23,7 @@ body {
   border-color: #05148e;
 }
 .bg-skySlate{
-  background-color: #87b3ae;
+  background-color: #27a294;
 }
 .border-blue {
   border-color: #688abb;
@@ -41,6 +41,20 @@ body {
 }
 .bg-dynamic {
   background-color: #1c49dc;
+}
+.background-gradient {
+  background: linear-gradient(to right, #09203f, #2d70a2);
+  height: auto; /* Full screen height */
+  width: 100%; /* Full width */
+}
+.border-gradient {
+  border-color: #024295;
+  
+}
+.background-gradient {
+  background: linear-gradient(to right, #09203f, #2d70a2);
+  height: auto; /* Full screen height */
+  width: 100%; /* Full width */
 }
 
 /* Scroll */

@@ -1,5 +1,4 @@
 "use client";
-import { Eye, StarIcon } from "lucide-react";
 import React from "react";
 
 export default function MyNewsProduct() {
@@ -80,14 +79,14 @@ export default function MyNewsProduct() {
 
   return (
     <>
-      <section className="max-w-screen-2xl mx-auto px-2 xl:px-20 py-5">
+      <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20 py-5">
         <div className="border-l-4 border-blue-bold ">
           <div className="flex justify-between border-b-2 mx-1 pb-2 px-2  border-blue-bold  mb-4">
-            <p className="text-lg ">News</p>
-            <a className="text-lg ">View More</a>
+            <p className="text-sm sm:text-[16px] md:text-lg ">News</p>
+            <a className="text-sm sm:text-[16px] md:text-lg ">View More</a>
           </div>
         </div>
-        <div className="mb-4 grid gap-4 grid-cols-2 md:grid-cols-3 md:mb-8  xl:grid-cols-6">
+        <div className="mb-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">
           {imageUrls.map((item, index) => (
             <div
               key={index}
@@ -115,26 +114,26 @@ export default function MyNewsProduct() {
                     <p className="col-span-6 text-end">{item.price}</p>
                   </div>
                   {/* <div className="col-span-6 ">
-                    <div className="flex items-center justify-end">
-                      <Eye width="16" />
-                      <p>{item.view}</p>
-                    </div>
-                  </div> */}
+                      <div className="flex items-center justify-end">
+                        <Eye width="16" />
+                        <p>{item.view}</p>
+                      </div>
+                    </div> */}
                 </div>
                 {/* <div className="flex mt-3">
-                  <p className="text-blue mr-1">Rate:</p>
-                  <div className="flex overflow-hidden">
-                    <StarIcon width="16" className="md:ml-2 text-yellow-400" />
-                    <StarIcon width="16" className="md:ml-2 text-yellow-400" />
-                    <StarIcon width="16" className="md:ml-2 text-yellow-400" />
-                    <StarIcon width="16" className="md:ml-2 text-yellow-400" />
-                  </div>
-                </div> */}
+                    <p className="text-blue mr-1">Rate:</p>
+                    <div className="flex overflow-hidden">
+                      <StarIcon width="16" className="md:ml-2 text-yellow-400" />
+                      <StarIcon width="16" className="md:ml-2 text-yellow-400" />
+                      <StarIcon width="16" className="md:ml-2 text-yellow-400" />
+                      <StarIcon width="16" className="md:ml-2 text-yellow-400" />
+                    </div>
+                  </div> */}
               </div>
             </div>
           ))}
         </div>
-      </section>
+      </div>
     </>
   );
 }

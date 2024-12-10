@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
 
         {/* Footer */}
 
-        <footer className="bg-nav ">
+        <footer className="background-gradient ">
           <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div className="md:grid grid-cols-12 ">
               <div className="col-span-5 mb-6 text-white md:mb-0">

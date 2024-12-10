@@ -224,45 +224,66 @@ export default function MyProduct() {
               {/*End Add to wishlist */}
             </div>
           </div>
-          {/* Content utttom */}
-          <Tabs defaultValue="account" className="md:w-[500px] mt-10  ">
-            <TabsList className="grid w-full grid-cols-2 ">
-              <TabsTrigger value="Specification">Specification</TabsTrigger>
-              <TabsTrigger value="Overview">Overview</TabsTrigger>
-            </TabsList>
-            <TabsContent value="Specification">
-              <Card className="shadow-none border-r-0 border-t-0 border-l-2 border-b-2 border-blue">
-                <CardContent className="space-y-2 ">
-                  <ul className="list-disc list-inside text-gray-900 space-y-2">
-                    <li>Backlight Technology: LED</li>
-                    <li>Panel Technology: VA</li>
-                    <li>Display type: LED-backlit LCD monitor</li>
-                    <li>
-                      Display Size: 32-inches FHD (1920 x 1080) 144 Hz Display
-                      Size: 32-inches FHD (1920 x 1080) 144 Hz Display Size:
-                      32-inches FHD (1920 x 1080) 144 Hz{" "}
-                    </li>
-                    <li>Aspect Ratio: 16:9 Widescreen</li>
-                    <li>Brightness: 250 cd/m²</li>
-                    <li>Interface: DisplayPort, HDMI</li>
-                    <li>Dimensions: 20.8 x 71.1 x 52.6 Centimeters</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="Overview">
-              <Card className="shadow-none border-r-0 border-t-0 border-l-2 border-b-2 border-blue">
-                <CardContent className="space-y-2">New Arrivals</CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
+          {/* Content butttom */}
+
           {/*End Content utttom */}
         </section>
+        <Tabs defaultValue="account" className="w-[400px]">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="account">Account</TabsTrigger>
+            <TabsTrigger value="password">Password</TabsTrigger>
+          </TabsList>
+          <TabsContent value="account">
+            <Card>
+              <CardHeader>
+                <CardTitle>Account</CardTitle>
+                <CardDescription>
+                  Make changes to your account here. Click save when you're
+                  done.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <div className="space-y-1">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" defaultValue="Pedro Duarte" />
+                </div>
+                <div className="space-y-1">
+                  <Label htmlFor="username">Username</Label>
+                  <Input id="username" defaultValue="@peduarte" />
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Button>Save changes</Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+          <TabsContent value="password">
+            <Card>
+              <CardHeader>
+                <CardTitle>Password</CardTitle>
+                <CardDescription>
+                  Change your password here. After saving, you'll be logged out.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <div className="space-y-1">
+                  <Label htmlFor="current">Current password</Label>
+                  <Input id="current" type="password" />
+                </div>
+                <div className="space-y-1">
+                  <Label htmlFor="new">New password</Label>
+                  <Input id="new" type="password" />
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Button>Save password</Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+        </Tabs>
         <hr className="border-black md:w-96 mx-auto mt-5"></hr>
       </section>
-      <div className="bg-skySlate">
-        <MyNewsProduct></MyNewsProduct>
-      </div>
+      <MyNewsProduct></MyNewsProduct>
     </>
   );
 }

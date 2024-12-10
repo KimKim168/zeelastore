@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import { Card, CardContent } from "./ui/card";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -24,13 +22,13 @@ export default function MyCategories() {
     <>
       <section className="max-w-screen-2xl mx-auto px-2 xl:px-20 py-5">
         <div>
-          <div className="text-lg mb-4">Categories</div>
+          <div className="text-sm sm:text-[16px] md:text-lg ">Categories</div>
           <div className="flex overflow-x-auto py-4 items-center  scroll-smooth scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500">
             {imagesWithTitles.map((item, index) => (
-              <Link href="/shop ">
+              <Link key={index} href="/shop ">
                 <div
                   key={index}
-                  className="flex flex-col items-center justify-center min-w-[90px] md:min-w-[150px]"
+                  className="flex flex-col items-center justify-center min-w-[100px] md:min-w-[150px]"
                 >
                   <Image
                     src={item.image}
@@ -39,7 +37,7 @@ export default function MyCategories() {
                     className=" w-[40px] h-[35px] md:w-[70px] md:h-[70px] mb-2  object-cover"
                     alt={item.title}
                   />
-                  <p className="text-center text-sm md:text-xl">{item.title}</p>
+                  <p className="text-center text-[12px] md:text-sm ">{item.title}</p>
                 </div>
               </Link>
             ))}

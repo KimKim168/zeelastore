@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Breadcrumb,
@@ -13,17 +14,14 @@ const MyBreadCrumb = () => {
     <>
       <section>
         <Breadcrumb>
-          <BreadcrumbList className="text-[10px] sm:text-sm md:text-[16px]">
+          <BreadcrumbList className="text-[12px] sm:text-sm md:text-[16px]">
             <BreadcrumbItem>
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
+
             <BreadcrumbItem>
-              <BreadcrumbLink href="/shop">Shop</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-blue">Laptop Acer</BreadcrumbPage>
+              <BreadcrumbPage className="text-blue">Shop</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

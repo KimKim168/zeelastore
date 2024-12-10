@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { AlignCenter } from "lucide-react";
+import { AlignCenter, AlignJustifyIcon } from "lucide-react";
 import { Button } from "./ui/button";
 
 import {
@@ -23,17 +23,15 @@ export default function MyResponsive() {
   return (
     <div>
       <Sheet>
-        <SheetTrigger asChild>
-          <Button className="p-3" aria-label="Align Center">
-            <AlignCenter
-              className="text-white "
-              style={{ width: 22, height: 22 }}
-            ></AlignCenter>
-          </Button>
+        <SheetTrigger asChild className="ml-0 ">
+          <AlignCenter
+            className="text-white "
+            style={{ width: 30, height: 30 }}
+          />
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent className="background-gradient">
           <SheetHeader>
-            <p className="text-xl">Menu</p>
+            <p className="text-2xl text-center text-white">Menu</p>
             <SheetTitle className="mt-5 font-normal">
               <form className="w-full">
                 <label
@@ -63,13 +61,13 @@ export default function MyResponsive() {
                   <input
                     type="search"
                     id="default-search"
-                    className="block w-full p-3 ps-10 text-sm text-primary border border-gray-300 bg-gray-50 outline-none focus:ring-[#FFD700]/100 focus:border-[#FFD700]/100 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    className="block w-full p-3 ps-10 text-sm text-primary border border-gray-300 bg-gray-50 outline-none  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                     placeholder="Search Product..."
                     required
                   />
                   <button
                     type="submit"
-                    className="text-sky absolute end-2 top-1/2 transform -translate-y-1/2 bg-gold hover:bg-primary/90 focus:ring-4 focus:outline-none focus:ring-primary/100 font-medium text-sm px-4 py-2"
+                    className="text-white absolute end-2 top-1/2 transform -translate-y-1/2 bg-gold hover:bg-primary/90 focus:ring-4 focus:outline-none focus:ring-primary/100 font-medium text-sm px-4 py-2"
                   >
                     Search
                   </button>
@@ -80,15 +78,19 @@ export default function MyResponsive() {
               <Accordion
                 type="single"
                 collapsible
-                className="w-full text-start text-black"
+                className="w-full text-start text-white"
               >
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>All Categories</AccordionTrigger>
-                  <AccordionContent>Content for categories...</AccordionContent>
-                </AccordionItem>
                 <AccordionItem value="item-2" className="py-4">
-                  <Link href="/" className="hover:underline text-sm">
-                    Home
+                  <Link
+                    href="/"
+                    className="flex items-center text-nowrap text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                    aria-current="page"
+                  >
+                    <AlignJustifyIcon
+                      className="mr-2 w-12 h-12 md:w-20 md:h-20"
+                      style={{ width: "15", height: "15" }}
+                    ></AlignJustifyIcon>
+                    <span>All Categorys</span>
                   </Link>
                 </AccordionItem>
                 <AccordionItem value="item-3" className="py-4">

@@ -6,13 +6,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const DescriptionTab = () => {
   return (
     <>
-      <Tabs defaultValue="account" className="md:w-[500px] mt-10  ">
-        <TabsList className="grid w-full grid-cols-2 ">
+      <Tabs defaultValue="Specification" className="w-full mt-10">
+        <TabsList className="grid w-full grid-cols-2 background-gradient ">
           <TabsTrigger value="Specification">Specification</TabsTrigger>
           <TabsTrigger value="Overview">Overview</TabsTrigger>
         </TabsList>
         <TabsContent value="Specification">
-          <Card className="shadow-none border-r-0 border-t-0 border-l-2 border-b-2 border-blue">
+          <Card className="shadow-none border-r-0 border-t-0 border-l-2 border-b-0 border-gradient">
             <CardContent className="space-y-2 ">
               <ul className="list-disc list-inside text-gray-900 space-y-2">
                 <li>Backlight Technology: LED</li>
@@ -32,7 +32,7 @@ const DescriptionTab = () => {
           </Card>
         </TabsContent>
         <TabsContent value="Overview">
-          <Card className="shadow-none border-r-0 border-t-0 border-l-2 border-b-2 border-blue">
+          <Card className="shadow-none border-r-0 border-t-0 border-l-2 border-b-0 border-blue">
             <CardContent className="space-y-2">New Arrivals</CardContent>
           </Card>
         </TabsContent>

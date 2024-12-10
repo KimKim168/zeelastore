@@ -30,11 +30,10 @@ export default function MySlider() {
 
   return (
     <div className="max-w-screen-2xl mt-2 mx-auto px-2 xl:px-20 ">
-      <Carousel className="w-full" selectedIndex={currentIndex}>
+      <Carousel className="w-full" selectedindex={currentIndex}>
         <CarouselContent>
           <div
             className="flex transition-transform duration-500 relative"
-            
             style={{
               transform: `translateX(-${currentIndex * 100}%)`,
             }}

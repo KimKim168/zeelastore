@@ -73,8 +73,8 @@ export default function MyAppleBrand() {
       <section className="max-w-screen-2xl  mx-auto px-2 xl:px-20 py-5">
         <div className="border-l-4 border-blue-bold mx-2">
           <div className="flex justify-between border-b-2 mx-1 pb-2 px-2  border-blue-bold  mb-4">
-            <p className="text-lg ">Laptop Asus</p>
-            <a className="text-lg ">View More</a>
+            <p className="text-sm sm:text-[16px] md:text-lg">Laptop Asus</p>
+            <a className="text-sm sm:text-[16px] md:text-lg">View More</a>
           </div>
         </div>
 
@@ -94,7 +94,7 @@ export default function MyAppleBrand() {
                 {products.map((item, id) => (
                   <CarouselItem
                     key={id}
-                    className="pl-1 basis-1/2  md:basis-1/3  xl:basis-1/6"
+                    className="pl-1 basis-1/2  sm:basis-1/3 md:basis-1/4 xl:basis-1/5 2xl:basis-1/6"
                   >
                     {/* Product Card */}
                     <div className=" border mx-2 aspect-square border-blue bg-white p-4  dark:border-gray-700 dark:bg-gray-800">

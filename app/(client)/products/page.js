@@ -189,7 +189,7 @@ export default function MyProduct() {
         </section>
         <hr className="border-black md:w-96 mx-auto mt-5"></hr>
       </section>
-      <div className="bg-skySlate">
+      <div>
         <MyNewsProduct />
       </div>
     </>

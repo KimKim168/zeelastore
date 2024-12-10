@@ -16,10 +16,10 @@ export default function Home() {
       <MyBelowSlider></MyBelowSlider>
       {/*End above slide */}
 
-      <div className="bg-skySlate pb-10">
         {/* Category */}
         <MyCategories></MyCategories>
         {/*End Category */}
+      <div >
         {/* Card */}
         <MyNewsProduct></MyNewsProduct>
         {/*End Card */}

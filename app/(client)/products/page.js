@@ -15,7 +15,7 @@ export default function MyProduct() {
         <div className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
             <div className="sm:col-span-12 md:col-span-5">
-              {/* <MyGallery /> */}
+              <MyGallery />
               For Image
             </div>
 
@@ -161,10 +161,7 @@ export default function MyProduct() {
               </div>
 
               {/* Add to wishlist */}
-              <div className="mt-5 flex space-x-2">
-                {/* <MyVideoCard /> */}
-                For Video
-              </div>
+              <div className="mt-5 flex space-x-2">{/* <MyVideoCard /> */}</div>
               {/*End Add to wishlist */}
             </div>
           </div>

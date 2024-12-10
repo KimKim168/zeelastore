@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import { Heart, PhoneCallIcon, ShoppingCart, User } from "lucide-react";
 import MyResponsive from "@/components/MyResponsive";
+import Link from "next/link";
 
 const MyHeader = () => {
   return (
@@ -59,13 +60,15 @@ const MyHeader = () => {
           </nav>
           <div className="grid grid-cols-12 gap-3 justify-between items-center">
             <div className="col-span-8 md:col-span-1">
-              <Image
-                src="/assets/images/logo.png"
-                width={200}
-                height={200}
-                alt="logo"
-                className="w-20 md:w-24"
-              ></Image>
+              <Link href="/">
+                <Image
+                  src="/assets/images/logo.png"
+                  width={200}
+                  height={200}
+                  alt="logo"
+                  className="w-20 md:w-24"
+                />
+              </Link>
             </div>
             <div className="col-span-4 flex items-center md:hidden  justify-end space-x-4">
               <div className="md:hidden">

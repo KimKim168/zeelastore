@@ -169,7 +169,7 @@ export default function MyProduct() {
             </div>
           </div>
           {/* Content utttom */}
-          {/* <DescriptionTab /> */}
+          <DescriptionTab />
           {/*End Content utttom */}
         </div>
       </section>

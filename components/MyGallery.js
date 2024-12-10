@@ -1,68 +1,88 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.min.css";
 import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
-import { AspectRatio } from "@radix-ui/react-aspect-ratio";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import MyCarouselButton from "./my-carousel-button";
+import { IMAGE_BOOK_URL } from "@/config/env";
 
-const MyGallery = () => {
-  const images = [
-    "/assets/images/product5.png",
+const MyGallery = ({
+  image = "/assets/images/product5.png",
+  images = [
     "/assets/images/product7.png",
     "/assets/images/product8.png",
     "/assets/images/product4.png",
     "/assets/images/product7.png",
     "/assets/images/product8.png",
-  ];
+  ],
+}) => {
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const lightbox = GLightbox({
-      touchNavigation: true,
-      loop: false,
-    });
-
-    return () => {
-      lightbox.destroy();
-    };
+    // Set client-only rendering after the initial render
+    setIsClient(true);
   }, []);
 
+  useEffect(() => {
+    if (isClient) {
+      const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: false,
+      });
+      return () => {
+        lightbox.destroy();
+      };
+    }
+  }, [isClient]);
+
+  if (!isClient) return null;
+
   return (
-    <div className=" flex flex-col gap-2">
-      <a href={images[0]} className="glightbox" data-gallery="gallery">
-        <Card>
-          <CardContent>
-            <AspectRatio ratio={1 / 1}>
-              <Image
-                className="w-full rounded-md cursor-pointer"
-                src={images[0]}
-                alt="Book Cover"
-                width="5000"
-                height="5000"
-              />
-            </AspectRatio>
-          </CardContent>
-        </Card>
+    <div className="max-w-[500px] mx-auto flex flex-col gap-4">
+      <a
+        href={IMAGE_BOOK_URL + image}
+        className="glightbox"
+        data-gallery="gallery"
+      >
+        <Image
+          width={600}
+          height={600}
+          className="w-full transition-transform duration-500 rounded-md cursor-pointer hover:scale-105"
+          src={IMAGE_BOOK_URL + image}
+          alt="Book Cover"
+        />
       </a>
-      <div className="grid grid-cols-4 gap-2">
-        {images.map((src, index) => (
-          <a
-            href={src}
-            className="glightbox"
-            data-gallery="gallery"
-            key={index}
-          >
-            <Image
-              width="5000"
-              height="5000"
-              className="aspect-square border w-full border-[#87b3ae] shadow-sm p-1 hover:scale-105 transition-transform duration-500 ease-in-out object-cover rounded-md cursor-pointer"
-              src={src}
-              alt={`Thumbnail ${index + 1}`}
-            />
-          </a>
-        ))}
-      </div>
+      {images.length > 0 && (
+        <Carousel>
+          <CarouselContent>
+            {images.map((src, index) => (
+              <CarouselItem className="basis-1/4" key={index}>
+                <a
+                  href={IMAGE_BOOK_URL + src}
+                  className="glightbox"
+                  data-gallery="gallery"
+                >
+                  <Image
+                    width={100}
+                    height={100}
+                    className="w-full aspect-[1/1] hover:scale-95 transition-transform duration-500 ease-in-out object-contain p-0.5 rounded-md cursor-pointer"
+                    src={IMAGE_BOOK_URL + src}
+                    alt={`Thumbnail ${index + 1}`}
+                    loading="lazy" // Lazy load thumbnails
+                  />
+                </a>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <MyCarouselButton />
+        </Carousel>
+      )}
     </div>
   );
 };

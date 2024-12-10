@@ -4,12 +4,11 @@ import {
   Sheet,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { AlignCenter, PhoneCallIcon } from "lucide-react";
+import { AlignCenter } from "lucide-react";
 import { Button } from "./ui/button";
 
 import {
@@ -19,20 +18,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-  SelectValue,
-} from "@radix-ui/react-select";
-import Image from "next/image";
 
 export default function MyResponsive() {
   return (
     <div>
       <Sheet>
-        <SheetTrigger>
+        <SheetTrigger asChild>
           <Button className="p-3" aria-label="Align Center">
             <AlignCenter
               className="text-white "

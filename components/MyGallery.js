@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.min.css";
@@ -49,6 +50,7 @@ const MyGallery = ({
         href={image}
         className="glightbox"
         data-gallery="gallery"
+        aria-label="View larger image"
       >
         <Image
           width={600}
@@ -63,21 +65,24 @@ const MyGallery = ({
         <Carousel>
           <CarouselContent>
             {images.map((src, index) => (
-              <CarouselItem
-                className="basis-1/4 glightbox"
-                key={index}
-                href={src}
-                data-gallery="gallery"
-              >
-                <Image
-                  width={100}
-                  height={100}
-                  className="w-full aspect-[1/1] hover:scale-95 transition-transform duration-500 ease-in-out object-contain p-0.5 rounded-md cursor-pointer"
-                  // src={IMAGE_BOOK_URL + src}
-                  src={src}
-                  alt={`Thumbnail ${index + 1}`}
-                  loading="lazy" // Lazy load thumbnails
-                />
+              <CarouselItem className="basis-1/4" key={index}>
+                <a
+                  href={src}
+                  // href={IMAGE_BOOK_URL + src}
+                  className="glightbox"
+                  data-gallery="gallery"
+                  aria-label={`View thumbnail ${index + 1}`}
+                >
+                  <Image
+                    width={100}
+                    height={100}
+                    className="w-full aspect-[1/1] hover:scale-95 transition-transform duration-500 ease-in-out object-contain p-0.5 rounded-md cursor-pointer"
+                    // src={IMAGE_BOOK_URL + src}
+                    src={src}
+                    alt={`Thumbnail ${index + 1}`}
+                    loading="lazy" // Lazy load thumbnails
+                  />
+                </a>
               </CarouselItem>
             ))}
           </CarouselContent>

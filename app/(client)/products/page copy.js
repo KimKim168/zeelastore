@@ -18,7 +18,7 @@ export default function MyProduct() {
     <>
       <section className="max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 mt-5 ">
         <MyBreadCrumb />
-        <section className="mt-3">
+        <div className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
             <div className="sm:col-span-12 md:col-span-5">
               <MyGallery />
@@ -177,7 +177,7 @@ export default function MyProduct() {
           {/* Content utttom */}
           <DescriptionTab />
           {/*End Content utttom */}
-        </section>
+        </div>
         <hr className="border-black md:w-96 mx-auto mt-5"></hr>
       </section>
       <div>

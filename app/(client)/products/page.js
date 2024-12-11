@@ -1,7 +1,7 @@
 "use client";
 import MyBreadCrumb from "@/components/my-bread-crumb";
-import MyGallery from "@/components/MyGallery";
-// import MyVideoCard from "@/components/MyVideoCard";
+// import MyGallery from "@/components/MyGallery";
+import MyVideoCard from "@/components/MyVideoCard";
 import DescriptionTab from "@/components/products/description-tab";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
@@ -17,8 +17,8 @@ export default function MyProduct() {
         <div className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
             <div className="sm:col-span-12 md:col-span-5">
-              <MyGallery />
-              {/* Error View images */}
+              {/* <MyGallery /> */}
+              Error View images
             </div>
 
             <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">
@@ -163,7 +163,9 @@ export default function MyProduct() {
               </div>
 
               {/* Add to wishlist */}
-              <div className="mt-5 flex space-x-2">{/* <MyVideoCard /> */}</div>
+              <div className="mt-5 flex space-x-2">
+                <MyVideoCard />
+              </div>
               {/*End Add to wishlist */}
             </div>
           </div>

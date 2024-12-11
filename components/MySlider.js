@@ -9,9 +9,9 @@ export default function MySlider() {
   // Define your image URLs here
   const images = [
     "/assets/images/slide4.jpg",
-    "/assets/images/slide3.png",
-    "/assets/images/slide4.png",
-    "/assets/images/slide5.png",
+    "/assets/images/slide1.jpg",
+    "/assets/images/slide2.jpg",
+    "/assets/images/slide3.jpg",
   ];
 
   useEffect(() => {

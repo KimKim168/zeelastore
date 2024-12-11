@@ -1,5 +1,4 @@
 import MyBreadCrumb from "@/components/my-bread-crumb";
-import MyGallery from "@/components/MyGallery";
 import MyNewsProduct from "@/components/MyNewsProduct";
 import DescriptionTab from "@/components/products/description-tab";
 import { Button } from "@/components/ui/button";
@@ -16,8 +15,7 @@ export default function MyProduct() {
         <div className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
             <div className="sm:col-span-12 md:col-span-5">
-              {/* Error View images */}
-              <MyGallery />
+              Error View images
             </div>
 
             <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">

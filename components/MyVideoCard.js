@@ -5,7 +5,7 @@ import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.min.css";
 import Image from "next/image";
 
-const https://zeelastore.vercel.app/ = () => {
+const MyVideoCard = () => {
   const images = [
     "/assets/images/product5.png",
     "/assets/images/product7.png",

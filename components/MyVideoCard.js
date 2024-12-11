@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import GLightbox from "glightbox";
 import "glightbox/dist/css/glightbox.min.css";
 import Image from "next/image";
+import { Play } from "lucide-react";
 
 const MyVideoCard = () => {
   const images = [
@@ -51,14 +52,8 @@ const MyVideoCard = () => {
             alt={`Thumbnail for video ${index + 1}`}
           />
           {/* Play Icon Overlay */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 w-[60px] h-[60px] rounded-full flex justify-center items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              className="w-[40px] h-[40px] fill-white"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
+          <div className="absolute text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/50 w-[60px] h-[60px] rounded-full flex justify-center items-center">
+            <Play />
           </div>
         </a>
       ))}

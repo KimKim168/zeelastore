@@ -45,8 +45,8 @@ const MyVideoCard = () => {
           {/* Video Thumbnail */}
           <Image
             src={images[index % images.length]}
-            width={3000}
-            height={3000}
+            width={600}
+            height={600}
             className=" aspect-square  object-cover rounded-lg shadow-lg cursor-pointer"
             alt={`Thumbnail for video ${index + 1}`}
           />

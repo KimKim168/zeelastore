@@ -174,7 +174,11 @@ export default function MyProduct() {
           <DescriptionTab />
           {/*End Content utttom */}
         </div>
+        <hr className="border-black md:w-96 mx-auto mt-5"></hr>
       </section>
+      <div>
+        <MyNewsProduct />
+      </div>
     </>
   );
 }

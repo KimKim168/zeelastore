@@ -1,5 +1,6 @@
 "use client";
 import MyBreadCrumb from "@/components/my-bread-crumb";
+import MyNewsProduct from "@/components/MyNewsProduct";
 // import MyGallery from "@/components/MyGallery";
 // import MyVideoCard from "@/components/MyVideoCard";
 import DescriptionTab from "@/components/products/description-tab";

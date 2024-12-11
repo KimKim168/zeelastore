@@ -9,7 +9,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
-import { Eye, StarIcon } from "lucide-react";
 
 export default function MyAppleBrand() {
   const products = [
@@ -100,9 +99,11 @@ export default function MyAppleBrand() {
                     <div className=" border mx-2 aspect-square border-blue bg-white p-4  dark:border-gray-700 dark:bg-gray-800">
                       <div className="aspect-square">
                         <a href="/products">
-                          <img
+                          <Image
                             className="mx-auto h-full dark:hidden transition-transform duration-300 hover:scale-110"
                             src={item.image}
+                            width={600}
+                            height={600}
                             alt="product"
                           />
                         </a>

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 export default function MyNewsProduct() {
@@ -94,8 +95,10 @@ export default function MyNewsProduct() {
             >
               <div className="aspect-square w-full">
                 <a href="/products">
-                  <img
+                  <Image
                     className="mx-auto h-full dark:hidden transition-transform duration-300 hover:scale-110"
+                    width={600}
+                    height={600}
                     src={item.image}
                     alt="product"
                   />

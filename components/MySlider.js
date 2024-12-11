@@ -1,14 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel";
+import { Carousel, CarouselContent } from "./ui/carousel";
 import Image from "next/image";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default function MySlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,8 +36,8 @@ export default function MySlider() {
                 <Image
                   src={src}
                   alt={`Slide ${index + 1}`}
-                  width={4000}
-                  height={4000}
+                  width={1200}
+                  height={1200}
                   className="w-full object-cover aspect-[21/9]"
                 />
               </div>

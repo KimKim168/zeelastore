@@ -32,12 +32,14 @@ export default function MyCategories() {
                 >
                   <Image
                     src={item.image}
-                    width={3000}
-                    height={3000}
+                    width={300}
+                    height={300}
                     className=" w-[40px] h-[35px] md:w-[70px] md:h-[70px] mb-2  object-cover"
                     alt={item.title}
                   />
-                  <p className="text-center text-[12px] md:text-sm ">{item.title}</p>
+                  <p className="text-center text-[12px] md:text-sm ">
+                    {item.title}
+                  </p>
                 </div>
               </Link>
             ))}

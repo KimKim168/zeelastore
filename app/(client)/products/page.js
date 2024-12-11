@@ -1,7 +1,7 @@
 "use client";
 import MyBreadCrumb from "@/components/my-bread-crumb";
 // import MyGallery from "@/components/MyGallery";
-import MyVideoCard from "@/components/MyVideoCard";
+// import MyVideoCard from "@/components/MyVideoCard";
 import DescriptionTab from "@/components/products/description-tab";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
@@ -164,7 +164,8 @@ export default function MyProduct() {
 
               {/* Add to wishlist */}
               <div className="mt-5 flex space-x-2">
-                <MyVideoCard />
+                {/* <MyVideoCard /> */}
+                Error View video
               </div>
               {/*End Add to wishlist */}
             </div>

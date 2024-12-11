@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Heart } from "lucide-react";
 import MyGallery from "@/components/my-gallery";
 import { Button } from "@/components/ui/button";
-import MyVideoCard from "@/components/MyVideoCard";
+import MyVideoCard from "@/components/my-video-gallery";
 import MyNewsProduct from "@/components/MyNewsProduct";
 import MyBreadCrumb from "@/components/my-bread-crumb";
 import DescriptionTab from "@/components/products/description-tab";

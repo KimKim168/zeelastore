@@ -12,9 +12,9 @@ import {
 
 export default function MyBelowSlider() {
   const image = [
-    "/assets/images/product5.png",
-    "/assets/images/product9.jpg",
-    "/assets/images/product10.png",
+    "/assets/images/slide1.jpg",
+    "/assets/images/slide2.jpg",
+    "/assets/images/slide3.jpg",
   ];
   return (
     <>
@@ -39,9 +39,9 @@ export default function MyBelowSlider() {
                       <Image
                         src={src}
                         alt={`src ${index + 1}`}
-                        width={400}
-                        height={400}
-                        className="aspect-[16/9] object-scale-down"
+                        width={1600}
+                        height={900}
+                        className="aspect-[16/9] object-fill"
                       />
                     </CardContent>
                   </Card>

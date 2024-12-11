@@ -8,7 +8,7 @@ export default function MySlider() {
 
   // Define your image URLs here
   const images = [
-    "/assets/images/slide1.png",
+    "/assets/images/slide4.jpg",
     "/assets/images/slide3.png",
     "/assets/images/slide4.png",
     "/assets/images/slide5.png",
@@ -36,8 +36,8 @@ export default function MySlider() {
                 <Image
                   src={src}
                   alt={`Slide ${index + 1}`}
-                  width={1200}
-                  height={1200}
+                  width={2100}
+                  height={900}
                   className="w-full object-cover aspect-[21/9]"
                 />
               </div>

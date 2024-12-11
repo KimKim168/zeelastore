@@ -21,7 +21,7 @@ import { Button } from "./ui/button";
 import { Heart } from "lucide-react";
 import MyNewsProduct from "./MyNewsProduct";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
-import MyVideoCard from "./MyVideoCard";
+import MyVideoCard from "./my-video-gallery";
 import MyGallery from "./my-gallery";
 
 export default function MyProduct() {

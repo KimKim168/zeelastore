@@ -1,3 +1,4 @@
+"use client";
 import MyBreadCrumb from "@/components/my-bread-crumb";
 import MyGallery from "@/components/MyGallery";
 // import MyVideoCard from "@/components/MyVideoCard";

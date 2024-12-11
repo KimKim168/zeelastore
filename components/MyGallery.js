@@ -10,7 +10,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 // import { IMAGE_BOOK_URL } from "@/config/env";
-import MyCarouselButton from "./my-carousel-button";
+import MyCarouselButton from "./ui/my-carousel-button";
 
 const MyGallery = ({
   image = "/assets/images/product5.png",

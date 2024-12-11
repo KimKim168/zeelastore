@@ -13,8 +13,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product3.jpg"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />
@@ -32,8 +32,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product7.png"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />
@@ -51,8 +51,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product6.jpg"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />
@@ -70,8 +70,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product1.png"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />
@@ -89,8 +89,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product5.png"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />
@@ -106,8 +106,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product3.jpg"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />
@@ -125,8 +125,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product4.png"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />
@@ -144,8 +144,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product3.jpg"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />
@@ -163,8 +163,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product3.jpg"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />
@@ -182,8 +182,8 @@ function MylastestProduct() {
           <div className="col-span-5">
             <Image
               src="/assets/images/product3.jpg"
-              width={3000}
-              height={3000}
+              width={600}
+              height={600}
               alt="image"
               className="object-contain aspect-[16/9] "
             />

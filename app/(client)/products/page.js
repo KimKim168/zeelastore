@@ -1,8 +1,6 @@
 "use client";
 import MyBreadCrumb from "@/components/my-bread-crumb";
 import MyNewsProduct from "@/components/MyNewsProduct";
-import MyGallery from "@/components/MyGallery";
-// import MyVideoCard from "@/components/MyVideoCard";
 import DescriptionTab from "@/components/products/description-tab";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
@@ -18,8 +16,7 @@ export default function MyProduct() {
         <div className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
             <div className="sm:col-span-12 md:col-span-5">
-              <MyGallery />
-              {/* Error View images */}
+              Error View images
             </div>
 
             <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">
@@ -102,8 +99,8 @@ export default function MyProduct() {
                   >
                     <Image
                       src="/assets/images/telegram.png"
-                      width={3000}
-                      height={3000}
+                      width={600}
+                      height={600}
                       className="w-7 xl:w-10"
                       alt="image"
                     />
@@ -118,8 +115,8 @@ export default function MyProduct() {
                   >
                     <Image
                       src="/assets/images/messager.jpg"
-                      width={3000}
-                      height={3000}
+                      width={600}
+                      height={600}
                       className="w-7 xl:w-10"
                       alt="image"
                     />
@@ -134,8 +131,8 @@ export default function MyProduct() {
                   >
                     <Image
                       src="/assets/images/whatsApp.png"
-                      width={3000}
-                      height={3000}
+                      width={600}
+                      height={600}
                       className="w-7 xl:w-10"
                       alt="image"
                     />
@@ -150,8 +147,8 @@ export default function MyProduct() {
                   >
                     <Image
                       src="/assets/images/call.png"
-                      width={3000}
-                      height={3000}
+                      width={600}
+                      height={600}
                       className="w-7 xl:w-10"
                       alt="image"
                     />

@@ -22,7 +22,7 @@ import { Heart } from "lucide-react";
 import MyNewsProduct from "./MyNewsProduct";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import MyVideoCard from "./MyVideoCard";
-import MyGallery from "./MyGallery";
+import MyGallery from "./my-gallery";
 
 export default function MyProduct() {
   const [currentIndex, setCurrentIndex] = useState(0);

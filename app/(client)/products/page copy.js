@@ -6,7 +6,7 @@ import "glightbox/dist/css/glightbox.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Heart } from "lucide-react";
-import MyGallery from "@/components/MyGallery";
+import MyGallery from "@/components/my-gallery";
 import { Button } from "@/components/ui/button";
 import MyVideoCard from "@/components/MyVideoCard";
 import MyNewsProduct from "@/components/MyNewsProduct";

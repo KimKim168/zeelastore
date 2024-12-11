@@ -1,4 +1,3 @@
-"use client";
 import MyBreadCrumb from "@/components/my-bread-crumb";
 import MyNewsProduct from "@/components/MyNewsProduct";
 import DescriptionTab from "@/components/products/description-tab";

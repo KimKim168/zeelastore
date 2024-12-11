@@ -1,6 +1,5 @@
 import MyBreadCrumb from "@/components/my-bread-crumb";
 import MyGallery from "@/components/my-gallery";
-import MyVideoGallery from "@/components/my-video-gallery";
 import MyNewsProduct from "@/components/MyNewsProduct";
 import DescriptionTab from "@/components/products/description-tab";
 import { Button } from "@/components/ui/button";
@@ -162,9 +161,7 @@ export default function MyProduct() {
               </div>
 
               {/* Add to wishlist */}
-              <div className="mt-5 flex space-x-2">
-                <MyVideoGallery />
-              </div>
+              <div className="mt-5 flex space-x-2">Video View</div>
               {/*End Add to wishlist */}
             </div>
           </div>

@@ -30,7 +30,7 @@ function MyNavigation() {
             </li>
             <li>
               <a
-                href="#"
+                href="/categories"
                 className="block p-2 text-nowrap text-black border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Products
@@ -38,16 +38,16 @@ function MyNavigation() {
             </li>
             <li>
               <a
-                href="#"
+                href="/contact"
                 className="block p-2 text-nowrap text-black border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
-                Contac us
+                Contact us
               </a>
             </li>
 
             <li>
               <a
-                href="#"
+                href="/video-gallery"
                 className="block p-2 text-nowrap text-black border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
                 video
@@ -56,7 +56,7 @@ function MyNavigation() {
 
             <li>
               <a
-                href="#"
+                href="/about"
                 className="block p-2 text-nowrap text-black border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
               >
                 About Us

@@ -4,16 +4,16 @@ import { DualRangeSlider } from "@/components/ui/dual-range-slider";
 import { Button } from "./ui/button";
 
 function MyDualRangPrice() {
-  const [values, setValues] = useState([0, 100]);
+  const [values, setValues] = useState([0, 2000]);
   return (
     <>
-      <div className=" mt-14">
+      <div className=" mt-7">
         <div className="mb-10">
-          <p className="text-2xl text-center p-4 background-gradient text-white">
+          <p className="text-lg text-center p-1 background-gradient text-white">
             Price
           </p>
         </div>
-        <div className="w-full px-2 ">
+        <div className="w-full">
           <DualRangeSlider
             label={(value) => `${value}$`}
             value={values}
@@ -24,7 +24,10 @@ function MyDualRangPrice() {
           />
         </div>
         <div className="flex justify-center ">
-          <Button type="submit" className="w-full px-4 py-2 hover:bg-blue-900 rounded">
+          <Button
+            type="submit"
+            className="w-full bg-transparent shadow-transparent text-blue border border-gradient px-4 py-2 hover:bg-gray-200 rounded"
+          >
             Apply Filter
           </Button>
         </div>

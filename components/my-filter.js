@@ -27,7 +27,7 @@ export default function Filter() {
           <div className="flex justify-between items-center">
             <MyBreadCrumb />
             {/* Small screen */}
-            <div className="md:hidden">
+            <div className="xl:hidden">
               <Sheet>
                 <SheetTrigger asChild>
                   <Button

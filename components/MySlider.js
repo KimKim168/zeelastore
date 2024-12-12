@@ -37,7 +37,7 @@ export default function MySlider() {
                   src={src}
                   alt={`Slide ${index + 1}`}
                   width={2100}
-                  height={900}
+                  height={1280}
                   className="w-full object-cover aspect-[21/9]"
                 />
               </div>

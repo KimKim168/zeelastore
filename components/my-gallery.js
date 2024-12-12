@@ -28,7 +28,7 @@ const MyGallery = ({
   };
 
   return (
-    <div className="max-w-[500px] mx-auto flex flex-col gap-4">
+    <div className="max-w-[500px] mx-auto flex flex-col gap-2">
       {/* Main Image */}
       <a
         href={allImages[0]} // Set the main image as the first item in the array

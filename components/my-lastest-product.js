@@ -4,8 +4,8 @@ import Image from "next/image";
 
 function MylastestProduct() {
   return (
-    <div className=" shadow-md mt-14">
-      <p className="text-2xl text-center p-4 background-gradient text-white">
+    <div className="mt-7">
+      <p className="text-lg text-center p-1 background-gradient text-white">
         Lastest Products
       </p>
       <div>
@@ -19,11 +19,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+          <div className="col-span-7 line-clamp-2 ">
             <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
               Acer Aspire 3( A315-58-P3S9)
             </p>
-            <p className="font-semibold">
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>
@@ -38,11 +38,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+          <div className="col-span-7 line-clamp-2 ">
             <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
               Acer Aspire 3( A315-58-P3S9)
             </p>
-            <p className="font-semibold">
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>
@@ -57,11 +57,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+          <div className="col-span-7 line-clamp-2 ">
             <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
               Acer Aspire 3( A315-58-P3S9)
             </p>
-            <p className="font-semibold">
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>
@@ -76,11 +76,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+          <div className="col-span-7 line-clamp-2 ">
             <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
               Acer Aspire 3( A315-58-P3S9)
             </p>
-            <p className="font-semibold">
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>
@@ -95,9 +95,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
-            <>Acer Aspire 3( A315-58-P3S9)</>
-            <p className="font-semibold">
+          <div className="col-span-7 line-clamp-2 ">
+            <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
+              Acer Aspire 3( A315-58-P3S9)
+            </p>
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>
@@ -112,11 +114,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+          <div className="col-span-7 line-clamp-2 ">
             <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
               Acer Aspire 3( A315-58-P3S9)
             </p>
-            <p className="font-semibold">
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>
@@ -131,11 +133,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+          <div className="col-span-7 line-clamp-2 ">
             <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
               Acer Aspire 3( A315-58-P3S9)
             </p>
-            <p className="font-semibold">
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>
@@ -150,11 +152,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+          <div className="col-span-7 line-clamp-2 ">
             <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
               Acer Aspire 3( A315-58-P3S9)
             </p>
-            <p className="font-semibold">
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>
@@ -169,11 +171,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+          <div className="col-span-7 line-clamp-2 ">
             <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
               Acer Aspire 3( A315-58-P3S9)
             </p>
-            <p className="font-semibold">
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>
@@ -188,11 +190,11 @@ function MylastestProduct() {
               className="object-contain aspect-[16/9] "
             />
           </div>
-          <div className="col-span-7 line-clamp-2 text-sm xl:text-base">
+          <div className="col-span-7 line-clamp-2 ">
             <p className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white">
               Acer Aspire 3( A315-58-P3S9)
             </p>
-            <p className="font-semibold">
+            <p>
               Price: <span className="text-color ml-3 xl:ml-5">$766</span>
             </p>
           </div>

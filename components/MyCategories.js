@@ -25,7 +25,7 @@ export default function MyCategories() {
           <div className="text-sm sm:text-[16px] md:text-lg ">Categories</div>
           <div className="flex overflow-x-auto py-4 items-center  scroll-smooth scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500">
             {imagesWithTitles.map((item, index) => (
-              <Link key={index} href="/shop ">
+              <Link key={index} href="/categories ">
                 <div
                   key={index}
                   className="flex flex-col items-center justify-center min-w-[100px] md:min-w-[150px]"

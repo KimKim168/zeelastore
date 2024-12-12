@@ -13,19 +13,19 @@ import { ArrowRight } from "lucide-react";
 function MyCategoryComponent() {
   return (
     <>
-      <div className="shadow-md">
-        <p className="text-2xl text-center  p-4 background-gradient text-white">
+      <div className="">
+        <p className="text-lg text-center p-1 background-gradient text-white">
           Categories
         </p>
-        <Accordion type="single" className="px-4" collapsible>
+        <Accordion type="single" className="px-1" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger className="text-sm xl:text-base text-blue">
+            <AccordionTrigger className="text-sm text-blue">
               Laptop Computer
             </AccordionTrigger>
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Laptop Acer</p>
@@ -34,7 +34,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Laptop Asus</p>
@@ -43,7 +43,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Laptop Dell</p>
@@ -52,7 +52,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Laptop MSI</p>
@@ -61,7 +61,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Laptop Apple</p>
@@ -70,7 +70,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Acer</p>
@@ -79,7 +79,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Laptop Lenovo</p>
@@ -88,7 +88,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Laptop HP</p>
@@ -97,7 +97,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Brand MSI</p>
@@ -105,13 +105,13 @@ function MyCategoryComponent() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger className="text-sm xl:text-base text-blue">
+            <AccordionTrigger className="text-sm text-blue">
               Desktop Computer
             </AccordionTrigger>
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Brand Dell </p>
@@ -120,7 +120,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Brand Acer </p>
@@ -129,7 +129,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Desktop Clone </p>
@@ -138,7 +138,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Brand IBM </p>
@@ -147,7 +147,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Brand HP </p>
@@ -156,7 +156,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Brand HP</p>
@@ -164,13 +164,13 @@ function MyCategoryComponent() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger className="text-sm xl:text-base text-blue">
+            <AccordionTrigger className="text-sm text-blue">
               Workstation Computer
             </AccordionTrigger>
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Dell Precision </p>
@@ -178,13 +178,13 @@ function MyCategoryComponent() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger className="text-sm xl:text-base text-blue">
+            <AccordionTrigger className="text-sm text-blue">
               Server Computer
             </AccordionTrigger>
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Dell PowerEdge</p>
@@ -192,13 +192,13 @@ function MyCategoryComponent() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
-            <AccordionTrigger className="text-sm xl:text-base text-blue">
+            <AccordionTrigger className="text-sm text-blue">
               Accessories
             </AccordionTrigger>
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Flash</p>
@@ -207,7 +207,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> External HDD</p>
@@ -216,7 +216,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> RAM</p>
@@ -225,7 +225,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Hard disk</p>
@@ -234,7 +234,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Speaker</p>
@@ -243,7 +243,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Keyboard & Mouse</p>
@@ -252,7 +252,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Modem</p>
@@ -261,7 +261,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Fax</p>
@@ -270,7 +270,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Inks</p>
@@ -279,7 +279,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Power Bank</p>
@@ -288,7 +288,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p> Other Products</p>
@@ -297,7 +297,7 @@ function MyCategoryComponent() {
             <AccordionContent>
               <Link
                 href="#"
-                className="hover:underline text-sm xl:text-base text-gray-400 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
+                className="hover:underline text-sm  text-gray-500 hover:text-red-600 decoration-red-500 underline-offset-2 flex items-center"
               >
                 <ArrowRight width={15} className=" hover:text-color" />
                 <p>Toner</p>

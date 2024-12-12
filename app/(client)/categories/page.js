@@ -4,6 +4,7 @@ import MylastestProduct from "@/components/my-lastest-product";
 
 import React from "react";
 import Filter from "@/components/my-filter";
+import { SearchBrand } from "@/components/my-search-brand";
 
 function page() {
   const imageUrls = [
@@ -88,14 +89,16 @@ function page() {
         </div>
       </section>
       <section className="mt-5 ">
-        <div className="grid grid-cols-12 gap-3">
+        <div className="flex gap-4">
           {/* Left Content */}
-          <div className="hidden md:grid col-span-3 ">
+          <div className="w-64 hidden lg:block">
             {/* Category */}
             <MyCategoryComponent />
             {/*End Category */}
+            {/* Search brand */}
+            <SearchBrand />
+            {/*End Search brand */}
             {/* Filter price */}
-
             <MyDualRangPrice />
             {/*End Filter price */}
 
@@ -106,8 +109,8 @@ function page() {
           {/*End Left Content */}
 
           {/* Right Content */}
-          <div className="col-span-12 md:col-span-9 ">
-            <div className="mb-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="flex-1 ">
+            <div className="mb-4 grid gap-2 grid-cols-2 md:grid-cols-3 md:mb-8 lg:grid-cols-4 xl:grid-cols-5">
               {imageUrls.map((item, index) => (
                 <div
                   key={index}

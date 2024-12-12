@@ -9,7 +9,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { AlignCenter, AlignJustifyIcon } from "lucide-react";
-import { Button } from "./ui/button";
+import { usePathname } from "next/navigation";
 
 import {
   Accordion,
@@ -20,16 +20,17 @@ import {
 import Link from "next/link";
 
 export default function MyResponsive() {
+  const pathname = usePathname();
   return (
     <div>
-      <Sheet>
+      <Sheet >
         <SheetTrigger asChild className="ml-0 ">
           <AlignCenter
             className="text-white "
             style={{ width: 30, height: 30 }}
           />
         </SheetTrigger>
-        <SheetContent className="background-gradient">
+        <SheetContent className="background-gradient max-w-80">
           <SheetHeader>
             <p className="text-2xl text-center text-white">Menu</p>
             <SheetTitle className="mt-5 font-normal">
@@ -94,18 +95,63 @@ export default function MyResponsive() {
                   </Link>
                 </AccordionItem>
                 <AccordionItem value="item-3" className="py-4">
-                  <Link href="#" className="hover:underline text-sm">
-                    About
+                  <Link
+                    href="/"
+                    className={` py-2 rounded ${
+                      pathname === "/"
+                        ? "underline  underline-offset-4  text-white font-semibold"
+                        : "text-white hover:text-blue-500"
+                    }`}
+                  >
+                    Home
                   </Link>
                 </AccordionItem>
                 <AccordionItem value="item-4" className="py-4">
-                  <Link href="#" className="hover:underline text-sm">
-                    Support
+                  <Link
+                    href="/categories"
+                    className={` py-2 rounded ${
+                      pathname === "/categories"
+                        ? "underline  underline-offset-4  text-white font-semibold"
+                        : "text-white hover:text-blue-500"
+                    }`}
+                  >
+                    Products
                   </Link>
                 </AccordionItem>
                 <AccordionItem value="item-5" className="py-4">
-                  <Link href="#" className="hover:underline text-sm">
-                    Contact
+                  <Link
+                    href="/contact"
+                    className={` py-2 rounded ${
+                      pathname === "/contact"
+                        ? "underline  underline-offset-4  text-white font-semibold"
+                        : "text-white hover:text-blue-500"
+                    }`}
+                  >
+                    Contact us
+                  </Link>
+                </AccordionItem>
+                <AccordionItem value="item-6" className="py-4">
+                  <Link
+                    href="/video-gallery"
+                    className={` py-2 rounded ${
+                      pathname === "/video-gallery"
+                        ? "underline  underline-offset-4  text-white font-semibold"
+                        : "text-white hover:text-blue-500"
+                    }`}
+                  >
+                    Videos
+                  </Link>
+                </AccordionItem>
+                <AccordionItem value="item-7" className="py-4">
+                  <Link
+                    href="/about"
+                    className={` py-2 rounded ${
+                      pathname === "/about"
+                        ? "underline  underline-offset-4  text-white font-semibold"
+                        : "text-white hover:text-blue-500"
+                    }`}
+                  >
+                    About Us
                   </Link>
                 </AccordionItem>
               </Accordion>

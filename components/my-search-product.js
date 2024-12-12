@@ -58,14 +58,14 @@ export function SearchProduct() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between border-gradient border-t-transparent text-sm text-blue"
+            className="w-24 p-1 justify-between border-gradient border-t-transparent text-[12px] text-blue"
           >
-            <div className="flex items-center gap-1">
-              <Search className="h-4 w-4 text-blue" /> {/* Search icon */}
+            <div className="flex items-center ">
+              <Search style={{ width:14, height:14 }} className="h-2 w-2 text-blue" /> {/* Search icon */}
               {value
                 ? frameworks.find((framework) => framework.value === value)
                     ?.label
-                : "Select Product..."}
+                : "Search"}
             </div>
             <ChevronsUpDown className="opacity-50" />
           </Button>

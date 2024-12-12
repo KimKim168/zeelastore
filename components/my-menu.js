@@ -11,7 +11,11 @@ import {
 } from "@/components/ui/sheet";
 import Image from "next/image";
 import MyUser from "./my-user";
-import { AlignJustifyIcon, PhoneCallIcon, ShoppingCartIcon } from "lucide-react";
+import {
+  AlignJustifyIcon,
+  PhoneCallIcon,
+  ShoppingCartIcon,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 
 function MyMenu() {
@@ -144,7 +148,7 @@ function MyMenu() {
               <div className="flex items-center space-x-2">
                 <PhoneCallIcon className="mr-1 md:mr-2 w-4 md:w-5" />
                 <p>015 222 772</p>
-              <ShoppingCartIcon/>
+                <ShoppingCartIcon />
               </div>
               <MyUser />
             </div>

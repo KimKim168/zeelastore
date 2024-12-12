@@ -60,7 +60,7 @@ function MySocialMedia() {
             {
               href: "http://www.tiktok.com/@chhayhokcomputer",
               src: "tiktok.png",
-              label: "tiktok",
+              label: "Tiktok",
             },
             {
               href: "https://www.youtube.com/channel/UCoJd25pfQNZFcBMeDakuvrw",

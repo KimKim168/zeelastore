@@ -73,7 +73,9 @@ export default function MyAppleBrand() {
         <div className="border-l-4 border-blue-bold mx-2">
           <div className="flex justify-between border-b-2 mx-1 pb-2 px-2  border-blue-bold  mb-4">
             <p className="text-sm sm:text-[16px] md:text-lg">Laptop Asus</p>
-            <a className="text-sm sm:text-[16px] md:text-lg">View More</a>
+            <a href="/categories" className="text-sm sm:text-[16px] md:text-lg">
+              View More
+            </a>
           </div>
         </div>
 

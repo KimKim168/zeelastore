@@ -2,9 +2,9 @@ import React from "react";
 import MyCategories from "@/components/MyCategories";
 import MyNewsProduct from "@/components/MyNewsProduct";
 import MyAppleBrand from "@/components/MyAppleBrand";
-import MySamsungBrand from "@/components/MySamsungBrand";
 import MyBelowSlider from "@/components/MyBelowSlider";
 import MySlider from "@/components/MySlider";
+import MyBrand from "@/components/MyBrand";
 
 export default function Home() {
   return (
@@ -16,10 +16,10 @@ export default function Home() {
       <MyBelowSlider></MyBelowSlider>
       {/*End above slide */}
 
-        {/* Category */}
-        <MyCategories></MyCategories>
-        {/*End Category */}
-      <div >
+      {/* Category */}
+      <MyCategories></MyCategories>
+      {/*End Category */}
+      <div>
         {/* Card */}
         <MyNewsProduct></MyNewsProduct>
         {/*End Card */}
@@ -27,7 +27,7 @@ export default function Home() {
         <MyAppleBrand></MyAppleBrand>
         {/*End product Card */}
         {/*Product Card */}
-        <MySamsungBrand></MySamsungBrand>
+        <MyBrand></MyBrand>
         {/*End product Card */}
       </div>
     </>

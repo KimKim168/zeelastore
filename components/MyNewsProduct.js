@@ -84,7 +84,12 @@ export default function MyNewsProduct() {
         <div className="border-l-4 border-blue-bold ">
           <div className="flex justify-between border-b-2 mx-1 pb-2 px-2  border-blue-bold  mb-4">
             <p className="text-sm sm:text-[16px] md:text-lg ">News</p>
-            <a className="text-sm sm:text-[16px] md:text-lg ">View More</a>
+            <a
+              href="/categories"
+              className="text-sm sm:text-[16px] md:text-lg "
+            >
+              View More
+            </a>
           </div>
         </div>
         <div className="mb-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">

@@ -14,7 +14,7 @@ const MyBreadCrumb = () => {
     <>
       <section>
         <Breadcrumb>
-          <BreadcrumbList className="text-[12px] sm:text-sm md:text-[16px]">
+          <BreadcrumbList className="text-[14px] sm:text-sm md:text-[16px]">
             <BreadcrumbItem>
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
             </BreadcrumbItem>

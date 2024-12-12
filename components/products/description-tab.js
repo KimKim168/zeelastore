@@ -1,18 +1,16 @@
 "use client";
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs";
 
 const DescriptionTab = () => {
   return (
     <>
       <Tabs defaultValue="Specification" className=" mt-10">
         <TabsList className="grid grid-cols-2 bg-white ">
-          {/* <TabsTrigger value="Specification" className="text-sm md:text-lg flex justify-start shadow-none">
+          <p className="text-sm md:text-lg underline text-blue underline-offset-4">
             Specification
-          </TabsTrigger> */}
-          <p className="text-sm md:text-lg underline text-blue underline-offset-4">Specification</p>
-          {/* <TabsTrigger value="Overview">Overview</TabsTrigger> */}
+          </p>
         </TabsList>
         <TabsContent value="Specification">
           <Card className="shadow-none border-r-2 border-t-1 border-l-2 border-b-1 border-gradient">

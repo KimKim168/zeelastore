@@ -20,6 +20,7 @@ export function SearchProduct() {
           width="20"
           height="20"
           alt="search"
+          className="min-w-5"
         />
       </SheetTrigger>
       <SheetContent side="top">

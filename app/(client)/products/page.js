@@ -1,8 +1,7 @@
 import MyBreadCrumb from "@/components/my-bread-crumb";
 import MyGallery from "@/components/my-gallery";
 import DescriptionTab from "@/components/products/description-tab";
-import { Button } from "@/components/ui/button";
-import { Heart } from "lucide-react";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -144,15 +143,15 @@ export default function MyProduct() {
                       <li className="text-color col-span-6">$150</li>
                     </ul>
                   </li>
-                  <li>
+                  {/* <li>
                     <Button
                       variant="outline"
                       className="flex items-center justify-center"
                     >
-                      <Heart />
+                      <ShoppingCart />
                       <p>Add to wishlist</p>
                     </Button>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
 

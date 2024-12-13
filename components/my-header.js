@@ -1,13 +1,7 @@
 import React from "react";
 
 import Image from "next/image";
-import {
-  Heart,
-  PhoneCallIcon,
-  ShoppingCart,
-  ShoppingCartIcon,
-  User,
-} from "lucide-react";
+import { PhoneCallIcon, User } from "lucide-react";
 import Link from "next/link";
 import MyMenu from "./my-menu";
 import MyLanguage from "./my-language";
@@ -34,9 +28,9 @@ const MyHeader = () => {
               </Link>
             </div>
             <div className="col-span-4 flex items-center md:hidden  justify-end space-x-2">
-              <div className="md:hidden bg-white p-[5px] rounded-sm">
+              {/* <div className="md:hidden bg-white p-[5px] rounded-sm">
                 <ShoppingCartIcon />
-              </div>
+              </div> */}
               <SearchProduct />
               {/* Menu */}
               <MyMenu />
@@ -92,7 +86,7 @@ const MyHeader = () => {
               </div>
               <div className="text-white space-x-4 flex items-center overflow-hidden">
                 <User className=" min-w-5"></User>
-                <ShoppingCart className=""></ShoppingCart>
+                {/* <ShoppingCart className=""></ShoppingCart> */}
                 <MyLanguage />
               </div>
             </div>

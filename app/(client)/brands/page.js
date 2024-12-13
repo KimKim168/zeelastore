@@ -1,4 +1,4 @@
-import MyBrand from "@/components/MyBrand";
+import MyBrand from "@/components/my-brand";
 import React from "react";
 
 export default function page() {

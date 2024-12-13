@@ -20,7 +20,7 @@ export default function MyBelowSlider() {
     <>
       {" "}
       {/* below slide */}
-      <section className="max-w-screen-2xl mt-2 mx-auto px-2 xl:px-20 ">
+      <section className="max-w-screen-2xl mt-7 mx-auto px-2 xl:px-20 ">
         <Carousel
           opts={{
             align: "start",

@@ -9,7 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const MyBreadCrumb = () => {
+const MyBreadCrumbShop = () => {
   return (
     <>
       <section>
@@ -30,4 +30,4 @@ const MyBreadCrumb = () => {
   );
 };
 
-export default MyBreadCrumb;
+export default MyBreadCrumbShop;

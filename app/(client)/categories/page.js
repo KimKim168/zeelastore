@@ -5,6 +5,7 @@ import MylastestProduct from "@/components/my-lastest-product";
 import React from "react";
 import Filter from "@/components/my-filter";
 import { SearchBrand } from "@/components/my-search-brand";
+import MyBreadCrumbShop from "@/components/my-bread-crumb-shop";
 
 function page() {
   const imageUrls = [
@@ -83,10 +84,9 @@ function page() {
   ];
   return (
     <div className="max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 mt-5 xl:mt-10 ">
-      <section>
-        <div>
-          <Filter />
-        </div>
+      <section className="flex justify-between px-1">
+        <MyBreadCrumbShop />
+        <Filter />
       </section>
       <section className="mt-5 ">
         <div className="flex gap-4">

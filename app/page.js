@@ -1,10 +1,10 @@
 import React from "react";
-import MyCategories from "@/components/MyCategories";
-import MyNewsProduct from "@/components/MyNewsProduct";
+import MyCategories from "@/components/my-categories";
+import MyNewsProduct from "@/components/my-news-product";
 import MyAppleBrand from "@/components/MyAppleBrand";
 import MyBelowSlider from "@/components/MyBelowSlider";
 import MySlider from "@/components/MySlider";
-import MyBrand from "@/components/MyBrand";
+import MyBrand from "@/components/my-brand";
 
 export default function Home() {
   return (

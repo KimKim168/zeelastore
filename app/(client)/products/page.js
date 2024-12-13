@@ -155,7 +155,7 @@ export default function MyProduct() {
                 </ul>
               </div>
 
-              <hr className="border-black mt-5 w-auto"></hr>
+              <div className="mt-5 border-b-2 w-full mb-8 hover:no-underline border-blue-bold pb-0 flex justify-between items-center"></div>
 
               <div className="flex items-center justify-center gap-2 md:gap-5 mt-5 ">
                 {/* <Button className="w-full ">
@@ -241,16 +241,18 @@ export default function MyProduct() {
           <DescriptionTab />
           {/*End Content utttom */}
         </div>
-        <hr className="border-black md:w-96 mx-auto mt-5"></hr>
+        <div className="mt-5 border-b-2 w-full mb-8 hover:no-underline border-blue-bold pb-0 flex justify-between items-center"></div>
       </section>
       <div>
         <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20 py-5">
-          <div className="border-l-4 border-blue-bold ">
-            <div className="flex justify-between border-b-2 mx-1 pb-2 px-2  border-blue-bold  mb-4">
-              <p className="text-sm sm:text-[16px] md:text-lg ">
+          <div>
+            <div className="flex justify-between items-center border-b-2 pb-1 border-blue-bold  mb-4">
+              <p className="text-[12px] sm:text-[16px] md:text-[17px] border-double shadow-md  text-white border-x-[5px] background-gradient1 rounded-tl-full rounded-br-full px-8 py-1">
                 Related products
               </p>
-              <a className="text-sm sm:text-[16px] md:text-lg ">View More</a>
+              <a className="text-[12px] sm:text-[16px] md:text-[17px] hover:underline cursor-pointer text-hover">
+                View More
+              </a>
             </div>
           </div>
           <div className="mb-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">

@@ -20,10 +20,10 @@ export default function MyCategories() {
 
   return (
     <>
-      <section className="max-w-screen-2xl mx-auto px-2 xl:px-20 py-5">
+      <section className="max-w-screen-2xl mx-auto px-2 xl:px-20 py-7 md:py-14">
         <div>
-          <div className="text-sm sm:text-[16px] md:text-lg ">Categories</div>
-          <div className="flex overflow-x-auto py-4 items-center  scroll-smooth scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500">
+          {/* <div className="text-sm sm:text-[16px] md:text-lg ">Categories</div> */}
+          <div className="flex overflow-x-auto py-2 items-center  scroll-smooth scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500">
             {imagesWithTitles.map((item, index) => (
               <Link key={index} href="/categories ">
                 <div

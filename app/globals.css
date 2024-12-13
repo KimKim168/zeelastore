@@ -16,6 +16,9 @@ body {
 .text-sky {
   color: #191970;
 }
+.text-hover:hover {
+  color: #191970;
+}
 .bg-gold {
   background-color: #05148e;
 }
@@ -46,6 +49,11 @@ body {
   background: linear-gradient(to right, #09203f, #2d70a2);
   height: auto; /* Full screen height */
   width: 100%; /* Full width */
+}
+
+.background-gradient1 {
+  background: linear-gradient(to right, #09203f, #2d70a2);
+  
 }
 .border-gradient {
   border-color: #024295;

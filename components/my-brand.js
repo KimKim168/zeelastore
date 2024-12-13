@@ -70,10 +70,12 @@ export default function MyBrand() {
   return (
     <>
       <section className="max-w-screen-2xl  mx-auto px-2 xl:px-20 py-5">
-        <div className="border-l-4 border-blue-bold mx-2">
-          <div className="flex justify-between border-b-2 mx-1 pb-2 px-2  border-blue-bold  mb-4">
-            <p className="text-sm sm:text-[16px] md:text-lg">Laptop Acer</p>
-            <a href="/categories" className="text-sm sm:text-[16px] md:text-lg">
+        <div>
+          <div className="flex justify-between items-center border-b-2 pb-1 border-blue-bold  mb-4">
+            <p className="text-[12px] sm:text-[16px] md:text-[17px] border-double shadow-md  text-white border-x-[5px] background-gradient1 rounded-tl-full rounded-br-full px-8 py-1">
+              Laptop Dell
+            </p>
+            <a className="text-[12px] sm:text-[16px] md:text-[17px] hover:underline cursor-pointer text-hover">
               View More
             </a>
           </div>

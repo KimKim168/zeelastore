@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
                     width={60}
                     height={60}
                     alt="logo"
-                    className="w-20 md:w-24"
+                    className="w-14 md:w-24"
                   ></Image>
                   <p className=" w-auto md:w-96 md:mt-5 text-[10px] sm:text-sm md:text-base">
                     Ours product is full with responsibility for product

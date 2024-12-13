@@ -17,7 +17,10 @@ const MyHeader = () => {
   return (
     <>
       <header className=" background-gradient py-3">
-        <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20 p-3">
+        <p className="text-[10px] p-2  text-white  xl:hidden">
+          Pend $120 more and get free shipping!
+        </p>
+        <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20 md:p-3">
           <div className="grid grid-cols-12 gap-3 justify-between items-center">
             <div className="col-span-8 md:col-span-2 xl:col-span-1">
               <Link href="/">
@@ -32,7 +35,7 @@ const MyHeader = () => {
             </div>
             <div className="col-span-4 flex items-center md:hidden  justify-end space-x-2">
               <div className="md:hidden bg-white p-[5px] rounded-sm">
-                <ShoppingCartIcon  />
+                <ShoppingCartIcon />
               </div>
               <SearchProduct />
               {/* Menu */}

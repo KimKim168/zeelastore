@@ -1,10 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown, Search } from "lucide-react";
+import { Check, Search } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 import {
   Command,
   CommandEmpty,
@@ -20,35 +21,29 @@ import {
 } from "@/components/ui/popover";
 
 const frameworks = [
-  {
-    value: "all",
-    label: "All",
-  },
-  {
-    value: "dell",
-    label: "Dell",
-  },
-  {
-    value: "apple",
-    label: "Apple",
-  },
-  {
-    value: "asus",
-    label: "Asus",
-  },
-  {
-    value: "mSI",
-    label: "MSI",
-  },
-  {
-    value: "acer",
-    label: "Acer",
-  },
+  { value: "all", label: "All" },
+  { value: "dell", label: "Dell" },
+  { value: "apple", label: "Apple" },
+  { value: "asus", label: "Asus" },
+  { value: "msi", label: "MSI" },
+  { value: "acer", label: "Acer" },
 ];
 
 export function SearchProduct() {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState();
+  const [value, setValue] = React.useState("");
+  const router = useRouter(); // Initialize useRouter
+
+  const handleSelect = (currentValue) => {
+    const selectedValue = currentValue === value ? "" : currentValue;
+    setValue(selectedValue);
+    setOpen(false);
+
+    if (selectedValue) {
+      // Navigate to the category-specific route
+      router.push(`/categories=${selectedValue}`);
+    }
+  };
 
   return (
     <div>
@@ -58,19 +53,23 @@ export function SearchProduct() {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="w-24 p-1 justify-between border-gradient border-t-transparent text-[12px] text-blue"
+            className="w-9 border-gradient border-t-transparent text-[12px] text-blue"
           >
-            <div className="flex items-center ">
-              <Search style={{ width:14, height:14 }} className="h-2 w-2 text-blue" /> {/* Search icon */}
+            <div className="flex items-center">
+              <Search
+                style={{ width: 20, height: 20 }}
+                className="h-3 w-3 text-black"
+              />{" "}
+              {/* Search icon */}
               {value
                 ? frameworks.find((framework) => framework.value === value)
                     ?.label
-                : "Search"}
+                : ""}
             </div>
-            <ChevronsUpDown className="opacity-50" />
+            {/* <ChevronsUpDown className="opacity-50" /> */}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-full p-0">
+        <PopoverContent className="w-56 p-0">
           <Command>
             <CommandInput placeholder="Search Product..." className="h-9" />
             <CommandList>
@@ -80,10 +79,11 @@ export function SearchProduct() {
                   <CommandItem
                     key={framework.value}
                     value={framework.value}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
-                      setOpen(false);
-                    }}
+                    onSelect={handleSelect}
+                    className={cn(
+                      "cursor-pointer hover:bg-gray-100 px-3 py-1 rounded-md",
+                      value === framework.value ? "bg-blue-100 font-bold" : ""
+                    )}
                   >
                     {framework.label}
                     <Check

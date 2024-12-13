@@ -14,32 +14,32 @@ function MyLanguage() {
     <>
       {" "}
       <Select defaultValue="English">
-        <SelectTrigger className="w-[83px] px-0 py-0 justify-center rounded-none">
+        <SelectTrigger className="w-[83px] px-0 py-0 shadow-none justify-center rounded-none">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="English">
-            <div className="flex">
+            <div className="flex items-center">
               <Image
                 src="/assets/images/flageUk.png"
                 width={20}
                 height={20}
                 alt="Flag"
-                className="w-5 h-5 md:w-6 md:h-6 "
+                className="w-7 md:w-5 md:h-5 rounded-full "
               />
-              <p className="ml-1 text-sm md:text-lg">EN</p>
+              <p className="ml-1 text-sm md:text-[16px]">EN</p>
             </div>
           </SelectItem>
           <SelectItem value="Khmer">
-            <div className="flex">
+            <div className="flex items-center">
               <Image
                 src="/assets/images/flageKH.png"
                 width={20}
                 height={20}
                 alt="Flag"
-                className="w-5 h-5 md:w-6 md:h-6"
+                className="w-7 md:w-5 md:h-5 "
               />
-              <p className="ml-1 text-sm md:text-lg">KH</p>
+              <p className="ml-1 text-sm md:text-[16px]">KH</p>
             </div>
           </SelectItem>
         </SelectContent>

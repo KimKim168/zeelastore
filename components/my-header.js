@@ -1,7 +1,13 @@
 import React from "react";
 
 import Image from "next/image";
-import { Heart, PhoneCallIcon, ShoppingCart, User } from "lucide-react";
+import {
+  Heart,
+  PhoneCallIcon,
+  ShoppingCart,
+  ShoppingCartIcon,
+  User,
+} from "lucide-react";
 import Link from "next/link";
 import MyMenu from "./my-menu";
 import MyLanguage from "./my-language";
@@ -10,7 +16,7 @@ import { SearchProduct } from "./my-search-product";
 const MyHeader = () => {
   return (
     <>
-      <header className=" background-gradient ">
+      <header className=" background-gradient py-3">
         <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20 p-3">
           <div className="grid grid-cols-12 gap-3 justify-between items-center">
             <div className="col-span-8 md:col-span-2 xl:col-span-1">
@@ -25,8 +31,8 @@ const MyHeader = () => {
               </Link>
             </div>
             <div className="col-span-4 flex items-center md:hidden  justify-end space-x-2">
-              <div className="md:hidden">
-                <MyLanguage />
+              <div className="md:hidden bg-white p-[5px] rounded-sm">
+                <ShoppingCartIcon  />
               </div>
               <SearchProduct />
               {/* Menu */}

@@ -28,7 +28,7 @@ export default function Filter() {
               aria-label="Open menu" // Optional for accessibility
             />
           </SheetTrigger>
-          <SheetContent className="pl-3 pr-3.5">
+          <SheetContent className="px-0">
             <SheetHeader>
               <SheetTitle className="text-center">Filter</SheetTitle>
             </SheetHeader>

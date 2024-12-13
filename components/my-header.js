@@ -11,7 +11,7 @@ const MyHeader = () => {
   return (
     <>
       <header className=" background-gradient py-3">
-        <p className="text-[10px] p-2  text-white  xl:hidden">
+        <p className="text-[10px] px-2  text-white  xl:hidden">
           Pend $120 more and get free shipping!
         </p>
         <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20 md:p-3">

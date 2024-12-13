@@ -1,104 +1,63 @@
 "use client";
 
 import * as React from "react";
-import { Check, Search } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-
-const frameworks = [
-  { value: "all", label: "All" },
-  { value: "dell", label: "Dell" },
-  { value: "apple", label: "Apple" },
-  { value: "asus", label: "Asus" },
-  { value: "msi", label: "MSI" },
-  { value: "acer", label: "Acer" },
-];
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import Image from "next/image";
 
 export function SearchProduct() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
-  const router = useRouter(); // Initialize useRouter
-
-  const handleSelect = (currentValue) => {
-    const selectedValue = currentValue === value ? "" : currentValue;
-    setValue(selectedValue);
-    setOpen(false);
-
-    if (selectedValue) {
-      // Navigate to the category-specific route
-      router.push(`/categories=${selectedValue}`);
-    }
-  };
-
   return (
-    <div>
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={open}
-            className="w-9 border-gradient border-t-transparent text-[12px] text-blue"
-          >
-            <div className="flex items-center">
-              <Search
-                style={{ width: 20, height: 20 }}
-                className="h-3 w-3 text-black"
-              />{" "}
-              {/* Search icon */}
-              {value
-                ? frameworks.find((framework) => framework.value === value)
-                    ?.label
-                : ""}
+    <Sheet>
+      <SheetTrigger className="bg-white p-[7px] rounded-md">
+        <Image
+          src="/assets/images/search.png"
+          width="20"
+          height="20"
+          alt="search"
+        />
+      </SheetTrigger>
+      <SheetContent side="top">
+        <SheetHeader>
+          <SheetTitle>Search Products</SheetTitle>
+          <div className="w-full relative">
+            <label
+              htmlFor="default-search"
+              className="text-sm font-medium text-gray-900 sr-only dark:text-white"
+            >
+              Search
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <Image
+                  src="/assets/images/search.png"
+                  width="20"
+                  height="20"
+                  alt="search"
+                />
+              </div>
+              <input
+                type="search"
+                id="default-search"
+                className="block w-full p-3 ps-10 text-sm text-primary border border-gray-300 bg-gray-50 outline-none focus:ring-[#09203f] focus:border-[#2667bc]/100 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                placeholder="Search Product..."
+                required
+              />
+              <button
+                type="submit"
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-white bg-gold hover:bg-primary/90 focus:ring-4 focus:outline-none focus:ring-primary/100 font-medium text-sm px-4 py-2"
+              >
+                Search
+              </button>
             </div>
-            {/* <ChevronsUpDown className="opacity-50" /> */}
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-56 p-0">
-          <Command>
-            <CommandInput placeholder="Search Product..." className="h-9" />
-            <CommandList>
-              <CommandEmpty>No Brand Found.</CommandEmpty>
-              <CommandGroup>
-                {frameworks.map((framework) => (
-                  <CommandItem
-                    key={framework.value}
-                    value={framework.value}
-                    onSelect={handleSelect}
-                    className={cn(
-                      "cursor-pointer hover:bg-gray-100 px-3 py-1 rounded-md",
-                      value === framework.value ? "bg-blue-100 font-bold" : ""
-                    )}
-                  >
-                    {framework.label}
-                    <Check
-                      className={cn(
-                        "ml-auto",
-                        value === framework.value ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
-    </div>
+          </div>
+        </SheetHeader>
+      </SheetContent>
+    </Sheet>
   );
 }

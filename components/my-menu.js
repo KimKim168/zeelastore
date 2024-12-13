@@ -36,6 +36,7 @@ function MyMenu() {
           <SheetHeader>
             <MyLanguage />
             <SheetTitle className="text-center">Menu</SheetTitle>
+            <hr ></hr>
             <ul className="text-start">
               <li className="my-3 flex items-center gap-3">
                 <Image

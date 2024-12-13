@@ -97,7 +97,7 @@ export default function MyNewsProduct() {
               key={index}
               className="border aspect-square border-blue bg-white p-4 dark:border-gray-700 dark:bg-gray-800"
             >
-              <div className="aspect-square w-full">
+              <div className="aspect-square w-full h-full">
                 <a href="/products">
                   <Image
                     className="mx-auto h-full dark:hidden transition-transform duration-300 hover:scale-110"

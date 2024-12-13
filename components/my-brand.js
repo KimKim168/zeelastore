@@ -100,15 +100,15 @@ export default function MyBrand() {
                     className="pl-1 basis-1/2  sm:basis-1/3 md:basis-1/4 xl:basis-1/5 2xl:basis-1/6"
                   >
                     {/* Product Card */}
-                    <div className=" border mx-2 aspect-square border-blue bg-white p-4  dark:border-gray-700 dark:bg-gray-800">
-                      <div className="aspect-square">
+                    <div className=" border mx-2 h-full border-blue bg-white p-4  dark:border-gray-700 dark:bg-gray-800">
+                      <div>
                         <a href="/products">
                           <Image
-                            className="mx-auto h-full dark:hidden transition-transform duration-300 hover:scale-110"
+                            className="mx-auto aspect-square dark:hidden transition-transform duration-300 hover:scale-110"
                             src={item.image}
                             width={600}
                             height={600}
-                            alt="product"
+                            alt="product "
                           />
                         </a>
                       </div>

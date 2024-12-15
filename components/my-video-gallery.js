@@ -1,63 +1,147 @@
 "use client";
 
-import { useEffect } from "react";
-import GLightbox from "glightbox";
-import "glightbox/dist/css/glightbox.css"; // Import Glightbox styles
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
+import { Button } from "./ui/button";
 
-const MyVideoGallery = () => {
+const videos = [
+  // Url MP4
+  {
+    id: 1,
+    src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    title: "Video 1",
+    thumb: "/assets/images/product1.png",
+  },
+  // Iframe
+  {
+    id: 2,
+    src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q1qKv5TBaOA?si=DLEjp-qL6slnc09p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+    title: "Video 2",
+    thumb: "/assets/images/product2.png",
+  },
+  // Youtube Embed
+  {
+    id: 3,
+    src: "https://www.youtube.com/embed/J0NuOlA2xDc?si=IiGdSgybkKc3-Uem",
+    title: "Video 2",
+    thumb: "/assets/images/product8.png",
+  },
+  // Locale
+  {
+    id: 3,
+    src: "/videos/BigBuckBunny.mp4",
+    title: "Video 3",
+    thumb: "/assets/images/product4.png",
+  },
+];
+
+export default function MyVideoGallery({ className }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
-    // Initialize GLightbox
-    const lightbox = GLightbox({
-      selector: ".glightbox",
-      touchNavigation: true,
-      loop: true,
-    });
+    if (isOpen) {
+      console.log(`Currently displaying: ${videos[currentIndex].title}`);
+    }
+  }, [currentIndex, isOpen]);
 
-    // Cleanup function
-    return () => {
-      lightbox.destroy();
-    };
-  }, []);
+  const getVideoUrl = (src) => {
+    // Check if the src is an iframe HTML string
+    const iframeRegex = /<iframe.*?src="(.*?)"/;
+    const match = src.match(iframeRegex);
+    return match ? match[1] : src; // Return the extracted URL or the original src
+  };
+
+  const nextSlide = () => {
+    if (currentIndex < videos.length - 1) {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
+  };
 
   return (
-    <div className="video-gallery">
-      <a
-        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-        className="glightbox"
-        data-type="video"
+    <>
+      <div
+        className={`grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-2 ${className}`}
       >
-        <img
-          src="/assets/images/product7.png"
-          alt="Video Thumbnail"
-          style={{ width: "200px", cursor: "pointer" }}
-        />
-      </a>
+        {videos.map((item, index) => (
+          <div
+            key={index}
+            className="cursor-pointer group"
+            onClick={() => {
+              setCurrentIndex(index); // Set current video index
+              setIsOpen(true); // Open the lightbox
+            }}
+          >
+            <div className="w-full relative aspect-square  overflow-hidden">
+              <img
+                src={item.thumb} // Replace with dynamic thumbnail if available
+                alt={item.title}
+                className="w-full aspect-square transition-all duration-300 transform group-hover:scale-105"
+              />
+              <span className="absolute border-[0.5px] -translate-x-1/2 group-hover:bg-primary bg-primary/80 rounded-full p-1.5 -translate-y-1/2 text-white top-[50%] left-[50%]">
+                <Play size={24} />
+              </span>
+            </div>
+            <div className="mt-1 text-center text-sm font-medium text-gray-700 group-hover:text-blue-500">
+              {item.title}
+            </div>
+          </div>
+        ))}
+      </div>
 
-      <a
-        href="https://vimeo.com/12345678"
-        className="glightbox"
-        data-type="video"
-      >
-        <img
-          src="/assets/images/product8.png"
-          alt="Vimeo Thumbnail"
-          style={{ width: "200px", cursor: "pointer" }}
-        />
-      </a>
-
-      <a
-        href="https://www.youtube.com/watch?v=Vc6SFpPf-V4"
-        className="glightbox"
-        data-type="video"
-      >
-        <img
-          src="/assets/images/product9.png"
-          alt="Self-hosted Video Thumbnail"
-          style={{ width: "200px", cursor: "pointer" }}
-        />
-      </a>
-    </div>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="w-full px-14 bg-black border-none h-full flex flex-col">
+          <DialogTitle className="hidden" />
+          <DialogDescription className="hidden" />
+          <div className="relative flex-grow">
+            <iframe
+              src={`${getVideoUrl(videos[currentIndex].src)}?&autoplay=1`} // Ensure autoplay works on YouTube
+              className="rounded-2xl w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute group top-1/2 left-2 transform -translate-y-1/2"
+            onClick={prevSlide}
+            aria-label="Previous video"
+            disabled={currentIndex === 0} // Disable button if on the first video
+          >
+            <ChevronLeft
+              className="text-white group-hover:text-black"
+              size={28}
+            />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute group top-1/2 right-2 transform -translate-y-1/2"
+            onClick={nextSlide}
+            aria-label="Next video"
+            disabled={currentIndex === videos.length - 1} // Disable button if on the last video
+          >
+            <ChevronRight
+              className="text-white group-hover:text-black"
+              size={28}
+            />
+          </Button>
+        </DialogContent>
+      </Dialog>
+    </>
   );
-};
-
-export default MyVideoGallery;
+}

@@ -1,35 +1,35 @@
 import React from "react";
-import MyCategories from "@/components/my-categories";
-import MyNewsProduct from "@/components/my-news-product";
-import MyAppleBrand from "@/components/MyAppleBrand";
-import MyBelowSlider from "@/components/MyBelowSlider";
 import MySlider from "@/components/MySlider";
-import MyBrand from "@/components/my-brand";
+import { BASE_API_URL } from "@/env";
+import MyNewProduct from "@/components/my-new-product";
+import MyProductCategory from "@/components/my-product-category";
+import MyListProducts from "@/components/my_list_products";
 
-export default function Home() {
+export default async function Home(props) {
+  const responeTop = await fetch(`${BASE_API_URL}/slides?position=top`);
+  const imagesTop = await responeTop.json();
+  const responeBottom = await fetch(`${BASE_API_URL}/slides?position=bottom`);
+  const imagesBottom = await responeBottom.json();
+  // console.log(result);
+  const searchParams = await props.searchParams;
+  const search = searchParams.search;
+  const categoryId = searchParams.categoryId;
+  const res = await fetch(`${BASE_API_URL}/categories`);
+  const result = await res.json();
+  const categories = result;
+
   return (
     <>
       {/* Slider */}
-      <MySlider></MySlider>
+      <MySlider imagesTop={imagesTop} imagesBottom={imagesBottom} />
       {/*End Slider */}
-      {/* above slide */}
-      <MyBelowSlider></MyBelowSlider>
-      {/*End above slide */}
-
-      {/* Category */}
-      <MyCategories></MyCategories>
-      {/*End Category */}
-      <div>
-        {/* Card */}
-        <MyNewsProduct></MyNewsProduct>
-        {/*End Card */}
-        {/*Product Card */}
-        <MyAppleBrand></MyAppleBrand>
-        {/*End product Card */}
-        {/*Product Card */}
-        <MyBrand></MyBrand>
-        {/*End product Card */}
-      </div>
+      <MyProductCategory categories={categories} />
+      {/* Card */}
+      <MyNewProduct />
+      {/*End Card */}
+      {/*Product Card */}
+      <MyListProducts />
+      {/*End product Card */}
     </>
   );
 }

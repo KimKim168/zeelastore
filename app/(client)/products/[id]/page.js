@@ -1,33 +1,37 @@
-"use client";
-import React from "react";
-// import GLightbox from "glightbox";
-import "glightbox/dist/css/glightbox.css";
-
-import Link from "next/link";
-import Image from "next/image";
-import { Heart } from "lucide-react";
-import MyGallery from "@/components/my-gallery";
-import { Button } from "@/components/ui/button";
-import MyVideoCard from "@/components/my-video-gallery";
-import MyNewsProduct from "@/components/my-news-product";
 import MyBreadCrumb from "@/components/my-bread-crumb";
+import MyGallery from "@/components/my-gallery";
+import MyRelatedProduct from "@/components/my-related-product";
+import MyVideoGallery from "@/components/my-video-gallery";
 import DescriptionTab from "@/components/products/description-tab";
+import { BASE_API_URL, IMAGE_PRODUCT_URL } from "@/env";
 
-export default function MyProduct() {
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+
+export default async function MyProduct({ params }) {
+  const { id } = await params;
+  const respone = await fetch(`${BASE_API_URL}/products/${id}`);
+  const result = await respone.json();
+  // console.log(result);
+  const productRelated = await fetch(
+    `${BASE_API_URL}/products?categoryId=${result.category_id}`
+  );
+  const resultProductRelated = await productRelated.json();
+  // console.log(resultProductRelated.data);
+
   return (
     <>
       <section className="max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 mt-5 ">
-        <MyBreadCrumb />
+        <MyBreadCrumb result={result.title} />
         <div className="mt-3">
           <div className="flex flex-col sm:grid grid-cols-12 gap-12">
             <div className="sm:col-span-12 md:col-span-5">
-              <MyGallery />
+              <MyGallery photos={[`${IMAGE_PRODUCT_URL}${result.image}`]} />
             </div>
 
             <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">
-              <div className="text-lg md:text-xl font-semibold">
-                Acer Swift Go (SFG14-71-59SE) Pure Silver
-              </div>
+              <p className="text-lg md:text-xl font-semibold">{result.title}</p>
               <div className="max-w-96 mt-4">
                 <ul className="space-y-2 text-sm md:text-lg">
                   <li>
@@ -42,62 +46,19 @@ export default function MyProduct() {
                       <li className="text-color col-span-6">Monitor</li>
                     </ul>
                   </li>
-                  {/* <li>
-                    <ul className="grid grid-cols-12 justify-between gap-5">
-                      <li className=" col-span-6">Product View :</li>
-                      <li className="text-color col-span-6">20</li>
-                    </ul>
-                  </li>
+
                   <li>
-                    <ul className="grid grid-cols-12 justify-between gap-5">
-                      <li className=" col-span-6">Rate :</li>
-                      <li className=" col-span-6">
-                        <div className="flex overflow-hidden">
-                          <StarIcon width="16" className=" text-yellow-400" />
-                          <StarIcon
-                            width="16"
-                            className="ml-2 text-yellow-400"
-                          />
-                          <StarIcon
-                            width="16"
-                            className="ml-2 text-yellow-400"
-                          />
-                          <StarIcon
-                            width="16"
-                            className="ml-2 text-yellow-400"
-                          />
-                        </div>
-                      </li>
-                    </ul>
-                  </li> */}
-                  <li>
-                    <ul className="grid grid-cols-12 font-semibold text-color justify-between text-lg md:text-xl">
+                    <ul className="grid grid-cols-12 gap-5 font-semibold text-color justify-between text-lg md:text-xl">
                       <li className=" col-span-6">Price:</li>
-                      <li className="text-color col-span-6">$150</li>
+                      <li className="text-color col-span-6">${result.price}</li>
                     </ul>
-                  </li>
-                  <li>
-                    <div>
-                      <Button
-                        variant="outline"
-                        className="flex items-center justify-center"
-                      >
-                        <Heart />
-                        <p>Add to wishlist</p>
-                      </Button>
-                    </div>
                   </li>
                 </ul>
               </div>
 
-              <hr className="border-black mt-5 w-auto"></hr>
+              <div className="mt-5 border-b-2 w-full mb-8 hover:no-underline border-blue-bold pb-0 flex justify-between items-center"></div>
 
               <div className="flex items-center justify-center gap-2 md:gap-5 mt-5 ">
-                {/* <Button className="w-full ">
-                  <ShoppingCart></ShoppingCart>
-                  <p>Buy Now</p>
-                </Button> */}
-                {/* Socail  */}
                 <div className="grid grid-cols-2  sm:grid-cols-4 items-center gap-2 md:gap-3 ">
                   <Link
                     href="https://telegram.org/"
@@ -106,14 +67,14 @@ export default function MyProduct() {
                   >
                     <Image
                       src="/assets/images/telegram.png"
-                      width={3000}
-                      height={3000}
+                      width={600}
+                      height={600}
                       className="w-7 xl:w-10"
                       alt="image"
                     />
-                    <p className="text-[10px] sm:text-[10px] xl:text-[13px]">
+                    <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
                       Order With Telegram
-                    </p>
+                    </span>
                   </Link>
                   <Link
                     href="https://www.messenger.com/"
@@ -122,14 +83,14 @@ export default function MyProduct() {
                   >
                     <Image
                       src="/assets/images/messager.jpg"
-                      width={3000}
-                      height={3000}
+                      width={600}
+                      height={600}
                       className="w-7 xl:w-10"
                       alt="image"
                     />
-                    <p className="text-[10px] sm:text-[10px] xl:text-[13px]">
+                    <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
                       Order With Messenger
-                    </p>
+                    </span>
                   </Link>
                   <Link
                     href="https://web.whatsapp.com/"
@@ -138,14 +99,14 @@ export default function MyProduct() {
                   >
                     <Image
                       src="/assets/images/whatsApp.png"
-                      width={3000}
-                      height={3000}
+                      width={600}
+                      height={600}
                       className="w-7 xl:w-10"
                       alt="image"
                     />
-                    <p className="text-[10px] sm:text-[10px] xl:text-[13px]">
+                    <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
                       Order With whatsapp
-                    </p>
+                    </span>
                   </Link>
                   <Link
                     href="#"
@@ -154,35 +115,33 @@ export default function MyProduct() {
                   >
                     <Image
                       src="/assets/images/call.png"
-                      width={3000}
-                      height={3000}
+                      width={600}
+                      height={600}
                       className="w-7 xl:w-10"
                       alt="image"
                     />
-                    <p className="text-[10px] sm:text-[10px] xl:text-[13px]">
+                    <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
                       Order By Calling
-                    </p>
+                    </span>
                   </Link>
                 </div>
                 {/*End Socail */}
               </div>
 
               {/* Add to wishlist */}
-              <div className="mt-5 flex space-x-2">
-                <MyVideoCard />
+              <div className="mt-5 ">
+                <MyVideoGallery />
               </div>
               {/*End Add to wishlist */}
             </div>
           </div>
           {/* Content utttom */}
-          <DescriptionTab />
+          <DescriptionTab result={result} />
           {/*End Content utttom */}
         </div>
-        <hr className="border-black md:w-96 mx-auto mt-5"></hr>
+        <div className="mt-5 border-b-2 w-full mb-8 hover:no-underline border-blue-bold pb-0 flex justify-between items-center"></div>
       </section>
-      <div>
-        <MyNewsProduct />
-      </div>
+      <MyRelatedProduct productRelated={resultProductRelated.data} />
     </>
   );
 }

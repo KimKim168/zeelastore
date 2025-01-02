@@ -50,6 +50,20 @@ body {
   height: auto; /* Full screen height */
   width: 100%; /* Full width */
 }
+.text-gradient {
+  text-colo: linear-gradient(to right, #09203f, #2d70a2);
+  height: auto; /* Full screen height */
+  width: 100%; /* Full width */
+}
+.border-gradient {
+  border: linear-gradient(to right, #09203f, #2d70a2);
+ 
+}
+.background-gradient-hover:hover {
+  background: linear-gradient(to right, #09203f, #2d70a2);
+  height: auto; /* Full screen height */
+  width: 100%; /* Full width */
+}
 
 .background-gradient1 {
   background: linear-gradient(to right, #09203f, #2d70a2);
@@ -64,6 +78,38 @@ body {
   height: auto; /* Full screen height */
   width: 100%; /* Full width */
 }
+
+
+.btn-grad {background-image: linear-gradient(to right, #FF3CAC 0%, #26a0da  51%, #09203f  100%)}
+.btn-grad {
+   padding: 5px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+ /*  */
+
+ /*  */
+ 
+
+.bg-circle{
+  background-image: linear-gradient(-225deg, #FF3CAC 0%, #562B7C 52%, #2B86C5 100%);
+}
+
+
 
 /* Scroll */
 /* Customize the scrollbar */
@@ -90,3 +136,5 @@ body {
     --radius: 0.5rem;
   }
 }
+
+

@@ -8,7 +8,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const MyBreadCrumb = () => {
+const MyBreadCrumb = ({ result }) => {
   return (
     <>
       <section>
@@ -18,12 +18,9 @@ const MyBreadCrumb = () => {
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
+
             <BreadcrumbItem>
-              <BreadcrumbLink href="/categories">Shop</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-blue">Laptop Acer</BreadcrumbPage>
+              <BreadcrumbPage className="text-blue">{result}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

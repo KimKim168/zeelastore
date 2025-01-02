@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-  };
-  
-  export default nextConfig;
-  
+  images: {
+    remotePatterns: [
+      {
+        hostname: "chhayhok.brolong.pro",
+      },
+    ],
+  },
+};
+
+export default nextConfig;

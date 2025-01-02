@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export default function MyBelowSlider() {
+export default function MySlidesButtom() {
   const image = [
     "/assets/images/slide1.jpg",
     "/assets/images/slide2.jpg",

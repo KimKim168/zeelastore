@@ -8,11 +8,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import Image from "next/image";
-import MyCategoryComponent from "./my-accordion-category";
+import MyCategoryComponent from "./my-category";
 import { SearchBrand } from "./my-search-brand";
 import MyDualRangPrice from "./my-dual-range-price";
 import MylastestProduct from "./my-lastest-product";
+import { FilterIcon } from "lucide-react";
 
 export default function Filter() {
   return (
@@ -20,13 +20,7 @@ export default function Filter() {
       <section className="lg:hidden block">
         <Sheet>
           <SheetTrigger asChild>
-            <Image
-              src="/assets/images/filter.png"
-              width="20"
-              height="20"
-              alt="menu"
-              aria-label="Open menu" // Optional for accessibility
-            />
+            <FilterIcon className="border p-1 md:p-2 w-8 h-8 md:w-10 md:h-10 rounded-md" />
           </SheetTrigger>
           <SheetContent className="px-0">
             <SheetHeader>
@@ -35,8 +29,11 @@ export default function Filter() {
             {/* Scrollable content */}
             <div className="overflow-y-auto max-h-[calc(100vh-100px)] px-2">
               <MyCategoryComponent />
+              <hr className="my-8" />
               <SearchBrand />
+              <hr className="my-8" />
               <MyDualRangPrice />
+              <hr className="my-8" />
               <MylastestProduct />
             </div>
           </SheetContent>

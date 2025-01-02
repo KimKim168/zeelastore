@@ -2,106 +2,88 @@
 import React from "react";
 import { Link as IconLink } from "lucide-react";
 import Image from "next/image";
+import { IMAGE_LINKS_URL } from "@/env";
 
-function MySocialMedia() {
+function MySocialMedia({ resultContact, resultLink }) {
   return (
     <>
-      <div>
-        <h2 className="text-xl font-bold mb-4">Contact Information</h2>
-        <div className="space-y-4">
-          {/* Address */}
-          <div className="text-blue flex items-start gap-2">
-            <Image
-              src="/assets/images/location.png"
-              width={24}
-              height={24}
-              alt="Location Icon"
-              className="min-w-6"
-            />
-            <p className="text-sm">
-              #17E0-19E0, Preah Sihanouk Blvd, Sangkat Veal Vong, Khan 7Makara,
-              Phnom Penh, Cambodia 120307
-            </p>
-          </div>
-          {/* Phone */}
-          <div className="text-blue flex items-center gap-2">
-            <Image
-              src="/assets/images/telephone.png"
-              width={24}
-              height={24}
-              alt="Phone Icon"
-              className="min-w-6"
-            />
-            <p className="text-sm">015 222 772</p>
-          </div>
-          {/* Email */}
-          <div className="text-blue flex items-center gap-2">
-            <Image
-              src="/assets/images/gmail.png"
-              width={24}
-              height={24}
-              alt="Email Icon"
-              className="min-w-6"
-            />
-            <p className="text-sm">sales11@chhayhok.com</p>
-          </div>
-          {/* Social Links */}
-          {[
-            {
-              href: "https://t.me/chhayhok_Computer",
-              src: "telegram.png",
-              label: "Telegram",
-            },
-            {
-              href: "https://www.facebook.com/ChhayHokComputer",
-              src: "facebook.png",
-              label: "Facebook",
-            },
-            {
-              href: "http://www.tiktok.com/@chhayhokcomputer",
-              src: "tiktok.png",
-              label: "Tiktok",
-            },
-            {
-              href: "https://www.youtube.com/channel/UCoJd25pfQNZFcBMeDakuvrw",
-              src: "youtube.png",
-              label: "YouTube",
-            },
-            {
-              href: "https://www.linkedin.com/company/chhayhokcomputer/posts/?feedView=all&viewAsMember=true",
-              src: "linkedin.png",
-              label: "LinkedIn",
-            },
-            {
-              href: "https://www.threads.net/@chhayhok_computer",
-              src: "threads.png",
-              label: "Threads",
-            },
-            {
-              href: "https://www.instagram.com/chhayhok_computer/",
-              src: "instagram.png",
-              label: "Instagram",
-            },
-          ].map((item, index) => (
-            <div key={index} className="text-blue flex items-center gap-2">
+      <div className="flex flex-col md:flex-row justify-between  gap-8">
+        <div>
+          <h2 className="text-xl font-bold mb-4">{resultContact.name}</h2>
+          <div className="space-y-4">
+            {/* Address */}
+            <div className="text-blue flex items-start gap-2">
               <Image
-                src={`/assets/images/${item.src}`}
+                src="/assets/images/location.png"
                 width={24}
                 height={24}
-                alt={`${item.label} Icon`}
+                alt="Location Icon"
                 className="min-w-6"
               />
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Visit our ${item.label} page`}
-                className="text-sm flex items-center gap-1 hover:text-blue-600 transition"
-              >
-                {item.label} <IconLink className="w-4 h-4" />
-              </a>
+              <p className="text-sm">{resultContact.address}</p>
             </div>
-          ))}
+            {/* Phone */}
+            <div className="text-blue flex items-center gap-2">
+              <Image
+                src="/assets/images/telephone.png"
+                width={24}
+                height={24}
+                alt="Phone Icon"
+                className="min-w-6"
+              />
+              <p className="text-sm">{resultContact.phone}</p>
+            </div>
+            {/* Email */}
+            <div className="text-blue flex items-center gap-2">
+              <Image
+                src="/assets/images/gmail.png"
+                width={24}
+                height={24}
+                alt="Email Icon"
+                className="min-w-6"
+              />
+              <p className="text-sm">{resultContact.email}</p>
+            </div>
+
+            {/* Social Links */}
+            {resultLink.map((item) => (
+              <div key={item.id} className="text-blue flex items-center gap-2">
+                <Image
+                  src={`${IMAGE_LINKS_URL}${item.image}`}
+                  width={24}
+                  height={24}
+                  alt="image"
+                  className="min-w-6"
+                />
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm flex items-center gap-1 hover:text-blue-600 transition"
+                >
+                  {item.link} <IconLink className="w-4 h-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2 className="text-xl font-bold mb-4">Find Us</h2>
+          <div className="">
+            <a
+              href={resultContact.map}
+              aria-label="View our location on Google Maps"
+              target="_blank"
+            >
+              <Image
+                src="/assets/images/imageMap.png"
+                width={600}
+                height={600}
+                alt="Google Maps Placeholder"
+                className="w-full h-full  object-cover rounded-lg shadow-md"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </>

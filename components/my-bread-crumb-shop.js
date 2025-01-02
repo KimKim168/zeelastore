@@ -9,7 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const MyBreadCrumbShop = () => {
+const MyBreadCrumbShop = ({ result }) => {
   return (
     <>
       <section>
@@ -21,7 +21,7 @@ const MyBreadCrumbShop = () => {
             <BreadcrumbSeparator />
 
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-blue">Shop</BreadcrumbPage>
+              <BreadcrumbPage className="text-blue">Scanner</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

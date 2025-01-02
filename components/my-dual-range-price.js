@@ -7,9 +7,9 @@ function MyDualRangPrice() {
   const [values, setValues] = useState([0, 2000]);
   return (
     <>
-      <div className=" mt-7">
+      <div >
         <div className="mb-10">
-          <p className="text-lg text-center p-1 background-gradient text-white">
+          <p className="text-lg text-center p-2 rounded-md background-gradient text-white">
             Price
           </p>
         </div>
@@ -19,14 +19,14 @@ function MyDualRangPrice() {
             value={values}
             onValueChange={setValues}
             min={0}
-            max={100}
+            max={2000}
             step={1}
           />
         </div>
         <div className="flex justify-center ">
           <Button
             type="submit"
-            className="w-full bg-transparent shadow-transparent text-blue border border-gradient px-4 py-2 hover:bg-gray-200 rounded"
+            className="w-full bg-gray-100 shadow-transparent text-blue h-10 px-4  hover:bg-gray-200 rounded"
           >
             Apply Filter
           </Button>

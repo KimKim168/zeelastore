@@ -2,6 +2,7 @@
 import React from "react";
 import { AlignJustifyIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
+import MyAllCategory from "./my-all-categories";
 
 function MyNavigation() {
   const pathname = usePathname();
@@ -16,11 +17,7 @@ function MyNavigation() {
                 className="flex items-center p-2 text-nowrap text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                 aria-current="page"
               >
-                <AlignJustifyIcon
-                  className="mr-2 w-12 h-12 md:w-20 md:h-20"
-                  style={{ width: "15", height: "15" }}
-                ></AlignJustifyIcon>
-                <span>All Categorys</span>
+                <MyAllCategory />
               </a>
             </li>
             <li>
@@ -37,9 +34,9 @@ function MyNavigation() {
             </li>
             <li>
               <a
-                href="/categories"
+                href="/products"
                 className={`px-2 py-2 rounded ${
-                  pathname === "/categories"
+                  pathname === "/products"
                     ? "underline  underline-offset-4  text-blue font-semibold"
                     : "text-black hover:text-blue-500"
                 }`}
@@ -60,7 +57,7 @@ function MyNavigation() {
               </a>
             </li>
 
-            <li>
+            {/* <li>
               <a
                 href="/video-gallery"
                 className={`px-2 py-2 rounded ${
@@ -71,7 +68,7 @@ function MyNavigation() {
               >
                 videos
               </a>
-            </li>
+            </li> */}
 
             <li>
               <a
@@ -86,9 +83,9 @@ function MyNavigation() {
               </a>
             </li>
           </ul>
-          <p className="hidden xl:flex">
+          {/* <p className="hidden xl:flex">
             Pend $120 more and get free shipping!
-          </p>
+          </p> */}
         </div>
       </div>
     </>

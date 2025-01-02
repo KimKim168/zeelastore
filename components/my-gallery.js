@@ -7,16 +7,17 @@ import "yet-another-react-lightbox/plugins/thumbnails.css"; // Thumbnail plugin 
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Image from "next/image";
 
-const photos = [
-  "/assets/images/product4.png",
-  "/assets/images/product6.jpg",
-  "/assets/images/product5.png",
-  "/assets/images/product7.png",
-  "/assets/images/product8.png",
-];
+// const photos = [
+//   "/assets/images/product4.png",
+//   "/assets/images/product6.jpg",
+//   "/assets/images/product5.png",
+//   "/assets/images/product7.png",
+//   "/assets/images/product8.png",
+// ];
 
-const MyImageGallery = () => {
+const MyImageGallery = ({ photos }) => {
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = photos.map((src) => ({ src })); // Convert photos array to Lightbox format
@@ -25,10 +26,12 @@ const MyImageGallery = () => {
     <div>
       {/* Large image at the top */}
       <div className="w-full mb-2">
-        <img
+        <Image
+          width={500}
+          height={500}
           src={photos[0]}
           alt="Large Image"
-          className="w-full aspect-square border object-cover rounded-lg"
+          className="w-full aspect-square object-contain border p-2 rounded-lg"
           onClick={() => {
             setCurrentIndex(0);
             setOpen(true);
@@ -39,7 +42,9 @@ const MyImageGallery = () => {
       {/* Thumbnails for the rest of the images */}
       <div className="grid grid-cols-4 gap-2">
         {photos.slice(1).map((photo, index) => (
-          <img
+          <Image
+            width={500}
+            height={500}
             key={index}
             src={photo}
             alt={`Image ${index + 2}`} // Adjusted index for thumbnails

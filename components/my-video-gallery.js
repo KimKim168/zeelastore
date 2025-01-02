@@ -15,7 +15,7 @@ const videos = [
   // Url MP4
   {
     id: 1,
-    src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    src: "https://www.youtube.com/embed/J0NuOlA2xDc?si=IiGdSgybkKc3-Uem",
     title: "Video 1",
     thumb: "/assets/images/product1.png",
   },
@@ -36,7 +36,7 @@ const videos = [
   // Locale
   {
     id: 3,
-    src: "/videos/BigBuckBunny.mp4",
+    src: "https://www.youtube.com/embed/J0NuOlA2xDc?si=IiGdSgybkKc3-Uem",
     title: "Video 3",
     thumb: "/assets/images/product4.png",
   },
@@ -103,7 +103,7 @@ export default function MyVideoGallery({ className }) {
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="w-full px-14 bg-black border-none h-full flex flex-col">
+        <DialogContent className="w-full max-w-full px-14 bg-black border-none h-full flex flex-col">
           <DialogTitle className="hidden" />
           <DialogDescription className="hidden" />
           <div className="relative flex-grow">

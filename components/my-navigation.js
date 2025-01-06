@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import MyAllCategory from "./my-all-categories";
 
@@ -8,16 +8,18 @@ function MyNavigation({ resultCate }) {
   const pathname = usePathname();
   return (
     <>
-      <div className="w-full  border-b shadow-sm">
+      <div className="w-full border-b shadow-sm">
         <div className="hidden md:flex justify-between text-[10px] sm:text-sm md:text-[16] items-center max-w-screen-2xl mx-auto xl:px-20 ">
-          <ul className="flex  items-center  font-medium lg:flex-row space-x-3 lg:space-x-5 lg:mt-0">
-            <li className=" md:p-3 ">
+          <ul className="flex items-center space-x-3 font-medium lg:flex-row lg:space-x-5 lg:mt-0">
+            <li className=" md:p-3">
               <a
                 href="#"
-                className="flex items-center p-2 text-nowrap text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                className="flex items-center p-2 text-black rounded text-nowrap bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                 aria-current="page"
               >
-                <MyAllCategory resultCate={resultCate} />
+                <Suspense>
+                  <MyAllCategory resultCate={resultCate} />
+                </Suspense>
               </a>
             </li>
             <li>

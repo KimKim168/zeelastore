@@ -1,26 +1,20 @@
-import React from "react";
-
 import Image from "next/image";
 import { PhoneCallIcon, Search, User } from "lucide-react";
 import Link from "next/link";
-import MyMenu from "./my-menu";
-// import MyLanguage from "./my-language";
 import { SearchProduct } from "./my-search-product";
 import SearchInput from "./ui/SearchInput";
-import { BASE_API_URL } from "@/env";
 import MyHomeModal from "./my-home-modal";
+import { Suspense } from "react";
 
-const MyHeader = async ({ resultCate }) => {
-  const responeContact = await fetch(`${BASE_API_URL}/contact`);
-  const resultContact = await responeContact.json();
+const MyHeader = ({ resultCate, resultContact }) => {
   return (
     <>
-      <header className=" background-gradient py-3">
+      <header className="py-3 background-gradient">
         {/* <p className="text-[10px] px-2  text-white  xl:hidden">
           Pend $120 more and get free shipping!
         </p> */}
-        <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20 md:p-3">
-          <div className="grid grid-cols-12 gap-3 justify-between items-center">
+        <div className="px-2 mx-auto max-w-screen-2xl xl:px-20 md:p-3">
+          <div className="grid items-center justify-between grid-cols-12 gap-3">
             <div className="col-span-8 md:col-span-2 xl:col-span-1">
               <Link href="/">
                 <Image
@@ -32,25 +26,31 @@ const MyHeader = async ({ resultCate }) => {
                 />
               </Link>
             </div>
-            <div className="col-span-4 flex items-center md:hidden  justify-end space-x-2">
+            <div className="flex items-center justify-end col-span-4 space-x-2 md:hidden">
               {/* <div className="md:hidden bg-white p-[5px] rounded-sm">
                 <ShoppingCartIcon />
               </div> */}
               <SearchProduct />
+
               {/* Menu */}
               {/* <MyMenu resultCate={resultCate} resultContact={resultContact} /> */}
-              <MyHomeModal categories={resultCate} />
+              <Suspense>
+                <MyHomeModal categories={resultCate} />
+              </Suspense>
+
               {/*End Menu */}
             </div>
-            <div className="hidden md:grid col-span-7 xl:col-span-9 ">
-              <SearchInput className="flex-1" />
+            <div className="hidden col-span-7 md:grid xl:col-span-9 ">
+              <Suspense>
+                <SearchInput className="flex-1" />
+              </Suspense>
             </div>
-            <div className="hidden sm:col-span-3 xl:col-span-2 md:flex space-x-4 text-nowrap justify-end ">
+            <div className="justify-end hidden space-x-4 sm:col-span-3 xl:col-span-2 md:flex text-nowrap ">
               <div className="text-white text-sm md:text-[16px] flex items-center ">
-                <PhoneCallIcon className="mr-1 md:mr-2 w-4 md:w-5"></PhoneCallIcon>
+                <PhoneCallIcon className="w-4 mr-1 md:mr-2 md:w-5"></PhoneCallIcon>
                 <p>{resultContact.phone}</p>
               </div>
-              <div className="text-white space-x-4 flex items-center overflow-hidden">
+              <div className="flex items-center space-x-4 overflow-hidden text-white">
                 <User className=" min-w-5"></User>
 
                 {/* <MyLanguage /> */}

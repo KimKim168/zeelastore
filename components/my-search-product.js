@@ -22,7 +22,9 @@ export function SearchProduct() {
       <SheetContent side="top">
         <SheetHeader>
           <SheetTitle className="text-center">Search Products</SheetTitle>
-          <SearchInput className="flex-1" />
+          <React.Suspense>
+            <SearchInput className="flex-1" />
+          </React.Suspense>
         </SheetHeader>
       </SheetContent>
     </Sheet>

@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,7 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { AlignJustifyIcon, ChevronDownIcon } from "lucide-react";
 import "./MyAllCategory.css"; // Import custom CSS for transitions
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function MyAllCategory({ resultCate }) {
   const searchParams = useSearchParams();
@@ -57,11 +56,11 @@ export default function MyAllCategory({ resultCate }) {
         <DropdownMenuTrigger asChild>
           <Button
             variant="add"
-            className="border-0 text-base text-black p-0 md:p-2 hover:bg-slate-200 shadow-none"
+            className="p-0 text-base text-black border-0 shadow-none md:p-2 hover:bg-slate-200"
             aria-haspopup="menu"
             aria-expanded={isHovering ? "true" : "false"}
           >
-            <AlignJustifyIcon className="hidden md:block w-12 h-12 md:w-20 md:h-20" />
+            <AlignJustifyIcon className="hidden w-12 h-12 md:block md:w-20 md:h-20" />
             All Categories
             <ChevronDownIcon className="block md:hidden" />
           </Button>
@@ -73,10 +72,10 @@ export default function MyAllCategory({ resultCate }) {
             {resultCate?.length > 0 &&
               resultCate.map((item) => (
                 <DropdownMenuSub key={item.id}>
-                  <div className=" flex p-2 hover:font-bold hover:underline underline-offset-4">
+                  <div className="flex p-2 hover:font-bold hover:underline underline-offset-4">
                     <button
                       onClick={() => handleSelectCategory(item.id)}
-                      className="px-2 flex-1 text-start"
+                      className="flex-1 px-2 text-start"
                     >
                       {item.name}
                     </button>
@@ -85,7 +84,7 @@ export default function MyAllCategory({ resultCate }) {
                     )}
                   </div>
                   <DropdownMenuPortal>
-                    <DropdownMenuSubContent className=" ml-3 ">
+                    <DropdownMenuSubContent className="ml-3 ">
                       {item.sub_categories?.length > 0 &&
                         item.sub_categories.map((subItem) => (
                           <button
@@ -95,7 +94,7 @@ export default function MyAllCategory({ resultCate }) {
                             }
                             className="w-full text-start"
                           >
-                            <p className="p-2 hover:bg-slate-200 text-sm">
+                            <p className="p-2 text-sm hover:bg-slate-200">
                               {subItem.name}
                             </p>
                           </button>

@@ -1,5 +1,3 @@
-import MyBreadCrumb from "@/components/my-bread-crumb";
-import MyCategoryProductDetail from "@/components/my-category-in-product-detail";
 import MyGallery from "@/components/my-gallery";
 import MyOrderWithTelegram from "@/components/my-order-with-telegram";
 import MyRelatedProduct from "@/components/my-related-product";
@@ -18,14 +16,14 @@ import React from "react";
 
 export default async function MyProduct({ params }) {
   const { id } = await params;
-  const respone = await fetch(`${BASE_API_URL}/products/${id}`);
+  const respone = await fetch(`${BASE_API_URL}/products/${id}`, {next: {revalidate: 3600}});
   const result = await respone.json();
   // console.log(result);
   const brand = result?.brand;
   const category = result?.category;
   const sub_category = result?.sub_category;
 
-  const responeLink = await fetch(`${BASE_API_URL}/links`);
+  const responeLink = await fetch(`${BASE_API_URL}/links`, {next: {revalidate: 3600}});
   const resultLink = await responeLink.json();
   const images = result?.images.map(
     (item) => `${MULTI_IMAGE_PRODUCT_URL}${item.image}`
@@ -39,45 +37,45 @@ export default async function MyProduct({ params }) {
   });
   // console.log(videos);
   const productRelated = await fetch(
-    `${BASE_API_URL}/products?categoryId=${result?.category_id}`
+    `${BASE_API_URL}/products?categoryId=${result?.category_id}`, {next: {revalidate: 3600}}
   );
   const resultProductRelated = await productRelated.json();
   // console.log(resultProductRelated.data);
-  const res = await fetch(`${BASE_API_URL}/categories?withSub=2`);
+  const res = await fetch(`${BASE_API_URL}/categories?withSub=2`, {next: {revalidate: 3600}});
   const categories = await res.json();
 
   return (
     <>
-      <section className="max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 mt-5 ">
+      <section className="px-2 mx-auto mt-5 mb-10 max-w-screen-2xl xl:px-20 ">
         {/* <MyBreadCrumb result={result?.title} /> */}
         <div className="mt-3">
-          <div className="flex flex-col sm:grid grid-cols-12 gap-12">
+          <div className="flex flex-col grid-cols-12 gap-12 sm:grid">
             <div className="sm:col-span-12 md:col-span-5">
               <MyGallery
                 photos={[`${IMAGE_PRODUCT_URL}${result?.image}`, ...images]}
               />
             </div>
 
-            <div className=" sm:col-span-12  md:col-span-7 text-blue xl:ml-5">
+            <div className=" sm:col-span-12 md:col-span-7 text-blue xl:ml-5">
               <div>
-                <p className="text-lg md:text-xl font-semibold">
+                <p className="text-lg font-semibold md:text-xl">
                   {result?.title}
                 </p>
                 <div className="mt-4">
                   <ul className="space-y-2 text-sm md:text-lg">
                     <li>
-                      <ul className="flex gap-2 items-center">
-                        <li className=" col-span-6">Shipping:</li>
-                        <li className="text-gray-700 col-span-6">
+                      <ul className="flex items-center gap-2">
+                        <li className="col-span-6 ">Shipping:</li>
+                        <li className="col-span-6 text-gray-700">
                           {" "}
                           {result?.shipping > 0.0 ? result?.shipping : "Free"}
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <ul className="flex gap-2 items-center">
-                        <li className=" col-span-6">Brand:</li>
-                        <li className="text-gray-700 col-span-6">
+                      <ul className="flex items-center gap-2">
+                        <li className="col-span-6 ">Brand:</li>
+                        <li className="col-span-6 text-gray-700">
                           <Link
                             className="hover:underline"
                             href={`/products?brandId=${brand?.id}`}
@@ -88,9 +86,9 @@ export default async function MyProduct({ params }) {
                       </ul>
                     </li>
                     <li>
-                      <ul className="flex gap-2 items-center w-full">
-                        <li className=" col-span-6">Category:</li>
-                        <li className="text-gray-700 col-span-6 flex items-center gap-2">
+                      <ul className="flex items-center w-full gap-2">
+                        <li className="col-span-6 ">Category:</li>
+                        <li className="flex items-center col-span-6 gap-2 text-gray-700">
                           <Link
                             href={`/products?categoryId=${category?.id}`}
                             className="hover:underline"
@@ -109,9 +107,9 @@ export default async function MyProduct({ params }) {
                       </ul>
                     </li>
                     <li>
-                      <ul className="flex items-center gap-2 font-semibold justify-start text-lg md:text-xl">
-                        <li className=" col-span-6">Price:</li>
-                        <li className="text-color col-span-6">
+                      <ul className="flex items-center justify-start gap-2 text-lg font-semibold md:text-xl">
+                        <li className="col-span-6 ">Price:</li>
+                        <li className="col-span-6 text-color">
                           ${result?.price}
                         </li>
                       </ul>
@@ -120,10 +118,10 @@ export default async function MyProduct({ params }) {
                 </div>
               </div>
 
-              <div className="mt-5 border-b-2 w-full mb-8 hover:no-underline border-blue-bold pb-0 flex justify-between items-center"></div>
+              <div className="flex items-center justify-between w-full pb-0 mt-5 mb-8 border-b-2 hover:no-underline border-blue-bold"></div>
 
               <div>
-                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 items-center gap-2 md:gap-3 ">
+                <div className="grid items-center grid-cols-2 gap-2 md:grid-cols-3 xl:grid-cols-4 md:gap-3 ">
                   <MyOrderWithTelegram id={id} />
                   {resultLink?.map(
                     (item) =>
@@ -132,7 +130,7 @@ export default async function MyProduct({ params }) {
                           key={item.id}
                           href={item.link}
                           target="_blank"
-                          className="border w-full p-1 sm:p-2 flex justify-center items-center gap-1 md:gap-2 rounded-md"
+                          className="flex items-center justify-center w-full gap-1 p-1 border rounded-md sm:p-2 md:gap-2"
                         >
                           <Image
                             src={IMAGE_LINKS_URL + item.image}
@@ -165,7 +163,7 @@ export default async function MyProduct({ params }) {
           )}
           {/*End Content utttom */}
         </div>
-        {/* <div className="mt-5 border-b-2 w-full mb-8 hover:no-underline border-blue-bold pb-0 flex justify-between items-center"></div> */}
+        {/* <div className="flex items-center justify-between w-full pb-0 mt-5 mb-8 border-b-2 hover:no-underline border-blue-bold"></div> */}
       </section>
       {resultProductRelated?.data?.length > 0 && (
         <MyRelatedProduct productRelated={resultProductRelated.data} />

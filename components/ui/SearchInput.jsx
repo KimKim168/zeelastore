@@ -1,7 +1,7 @@
 "use client";
 import { Search } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 export default function SearchInput() {
   const searchParams = useSearchParams();
@@ -25,28 +25,30 @@ export default function SearchInput() {
 
   return (
     <>
-      <form action={handleSearch}>
-        <div className="flex items-center bg-white justify-between border ">
-          <div className="flex items-center ml-2 gap-2">
-            <Search className="text-gray-400 " size={20} />
-            <input
-              type="text"
-              placeholder="Search Products..."
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              // onChange={(e) => handleSearch(e.target.value)}
-              className=" bg-transparent border-none xl:min-w-[500px] outline-none text-gray-700 py-2"
-              aria-label="Search input"
-            />
+      <Suspense>
+        <form action={handleSearch}>
+          <div className="flex items-center justify-between bg-white border ">
+            <div className="flex items-center gap-2 ml-2">
+              <Search className="text-gray-400 " size={20} />
+              <input
+                type="text"
+                placeholder="Search Products..."
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                // onChange={(e) => handleSearch(e.target.value)}
+                className=" bg-transparent border-none xl:min-w-[500px] outline-none text-gray-700 py-2"
+                aria-label="Search input"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-blue-900 hidden min-[350px]:block text-white py-1 px-2 mr-1"
+            >
+              Search
+            </button>
           </div>
-          <button
-            type="submit"
-            className="bg-blue-900 hidden min-[350px]:block text-white py-1 px-2 mr-1"
-          >
-            Search
-          </button>
-        </div>
-      </form>
+        </form>
+      </Suspense>
     </>
   );
 }

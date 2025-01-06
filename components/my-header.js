@@ -8,6 +8,7 @@ import MyMenu from "./my-menu";
 import { SearchProduct } from "./my-search-product";
 import SearchInput from "./ui/SearchInput";
 import { BASE_API_URL } from "@/env";
+import MyHomeModal from "./my-home-modal";
 
 const MyHeader = async ({ resultCate }) => {
   const responeContact = await fetch(`${BASE_API_URL}/contact`);
@@ -37,14 +38,12 @@ const MyHeader = async ({ resultCate }) => {
               </div> */}
               <SearchProduct />
               {/* Menu */}
-              <MyMenu resultCate={resultCate} resultContact={resultContact} />
+              {/* <MyMenu resultCate={resultCate} resultContact={resultContact} /> */}
+              <MyHomeModal categories={resultCate} />
               {/*End Menu */}
             </div>
             <div className="hidden md:grid col-span-7 xl:col-span-9 ">
-              <div className="flex items-center bg-white justify-between border ">
-                <SearchInput className="flex-1" />
-                <p className="bg-blue-900 text-white py-1 px-2 mr-1">Search</p>
-              </div>
+              <SearchInput className="flex-1" />
             </div>
             <div className="hidden sm:col-span-3 xl:col-span-2 md:flex space-x-4 text-nowrap justify-end ">
               <div className="text-white text-sm md:text-[16px] flex items-center ">

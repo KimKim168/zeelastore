@@ -2,8 +2,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Koulen, Siemreap, Poppins } from "next/font/google";
 
-
-
 import MyHeader from "@/components/my-header";
 import MyNavigation from "@/components/my-navigation";
 import { BASE_API_URL } from "@/env";
@@ -25,8 +23,13 @@ export default async function RootLayout({ children }) {
   // const res = await fetch(`${BASE_API_URL}/categories`);
   // const resultCate = await res.json();
   // console.log(resultCate);
-  const respone = await fetch(`${BASE_API_URL}/categories?withSub=2`);
+  const respone = await fetch(`${BASE_API_URL}/categories?withSub=2`, {
+    next: {
+      revalidate: 3600,
+    },
+  });
   const resultCate = await respone.json();
+  console.log(resultCate);
   return (
     <html lang="en">
       <body

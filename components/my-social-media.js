@@ -72,14 +72,12 @@ function MySocialMedia({ resultContact, resultLink }) {
           <div className="">
             <iframe
               src={resultContact.map}
-              width="600"
-              height="450"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Google Map Location"
-              className="rounded-md shadow-md"
+              className="w-full h-64 sm:h-80 md:w-[500px] md:h-[450px] rounded-md shadow-md"
             ></iframe>
           </div>
         </div>

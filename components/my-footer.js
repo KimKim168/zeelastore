@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { BASE_API_URL, IMAGE_BRAND_URL } from "@/env";
+import Link from "next/link";
 export default async function MyFooter() {
   const respone = await fetch(`${BASE_API_URL}/brands`);
   const brandData = await respone.json();
@@ -33,7 +34,11 @@ export default async function MyFooter() {
             </h2>
             <div className="grid grid-cols-5 sm:grid-cols-6 xl:grid-cols-8 gap-1 ">
               {brandData?.map((item) => (
-                <div key={item.id} className="col-span-1">
+                <Link
+                  href={`/products?brandId=${item.id}`}
+                  key={item.id}
+                  className="col-span-1"
+                >
                   <Image
                     src={IMAGE_BRAND_URL + item.image}
                     width={100}
@@ -41,7 +46,7 @@ export default async function MyFooter() {
                     alt=" brand product"
                     className="w-full aspect-video object-cover "
                   />
-                </div>
+                </Link>
               ))}
             </div>
           </div>

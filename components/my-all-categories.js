@@ -12,7 +12,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { AlignJustifyIcon } from "lucide-react";
+import { AlignJustifyIcon, ChevronDownIcon } from "lucide-react";
 import "./MyAllCategory.css"; // Import custom CSS for transitions
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
@@ -56,23 +56,24 @@ export default function MyAllCategory({ resultCate }) {
       <DropdownMenu open={isHovering}>
         <DropdownMenuTrigger asChild>
           <Button
-            variant="outline"
-            className="border-0 shadow-none"
+            variant="add"
+            className="border-0 text-base text-black p-0 md:p-2 hover:bg-slate-200 shadow-none"
             aria-haspopup="menu"
             aria-expanded={isHovering ? "true" : "false"}
           >
-            <AlignJustifyIcon className="w-12 h-12 md:w-20 md:h-20" />
+            <AlignJustifyIcon className="hidden md:block w-12 h-12 md:w-20 md:h-20" />
             All Categories
+            <ChevronDownIcon className="block md:hidden" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className={`w-56 dropdown-content ${isHovering ? "open" : ""}`}
+          className={`ml-5 w-56 dropdown-content ${isHovering ? "open" : ""}`}
         >
           <DropdownMenuGroup>
             {resultCate?.length > 0 &&
               resultCate.map((item) => (
                 <DropdownMenuSub key={item.id}>
-                  <div className="flex p-2 hover:font-bold hover:underline underline-offset-4">
+                  <div className=" flex p-2 hover:font-bold hover:underline underline-offset-4">
                     <button
                       onClick={() => handleSelectCategory(item.id)}
                       className="px-2 flex-1 text-start"
@@ -84,7 +85,7 @@ export default function MyAllCategory({ resultCate }) {
                     )}
                   </div>
                   <DropdownMenuPortal>
-                    <DropdownMenuSubContent className="min-w-0 w-56">
+                    <DropdownMenuSubContent className=" ml-3 ">
                       {item.sub_categories?.length > 0 &&
                         item.sub_categories.map((subItem) => (
                           <button

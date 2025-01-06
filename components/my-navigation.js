@@ -53,7 +53,7 @@ function MyNavigation({ resultCate }) {
                     : "text-black hover:text-blue-500"
                 }`}
               >
-                Contact us
+                Contact Us
               </a>
             </li>
 

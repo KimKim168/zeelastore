@@ -28,6 +28,7 @@ function MyCategoryComponent({ categories }) {
       params.delete("subCategoryId");
     } else {
       params.delete("categoryId");
+      params.delete("subCategoryId");
     }
     replace(`${pathname}?${params.toString()}`);
   };

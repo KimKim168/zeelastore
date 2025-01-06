@@ -12,10 +12,11 @@ export default function SearchInput() {
     console.log(params);
     if (value) {
       params.set("search", value);
+      params.set("page", 1);
     } else {
       params.delete("search");
     }
-    replace(`${pathname}?${params.toString()}`);
+    replace(`/products?${params.toString()}`);
   };
 
   return (

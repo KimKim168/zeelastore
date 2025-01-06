@@ -17,12 +17,38 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const frameworks = ["From A to Z", "From Z to A"];
+const framework = [
+  {
+    label: "From A to Z",
+    value: "asc",
+  },
+  {
+    label: "From Z to A",
+    value: "desc",
+  },
+];
 
 export function MyShortCharacter() {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+  const selectedDir = searchParams.get("orderDir");
+  const selectedDirObject = framework.find((item) => item.value == selectedDir);
+
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("From A to Z");
+  const [value, setValue] = React.useState(selectedDirObject?.label || "");
+
+  const handleSelect = (selectedValue) => {
+    const params = new URLSearchParams(searchParams);
+    if (selectedValue) {
+      params.set("orderDir", selectedValue);
+    } else {
+      params.delete("orderDir");
+    }
+    replace(`${pathname}?${params.toString()}`);
+  };
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -31,38 +57,37 @@ export function MyShortCharacter() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="min-w-[90px] px-2 gap-1 md:gap-2 md:px-4 max-w-[100px] md:min-w-[150px] md:max-w-[200px] py-2 justify-between md:py-5"
+          className="min-w-[90px] px-2 gap-1 md:gap-2 md:px-4 max-w-[130px] md:min-w-[150px] md:max-w-[200px] justify-between md:py-5"
         >
           <span className="text-[10px] md:text-sm">
-            <span
-              className={`${value ? "text-blue" : " "}`}
-            >
-              {value || "Select"}
+            <span className={`${value ? "text-blue font-bold" : ""}`}>
+              {value || "Sort Direction"}
             </span>
           </span>
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="max-w-[110px]  md:max-w-[200px] p-0">
+      <PopoverContent className="max-w-[130px] md:max-w-[200px] p-0">
         <Command>
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No options found.</CommandEmpty>
             <CommandGroup>
-              {frameworks.map((framework) => (
+              {framework.map((item) => (
                 <CommandItem
-                  key={framework}
-                  value={framework}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue);
+                  key={item.label}
+                  value={item.value}
+                  onSelect={() => {
+                    setValue(item.label);
+                    handleSelect(item.value);
                     setOpen(false);
                   }}
                   className="text-[10px] md:text-sm"
                 >
-                  {framework}
+                  {item.label}
                   <Check
                     className={cn(
                       "ml-auto",
-                      value === framework ? "opacity-100 " : "opacity-0"
+                      value === item.value ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>

@@ -18,6 +18,9 @@ function MyCategoryComponent({ categories }) {
   const { replace } = useRouter();
   // console.log(categories);
 
+  const currentCategoryId = searchParams.get("categoryId")?.toString();
+  const currentSubCategoryId = searchParams.get("subCategoryId")?.toString();
+
   const handleSelectCategory = (categoryId) => {
     const params = new URLSearchParams(searchParams);
     if (categoryId) {
@@ -43,10 +46,16 @@ function MyCategoryComponent({ categories }) {
   return (
     <>
       <div className="mt-4">
-        <p className="text-lg flex items-center  rounded-md justify-center gap-2 text-center p-2 background-gradient text-white">
+        <button
+          onClick={() => handleSelectCategory()}
+          className={`${
+            currentCategoryId == null &&
+            "underline text-white text-center background-gradient font-bold bg-primary group text-primary-foreground hover:text-primary"
+          } hover:bg-blue-300/10 p-2 py-2 rounded items-center flex gap-1 w-full text-[16px] hover:underline`}
+        >
           <AlignJustifyIcon />
           All Categories
-        </p>
+        </button>
         <Accordion
           type="single"
           collapsible
@@ -59,9 +68,9 @@ function MyCategoryComponent({ categories }) {
               className="space-y-4 mt-2"
             >
               <div
-                className={`flex justify-between text-hover hover:bg-blue-50 rounded-md hover:font-bold hover:underline underline-offset-4 ${
+                className={`flex justify-between hover:bg-blue-50 rounded-md hover:font-bold hover:underline underline-offset-4 ${
                   searchParams.get("categoryId") == item.id &&
-                  "font-bold underline"
+                  "font-bold underline background-gradient text-white"
                 }`}
               >
                 <Image
@@ -77,7 +86,14 @@ function MyCategoryComponent({ categories }) {
                 >
                   {item.name}
                 </button>
-                <AccordionTrigger className="text-sm text-black background-gradient-hover rounded-md hover:text-white  px-2"></AccordionTrigger>
+                {item.sub_categories?.length > 0 && (
+                  <AccordionTrigger
+                    className={`${
+                      currentCategoryId == item.id &&
+                      "underline  font-bold bg-gray-400 group text-white hover:text-primary"
+                    } p-0.5 text-[16px] rounded-tr rounded-br px-2 hover:bg-gray/10`}
+                  ></AccordionTrigger>
+                )}
               </div>
               <div
                 className="mx-6  border-l-2  border-gradient "
@@ -85,15 +101,18 @@ function MyCategoryComponent({ categories }) {
               >
                 {item.sub_categories?.length > 0 ? (
                   item.sub_categories.map((subItem) => (
-                    <AccordionContent key={subItem.id} className="px-1 pb-1 ">
+                    <AccordionContent
+                      key={subItem.id}
+                      className="px-1 pb-1 mt-2"
+                    >
                       <button
                         onClick={() =>
                           handleSelectSubCategory(subItem.id, item.id)
                         }
-                        className={` hover:underline  p-1 rounded-md text-hover hover:bg-gray-200 text-sm text-gray-500  underline-offset-2 flex items-center ${
-                          searchParams.get("subCategoryId") == subItem.id &&
-                          "font-bold underline"
-                        }`}
+                        className={`${
+                          currentSubCategoryId == subItem.id &&
+                          "underline font-semibold"
+                        } relative flex items-center  pl-2 max-w-[85%] w-full text-left underline-offset-4 cursor-pointer hover:underline`}
                       >
                         <ArrowRight width={15} className="hover:text-color" />
                         {subItem.name}

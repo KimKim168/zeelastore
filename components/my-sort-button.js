@@ -28,27 +28,27 @@ const framework = [
     label: "Price",
     value: "price",
   },
-  {
-    label: "Description",
-    value: "description",
-  },
 ];
 
 export function MyShortButton() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const router = useRouter();
+  const { replace } = useRouter();
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("Title");
+  const selectedValue = searchParams.get("orderBy"); //title
+  const selectedObject = framework.find((item) => item.value == selectedValue);
+  const [value, setValue] = React.useState(selectedObject?.label || "");
 
   const handleSelect = (selectedValue) => {
     const params = new URLSearchParams(searchParams);
+
     if (selectedValue) {
       params.set("orderBy", selectedValue);
+      params.set("orderDir", "desc");
     } else {
       params.delete("orderBy");
     }
-    router.replace(`${pathname}?${params.toString()}`);
+    replace(`${pathname}?${params.toString()}`);
   };
 
   return (
@@ -76,10 +76,10 @@ export function MyShortButton() {
             <CommandGroup>
               {framework.map((item) => (
                 <CommandItem
-                  key={item.label}
+                  key={item.value}
                   value={item.label}
                   onSelect={() => {
-                    setValue(item.value);
+                    setValue(item.label);
                     handleSelect(item.value);
                     setOpen(false);
                   }}
@@ -89,7 +89,7 @@ export function MyShortButton() {
                   <Check
                     className={cn(
                       "ml-auto",
-                      value === item.value ? "opacity-100" : "opacity-0"
+                      value == item.label ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>

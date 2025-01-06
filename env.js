@@ -7,6 +7,8 @@ const BASE_API_URL = BASE_BACKEND_URL + "/api";
 // const IMAGE_BOOK_URL = BASE_BACKEND_URL + "/assets/images/isbn/";
 const IMAGE_SLIDES_URL = BASE_BACKEND_URL + "/assets/images/slides/";
 const IMAGE_PRODUCT_URL = BASE_BACKEND_URL + "/assets/images/isbn/";
+const MULTI_IMAGE_PRODUCT_URL = BASE_BACKEND_URL + "/assets/images/books/";
+const IMAGE_BRAND_URL = BASE_BACKEND_URL + "/assets/images/brands/";
 const IMAGE_LINKS_URL = BASE_BACKEND_URL + "/assets/images/links/";
 const IMAGE_CATE_URL = BASE_BACKEND_URL + "/assets/images/categories/";
 const IMAGE_PAYMENT_URL = BASE_BACKEND_URL + "/assets/images/payments/";
@@ -18,8 +20,10 @@ export {
   IMAGE_CATE_URL,
   IS_SHOW_KID_BOOKS,
   IMAGE_LINKS_URL,
+  IMAGE_BRAND_URL,
   EXCHANGE_RATE,
   IMAGE_PRODUCT_URL,
+  MULTI_IMAGE_PRODUCT_URL,
   APP_URL,
   IMAGE_SLIDES_URL,
   BOOK_PDF_URL,

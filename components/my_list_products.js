@@ -11,7 +11,8 @@ import {
 } from "./ui/carousel";
 import { BASE_API_URL, IMAGE_PRODUCT_URL } from "@/env";
 
-export default async function  MyListProducts() {
+export default async function MyListProducts() {
+  // const res = await fetch(BASE_API_URL + "/brands?with_books=1"); //brands
   const res = await fetch(BASE_API_URL + "/category_with_products");
   const categories = await res.json();
   // console.log(categories);

@@ -7,8 +7,11 @@ import MyMenu from "./my-menu";
 // import MyLanguage from "./my-language";
 import { SearchProduct } from "./my-search-product";
 import SearchInput from "./ui/SearchInput";
+import { BASE_API_URL } from "@/env";
 
-const MyHeader = () => {
+const MyHeader = async ({ resultCate }) => {
+  const responeContact = await fetch(`${BASE_API_URL}/contact`);
+  const resultContact = await responeContact.json();
   return (
     <>
       <header className=" background-gradient py-3">
@@ -34,7 +37,7 @@ const MyHeader = () => {
               </div> */}
               <SearchProduct />
               {/* Menu */}
-              <MyMenu />
+              <MyMenu resultCate={resultCate} resultContact={resultContact} />
               {/*End Menu */}
             </div>
             <div className="hidden md:grid col-span-7 xl:col-span-9 ">
@@ -46,7 +49,7 @@ const MyHeader = () => {
             <div className="hidden sm:col-span-3 xl:col-span-2 md:flex space-x-4 text-nowrap justify-end ">
               <div className="text-white text-sm md:text-[16px] flex items-center ">
                 <PhoneCallIcon className="mr-1 md:mr-2 w-4 md:w-5"></PhoneCallIcon>
-                <p>015 222 772</p>
+                <p>{resultContact.phone}</p>
               </div>
               <div className="text-white space-x-4 flex items-center overflow-hidden">
                 <User className=" min-w-5"></User>

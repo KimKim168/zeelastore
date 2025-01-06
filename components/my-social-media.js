@@ -61,7 +61,7 @@ function MySocialMedia({ resultContact, resultLink }) {
                   rel="noopener noreferrer"
                   className="text-sm flex items-center gap-1 hover:text-blue-600 transition"
                 >
-                  {item.link} <IconLink className="w-4 h-4" />
+                  {item.name} <IconLink className="w-4 h-4" />
                 </a>
               </div>
             ))}
@@ -70,19 +70,17 @@ function MySocialMedia({ resultContact, resultLink }) {
         <div>
           <h2 className="text-xl font-bold mb-4">Find Us</h2>
           <div className="">
-            <a
-              href={resultContact.map}
-              aria-label="View our location on Google Maps"
-              target="_blank"
-            >
-              <Image
-                src="/assets/images/imageMap.png"
-                width={600}
-                height={600}
-                alt="Google Maps Placeholder"
-                className="w-full h-full  object-cover rounded-lg shadow-md"
-              />
-            </a>
+            <iframe
+              src={resultContact.map}
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Google Map Location"
+              className="rounded-md shadow-md"
+            ></iframe>
           </div>
         </div>
       </div>

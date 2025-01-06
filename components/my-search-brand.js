@@ -18,28 +18,42 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const frameworks = ["all", "dell", "apple", "asus", "mSI", "acer"];
+export function SearchBrand({ brand }) {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
 
-export function SearchBrand() {
+  const selectedBrand = brand?.find((b) => b.id == searchParams.get("brandId"));
+
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState();
+  const [value, setValue] = React.useState(selectedBrand?.name || "");
 
+  const handleSelect = (selectedValue) => {
+    const params = new URLSearchParams(searchParams);
+    if (selectedValue) {
+      params.set("brandId", selectedValue);
+    } else {
+      params.delete("brandId");
+    }
+    replace(`${pathname}?${params.toString()}`);
+  };
   return (
     <div>
-      <p className="text-lg text-center p-2 background-gradient rounded-md text-white">
+      <p className="text-lg text-start font-bold text-blue rounded-md ">
         Brands
       </p>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
-            variant="outline"
+            variant="add"
             role="combobox"
             aria-expanded={open}
-            className="w-full justify-between h-10 border-0 bg-gray-100  mt-4 text-sm text-blue"
+            className="w-full justify-between  h-10 text-sm text-black"
           >
-            {value ? value : "Select Brand..."}
-            <ChevronsUpDown className="opacity-50" />
+            {value ? `${value}` : "Select Brand..."}
+            <ChevronsUpDown size={15} className="opacity-50" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-full p-0">
@@ -48,20 +62,36 @@ export function SearchBrand() {
             <CommandList>
               <CommandEmpty>No Brand Found.</CommandEmpty>
               <CommandGroup>
-                {frameworks.map((framework) => (
+                <CommandItem
+                  onSelect={() => {
+                    handleSelect();
+                    setValue("");
+                    setOpen(false);
+                  }}
+                >
+                  All
+                  <Check
+                    className={cn(
+                      "ml-auto",
+                      value == "" ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                </CommandItem>
+                {brand?.map((item) => (
                   <CommandItem
-                    key={framework}
-                    value={framework}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
+                    key={item.id}
+                    value={item.name}
+                    onSelect={() => {
+                      handleSelect(item.id);
+                      setValue(item.name);
                       setOpen(false);
                     }}
                   >
-                    {framework}
+                    {item.name}
                     <Check
                       className={cn(
                         "ml-auto",
-                        value === framework ? "opacity-100" : "opacity-0"
+                        value == item.name ? "opacity-100" : "opacity-0"
                       )}
                     />
                   </CommandItem>

@@ -1,19 +1,40 @@
+import MyPagination from "@/components/my-pagination";
 import { BASE_API_URL, IMAGE_PRODUCT_URL } from "@/env";
+import { ListX } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default async function MyDataList({ search, categoryId }) {
+export default async function MyDataList({
+  search,
+  categoryId,
+  subCategoryId,
+  brandId,
+  priceFrom,
+  priceTo,
+  orderBy,
+  orderDir,
+  perPage,
+  page,
+}) {
   const res = await fetch(
-    `${BASE_API_URL}/products?search=${search || ""}&categoryId=${
-      categoryId || ""
-    }`
+    `${BASE_API_URL}/products?search=${search}&categoryId=${categoryId}&subCategoryId=${subCategoryId}&brandId=${brandId}&priceFrom=${priceFrom}&priceTo=${priceTo}&orderBy=${orderBy}&orderDir=${orderDir}&perPage=${perPage}&page=${page}`
   );
   const result = await res.json();
   const products = result?.data;
+
+  const from = result?.from;
+  const to = result?.to;
+  const total = result?.total;
+  const links = result?.links;
   return (
     <>
       <div className="flex-1 ">
+        {products?.length < 1 && (
+          <p className="flex gap-2 items-center justify-center w-full h-20">
+            <ListX /> No Data
+          </p>
+        )}
         <div className="mb-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 ">
           <>
             {products?.map((item) => (
@@ -45,6 +66,10 @@ export default async function MyDataList({ search, categoryId }) {
             ))}
           </>
         </div>
+        {/* pagination */}
+        {total > 0 && (
+          <MyPagination from={from} to={to} total={total} links={links} />
+        )}
       </div>
     </>
   );

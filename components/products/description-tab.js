@@ -9,7 +9,7 @@ import {
 } from "@radix-ui/react-accordion";
 import { ArrowUpDown } from "lucide-react";
 
-const DescriptionTab = ({ result }) => {
+const DescriptionTab = ({ description }) => {
   return (
     <>
       {/* <Tabs defaultValue="Specification" className=" mt-10">
@@ -61,9 +61,10 @@ const DescriptionTab = ({ result }) => {
 
           {/* Content Section */}
           <AccordionContent className="text-base transition-all duration-300 ease-in-out">
-            <div className="product-description">
-              {result.short_description}
-            </div>
+            <div
+              className="product-description prose max-w-none"
+              dangerouslySetInnerHTML={{ __html: description }}
+            ></div>
           </AccordionContent>
         </AccordionItem>
       </Accordion>

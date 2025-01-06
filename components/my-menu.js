@@ -10,11 +10,12 @@ import {
 } from "@/components/ui/sheet";
 import Image from "next/image";
 // import MyUser from "./my-user";
-import { PhoneCallIcon } from "lucide-react";
+import { Contact, Home, Package, PhoneCallIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
+import MyAllCategory from "./my-all-categories";
 // import MyLanguage from "./my-language";
 
-function MyMenu() {
+function MyMenu({ resultCate, resultContact }) {
   const pathname = usePathname();
 
   return (
@@ -37,30 +38,15 @@ function MyMenu() {
             <hr></hr>
             <ul className="text-start">
               <li className="my-3 flex items-center gap-3">
-                <Image
-                  src="/assets/images/list.png"
-                  width="25"
-                  height="25"
-                  alt="home"
-                />
-                <a
-                  href="#"
-                  className={`py-2 rounded ${
-                    pathname === "#"
-                      ? "underline underline-offset-4 text-blue font-semibold"
-                      : "text-black hover:text-blue-500"
-                  }`}
-                >
-                  All Categories
-                </a>
+                <MyAllCategory resultCate={resultCate} />
               </li>
               <li className="my-3 flex items-center gap-3">
-                <Image
+                {/* <Image
                   src="/assets/images/home.png"
                   width="25"
                   height="25"
                   alt="home"
-                />
+                /> */}
                 <a
                   href="/"
                   className={`py-2 rounded ${
@@ -73,12 +59,6 @@ function MyMenu() {
                 </a>
               </li>
               <li className="my-3 flex items-center gap-3">
-                <Image
-                  src="/assets/images/products.png" // Replace with the correct image path
-                  width="25"
-                  height="25"
-                  alt="about us"
-                />
                 <a
                   href="/products"
                   className={`py-2 rounded ${
@@ -91,12 +71,6 @@ function MyMenu() {
                 </a>
               </li>
               <li className="my-3 flex items-center gap-3">
-                <Image
-                  src="/assets/images/contact.png" // Replace with the correct image path
-                  width="25"
-                  height="25"
-                  alt="about us"
-                />
                 <a
                   href="/contact"
                   className={`py-2 rounded ${
@@ -127,12 +101,6 @@ function MyMenu() {
                 </a>
               </li> */}
               <li className="my-3 flex items-center gap-3">
-                <Image
-                  src="/assets/images/about.png" // Replace with the correct image path
-                  width="25"
-                  height="25"
-                  alt="about us"
-                />
                 <a
                   href="/about"
                   className={`py-2 rounded ${
@@ -150,7 +118,7 @@ function MyMenu() {
             <div className="text-black text-sm md:text-[16px] flex items-center justify-between">
               <div className="flex  items-center space-x-1">
                 <PhoneCallIcon className="mr-1 md:mr-2 w-5 md:w-5" />
-                <p className="text-[16px] text-start">015 222 772</p>
+                <p className="text-[16px] text-start">{resultContact.phone}</p>
               </div>
               {/* <MyUser /> */}
             </div>

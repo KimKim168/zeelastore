@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { AlignJustifyIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import MyAllCategory from "./my-all-categories";
 
-function MyNavigation() {
+function MyNavigation({ resultCate }) {
+  // console.log(resultCate);
   const pathname = usePathname();
   return (
     <>
@@ -17,7 +17,7 @@ function MyNavigation() {
                 className="flex items-center p-2 text-nowrap text-black rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                 aria-current="page"
               >
-                <MyAllCategory />
+                <MyAllCategory resultCate={resultCate} />
               </a>
             </li>
             <li>

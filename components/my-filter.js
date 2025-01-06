@@ -14,7 +14,7 @@ import MyDualRangPrice from "./my-dual-range-price";
 import MylastestProduct from "./my-lastest-product";
 import { FilterIcon } from "lucide-react";
 
-export default function Filter() {
+export default function Filter({ categories, brand }) {
   return (
     <>
       <section className="lg:hidden block">
@@ -28,9 +28,9 @@ export default function Filter() {
             </SheetHeader>
             {/* Scrollable content */}
             <div className="overflow-y-auto max-h-[calc(100vh-100px)] px-2">
-              <MyCategoryComponent />
+              <MyCategoryComponent categories={categories} />
               <hr className="my-8" />
-              <SearchBrand />
+              <SearchBrand brand={brand} />
               <hr className="my-8" />
               <MyDualRangPrice />
               <hr className="my-8" />

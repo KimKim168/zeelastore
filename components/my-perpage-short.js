@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 
@@ -16,12 +17,48 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const frameworks = ["10", "20", "10000"];
+const framework = [
+   {
+    label: "10",
+    value: "10",
+  },
+  {
+    label: "20",
+    value: "20",
+  },
+  {
+    label: "30",
+    value: "30",
+  },
+  {
+    label: "40",
+    value: "40",
+  },
+];
 
 export function MyPerpageShort() {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  const selectedPerPage = searchParams.get("perPage");
+  const selectedPerPageObj = framework.find(
+    (item) => item.value == selectedPerPage
+  );
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("10");
+  const [value, setValue] = React.useState(selectedPerPageObj?.label || " ");
+
+  const handleSelect = (selectedValue) => {
+    const params = new URLSearchParams(searchParams);
+    if (selectedValue) {
+      params.set("perPage", selectedValue);
+    } else {
+      params.delete("perPage");
+    }
+    replace(`${pathname}?${params.toString()}`);
+  };
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -30,37 +67,38 @@ export function MyPerpageShort() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="min-w-[90px] px-2 gap-1 md:gap-2 md:px-4 max-w-[130px] md:min-w-[150px] md:max-w-[200px] py-2 justify-between md:py-5"
+          className="min-w-[90px] px-2 gap-1 md:gap-2 md:px-4 max-w-[130px] md:min-w-[150px] md:max-w-[200px] justify-between md:py-5"
         >
           <span className="text-[10px] md:text-sm">
-            <span className={`${value ? "text-blue-700 " : " text-blue-700 "}`}>
+            <span className={`${value ? "text-blue font-bold" : ""}`}>
               {value || "Select"}
             </span>{" "}
             Per Page
           </span>
-          <ChevronsUpDown className="opacity-50 " />
+          <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[110px] md:max-w-[200px] p-0">
+      <PopoverContent className="max-w-[130px] md:max-w-[150px] p-0">
         <Command>
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No options found.</CommandEmpty>
             <CommandGroup>
-              {frameworks.map((framework) => (
+              {framework.map((item) => (
                 <CommandItem
-                  key={framework}
-                  value={framework}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue);
+                  key={item.label}
+                  value={item.value}
+                  onSelect={() => {
+                    setValue(item.label);
+                    handleSelect(item.value);
                     setOpen(false);
                   }}
                   className="text-[10px] md:text-sm"
                 >
-                  {framework}
+                  {item.label} Per Page
                   <Check
                     className={cn(
                       "ml-auto",
-                      value === framework ? "opacity-100" : "opacity-0"
+                      value === item.value ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>

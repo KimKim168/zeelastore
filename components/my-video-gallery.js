@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -80,23 +80,23 @@ export default function MyVideoGallery({ className, videos }) {
         {videos?.map((item, index) => (
           <div
             key={index}
-            className="cursor-pointer group border rounded-md overflow-hidden aspect-video shadow-md"
+            className="overflow-hidden border rounded-md shadow-md cursor-pointer group aspect-video"
             onClick={() => {
               setCurrentIndex(index); // Set current video index
               setIsOpen(true); // Open the lightbox
             }}
           >
-            <div className="w-full relative aspect-video  overflow-hidden">
+            <div className="relative w-full overflow-hidden aspect-video">
               <img
                 src={item.image} // Replace with dynamic thumbnail if available
                 alt=""
-                className="w-full aspect-video object-cover transition-all duration-300 transform group-hover:scale-105"
+                className="object-cover w-full transition-all duration-300 transform aspect-video group-hover:scale-105"
               />
               <span className="absolute bg-black/50 border-[0.5px] -translate-x-1/2 group-hover:bg-primary bg-primary/80 rounded-full p-1.5 -translate-y-1/2 text-white top-[50%] left-[50%]">
                 <Play size={24} />
               </span>
             </div>
-            {/* <div className="mt-1 text-center text-sm font-medium text-gray-700 group-hover:text-blue-500">
+            {/* <div className="mt-1 text-sm font-medium text-center text-gray-700 group-hover:text-blue-500">
               {item.title}
             </div> */}
           </div>
@@ -105,13 +105,13 @@ export default function MyVideoGallery({ className, videos }) {
 
       {videos?.length > 0 && (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogContent className="w-full max-w-full px-14 bg-black border-none h-full flex flex-col">
+          <DialogContent className="flex flex-col w-full h-full max-w-full bg-black border-none px-14">
             <DialogTitle className="hidden" />
             <DialogDescription className="hidden" />
             <div className="relative flex-grow">
               <iframe
                 src={`${getVideoUrl(videos[currentIndex].url)}?&autoplay=1`} // Ensure autoplay works on YouTube
-                className="rounded-2xl w-full h-full"
+                className="w-full h-full rounded-2xl"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
@@ -119,7 +119,7 @@ export default function MyVideoGallery({ className, videos }) {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute group top-1/2 left-2 transform -translate-y-1/2"
+              className="absolute transform -translate-y-1/2 group top-1/2 left-2"
               onClick={prevSlide}
               aria-label="Previous video"
               disabled={currentIndex === 0} // Disable button if on the first video
@@ -132,7 +132,7 @@ export default function MyVideoGallery({ className, videos }) {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute group top-1/2 right-2 transform -translate-y-1/2"
+              className="absolute transform -translate-y-1/2 group top-1/2 right-2"
               onClick={nextSlide}
               aria-label="Next video"
               disabled={currentIndex === videos.length - 1} // Disable button if on the last video
@@ -141,6 +141,10 @@ export default function MyVideoGallery({ className, videos }) {
                 className="text-white group-hover:text-black"
                 size={28}
               />
+            </Button>
+            <Button onClick={() => setIsOpen(false)} size='icon' variant='ghost' className="absolute right-4 z-50 top-4 border-white text-white rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 data-[state=open]:text-neutral-500 dark:ring-offset-neutral-950 dark:focus:ring-neutral-300 dark:data-[state=open]:bg-neutral-800 dark:data-[state=open]:text-neutral-400">
+              <X className="w-8 h-8" />
+              <span className="sr-only">Close</span>
             </Button>
           </DialogContent>
         </Dialog>

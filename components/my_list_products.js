@@ -19,17 +19,17 @@ export default async function MyListProducts() {
 
   return (
     <>
-      <section className="max-w-screen-2xl  mx-auto px-2 xl:px-20 py-5">
+      <section className="px-2 py-5 mx-auto max-w-screen-2xl xl:px-20">
         {categories?.map(
           (category) =>
             category.books?.length > 0 && (
               <div key={category.id}>
-                <div className="flex mt-8 justify-between items-center border-b-2 pb-1 border-blue-bold  mb-4">
+                <div className="flex items-center justify-between pb-1 mt-8 mb-4 border-b-2 border-blue-bold">
                   <p className="text-[12px] sm:text-[16px] md:text-[17px] border-double shadow-md  text-white border-x-[5px] background-gradient1 rounded-tl-full rounded-br-full px-8 py-1">
                     {category.name}
                   </p>
                   <Link
-                    href="/products?categoryId="
+                    href={`/products?categoryId=${category.id}`}
                     className="text-[12px] sm:text-[16px] md:text-[17px] hover:underline cursor-pointer text-hover"
                   >
                     View More
@@ -42,13 +42,13 @@ export default async function MyListProducts() {
                         {category.books?.map((item, id) => (
                           <CarouselItem
                             key={id}
-                            className="pl-1 basis-1/2  sm:basis-1/3 md:basis-1/4 xl:basis-1/5 2xl:basis-1/6"
+                            className="pl-1 basis-1/2 sm:basis-1/3 md:basis-1/4 xl:basis-1/5 2xl:basis-1/6"
                           >
                             {/* Product Card */}
-                            <div className="border h-full border-blue p-2">
+                            <div className="h-full p-2 border border-blue">
                               <Link href={`/products/${item.id}`}>
                                 <Image
-                                  className="mx-auto w-full aspect-square object-contain dark:hidden transition-transform duration-300 hover:scale-105"
+                                  className="object-contain w-full mx-auto transition-transform duration-300 aspect-square dark:hidden hover:scale-105"
                                   src={IMAGE_PRODUCT_URL + item.image}
                                   width={600}
                                   height={600}
@@ -58,11 +58,11 @@ export default async function MyListProducts() {
                               <div className="pt-2">
                                 <Link
                                   href={`/products/${item.id}`}
-                                  className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white"
+                                  className="text-sm leading-tight text-gray-500 line-clamp-2 hover:underline dark:text-white"
                                 >
                                   {item.title}
                                 </Link>
-                                <div className=" text-sm mt-1 overflow-hidden justify-between items-center">
+                                <div className="items-center justify-between mt-1 overflow-hidden text-sm ">
                                   <div className="text-color grid grid-cols-12 justify-between overflow-hidden text-sm md:text-[16px]">
                                     <p className="col-span-6">Price:</p>
                                     <p className="col-span-6 text-end">

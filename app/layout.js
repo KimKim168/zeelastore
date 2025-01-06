@@ -32,7 +32,9 @@ export default function RootLayout({ children }) {
         <HomeHeader />
 
         {/*End Slider */}
-        <Suspense fallback={<MyLoadingAnimation />}>{children}</Suspense>
+        <Suspense fallback={<MyLoadingAnimation />}>
+          <div className="min-h-[70vh]">{children}</div>
+        </Suspense>
 
         {/* Footer */}
 

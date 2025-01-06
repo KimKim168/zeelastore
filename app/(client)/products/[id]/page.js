@@ -166,7 +166,7 @@ export default async function MyProduct({ params }) {
         {/* <div className="flex items-center justify-between w-full pb-0 mt-5 mb-8 border-b-2 hover:no-underline border-blue-bold"></div> */}
       </section>
       {resultProductRelated?.data?.length > 0 && (
-        <MyRelatedProduct productRelated={resultProductRelated.data} />
+        <MyRelatedProduct categoryId={result?.category_id} productRelated={resultProductRelated.data} />
       )}
     </>
   );

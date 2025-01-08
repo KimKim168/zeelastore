@@ -41,7 +41,7 @@ const MyHomeModal = ({ categories }) => {
         </SheetTrigger>
         <SheetContent
           side="left"
-          className="w-[300px] sm:w-[540px] overscroll-y-auto"
+          className="w-[300px] p-0 pt-2 sm:w-[540px] overscroll-y-auto"
         >
           <SheetHeader>
             <SheetTitle>Menu</SheetTitle>
@@ -50,7 +50,7 @@ const MyHomeModal = ({ categories }) => {
             <div className="pt-2">
               <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className="w-full border-b-2 p-2 py-2 mb-1 text-lg font-semibold  hover:bg-primary hover:text-primary-foreground">
+                  <AccordionTrigger className="w-full p-2 py-2 mb-1 text-lg font-semibold border-b-2 hover:bg-primary hover:text-primary-foreground">
                     Categories
                   </AccordionTrigger>
                   <AccordionContent>

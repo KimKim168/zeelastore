@@ -38,17 +38,17 @@ export default async function MyDataList({
         <div className="grid grid-cols-2 gap-4 mb-4 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 ">
           <>
             {products?.map((item) => (
-              <div key={item.id} className="p-2 border border-blue">
+              <div key={item.id} className="overflow-hidden border border-blue">
                 <Link href={`/products/${item.id}`} key={item.id}>
                   <Image
                     width={600}
                     height={600}
-                    className="object-contain w-full mx-auto transition-transform duration-300 aspect-square dark:hidden hover:scale-105"
+                    className="object-contain w-full mx-auto transition-transform duration-300 border-b aspect-square dark:hidden hover:scale-105"
                     src={IMAGE_PRODUCT_URL + item.image}
                     alt="product"
                   />
                 </Link>
-                <div className="pt-2">
+                <div className="p-2">
                   <Link
                     href={`/products/${item.id}`}
                     className="text-sm leading-tight text-gray-500 line-clamp-2 hover:underline dark:text-white"

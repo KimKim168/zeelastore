@@ -37,11 +37,11 @@ const MyPagination = ({ links, from, to, total }) => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full md:justify-between ">
-      <p className="hidden whitespace-nowrap md:block">
-        showing {from} to {to} of {total} results
-      </p>
-      <Pagination className="w-auto mx-0">
+    <div className="flex items-center content-between justify-center w-full md:justify-end">
+      {/* <p className="hidden whitespace-nowrap md:block">
+        {from} to {to} of {total} results
+      </p> */}
+      <Pagination className="self-end w-auto mx-0">
         <PaginationContent>
           {/* Previous Button */}
           <PaginationItem>

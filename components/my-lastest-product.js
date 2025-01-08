@@ -38,30 +38,30 @@ function MylastestProduct() {
 
   return (
     <div >
-      <p className="text-lg text-center p-2 rounded-md background-gradient text-white">
+      <p className="p-2 text-lg text-center text-white rounded-md background-gradient">
         New Products
       </p>
-      <div className="bg-gray-50">
+      <div className="pt-2 bg-gray-50">
         {products.map((item) => (
           <Link href={`/products/${item.id}`} key={item.id}>
-            <div key={item.id} className="grid grid-cols-12 p-3 ">
-              <div className="col-span-5">
+            <div key={item.id} className="grid grid-cols-12 gap-2 p-2 overflow-hidden border-b">
+              <div className="col-span-3">
                 <Image
                   src={`${IMAGE_PRODUCT_URL}${item.image}`}
-                  width={600}
-                  height={600}
-                  alt={`Image of ${item.name}`}
-                  className="object-contain aspect-[16/9]"
+                  width={300}
+                  height={300}
+                  alt="img"
+                  className="object-contain aspect-square"
                   loading="lazy"
                 />
               </div>
-              <div className="col-span-7">
-                <p className="text-sm line-clamp-2 leading-tight text-gray-900 text-hover hover:underline dark:text-white">
+              <div className="col-span-9">
+                <p className="text-sm leading-tight text-gray-900 line-clamp-2 text-hover hover:underline dark:text-white">
                   {item.title}
                 </p>
                 <p>
                   Price:{" "}
-                  <span className="text-color ml-3 xl:ml-5">${item.price}</span>
+                  <span className="ml-3 text-color xl:ml-5">${item.price}</span>
                 </p>
               </div>
             </div>

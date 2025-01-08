@@ -66,7 +66,9 @@ export default function MyAllCategory({ resultCate }) {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className={`ml-5 w-56 dropdown-content ${isHovering ? "open" : ""}`}
+          className={`ml-5 w-60 dropdown-content max-h-[450px] scroll-smooth scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-500 rounded-none px-0 shadow-lg overflow-y-auto ${
+            isHovering ? "open" : ""
+          }`}
         >
           <DropdownMenuGroup>
             {resultCate?.length > 0 &&
@@ -75,16 +77,21 @@ export default function MyAllCategory({ resultCate }) {
                   <div className="flex p-2 hover:font-bold hover:underline underline-offset-4">
                     <button
                       onClick={() => handleSelectCategory(item.id)}
-                      className="flex-1 px-2 text-start"
+                      className="flex items-center flex-1 gap-1 px-2 text-sm text-start"
                     >
-                      {item.name}
+                      {item.name}{" "}
+                      {item.books_count > 0 && (
+                        <span className="text-xs text-primary">
+                          ({item.books_count})
+                        </span>
+                      )}
                     </button>
                     {item.sub_categories?.length > 0 && (
                       <DropdownMenuSubTrigger className="text-sm text-black rounded-md" />
                     )}
                   </div>
                   <DropdownMenuPortal>
-                    <DropdownMenuSubContent className="ml-3 ">
+                    <DropdownMenuSubContent className="ml-3 w-60">
                       {item.sub_categories?.length > 0 &&
                         item.sub_categories.map((subItem) => (
                           <button
@@ -94,8 +101,13 @@ export default function MyAllCategory({ resultCate }) {
                             }
                             className="w-full text-start"
                           >
-                            <p className="p-2 text-sm hover:bg-slate-200">
-                              {subItem.name}
+                            <p className="flex items-center justify-start gap-1 p-2 text-sm hover:bg-slate-200">
+                              {subItem.name}{" "}
+                              {subItem.books_count > 0 && (
+                                <span className="text-xs text-primary">
+                                  ({subItem.books_count})
+                                </span>
+                              )}
                             </p>
                           </button>
                         ))}

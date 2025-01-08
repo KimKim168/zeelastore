@@ -115,6 +115,7 @@ body {
 /* Customize the scrollbar */
 ::-webkit-scrollbar {
   height: 2px; /* Height for horizontal scrollbar */
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {

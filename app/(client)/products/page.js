@@ -35,7 +35,7 @@ async function page(props) {
       <div className="min-h-[50vh] max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 ">
         <div className="flex gap-4">
           {/* Left Content */}
-          <div className="w-[270px] hidden lg:block">
+          <div className="w-[240px] hidden lg:block">
             {/* Category */}
             <MyCategoryComponent
               key={search + categoryId + subCategoryId}

@@ -1,4 +1,5 @@
 import { BASE_API_URL, IMAGE_PRODUCT_URL } from "@/env";
+import { ChevronRightSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,9 +10,9 @@ export default async function MyNewProduct() {
 
   return (
     <>
-      <div className=" max-w-screen-2xl mx-auto px-2 xl:px-20 py-5">
+      <div className="px-2 py-5 mx-auto max-w-screen-2xl xl:px-20">
         <div>
-          <div className="flex justify-between items-center border-b-2 pb-1 border-blue-bold  mb-4">
+          <div className="flex items-center justify-between pb-1 mb-4 border-b-2 border-blue-bold">
             <p className="text-[12px]  sm:text-[16px] md:text-[17px] border-double shadow-md  text-white border-x-[5px] background-gradient1 rounded-tl-full rounded-br-full px-8 py-1">
               New Products
             </p>
@@ -23,26 +24,26 @@ export default async function MyNewProduct() {
             </Link>
           </div>
         </div>
-        <div className="mb-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 mb-4 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">
           {result.map((item) => (
-            <div key={item.id} className="border border-blue p-2">
+            <div key={item.id} className="overflow-hidden border border-blue">
               <Link href={`/products/${item.id}`}>
                 <Image
-                  className="mx-auto  w-full aspect-square object-contain dark:hidden transition-transform duration-300 hover:scale-105"
+                  className="object-contain w-full mx-auto transition-transform duration-300 border-b aspect-square dark:hidden hover:scale-105"
                   width={600}
                   height={600}
                   src={IMAGE_PRODUCT_URL + item.image}
                   alt="product"
                 />
               </Link>
-              <div className="pt-2">
+              <div className="p-2">
                 <Link
                   href={`/products/${item.id}`}
-                  className="text-sm line-clamp-2 leading-tight text-gray-500 hover:underline dark:text-white"
+                  className="text-sm leading-tight text-gray-500 line-clamp-2 hover:underline dark:text-white"
                 >
                   {item.title}
                 </Link>
-                <div className=" text-sm mt-1 overflow-hidden justify-between items-center">
+                <div className="items-center justify-between mt-1 overflow-hidden text-sm ">
                   <div className="text-color grid grid-cols-12 justify-between overflow-hidden text-sm md:text-[16px]">
                     <p className="col-span-6">Price:</p>
                     <p className="col-span-6 text-end">${item.price}</p>

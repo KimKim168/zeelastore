@@ -16,14 +16,18 @@ import React from "react";
 
 export default async function MyProduct({ params }) {
   const { id } = await params;
-  const respone = await fetch(`${BASE_API_URL}/products/${id}`, {next: {revalidate: 3600}});
+  const respone = await fetch(`${BASE_API_URL}/products/${id}`, {
+    next: { revalidate: 3600 },
+  });
   const result = await respone.json();
   // console.log(result);
   const brand = result?.brand;
   const category = result?.category;
   const sub_category = result?.sub_category;
 
-  const responeLink = await fetch(`${BASE_API_URL}/links`, {next: {revalidate: 3600}});
+  const responeLink = await fetch(`${BASE_API_URL}/links`, {
+    next: { revalidate: 3600 },
+  });
   const resultLink = await responeLink.json();
   const images = result?.images.map(
     (item) => `${MULTI_IMAGE_PRODUCT_URL}${item.image}`
@@ -37,13 +41,16 @@ export default async function MyProduct({ params }) {
   });
   // console.log(videos);
   const productRelated = await fetch(
-    `${BASE_API_URL}/products?categoryId=${result?.category_id}`, {next: {revalidate: 3600}}
+    `${BASE_API_URL}/products?categoryId=${result?.category_id}`,
+    { next: { revalidate: 3600 } }
   );
   const resultProductRelated = await productRelated.json();
   // console.log(resultProductRelated.data);
-  const res = await fetch(`${BASE_API_URL}/categories?withSub=2`, {next: {revalidate: 3600}});
+  const res = await fetch(`${BASE_API_URL}/categories?withSub=2`, {
+    next: { revalidate: 3600 },
+  });
   const categories = await res.json();
-
+  console.log([`${IMAGE_PRODUCT_URL}${result?.image}`, ...images]);
   return (
     <>
       <section className="px-2 mx-auto mt-5 mb-10 max-w-screen-2xl xl:px-20 ">
@@ -68,7 +75,7 @@ export default async function MyProduct({ params }) {
                         <li className="col-span-6 ">Shipping:</li>
                         <li className="col-span-6 text-gray-700">
                           {" "}
-                          {result?.shipping > 0.0 ? result?.shipping : "Free"}
+                          {result?.shipping > 0.0 ? `${result?.shipping} $` : "Free"}
                         </li>
                       </ul>
                     </li>
@@ -166,7 +173,10 @@ export default async function MyProduct({ params }) {
         {/* <div className="flex items-center justify-between w-full pb-0 mt-5 mb-8 border-b-2 hover:no-underline border-blue-bold"></div> */}
       </section>
       {resultProductRelated?.data?.length > 0 && (
-        <MyRelatedProduct categoryId={result?.category_id} productRelated={resultProductRelated.data} />
+        <MyRelatedProduct
+          categoryId={result?.category_id}
+          productRelated={resultProductRelated.data}
+        />
       )}
     </>
   );

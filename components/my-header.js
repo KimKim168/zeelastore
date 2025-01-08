@@ -5,6 +5,7 @@ import { SearchProduct } from "./my-search-product";
 import SearchInput from "./ui/SearchInput";
 import MyHomeModal from "./my-home-modal";
 import { Suspense } from "react";
+import { BASE_BACKEND_URL } from "@/env";
 
 const MyHeader = ({ resultCate, resultContact }) => {
   return (
@@ -51,7 +52,9 @@ const MyHeader = ({ resultCate, resultContact }) => {
                 <p>{resultContact.phone}</p>
               </div>
               <div className="flex items-center space-x-4 overflow-hidden text-white">
-                <User className=" min-w-5"></User>
+                <Link href={BASE_BACKEND_URL}>
+                  <User className=" min-w-5"></User>
+                </Link>
 
                 {/* <MyLanguage /> */}
               </div>

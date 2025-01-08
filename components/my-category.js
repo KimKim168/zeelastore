@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import { AlignJustifyIcon, ArrowRight } from "lucide-react";
+import { AlignJustifyIcon, ArrowRight, ChevronsRightIcon, Dot } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { IMAGE_CATE_URL } from "@/env";
 import Image from "next/image";
@@ -46,7 +46,7 @@ function MyCategoryComponent({ categories }) {
 
   return (
     <>
-      <div className="mt-4">
+      <div className="w-full mt-4">
         <button
           onClick={() => handleSelectCategory()}
           className={`${
@@ -66,38 +66,45 @@ function MyCategoryComponent({ categories }) {
             <AccordionItem
               key={item.id}
               value={`${item.id}`}
-              className="space-y-4 mt-2"
+              className="w-full mt-2 space-y-4"
             >
               <div
-                className={`flex justify-between hover:bg-blue-50 rounded-md hover:font-bold hover:underline underline-offset-4 ${
+                className={`flex justify-between   rounded-md hover:font-bold hover:underline underline-offset-4 ${
                   searchParams.get("categoryId") == item.id &&
                   "font-bold underline background-gradient text-white"
                 }`}
               >
                 <Image
                   src={IMAGE_CATE_URL + item.image}
-                  width={40}
-                  height={40}
-                  alt="image"
-                  className="aspect-square mx-2 object-contain"
+                  width={30}
+                  height={30}
+                  alt="img"
+                  className="object-contain ml-2 aspect-square"
                 />
                 <button
                   onClick={() => handleSelectCategory(item.id)}
-                  className=" px-2 flex-1 text-start"
+                  className="flex items-center justify-start flex-1 gap-1 px-2 text-sm text-start"
                 >
                   {item.name}
+                  {item.books_count > 0 && (
+                    <span className="text-xs text-primary">
+                      ({item.books_count})
+                    </span>
+                  )}
                 </button>
                 {item.sub_categories?.length > 0 && (
-                  <AccordionTrigger
-                    className={`${
-                      currentCategoryId == item.id &&
-                      "underline  font-bold bg-gray-400 group text-white hover:text-primary"
-                    } p-0.5 text-[16px] rounded-tr rounded-br px-2 hover:bg-gray/10`}
-                  ></AccordionTrigger>
+                  <span className="flex items-center justify-center rounded-md hover:bg-gray-100">
+                    <AccordionTrigger
+                      className={`${
+                        currentCategoryId == item.id &&
+                        "underline  font-bold bg-gray-400 group text-white hover:text-primary"
+                      } p-0.5 text-[16px] rounded-tr rounded-br px-2 hover:bg-gray/10`}
+                    ></AccordionTrigger>
+                  </span>
                 )}
               </div>
               <div
-                className="mx-6  border-l-2  border-gradient "
+                className="ml-6 border-l-2 border-gradient "
                 style={{ marginTop: "0" }}
               >
                 {item.sub_categories?.length > 0 ? (
@@ -113,16 +120,21 @@ function MyCategoryComponent({ categories }) {
                         className={`${
                           currentSubCategoryId == subItem.id &&
                           "underline font-semibold"
-                        } relative flex items-center  pl-2 max-w-[85%] w-full text-left underline-offset-4 cursor-pointer hover:underline`}
+                        } relative flex items-center max-w-full text-left underline-offset-4 w-full text-xs gap-1 cursor-pointer justify-start  hover:underline`}
                       >
-                        <ArrowRight width={15} className="hover:text-color" />
+                        <Dot width={15} className="hover:text-color" />
                         {subItem.name}
+                        {subItem.books_count > 0 && (
+                          <span className="text-xs text-primary">
+                            ({subItem.books_count})
+                          </span>
+                        )}
                       </button>
                     </AccordionContent>
                   ))
                 ) : (
                   <AccordionContent>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-sm text-gray-500">
                       No subcategories available.
                     </p>
                   </AccordionContent>

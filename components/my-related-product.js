@@ -22,11 +22,11 @@ export default function MyRelatedProduct({ productRelated, categoryId }) {
         </div>
         <div className="grid grid-cols-2 gap-4 mb-4 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">
           {productRelated?.map((item) => (
-            <div key={item.id} className="p-2 border border-blue">
+            <div key={item.id} className="overflow-hidden border border-blue">
               <div className="w-full aspect-square">
                 <Link href="/products">
                   <Image
-                    className="object-contain w-full mx-auto transition-transform duration-300 aspect-square dark:hidden hover:scale-105"
+                    className="object-contain w-full mx-auto transition-transform duration-300 border-b aspect-square dark:hidden hover:scale-105"
                     width={600}
                     height={600}
                     src={IMAGE_PRODUCT_URL + item.image}
@@ -34,7 +34,7 @@ export default function MyRelatedProduct({ productRelated, categoryId }) {
                   />
                 </Link>
               </div>
-              <div className="pt-2">
+              <div className="p-2">
                 <Link
                   href="/products"
                   className="text-sm leading-tight text-gray-500 line-clamp-2 hover:underline dark:text-white"

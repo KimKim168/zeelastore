@@ -42,20 +42,20 @@ export default async function MyListProducts() {
                         {category.books?.map((item, id) => (
                           <CarouselItem
                             key={id}
-                            className="pl-1 basis-1/2 sm:basis-1/3 md:basis-1/4 xl:basis-1/5 2xl:basis-1/6"
+                            className="pl-1 basis-1/2 sm:basis-1/3 md:basis-1/4 xl:basis-1/6"
                           >
                             {/* Product Card */}
-                            <div className="h-full p-2 border border-blue">
+                            <div className="h-full overflow-hidden border border-blue">
                               <Link href={`/products/${item.id}`}>
                                 <Image
-                                  className="object-contain w-full mx-auto transition-transform duration-300 aspect-square dark:hidden hover:scale-105"
+                                  className="object-contain w-full mx-auto transition-transform duration-300 border-b aspect-square dark:hidden hover:scale-105"
                                   src={IMAGE_PRODUCT_URL + item.image}
                                   width={600}
                                   height={600}
                                   alt="product "
                                 />
                               </Link>
-                              <div className="pt-2">
+                              <div className="p-2">
                                 <Link
                                   href={`/products/${item.id}`}
                                   className="text-sm leading-tight text-gray-500 line-clamp-2 hover:underline dark:text-white"

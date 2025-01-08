@@ -9,7 +9,7 @@ function MyDualRangePrice() {
   const pathname = usePathname();
   const { replace } = useRouter();
   const priceFrom = searchParams.get("priceFrom") || 0;
-  const priceTo = searchParams.get("priceTo") || 2000;
+  const priceTo = searchParams.get("priceTo") || 5000;
   const [values, setValues] = useState([Number(priceFrom), Number(priceTo)]);
 
   const handleSelect = ([priceFrom, priceTo]) => {
@@ -22,7 +22,7 @@ function MyDualRangePrice() {
   return (
     <div>
       <div className="mb-10">
-        <p className="text-lg text-start font-bold text-blue rounded-md ">
+        <p className="text-lg font-bold rounded-md text-start text-blue ">
           Price
         </p>
       </div>
@@ -32,7 +32,7 @@ function MyDualRangePrice() {
           value={values}
           onValueChange={setValues}
           min={0}
-          max={2000}
+          max={5000}
           step={5}
         />
       </div>
@@ -41,7 +41,7 @@ function MyDualRangePrice() {
           onClick={() => handleSelect(values)}
           variant="add"
           type="submit"
-          className="w-full  shadow-transparent  hover:text-blue-900 hover:font-bold h-10 px-4 hover:bg-gray-50 rounded"
+          className="w-full h-10 px-4 rounded shadow-transparent hover:text-blue-900 hover:font-bold hover:bg-gray-50"
         >
           Apply Filter
         </Button>

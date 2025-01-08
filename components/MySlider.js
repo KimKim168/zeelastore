@@ -22,11 +22,11 @@ export default function MySlider({ imagesTop, imagesBottom }) {
   }, [imagesTop.length]);
 
   return (
-    <div className="max-w-screen-2xl mt-2 mx-auto px-2 xl:px-20 ">
+    <div className="px-2 mx-auto mt-2 max-w-screen-2xl xl:px-20 ">
       <Carousel className="w-full" selectedindex={currentIndex}>
         <CarouselContent>
           <div
-            className="flex transition-transform duration-500 relative"
+            className="relative flex transition-transform duration-500"
             style={{
               transform: `translateX(-${currentIndex * 100}%)`,
             }}
@@ -46,7 +46,7 @@ export default function MySlider({ imagesTop, imagesBottom }) {
         </CarouselContent>
 
         {/* Dot Indicators */}
-        <div className="flex justify-center space-x-3 absolute bottom-3 left-1/2 transform -translate-x-1/2 items-center">
+        <div className="absolute flex items-center justify-center space-x-3 transform -translate-x-1/2 bottom-3 left-1/2">
           {imagesTop.map((_, index) => (
             <div
               key={index}
@@ -61,26 +61,26 @@ export default function MySlider({ imagesTop, imagesBottom }) {
 
         {/* Uncomment the buttons if you want manual controls */}
         {/* 
-        <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" />
-        <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" />
+        <CarouselPrevious className="absolute left-0 p-2 text-white transform -translate-y-1/2 bg-gray-800 rounded-full top-1/2" />
+        <CarouselNext className="absolute right-0 p-2 text-white transform -translate-y-1/2 bg-gray-800 rounded-full top-1/2" />
         */}
       </Carousel>
-      <div className=" mt-2 md:mt-5 mx-auto">
+      <div className="mx-auto mt-2 ">
         <Carousel
           opts={{
             align: "start",
           }}
-          className="w-full overflow-hidden "
+          className="w-full gap-2 overflow-hidden"
         >
           <CarouselContent>
             {imagesBottom.map((item, index) => (
               <CarouselItem
                 key={index}
-                className="basis-1/2 pl-0 lg:basis-1/3 "
+                className="pl-0 basis-1/2 lg:basis-1/3 "
               >
                 <div className="p-1">
                   <Card className="rounded-none ">
-                    <CardContent className="p-0 flex  items-center justify-center">
+                    <CardContent className="flex items-center justify-center p-0">
                       <Image
                         src={IMAGE_SLIDES_URL + item.image}
                         alt={`src ${index + 1}`}

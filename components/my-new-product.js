@@ -24,7 +24,7 @@ export default async function MyNewProduct() {
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4 mb-4 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">
+        <div className="grid grid-cols-2 gap-2 mb-4 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">
           {result.map((item) => (
             <div key={item.id} className="overflow-hidden border border-blue">
               <Link href={`/products/${item.id}`}>

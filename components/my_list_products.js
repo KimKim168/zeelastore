@@ -42,7 +42,7 @@ export default async function MyListProducts() {
                         {category.books?.map((item, id) => (
                           <CarouselItem
                             key={id}
-                            className="pl-1 basis-1/2 sm:basis-1/3 md:basis-1/4 xl:basis-1/6"
+                            className="pl-2 basis-1/2 sm:basis-1/3 md:basis-1/4 xl:basis-1/6"
                           >
                             {/* Product Card */}
                             <div className="h-full overflow-hidden border border-blue">

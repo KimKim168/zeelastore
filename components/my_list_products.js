@@ -10,6 +10,7 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import { BASE_API_URL, IMAGE_PRODUCT_URL } from "@/env";
+import MyDescoundOnListProducts from "./my-descound-on-list-products";
 
 export default async function MyListProducts() {
   // const res = await fetch(BASE_API_URL + "/brands?with_books=1"); //brands
@@ -46,7 +47,7 @@ export default async function MyListProducts() {
                           >
                             {/* Product Card */}
                             <div className="h-full overflow-hidden border border-blue">
-                              <Link href={`/products/${item.id}`}>
+                              <Link href={`/products/${item.id}`} className="relative">
                                 <Image
                                   className="object-contain w-full mx-auto transition-transform duration-300 border-b aspect-square dark:hidden hover:scale-105"
                                   src={IMAGE_PRODUCT_URL + item.image}
@@ -54,6 +55,9 @@ export default async function MyListProducts() {
                                   height={600}
                                   alt="product "
                                 />
+                                <div className="absolute top-0 ">
+                                  <MyDescoundOnListProducts />
+                                </div>
                               </Link>
                               <div className="p-2">
                                 <Link

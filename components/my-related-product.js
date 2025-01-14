@@ -24,7 +24,7 @@ export default function MyRelatedProduct({ productRelated, categoryId }) {
           {productRelated?.map((item) => (
             <div key={item.id} className="overflow-hidden border border-blue">
               <div className="w-full aspect-square">
-                <Link href="/products">
+                <Link href={`/products/${item.id}`}>
                   <Image
                     className="object-contain w-full mx-auto transition-transform duration-300 border-b aspect-square dark:hidden hover:scale-105"
                     width={600}
@@ -36,7 +36,7 @@ export default function MyRelatedProduct({ productRelated, categoryId }) {
               </div>
               <div className="p-2">
                 <Link
-                  href="/products"
+                  href={`/products/${item.id}`}
                   className="text-sm leading-tight text-gray-500 line-clamp-2 hover:underline dark:text-white"
                 >
                   {item.title}

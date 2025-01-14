@@ -3,6 +3,7 @@ import { ChevronRightSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import MyIconOnProduct from "./my-icon-on-product";
 
 export default async function MyNewProduct() {
   const respone = await fetch(`${BASE_API_URL}/new_products`);
@@ -27,7 +28,7 @@ export default async function MyNewProduct() {
         <div className="grid grid-cols-2 gap-2 mb-4 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">
           {result.map((item) => (
             <div key={item.id} className="overflow-hidden border border-blue">
-              <Link href={`/products/${item.id}`}>
+              <Link href={`/products/${item.id}`} className="relative">
                 <Image
                   className="object-contain w-full mx-auto transition-transform duration-300 border-b aspect-square dark:hidden hover:scale-105"
                   width={600}
@@ -35,6 +36,9 @@ export default async function MyNewProduct() {
                   src={IMAGE_PRODUCT_URL + item.image}
                   alt="product"
                 />
+                <div className="absolute top-0 left-1 ">
+                  <MyIconOnProduct />
+                </div>
               </Link>
               <div className="p-2">
                 <Link

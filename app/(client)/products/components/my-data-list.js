@@ -18,7 +18,8 @@ export default async function MyDataList({
   page,
 }) {
   const res = await fetch(
-    `${BASE_API_URL}/products?search=${search}&categoryId=${categoryId}&subCategoryId=${subCategoryId}&brandId=${brandId}&priceFrom=${priceFrom}&priceTo=${priceTo}&orderBy=${orderBy}&orderDir=${orderDir}&perPage=${perPage}&page=${page}`, {next: {revalidate: 3600}}
+    `${BASE_API_URL}/products?search=${search}&categoryId=${categoryId}&subCategoryId=${subCategoryId}&brandId=${brandId}&priceFrom=${priceFrom}&priceTo=${priceTo}&orderBy=${orderBy}&orderDir=${orderDir}&perPage=${perPage}&page=${page}`,
+    { next: { revalidate: 3600 } }
   );
   const result = await res.json();
   const products = result?.data;

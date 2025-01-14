@@ -75,23 +75,28 @@ export default async function MyProduct({ params }) {
                         <li className="col-span-6 ">Shipping:</li>
                         <li className="col-span-6 text-gray-700">
                           {" "}
-                          {result?.shipping > 0.0 ? `${result?.shipping} $` : "Free"}
+                          {result?.shipping > 0.0
+                            ? `${result?.shipping} $`
+                            : "Free"}
                         </li>
                       </ul>
                     </li>
-                    <li>
-                      <ul className="flex items-center gap-2">
-                        <li className="col-span-6 ">Brand:</li>
-                        <li className="col-span-6 text-gray-700">
-                          <Link
-                            className="hover:underline"
-                            href={`/products?brandId=${brand?.id}`}
-                          >
-                            {brand?.name}
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
+                    {brand?.length > 0 && (
+                      <li>
+                        <ul className="flex items-center gap-2">
+                          <li className="col-span-6 ">Brand:</li>
+                          <li className="col-span-6 text-gray-700">
+                            <Link
+                              className="hover:underline"
+                              href={`/products?brandId=${brand?.id}`}
+                            >
+                              {brand?.name}
+                            </Link>
+                          </li>
+                        </ul>
+                      </li>
+                    )}
+
                     <li>
                       <ul className="flex items-center w-full gap-2">
                         <li className="col-span-6 ">Category:</li>

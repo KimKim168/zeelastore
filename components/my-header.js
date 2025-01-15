@@ -5,7 +5,7 @@ import { SearchProduct } from "./my-search-product";
 import SearchInput from "./ui/SearchInput";
 import MyHomeModal from "./my-home-modal";
 import { Suspense } from "react";
-import { BASE_BACKEND_URL } from "@/env";
+import { APP_LOGO, BASE_BACKEND_URL } from "@/env";
 
 const MyHeader = ({ resultCate, resultContact }) => {
   return (
@@ -19,11 +19,11 @@ const MyHeader = ({ resultCate, resultContact }) => {
             <div className="col-span-8 md:col-span-2 xl:col-span-1">
               <Link href="/">
                 <Image
-                  src="/assets/images/logo.png"
+                  src={APP_LOGO}
                   width={200}
                   height={200}
                   alt="logo"
-                  className="w-24 md:w-24"
+                  className="h-16 w-16 object-cover"
                 />
               </Link>
             </div>

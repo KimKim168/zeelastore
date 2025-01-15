@@ -18,7 +18,8 @@ export default async function MyDataList({
   page,
 }) {
   const res = await fetch(
-    `${BASE_API_URL}/products?search=${search}&categoryId=${categoryId}&subCategoryId=${subCategoryId}&brandId=${brandId}&priceFrom=${priceFrom}&priceTo=${priceTo}&orderBy=${orderBy}&orderDir=${orderDir}&perPage=${perPage}&page=${page}`, {next: {revalidate: 3600}}
+    `${BASE_API_URL}/products?search=${search}&categoryId=${categoryId}&subCategoryId=${subCategoryId}&brandId=${brandId}&priceFrom=${priceFrom}&priceTo=${priceTo}&orderBy=${orderBy}&orderDir=${orderDir}&perPage=${perPage}&page=${page}`,
+    { next: { revalidate: 600 } }
   );
   const result = await res.json();
   const products = result?.data;
@@ -39,7 +40,11 @@ export default async function MyDataList({
           <>
             {products?.map((item) => (
               <div key={item.id} className="overflow-hidden border border-blue">
-                <Link href={`/products/${item.id}`} key={item.id}>
+                <Link
+                  href={`/products/${item.id}`}
+                  key={item.id}
+                  className="relative"
+                >
                   <Image
                     width={600}
                     height={600}
@@ -47,6 +52,17 @@ export default async function MyDataList({
                     src={IMAGE_PRODUCT_URL + item.image}
                     alt="product"
                   />
+                  {item.discount > 0 && (
+                    <div className="absolute top-0 ">
+                      {/* <MyDescoundOnListProducts /> */}
+                      <div
+                        key={item.id}
+                        className="bg-red-700 font-medium rounded-br-2xl italic text-white py-1 px-3 "
+                      >
+                        <p> - ${item.discount}</p>
+                      </div>
+                    </div>
+                  )}
                 </Link>
                 <div className="p-2">
                   <Link
@@ -55,10 +71,29 @@ export default async function MyDataList({
                   >
                     {item.title}
                   </Link>
-                  <div className="items-center justify-between mt-1 overflow-hidden text-sm ">
-                    <div className="text-color grid grid-cols-12 justify-between overflow-hidden text-sm md:text-[16px]">
-                      <p className="col-span-6">Price:</p>
-                      <p className="col-span-6 text-end">${item.price}</p>
+                  <div className="items-center justify-between mt-2 overflow-hidden text-sm">
+                    <div className="grid grid-cols-12 items-center gap-2 md:text-[16px] text-red-600">
+                      {/* Price Label */}
+                      <p className="col-span-6 font-medium">Price:</p>
+
+                      {/* Price Value */}
+                      <div className="col-span-6 text-end">
+                        {item.discount ? (
+                          <div className="flex items-center justify-end gap-2">
+                            {/* Original Price (Strikethrough) */}
+                            <p className="line-through text-gray-400 font-normal ">
+                              {/* ${item.price.toFixed(2)} */}${item.price}
+                            </p>
+
+                            {/* Discounted Price */}
+                            <p className="font-semibold text-red-600">
+                              ${item.price - item.discount}
+                            </p>
+                          </div>
+                        ) : (
+                          <p className="font-medium">${item.price}</p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -7,7 +7,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import { AlignJustifyIcon, ArrowRight, ChevronsRightIcon, Dot } from "lucide-react";
+import {
+  AlignJustifyIcon,
+  ArrowRight,
+  ChevronsRightIcon,
+  Dot,
+} from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { IMAGE_CATE_URL } from "@/env";
 import Image from "next/image";
@@ -93,12 +98,12 @@ function MyCategoryComponent({ categories }) {
                   )}
                 </button>
                 {item.sub_categories?.length > 0 && (
-                  <span className="flex items-center justify-center rounded-md hover:bg-gray-100">
+                  <span className="flex items-center justify-center rounded-md ">
                     <AccordionTrigger
                       className={`${
                         currentCategoryId == item.id &&
-                        "underline  font-bold bg-gray-400 group text-white hover:text-primary"
-                      } p-0.5 text-[16px] rounded-tr rounded-br px-2 hover:bg-gray/10`}
+                        "underline font-bold bg-gray-400 group  text-white hover:text-primary"
+                      } p-2  text-[16px] rounded-tr rounded-br px-2 hover:bg-gray-500 hover:text-white`}
                     ></AccordionTrigger>
                   </span>
                 )}

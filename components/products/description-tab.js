@@ -62,7 +62,7 @@ const DescriptionTab = ({ description }) => {
           {/* Content Section */}
           <AccordionContent className="text-base transition-all duration-300 ease-in-out">
             <div
-              className="product-description prose max-w-none"
+              className="product-description prose max-w-none overflow-hidden"
               dangerouslySetInnerHTML={{ __html: description }}
             ></div>
           </AccordionContent>

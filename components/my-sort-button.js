@@ -28,6 +28,10 @@ const framework = [
     label: "Price",
     value: "price",
   },
+  {
+    label: "Post Date",
+    value: "post_date",
+  },
 ];
 
 export function MyShortButton() {

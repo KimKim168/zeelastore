@@ -8,11 +8,11 @@ import MyIconOnProduct from "@/components/my-icon-on-product";
 
 export default async function Home(props) {
   const responeTop = await fetch(`${BASE_API_URL}/slides?position=top`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 600 },
   });
   const imagesTop = await responeTop.json();
   const responeBottom = await fetch(`${BASE_API_URL}/slides?position=bottom`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 600 },
   });
   const imagesBottom = await responeBottom.json();
   // console.log(result);
@@ -20,7 +20,7 @@ export default async function Home(props) {
   const search = searchParams.search;
   const categoryId = searchParams.categoryId;
   const res = await fetch(`${BASE_API_URL}/categories`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 600 },
   });
   const result = await res.json();
   const categories = result;

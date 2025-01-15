@@ -6,6 +6,7 @@ import MyFooter from "@/components/my-footer";
 import { Suspense } from "react";
 import MyLoadingAnimation from "@/components/my-loading-animation";
 import HomeHeader from "./components/home-header";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,6 +19,12 @@ const geistMono = localFont({
   weight: "100 900",
 });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
+
+export const metadata = {
+  icons: {
+    icon: "/favicon.png",
+  },
+};
 
 export default function RootLayout({ children }) {
   // const res = await fetch(`${BASE_API_URL}/categories`);

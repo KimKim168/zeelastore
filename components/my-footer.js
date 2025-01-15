@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { BASE_API_URL, IMAGE_BRAND_URL } from "@/env";
+import { APP_LOGO, BASE_API_URL, IMAGE_BRAND_URL } from "@/env";
 import Link from "next/link";
 export default async function MyFooter() {
   const respone = await fetch(`${BASE_API_URL}/brands`);
@@ -13,13 +13,13 @@ export default async function MyFooter() {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="flex  gap-4">
           <div className=" flex-1 text-white md:mb-0">
-            <a href="/" className="flex flex-col items-start gap-2">
+            <a href="/" className="flex flex-col gap-2">
               <Image
-                src="/assets/images/logo.png"
-                width={100}
-                height={100}
+                src={APP_LOGO}
+                width={200}
+                height={200}
                 alt="logo"
-                className="w-14 md:w-24"
+                className="h-16 w-16 object-cover"
               />
 
               <div

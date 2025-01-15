@@ -20,7 +20,7 @@ import {
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const framework = [
-   {
+  {
     label: "10",
     value: "10",
   },
@@ -35,6 +35,30 @@ const framework = [
   {
     label: "40",
     value: "40",
+  },
+  {
+    label: "50",
+    value: "50",
+  },
+  {
+    label: "60",
+    value: "60",
+  },
+  {
+    label: "70",
+    value: "70",
+  },
+  {
+    label: "80",
+    value: "80",
+  },
+  {
+    label: "90",
+    value: "90",
+  },
+  {
+    label: "100",
+    value: "100",
   },
 ];
 

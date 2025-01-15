@@ -12,6 +12,7 @@ const IMAGE_BRAND_URL = BASE_BACKEND_URL + "/assets/images/brands/";
 const IMAGE_LINKS_URL = BASE_BACKEND_URL + "/assets/images/links/";
 const IMAGE_CATE_URL = BASE_BACKEND_URL + "/assets/images/categories/";
 const IMAGE_PAYMENT_URL = BASE_BACKEND_URL + "/assets/images/payments/";
+const APP_LOGO = BASE_BACKEND_URL + "/assets/images/website_infos/logo.png";
 
 const BOOK_PDF_URL = BASE_BACKEND_URL + "/assets/pdf/books/";
 
@@ -30,4 +31,5 @@ export {
   BASE_BACKEND_URL,
   BASE_API_URL,
   IMAGE_PAYMENT_URL,
+  APP_LOGO,
 };

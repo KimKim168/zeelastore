@@ -17,7 +17,7 @@ import React from "react";
 export default async function MyProduct({ params }) {
   const { id } = await params;
   const respone = await fetch(`${BASE_API_URL}/products/${id}`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 600 },
   });
   const result = await respone.json();
   // console.log(result);
@@ -26,7 +26,7 @@ export default async function MyProduct({ params }) {
   const sub_category = result?.sub_category;
 
   const responeLink = await fetch(`${BASE_API_URL}/links`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 600 },
   });
   const resultLink = await responeLink.json();
   const images = result?.images.map(
@@ -42,12 +42,12 @@ export default async function MyProduct({ params }) {
   // console.log(videos);
   const productRelated = await fetch(
     `${BASE_API_URL}/products?categoryId=${result?.category_id}`,
-    { next: { revalidate: 3600 } }
+    { next: { revalidate: 600 } }
   );
   const resultProductRelated = await productRelated.json();
   // console.log(resultProductRelated.data);
   const res = await fetch(`${BASE_API_URL}/categories?withSub=2`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 600 },
   });
   const categories = await res.json();
   console.log([`${IMAGE_PRODUCT_URL}${result?.image}`, ...images]);
@@ -71,7 +71,7 @@ export default async function MyProduct({ params }) {
                 <div className="mt-4">
                   <ul className="space-y-2 text-sm md:text-lg">
                     <li>
-                      <ul className="flex items-center gap-2">
+                      <ul className="flex items-center gap-5">
                         <li className="col-span-6 ">Shipping:</li>
                         <li className="col-span-6 text-gray-700">
                           {" "}
@@ -83,7 +83,7 @@ export default async function MyProduct({ params }) {
                     </li>
                     {brand?.length > 0 && (
                       <li>
-                        <ul className="flex items-center gap-2">
+                        <ul className="flex items-center gap-5">
                           <li className="col-span-6 ">Brand:</li>
                           <li className="col-span-6 text-gray-700">
                             <Link
@@ -98,7 +98,7 @@ export default async function MyProduct({ params }) {
                     )}
 
                     <li>
-                      <ul className="flex items-center w-full gap-2">
+                      <ul className="flex items-center w-full gap-5">
                         <li className="col-span-6 ">Category:</li>
                         <li className="flex items-center col-span-6 gap-2 text-gray-700">
                           <Link
@@ -119,10 +119,24 @@ export default async function MyProduct({ params }) {
                       </ul>
                     </li>
                     <li>
-                      <ul className="flex items-center justify-start gap-2 text-lg font-semibold md:text-xl">
+                      <ul className="flex items-center justify-start gap-5 text-lg font-semibold md:text-xl">
                         <li className="col-span-6 ">Price:</li>
                         <li className="col-span-6 text-color">
-                          ${result?.price}
+                          {result.discount ? (
+                            <div className="flex items-center justify-end gap-2">
+                              {/* Original Price (Strikethrough) */}
+                              <p className="line-through text-gray-400 font-normal ">
+                                {/* ${item.price.toFixed(2)} */}${result.price}
+                              </p>
+
+                              {/* Discounted Price */}
+                              <p className="font-semibold text-red-600">
+                                ${result.price - result.discount}
+                              </p>
+                            </div>
+                          ) : (
+                            <p className="font-medium">${result.price}</p>
+                          )}
                         </li>
                       </ul>
                     </li>

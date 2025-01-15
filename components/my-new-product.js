@@ -1,9 +1,7 @@
 import { BASE_API_URL, IMAGE_PRODUCT_URL } from "@/env";
-import { ChevronRightSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import MyIconOnProduct from "./my-icon-on-product";
 
 export default async function MyNewProduct() {
   const respone = await fetch(`${BASE_API_URL}/new_products`);
@@ -15,7 +13,7 @@ export default async function MyNewProduct() {
         <div>
           <div className="flex items-center justify-between pb-1 mb-4 border-b-2 border-blue-bold">
             <p className="text-[12px]  sm:text-[16px] md:text-[17px] border-double shadow-md  text-white border-x-[5px] background-gradient1 rounded-tl-full rounded-br-full px-8 py-1">
-              New Products
+              New Arrivals
             </p>
             <Link
               href={`/products`}
@@ -26,7 +24,7 @@ export default async function MyNewProduct() {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-2 mb-4 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">
-          {result.map((item) => (
+          {result?.map((item) => (
             <div key={item.id} className="overflow-hidden border border-blue">
               <Link href={`/products/${item.id}`} className="relative">
                 <Image
@@ -37,7 +35,12 @@ export default async function MyNewProduct() {
                   alt="product"
                 />
                 <div className="absolute top-0 left-1 ">
-                  <MyIconOnProduct />
+                  <Image
+                    src="/assets/images/new.png"
+                    width={80}
+                    height={80}
+                    alt="image"
+                  />
                 </div>
               </Link>
               <div className="p-2">

@@ -26,14 +26,14 @@ async function page(props) {
   const priceTo = searchParams?.priceTo || "";
 
   const respone = await fetch(`${BASE_API_URL}/categories?withSub=2`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 600 },
   });
   const categories = await respone.json();
   const resBrand = await fetch(`${BASE_API_URL}/brands`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 600 },
   });
   const brand = await resBrand.json();
-  // console.log(brand);
+  console.log(categories);
 
   return (
     <div className="min-h-[50vh] max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 ">

@@ -12,7 +12,7 @@ const MyFloatTelegram = () => {
         src="/assets/images/telegram.png"
         width={600}
         height={600}
-        className="w-6 sm:w-8 md:w-10"
+        className="w-12"
         alt="Telegram Icon"
       />
     </a>

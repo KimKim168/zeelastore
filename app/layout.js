@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import MyLoadingAnimation from "@/components/my-loading-animation";
 import HomeHeader from "./components/home-header";
 import Head from "next/head";
+import MyFloatTelegram from "@/components/my-float-telegram";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
       <body
         className={` ${poppins.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <MyFloatTelegram />
         <HomeHeader />
 
         {/*End Slider */}

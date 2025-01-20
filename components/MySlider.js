@@ -10,9 +10,11 @@ import {
 import Image from "next/image";
 import { IMAGE_SLIDES_URL } from "@/env";
 import { Card, CardContent } from "./ui/card";
+import Link from "next/link";
 
 export default function MySlider({ imagesTop, imagesBottom }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  // console.log(imagesTop);
   // Define your image URLs here
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,13 +35,15 @@ export default function MySlider({ imagesTop, imagesBottom }) {
           >
             {imagesTop.map((item, index) => (
               <div key={index} className="min-w-full">
-                <Image
-                  src={IMAGE_SLIDES_URL + item.image}
-                  alt={`Slide ${index + 1}`}
-                  width={2100}
-                  height={1200}
-                  className="w-full object-cover aspect-[21/9]"
-                />
+                <Link href={item.link || "#"} passHref>
+                  <Image
+                    src={IMAGE_SLIDES_URL + item.image}
+                    alt={`Slide ${index + 1}`}
+                    width={2100}
+                    height={1200}
+                    className="w-full object-cover aspect-[21/9] hover:cursor-pointer"
+                  />
+                </Link>
               </div>
             ))}
           </div>
@@ -81,13 +85,15 @@ export default function MySlider({ imagesTop, imagesBottom }) {
                 <div className="p-1">
                   <Card className="rounded-none ">
                     <CardContent className="flex items-center justify-center p-0">
-                      <Image
-                        src={IMAGE_SLIDES_URL + item.image}
-                        alt={`src ${index + 1}`}
-                        width={1600}
-                        height={900}
-                        className="aspect-[21/9] object-cover"
-                      />
+                      <Link href={item.link || "#"} passHref>
+                        <Image
+                          src={IMAGE_SLIDES_URL + item.image}
+                          alt={`src ${index + 1}`}
+                          width={1600}
+                          height={900}
+                          className="aspect-[21/9] object-cover hover:cursor-pointer"
+                        />
+                      </Link>
                     </CardContent>
                   </Card>
                 </div>

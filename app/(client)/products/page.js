@@ -12,6 +12,30 @@ import { MyShortCharacter } from "@/components/my-sort-character";
 import { MyPerpageShort } from "@/components/my-perpage-short";
 import MyLoadingAnimation from "@/components/my-loading-animation";
 
+export const metadata = {
+  title: "Explore Our Products - Chhayhok.com",
+  openGraph: {
+    title: "Chhayhok - Products",
+    description: "Discover products and categories on Chhayhok.",
+    url: "https://chhayhok.com/products",
+    siteName: "Chhayhok",
+    images: [
+      {
+        url: "/assets/images/product11.png", // Path to your image
+        width: 1200,
+        height: 630,
+        alt: "Chhayhok Products Page Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chhayhok - Products",
+    description: "Discover products and categories on Chhayhok.",
+    images: ["/assets/images/product11.png"], // Path to your image
+  },
+};
+
 async function page(props) {
   const searchParams = await props.searchParams;
   const search = searchParams.search || "";
@@ -33,7 +57,7 @@ async function page(props) {
     next: { revalidate: 600 },
   });
   const brand = await resBrand.json();
-  console.log(categories);
+  // console.log(categories);
 
   return (
     <div className="min-h-[50vh] max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 ">

@@ -20,14 +20,17 @@ export async function generateMetadata({ params }) {
     next: { revalidate: 600 },
   });
   const product = await response.json();
+  const htmlString = product.description;
+  const description = htmlString.replace(/<[^>]+>/g, "");
 
   return {
     title: `${product.title}`,
-    description: `${product.description} `,
+    description,
+    // description: `${product.description} `,
 
     openGraph: {
       title: `${product.title}`,
-      description: `${product.description} `,
+      description: description,
       url: `https://chhayhok.com/products/${id}`,
       images: [
         `${IMAGE_PRODUCT_URL}${product.image}`,

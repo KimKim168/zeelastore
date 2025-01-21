@@ -14,6 +14,31 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const response = await fetch(`${BASE_API_URL}/products/${id}`, {
+    next: { revalidate: 600 },
+  });
+  const product = await response.json();
+
+  return {
+    title: `${product.title}`,
+    description: `${product.description} `,
+
+    openGraph: {
+      title: `${product.title}`,
+      description: `${product.description} `,
+      url: `https://chhayhok.com/products/${id}`,
+      images: [
+        `${IMAGE_PRODUCT_URL}${product.image}`,
+        // ...product.images.map(
+        //   (img) => `${MULTI_IMAGE_PRODUCT_URL}${img.image}`
+        // ),
+      ],
+    },
+  };
+}
+
 export default async function MyProduct({ params }) {
   const { id } = await params;
   const respone = await fetch(`${BASE_API_URL}/products/${id}`, {

@@ -27,7 +27,7 @@ export const metadata = {
 
 async function page() {
   const respone = await fetch(`${BASE_API_URL}/about`, {
-    next: { revalidate: 3600 },
+    next: { revalidate: 600 },
   });
   const result = await respone.json();
   return (

@@ -5,6 +5,11 @@ import { BASE_API_URL } from "@/env";
 
 export const metadata = {
   title: "Explore Our Contact - Chhayhok.com",
+  icons: {
+    icon: "/assets/images/chhayhokLogo.png",
+    shortcut: "/assets/images/chhayhokLogo.png",
+    apple: "/assets/images/chhayhokLogo.png",
+  },
   openGraph: {
     title: "Chhayhok - Contact Us",
     description: "Get in touch with us through our contact page.",

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }) {
     next: { revalidate: 600 },
   });
   const product = await response.json();
-  const htmlString = product.description;
+  const htmlString = product.description || "";
   const description = htmlString.replace(/<[^>]+>/g, "");
 
   return {
@@ -109,7 +109,7 @@ export default async function MyProduct({ params }) {
                         </li>
                       </ul>
                     </li>
-                    {brand?.length > 0 && (
+                    {brand?.name && (
                       <li>
                         <ul className="flex items-center gap-5">
                           <li className="col-span-6 ">Brand:</li>

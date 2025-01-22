@@ -14,6 +14,11 @@ import MyLoadingAnimation from "@/components/my-loading-animation";
 
 export const metadata = {
   title: "Explore Our Products - Chhayhok.com",
+  icons: {
+    icon: "/assets/images/chhayhokLogo.png",
+    shortcut: "/assets/images/chhayhokLogo.png",
+    apple: "/assets/images/chhayhokLogo.png",
+  },
   openGraph: {
     title: "Chhayhok - Products",
     description: "Discover products and categories on Chhayhok.",

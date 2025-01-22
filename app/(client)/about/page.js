@@ -3,6 +3,11 @@ import { BASE_API_URL } from "@/env";
 
 export const metadata = {
   title: "Explore Our About - Chhayhok.com",
+  icons: {
+    icon: "/assets/images/chhayhokLogo.png",
+    shortcut: "/assets/images/chhayhokLogo.png",
+    apple: "/assets/images/chhayhokLogo.png",
+  },
   openGraph: {
     title: "Chhayhok - About Us",
     description: "Learn more about Chhayhok, our mission, and values.",

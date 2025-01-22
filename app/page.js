@@ -6,7 +6,12 @@ import MyProductCategory from "@/components/my-product-category";
 import MyListProducts from "@/components/my_list_products";
 
 export const metadata = {
-  title: "Welcome to Chhayhok - Home",
+  title: "Welcome to Chhayhok",
+  icons: {
+    icon: "/assets/images/chhayhokLogo.png",
+    shortcut: "/assets/images/chhayhokLogo.png",
+    apple: "/assets/images/chhayhokLogo.png",
+  },
   openGraph: {
     title: "Chhayhok - Discover Our Products",
     description:

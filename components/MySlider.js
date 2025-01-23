@@ -25,6 +25,7 @@ export default function MySlider({ imagesTop, imagesBottom }) {
 
   return (
     <div className="px-2 mx-auto mt-2 max-w-screen-2xl xl:px-20 ">
+      {/* Slide ImageTop */}
       <Carousel className="w-full" selectedindex={currentIndex}>
         <CarouselContent>
           <div
@@ -69,6 +70,7 @@ export default function MySlider({ imagesTop, imagesBottom }) {
         <CarouselNext className="absolute right-0 p-2 text-white transform -translate-y-1/2 bg-gray-800 rounded-full top-1/2" />
         */}
       </Carousel>
+      {/* Slide ImageButton */}
       <div className="mx-auto mt-2 ">
         <Carousel
           opts={{

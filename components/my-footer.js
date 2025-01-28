@@ -57,7 +57,7 @@ export default async function MyFooter() {
             {footerData.copyright}
           </span>
           <a
-            href="https://alphalib.org/"
+            href="https://corasolution.com/"
             className="text-[9px] md:text-sm text-white sm:text-center"
           >
             Developed By: <span className="hover:underline ">Cora Soft</span>

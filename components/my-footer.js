@@ -52,10 +52,16 @@ export default async function MyFooter() {
           </div>
         </div>
         <hr className="mt-2 border-gray-200 sm:mx-auto dark:border-gray-700 md:my-5" />
-        <div className=" text-center">
+        <div className="flex justify-between gap-4">
           <span className="text-[9px] md:text-sm text-white sm:text-center dark:text-gray-400">
             {footerData.copyright}
           </span>
+          <a
+            href="https://alphalib.org/"
+            className="text-[9px] md:text-sm text-white sm:text-center"
+          >
+            Developed By: <span className="hover:underline ">Cora Soft</span>
+          </a>
         </div>
       </div>
     </footer>

@@ -42,7 +42,7 @@ export default function MyOrderWithTelegram({ id }) {
       BASE_API_URL + `/sent_to_telegram?phone=${phone}&product_id=${id}`
     );
     if (!res.ok) {
-    //   console.log("Fail to sent to telegram");
+      //   console.log("Fail to sent to telegram");
       setError("Submit Fail, Please Contact to Admin Page.");
       setLoading(false);
       return;
@@ -61,22 +61,24 @@ export default function MyOrderWithTelegram({ id }) {
     <>
       <Dialog open={openDialog} onOpenChange={(state) => setOpenDialog(state)}>
         <DialogTrigger asChild>
-          <button
-            onClick={() => setOpenDialog(true)}
-            className="border p-1 cursor-pointer sm:p-2 flex justify-center items-center gap-1 md:gap-2 rounded-md"
-          >
-            <Image
-              src={`/assets/images/telegram.png`}
-              width={600}
-              height={600}
-              className="w-7 xl:w-10"
-              alt="image"
-            />
-            <span className="text-start text-[10px] sm:text-[10px] xl:text-[13px]">
-              {/* Order with  */}
-              Telegram
-            </span>
-          </button>
+          <div className="bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 p-[0.5px] rounded-md">
+            <button
+              onClick={() => setOpenDialog(true)}
+              className="flex items-center justify-center w-full gap-1 p-1 bg-white dark:bg-gray-900 rounded-md sm:p-2 md:gap-2"
+            >
+              <Image
+                src={`/assets/images/telegram.png`}
+                width={600}
+                height={600}
+                className="w-7 xl:w-10"
+                alt="image"
+              />
+              <span className="text-start text-[10px] sm:text-[10px] xl:text-[13px]">
+                {/* Order with  */}
+                Telegram
+              </span>
+            </button>
+          </div>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>

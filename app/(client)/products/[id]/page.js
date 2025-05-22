@@ -180,24 +180,25 @@ export default async function MyProduct({ params }) {
                   {resultLink?.map(
                     (item) =>
                       item?.link_in_product_detail == 1 && (
-                        <Link
-                          key={item.id}
-                          href={item.link}
-                          target="_blank"
-                          className="flex items-center justify-center w-full gap-1 p-1 border rounded-md sm:p-2 md:gap-2"
-                        >
-                          <Image
-                            src={IMAGE_LINKS_URL + item.image}
-                            width={600}
-                            height={600}
-                            className="w-7 xl:w-10"
-                            alt="image"
-                          />
-                          <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
-                            {/* Order with  */}
-                            {item.name}
-                          </span>
-                        </Link>
+                        <div className="bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 p-[0.5px] rounded-md">
+                          <Link
+                            key={item.id}
+                            href={item.link}
+                            target="_blank"
+                            className="flex items-center justify-center w-full gap-1 p-1 bg-white dark:bg-gray-900 rounded-md sm:p-2 md:gap-2"
+                          >
+                            <Image
+                              src={IMAGE_LINKS_URL + item.image}
+                              width={600}
+                              height={600}
+                              className="w-7 xl:w-10"
+                              alt="image"
+                            />
+                            <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
+                              {item.name}
+                            </span>
+                          </Link>
+                        </div>
                       )
                   )}
                 </div>

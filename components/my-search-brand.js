@@ -48,15 +48,17 @@ export function SearchBrand({ brand }) {
       </p>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <Button
-            variant="add"
-            role="combobox"
-            aria-expanded={open}
-            className="w-full justify-between  h-10 text-sm text-black"
-          >
-            {value ? `${value}` : "Select Brand..."}
-            <ChevronsUpDown size={15} className="opacity-50" />
-          </Button>
+          <div className="bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 p-[0.5px] rounded-md">
+            <Button
+              variant="add"
+              role="combobox"
+              aria-expanded={open}
+              className="w-full justify-between h-10 border-none text-sm text-black bg-white rounded-md"
+            >
+              {value ? `${value}` : "Select Brand..."}
+              <ChevronsUpDown size={15} className="opacity-50" />
+            </Button>
+          </div>
         </PopoverTrigger>
         <PopoverContent className="w-full p-0">
           <Command>

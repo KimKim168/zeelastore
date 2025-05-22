@@ -42,7 +42,7 @@ export default function MyOrderWithTelegram({ id }) {
       BASE_API_URL + `/sent_to_telegram?phone=${phone}&product_id=${id}`
     );
     if (!res.ok) {
-      console.log("Fail to sent to telegram");
+    //   console.log("Fail to sent to telegram");
       setError("Submit Fail, Please Contact to Admin Page.");
       setLoading(false);
       return;
@@ -54,7 +54,7 @@ export default function MyOrderWithTelegram({ id }) {
     setPhone("");
     setOpenDialog(false);
     setOpenDialogSuccess(true);
-    console.log(result);
+    // console.log(result);
   };
 
   return (

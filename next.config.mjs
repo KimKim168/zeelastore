@@ -6,6 +6,7 @@ const nextConfig = {
         hostname: "chhayhok.brolong.pro",
       },
     ],
+    unoptimized: false,
   },
 };
 

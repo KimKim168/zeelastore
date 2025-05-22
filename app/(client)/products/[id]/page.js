@@ -78,7 +78,7 @@ export default async function MyProduct({ params }) {
     next: { revalidate: 600 },
   });
   const categories = await res.json();
-  console.log([`${IMAGE_PRODUCT_URL}${result?.image}`, ...images]);
+//   console.log([`${IMAGE_PRODUCT_URL}${result?.image}`, ...images]);
   return (
     <>
       <section className="px-2 mx-auto mt-5 mb-10 max-w-screen-2xl xl:px-20 ">

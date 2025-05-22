@@ -84,7 +84,7 @@ export function MyHomeSidebar({ categories, isModal = false }) {
                 />
                 <span>
                   {category.name}{" "}
-                  {category.books_count > 0 && (
+                  {/* {category.books_count > 0 && (
                     <span
                       className={`text-[12px]  ${
                         currentCategoryId == category.id
@@ -92,7 +92,7 @@ export function MyHomeSidebar({ categories, isModal = false }) {
                           : "text-primary/80"
                       }  `}
                     >{` (${category.books_count})`}</span>
-                  )}
+                  )} */}
                 </span>
               </button>
               {category.sub_categories?.length > 0 && (
@@ -121,9 +121,9 @@ export function MyHomeSidebar({ categories, isModal = false }) {
                         }}
                       >
                         {subCategory.name}
-                        {subCategory.books_count > 0 && (
+                        {/* {subCategory.books_count > 0 && (
                           <span className="text-[12px] text-primary/80">{` (${subCategory.books_count})`}</span>
-                        )}
+                        )} */}
                       </button>
                     </li>
                   ))}

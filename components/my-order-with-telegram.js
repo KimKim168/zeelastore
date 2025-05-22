@@ -73,7 +73,8 @@ export default function MyOrderWithTelegram({ id }) {
               alt="image"
             />
             <span className="text-start text-[10px] sm:text-[10px] xl:text-[13px]">
-              Order with Telegram
+              {/* Order with  */}
+              Telegram
             </span>
           </button>
         </DialogTrigger>

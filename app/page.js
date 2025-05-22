@@ -59,7 +59,7 @@ export default async function Home(props) {
       {/* Slider */}
       <MySlider imagesTop={imagesTop} imagesBottom={imagesBottom} />
       {/*End Slider */}
-      <MyProductCategory categories={categories} />
+      {/* <MyProductCategory categories={categories} /> */}
       {/* Card */}
       <MyNewProduct />
       {/*End Card */}

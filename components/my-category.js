@@ -91,11 +91,11 @@ function MyCategoryComponent({ categories }) {
                   className="flex items-center justify-start flex-1 gap-1 px-2 text-sm text-start"
                 >
                   {item.name}
-                  {item.books_count > 0 && (
+                  {/* {item.books_count > 0 && (
                     <span className="text-xs text-primary">
                       ({item.books_count})
                     </span>
-                  )}
+                  )} */}
                 </button>
                 {item.sub_categories?.length > 0 && (
                   <span className="flex items-center justify-center rounded-md ">
@@ -129,11 +129,11 @@ function MyCategoryComponent({ categories }) {
                       >
                         <Dot width={15} className="hover:text-color" />
                         {subItem.name}
-                        {subItem.books_count > 0 && (
+                        {/* {subItem.books_count > 0 && (
                           <span className="text-xs text-primary">
                             ({subItem.books_count})
                           </span>
-                        )}
+                        )} */}
                       </button>
                     </AccordionContent>
                   ))

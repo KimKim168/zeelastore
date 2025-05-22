@@ -82,9 +82,9 @@ async function page(props) {
           <hr className="my-5" />
 
           {/* Filter price */}
-          <MyDualRangPrice />
+          {/* <MyDualRangPrice /> */}
           {/*End Filter price */}
-          <hr className="my-5" />
+          {/* <hr className="my-5" /> */}
 
           {/* Lastest Products */}
           <MylastestProduct />
@@ -98,7 +98,7 @@ async function page(props) {
               key={" " + orderBy + orderDir + perPage}
             >
               <MyShortButton />
-              <MyShortCharacter />
+              {/* <MyShortCharacter /> */}
               <MyPerpageShort />
             </div>
             <div

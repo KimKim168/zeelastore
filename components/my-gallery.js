@@ -6,7 +6,6 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"; // Thumb
 import "yet-another-react-lightbox/plugins/thumbnails.css"; // Thumbnail plugin styles
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Image from "next/image";
 
 // const photos = [
@@ -62,7 +61,8 @@ const MyImageGallery = ({ photos }) => {
         close={() => setOpen(false)}
         slides={slides}
         index={currentIndex}
-        plugins={[Thumbnails, Zoom, Slideshow, Fullscreen]}
+        plugins={[Thumbnails, Zoom, Fullscreen]}
+        carousel={{ finite: true }}
       />
     </div>
   );

@@ -27,7 +27,7 @@ export default function SearchInput() {
     <>
       <Suspense>
         <form action={handleSearch}>
-          <div className="flex items-center justify-between bg-white border ">
+          <div className="flex items-center min-w-[500px] xl:max-w-[500px] justify-between bg-white border ">
             <div className="flex items-center gap-2 ml-2">
               <Search className="text-gray-400 " size={20} />
               <input
@@ -36,13 +36,13 @@ export default function SearchInput() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 // onChange={(e) => handleSearch(e.target.value)}
-                className=" bg-transparent border-none xl:min-w-[500px] outline-none text-gray-700 py-2"
+                className=" bg-transparent border-none outline-none text-gray-700 py-2"
                 aria-label="Search input"
               />
             </div>
             <button
               type="submit"
-              className="bg-blue-900 hidden min-[350px]:block text-white py-1 px-2 mr-1"
+              className="bg-blue-900 hidden min-[280px]:block text-white py-1 px-2 mr-1"
             >
               Search
             </button>

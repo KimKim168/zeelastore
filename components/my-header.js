@@ -41,7 +41,7 @@ const MyHeader = ({ resultCate, resultContact }) => {
 
               {/*End Menu */}
             </div>
-            <div className="hidden col-span-7 md:grid xl:col-span-9 ">
+            <div className="hidden col-span-7 md:grid xl:col-span-9 place-items-center">
               <Suspense>
                 <SearchInput className="flex-1" />
               </Suspense>
@@ -52,9 +52,9 @@ const MyHeader = ({ resultCate, resultContact }) => {
                 <p>{resultContact.phone}</p>
               </div>
               <div className="flex items-center space-x-4 overflow-hidden text-white">
-                <Link href={BASE_BACKEND_URL}>
+                {/* <Link href={BASE_BACKEND_URL}>
                   <User className=" min-w-5"></User>
-                </Link>
+                </Link> */}
 
                 {/* <MyLanguage /> */}
               </div>

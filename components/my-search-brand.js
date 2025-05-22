@@ -19,6 +19,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
+import { IMAGE_BRAND_URL } from "@/env";
 
 export function SearchBrand({ brand }) {
   const searchParams = useSearchParams();
@@ -87,6 +89,13 @@ export function SearchBrand({ brand }) {
                       setOpen(false);
                     }}
                   >
+                    <Image
+                      src={IMAGE_BRAND_URL + item.image}
+                      width={40}
+                      height={40}
+                      alt=""
+                      className="object-contain "
+                    />
                     {item.name}
                     <Check
                       className={cn(

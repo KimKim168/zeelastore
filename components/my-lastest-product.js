@@ -37,14 +37,17 @@ function MylastestProduct() {
   }
 
   return (
-    <div >
+    <div>
       <p className="p-2 text-lg text-center text-white rounded-md background-gradient">
-        New Products
+        New Arrivals
       </p>
       <div className="pt-2 bg-gray-50">
         {products.map((item) => (
           <Link href={`/products/${item.id}`} key={item.id}>
-            <div key={item.id} className="grid grid-cols-12 gap-2 p-2 overflow-hidden border-b">
+            <div
+              key={item.id}
+              className="grid grid-cols-12 gap-2 p-2 overflow-hidden border-b"
+            >
               <div className="col-span-3">
                 <Image
                   src={`${IMAGE_PRODUCT_URL}${item.image}`}
@@ -59,10 +62,21 @@ function MylastestProduct() {
                 <p className="text-sm leading-tight text-gray-900 line-clamp-2 text-hover hover:underline dark:text-white">
                   {item.title}
                 </p>
-                <p>
-                  Price:{" "}
-                  <span className="ml-3 text-color xl:ml-5">${item.price}</span>
-                </p>
+                {item.discount ? (
+                  <div className="flex items-center justify-start gap-2">
+                    {/* Original Price (Strikethrough) */}
+                    <p className="line-through decoration-red-500 text-gray-400 font-normal ">
+                      {/* ${item.price.toFixed(2)} */}${item.price}
+                    </p>
+
+                    {/* Discounted Price */}
+                    <p className="font-normal text-gray-600">
+                      ${item.price - item.discount}
+                    </p>
+                  </div>
+                ) : (
+                  <p className="font-medium">${item.price}</p>
+                )}
               </div>
             </div>
           </Link>

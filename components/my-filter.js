@@ -18,7 +18,7 @@ export default function Filter({ categories, brand }) {
   return (
     <>
       <section className="lg:hidden block">
-        <Sheet>
+        <Sheet modal={false}>
           <SheetTrigger asChild>
             <FilterIcon className="border p-1 md:p-2 w-8 h-8 md:w-10 md:h-10 rounded-md" />
           </SheetTrigger>
@@ -32,8 +32,8 @@ export default function Filter({ categories, brand }) {
               <hr className="my-8" />
               <SearchBrand brand={brand} />
               <hr className="my-8" />
-              <MyDualRangPrice />
-              <hr className="my-8" />
+              {/* <MyDualRangPrice />
+              <hr className="my-8" /> */}
               <MylastestProduct />
             </div>
           </SheetContent>

@@ -19,19 +19,11 @@ import {
 } from "@/components/ui/popover";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const framework = [
-  {
-    label: "Title",
-    value: "title",
-  },
-  {
-    label: "Price",
-    value: "price",
-  },
-  {
-    label: "Post Date",
-    value: "post_date",
-  },
+const sortOptions = [
+  { label: "Newest", orderBy: "post_date", orderDir: "desc" },
+  { label: "Oldest", orderBy: "post_date", orderDir: "asc" },
+  { label: "Price: Low to High", orderBy: "price", orderDir: "asc" },
+  { label: "Price: High to Low", orderBy: "price", orderDir: "desc" },
 ];
 
 export function MyShortButton() {
@@ -39,19 +31,24 @@ export function MyShortButton() {
   const pathname = usePathname();
   const { replace } = useRouter();
   const [open, setOpen] = React.useState(false);
-  const selectedValue = searchParams.get("orderBy"); //title
-  const selectedObject = framework.find((item) => item.value == selectedValue);
+  const selectedValue = searchParams.get("orderBy");
+  const selectedDir = searchParams.get("orderDir");
+  const selectedObject = sortOptions.find(
+    (item) => item.orderBy === selectedValue && item.orderDir === selectedDir
+  );
   const [value, setValue] = React.useState(selectedObject?.label || "");
 
-  const handleSelect = (selectedValue) => {
+  const handleSelect = (orderBy, orderDir) => {
     const params = new URLSearchParams(searchParams);
 
-    if (selectedValue) {
-      params.set("orderBy", selectedValue);
-      params.set("orderDir", "desc");
+    if (orderBy) {
+      params.set("orderBy", orderBy);
+      params.set("orderDir", orderDir);
     } else {
       params.delete("orderBy");
+      params.delete("orderDir");
     }
+
     replace(`${pathname}?${params.toString()}`);
   };
 
@@ -62,12 +59,11 @@ export function MyShortButton() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="min-w-[90px] px-2 gap-1 md:gap-2 md:px-4 max-w-[130px] md:min-w-[150px] md:max-w-[200px] justify-between md:py-5"
+          className="min-w-[90px] px-2 gap-1 md:gap-2 md:px-4 max-w-[130px] md:min-w-[150px] md:max-w-[400px] justify-between md:py-5"
         >
           <span className="text-[10px] md:text-sm">
-            Sort By:{" "}
             <span className={`${value ? "text-blue font-bold" : ""}`}>
-              {value || "Select"}
+              {value || "Sort By"}
             </span>
           </span>
           <ChevronsUpDown className="opacity-50" />
@@ -78,13 +74,13 @@ export function MyShortButton() {
           <CommandList>
             <CommandEmpty>No options found.</CommandEmpty>
             <CommandGroup>
-              {framework.map((item) => (
+              {sortOptions.map((item) => (
                 <CommandItem
-                  key={item.value}
+                  key={item.label}
                   value={item.label}
                   onSelect={() => {
                     setValue(item.label);
-                    handleSelect(item.value);
+                    handleSelect(item.orderBy, item.orderDir);
                     setOpen(false);
                   }}
                   className="text-[10px] md:text-sm"
@@ -93,7 +89,7 @@ export function MyShortButton() {
                   <Check
                     className={cn(
                       "ml-auto",
-                      value == item.label ? "opacity-100" : "opacity-0"
+                      value === item.label ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>

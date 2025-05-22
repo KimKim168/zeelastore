@@ -37,14 +37,14 @@ export default async function MyFooter() {
                 <Link
                   href={`/products?brandId=${item.id}`}
                   key={item.id}
-                  className="col-span-1"
+                  className="col-span-1 bg-white"
                 >
                   <Image
                     src={IMAGE_BRAND_URL + item.image}
                     width={100}
                     height={100}
                     alt=" brand product"
-                    className="w-full aspect-video object-cover "
+                    className="w-full aspect-video object-contain "
                   />
                 </Link>
               ))}
@@ -58,7 +58,7 @@ export default async function MyFooter() {
           </span>
           <a
             href="https://corasolution.com/"
-            className="text-[9px] md:text-sm text-white sm:text-center"
+            className="text-[6px] md:text-xs text-white sm:text-center"
           >
             Developed By: <span className="hover:underline ">Cora Soft</span>
           </a>

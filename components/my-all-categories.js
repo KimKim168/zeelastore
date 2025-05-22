@@ -80,11 +80,11 @@ export default function MyAllCategory({ resultCate }) {
                       className="flex items-center flex-1 gap-1 px-2 text-sm text-start"
                     >
                       {item.name}{" "}
-                      {item.books_count > 0 && (
+                      {/* {item.books_count > 0 && (
                         <span className="text-xs text-primary">
                           ({item.books_count})
                         </span>
-                      )}
+                      )} */}
                     </button>
                     {item.sub_categories?.length > 0 && (
                       <DropdownMenuSubTrigger className="text-sm text-black rounded-md" />
@@ -103,11 +103,11 @@ export default function MyAllCategory({ resultCate }) {
                           >
                             <p className="flex items-center justify-start gap-1 p-2 text-sm hover:bg-slate-200">
                               {subItem.name}{" "}
-                              {subItem.books_count > 0 && (
+                              {/* {subItem.books_count > 0 && (
                                 <span className="text-xs text-primary">
                                   ({subItem.books_count})
                                 </span>
-                              )}
+                              )} */}
                             </p>
                           </button>
                         ))}

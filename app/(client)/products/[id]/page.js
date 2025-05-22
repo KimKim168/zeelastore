@@ -1,3 +1,4 @@
+import HeaderWithLink from "@/components/HeaderWithLink";
 import MyGallery from "@/components/my-gallery";
 import MyOrderWithTelegram from "@/components/my-order-with-telegram";
 import MyRelatedProduct from "@/components/my-related-product";
@@ -69,7 +70,7 @@ export default async function MyProduct({ params }) {
   });
   // console.log(videos);
   const productRelated = await fetch(
-    `${BASE_API_URL}/products?categoryId=${result?.category_id}`,
+    `${BASE_API_URL}/products?categoryId=${result?.category_id}&perPage=18`,
     { next: { revalidate: 600 } }
   );
   const resultProductRelated = await productRelated.json();
@@ -78,7 +79,7 @@ export default async function MyProduct({ params }) {
     next: { revalidate: 600 },
   });
   const categories = await res.json();
-//   console.log([`${IMAGE_PRODUCT_URL}${result?.image}`, ...images]);
+  //   console.log([`${IMAGE_PRODUCT_URL}${result?.image}`, ...images]);
   return (
     <>
       <section className="px-2 mx-auto mt-5 mb-10 max-w-screen-2xl xl:px-20 ">
@@ -153,12 +154,12 @@ export default async function MyProduct({ params }) {
                           {result.discount ? (
                             <div className="flex items-center justify-end gap-2">
                               {/* Original Price (Strikethrough) */}
-                              <p className="line-through text-gray-400 font-normal ">
+                              <p className="line-through decoration-red-500 text-gray-400 font-normal ">
                                 {/* ${item.price.toFixed(2)} */}${result.price}
                               </p>
 
                               {/* Discounted Price */}
-                              <p className="font-semibold text-red-600">
+                              <p className="font-semibold text-black">
                                 ${result.price - result.discount}
                               </p>
                             </div>
@@ -172,9 +173,8 @@ export default async function MyProduct({ params }) {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between w-full pb-0 mt-5 mb-8 border-b-2 hover:no-underline border-blue-bold"></div>
-
               <div>
+                <HeaderWithLink title="Order With" />
                 <div className="grid items-center grid-cols-2 gap-2 md:grid-cols-3 xl:grid-cols-4 md:gap-3 ">
                   <MyOrderWithTelegram id={id} />
                   {resultLink?.map(
@@ -194,7 +194,8 @@ export default async function MyProduct({ params }) {
                             alt="image"
                           />
                           <span className="text-[10px] sm:text-[10px] xl:text-[13px]">
-                            Order with {item.name}
+                            {/* Order with  */}
+                            {item.name}
                           </span>
                         </Link>
                       )

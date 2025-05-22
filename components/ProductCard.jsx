@@ -9,7 +9,7 @@ export default function ProductCard({ item, isNew = false }) {
     <div className="p-[0.5px] bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 h-full overflow-hidden ">
       <div className="bg-white flex flex-col dark:bg-gray-900 h-full overflow-hidden relative">
         {isNew && (
-          <div className="absolute top-0 right-1 z-10 ">
+          <div className="absolute top-0 left-1 z-10 ">
             <Image
               src="/assets/images/new.png"
               width={80}

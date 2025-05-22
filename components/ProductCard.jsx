@@ -27,13 +27,13 @@ export default function ProductCard({ item, isNew = false }) {
             alt={item.title}
           />
 
-          {item.discount > 0 && (
+          {/* {item.discount > 0 && (
             <div className="absolute top-0">
               <div className="bg-red-700 font-medium rounded-br-2xl italic text-white py-1 px-3">
                 <p>- ${item.discount}</p>
               </div>
             </div>
-          )}
+          )} */}
         </Link>
 
         <div className="p-2 flex flex-col flex-1 justify-between">

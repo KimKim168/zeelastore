@@ -164,7 +164,7 @@ export default async function MyProduct({ params }) {
                               </p>
                             </div>
                           ) : (
-                            <p className="font-medium">${result.price}</p>
+                            <p className="font-medium text-black">${result.price}</p>
                           )}
                         </li>
                       </ul>

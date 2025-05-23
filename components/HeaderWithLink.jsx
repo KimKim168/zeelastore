@@ -6,7 +6,7 @@ const HeaderWithLink = ({ title, href }) => {
   return (
     <div className="flex flex-col pb-1 mt-12 mb-2">
       <div className="flex items-center justify-between">
-        <p className="bg-gradient-to-r text-[#48bd33] text-transparent font-bold text-lg sm:text-lg md:text-xl tracking-wide py-1 text-center">
+        <p className="text-[#48bd33] font-bold text-lg sm:text-lg md:text-xl tracking-wide py-1 text-center">
           {title}
         </p>
 

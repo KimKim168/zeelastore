@@ -54,7 +54,7 @@ const DescriptionTab = ({ description }) => {
           {/* Trigger Section */}
           <div>
             <AccordionTrigger className="w-full hover:no-underline pb-0 flex justify-between items-center">
-              <p className="bg-gradient-to-r text-[#48bd33] text-transparent font-bold text-lg sm:text-lg md:text-xl tracking-wide py-1 text-center">
+              <p className="text-[#48bd33] font-bold text-lg sm:text-lg md:text-xl tracking-wide py-1 text-center">
                 Description
               </p>
               <ArrowUpDown className="text-[#48bd33]" />

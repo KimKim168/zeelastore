@@ -49,7 +49,7 @@ const MyHeader = ({ resultCate, resultContact }) => {
             <div className="justify-end hidden space-x-4 sm:col-span-3 xl:col-span-2 md:flex text-nowrap ">
               <div className="text-white text-sm md:text-[16px] flex items-center ">
                 <PhoneCallIcon className="w-4 mr-1 md:mr-2 md:w-5"></PhoneCallIcon>
-                <p>{resultContact.phone}</p>
+                <a href={`tel:${resultContact.phone}`} className="hover:underline">{resultContact.phone}</a>
               </div>
               <div className="flex items-center space-x-4 overflow-hidden text-white">
                 {/* <Link href={BASE_BACKEND_URL}>

@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Roboto } from "next/font/google";
 
 import MyFooter from "@/components/my-footer";
 import { Suspense } from "react";
@@ -18,7 +18,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
+const roboto = Roboto({ subsets: ["latin"], weight: ["400"] });
 
 export default function RootLayout({ children }) {
   // const res = await fetch(`${BASE_API_URL}/categories`);
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={` ${poppins.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${roboto.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MyFloatTelegram />
         <HomeHeader />

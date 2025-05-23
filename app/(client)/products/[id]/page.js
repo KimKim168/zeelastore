@@ -180,7 +180,7 @@ export default async function MyProduct({ params }) {
                   {resultLink?.map(
                     (item) =>
                       item?.link_in_product_detail == 1 && (
-                        <div className="bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 p-[0.5px] rounded-md">
+                        <div key={item.id} className="bg-gradient-to-r bg-[#48bd33] p-[0.5px] rounded-md">
                           <Link
                             key={item.id}
                             href={item.link}

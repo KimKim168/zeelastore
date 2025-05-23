@@ -30,6 +30,7 @@ function MyCategoryComponent({ categories }) {
     const params = new URLSearchParams(searchParams);
     if (categoryId) {
       params.set("categoryId", categoryId);
+      params.set("page", 1);
       params.delete("subCategoryId");
     } else {
       params.delete("categoryId");

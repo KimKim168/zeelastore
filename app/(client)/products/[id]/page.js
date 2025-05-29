@@ -5,6 +5,15 @@ import MyRelatedProduct from "@/components/my-related-product";
 import MyVideoGallery from "@/components/my-video-gallery";
 import DescriptionTab from "@/components/products/description-tab";
 import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { ChevronsDown, ChevronsRight, LucideChevronDown } from "lucide-react";
+import {
   BASE_API_URL,
   IMAGE_LINKS_URL,
   IMAGE_PRODUCT_URL,
@@ -82,7 +91,52 @@ export default async function MyProduct({ params }) {
   //   console.log([`${IMAGE_PRODUCT_URL}${result?.image}`, ...images]);
   return (
     <>
-      <section className="px-2 mx-auto mt-5 mb-10 max-w-screen-2xl xl:px-20 ">
+      <section className="px-2 mx-auto mb-10 max-w-screen-2xl xl:px-20 ">
+        <Breadcrumb className="my-6">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            {category?.name && (
+              <>
+                <BreadcrumbSeparator>
+                  <ChevronsRight />
+                </BreadcrumbSeparator>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href={`/products?categoryId=${category?.id}`}>
+                    {category?.name}
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+              </>
+            )}
+            {sub_category?.name && (
+              <>
+                <BreadcrumbSeparator>
+                  <ChevronsRight />
+                </BreadcrumbSeparator>
+                <BreadcrumbItem>
+                  <BreadcrumbLink
+                    href={`/products?subCategoryId=${sub_category?.id}&categoryId=${category?.id}`}
+                  >
+                    {sub_category?.name}
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+              </>
+            )}
+            {brand?.name && (
+              <>
+                <BreadcrumbSeparator>
+                  <ChevronsRight />
+                </BreadcrumbSeparator>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href={`/products?brandId=${brand?.id}`}>
+                    {brand?.name}
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+              </>
+            )}
+          </BreadcrumbList>
+        </Breadcrumb>
         {/* <MyBreadCrumb result={result?.title} /> */}
         <div className="mt-3">
           <div className="flex flex-col grid-cols-12 gap-12 sm:grid">
@@ -92,14 +146,15 @@ export default async function MyProduct({ params }) {
               />
             </div>
 
-            <div className=" sm:col-span-12 md:col-span-7 text-primary xl:ml-5">
+            <div className=" sm:col-span-12 md:col-span-7 text-foreground xl:ml-5">
               <div>
                 <p className="text-lg font-semibold md:text-xl">
                   {result?.title}
                 </p>
+
                 <div className="mt-4">
                   <ul className="space-y-2 text-sm md:text-lg">
-                    <li>
+                    {/* <li>
                       <ul className="flex items-center gap-5">
                         <li className="col-span-6 ">Shipping:</li>
                         <li className="col-span-6 text-gray-700">
@@ -109,8 +164,8 @@ export default async function MyProduct({ params }) {
                             : "Free"}
                         </li>
                       </ul>
-                    </li>
-                    {brand?.name && (
+                    </li> */}
+                    {/* {brand?.name && (
                       <li>
                         <ul className="flex items-center gap-5">
                           <li className="col-span-6 ">Brand:</li>
@@ -124,9 +179,9 @@ export default async function MyProduct({ params }) {
                           </li>
                         </ul>
                       </li>
-                    )}
+                    )} */}
 
-                    <li>
+                    {/* <li>
                       <ul className="flex items-center w-full gap-5">
                         <li className="col-span-6 ">Category:</li>
                         <li className="flex items-center col-span-6 gap-2 text-gray-700">
@@ -146,10 +201,10 @@ export default async function MyProduct({ params }) {
                           )}
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
                     <li>
                       <ul className="flex items-center justify-start gap-5 text-lg font-semibold md:text-xl">
-                        <li className="col-span-6 ">Price:</li>
+                        <li className="col-span-6 text-gray-600">Price:</li>
                         <li className="col-span-6 text-color">
                           {result.discount ? (
                             <div className="flex items-center justify-end gap-2">
@@ -164,7 +219,9 @@ export default async function MyProduct({ params }) {
                               </p>
                             </div>
                           ) : (
-                            <p className="font-medium text-black">${result.price}</p>
+                            <p className="font-medium text-black">
+                              ${result.price}
+                            </p>
                           )}
                         </li>
                       </ul>
@@ -180,7 +237,10 @@ export default async function MyProduct({ params }) {
                   {resultLink?.map(
                     (item) =>
                       item?.link_in_product_detail == 1 && (
-                        <div key={item.id} className="bg-gradient-to-r bg-primary p-[0.5px] rounded-md">
+                        <div
+                          key={item.id}
+                          className="bg-gradient-to-r bg-primary p-[0.5px] rounded-md"
+                        >
                           <Link
                             key={item.id}
                             href={item.link}
@@ -204,6 +264,35 @@ export default async function MyProduct({ params }) {
                 </div>
 
                 {/*End Socail */}
+              </div>
+
+              <div className="my-12">
+                <div className="col-span-6 text-gray-600 text-lg font-semibold md:text-xl">
+                  Colors : <span className="text-base text-gray-500 font-normal">Gray, Blue, White, Gold</span>
+                </div>
+                <div className="col-span-6 text-gray-600 mt-2 flex gap-2 items-center text-lg font-semibold md:text-xl">
+                  Tech specs
+                </div>
+                <div
+                  className="font-normal text-gray-500"
+                  dangerouslySetInnerHTML={{
+                    __html: `<div class="pc-specs">
+                        <ul>
+                          <li><span>Processor:</span> Intel Core i7-13700K (16-Core, up to 5.4 GHz)</li>
+                          <li><span>Motherboard:</span> ASUS ROG Strix Z790-E Gaming WiFi</li>
+                          <li><span>Graphics Card:</span> NVIDIA GeForce RTX 4080 16GB GDDR6X</li>
+                          <li><span>Memory:</span> 32GB DDR5 6000MHz (2 x 16GB)</li>
+                          <li><span>Storage:</span> 1TB NVMe Gen4 SSD + 2TB HDD 7200RPM</li>
+                          <li><span>Power Supply:</span> 850W 80+ Gold Fully Modular</li>
+                          <li><span>Cooling:</span> Corsair iCUE H150i Elite Capellix Liquid Cooler</li>
+                          <li><span>Case:</span> NZXT H710 Mid-Tower ATX (Tempered Glass)</li>
+                          <li><span>Operating System:</span> Windows 11 Pro 64-bit</li>
+                          <li><span>Connectivity:</span> Wi-Fi 6E, Bluetooth 5.3, 2.5G LAN</li>
+                        </ul>
+                      </div>
+                      `,
+                  }}
+                />
               </div>
 
               {/* Add to wishlist */}

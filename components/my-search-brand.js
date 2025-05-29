@@ -32,17 +32,19 @@ export function SearchBrand({ brand }) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState(selectedBrand?.name || "");
 
-  const handleSelect = (selectedValue) => {
+  const handleSelect = (selectedValue, brand) => {
     const params = new URLSearchParams(searchParams);
     if (selectedValue) {
       params.set("brandId", selectedValue);
+      params.set("brand", brand);
     } else {
       params.delete("brandId");
+      params.delete("brand");
     }
     replace(`${pathname}?${params.toString()}`);
   };
   return (
-    <div>
+    <div key={selectedBrand}>
       <p className="text-lg text-start font-bold text-primary rounded-md ">
         Brands
       </p>
@@ -55,7 +57,7 @@ export function SearchBrand({ brand }) {
               aria-expanded={open}
               className="w-full justify-between h-10 border-none text-sm text-black bg-white rounded-md"
             >
-              {value ? `${value}` : "Select Brand..."}
+              {value ? `${value}` : "All Products Brands"}
               <ChevronsUpDown size={15} className="opacity-50" />
             </Button>
           </div>
@@ -73,7 +75,7 @@ export function SearchBrand({ brand }) {
                     setOpen(false);
                   }}
                 >
-                  All
+                  All Brands
                   <Check
                     className={cn(
                       "ml-auto",
@@ -86,7 +88,7 @@ export function SearchBrand({ brand }) {
                     key={item.id}
                     value={item.name}
                     onSelect={() => {
-                      handleSelect(item.id);
+                      handleSelect(item.id, item.name);
                       setValue(item.name);
                       setOpen(false);
                     }}

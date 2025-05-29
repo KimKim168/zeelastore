@@ -24,7 +24,7 @@ export default async function MyBrands() {
               width={100}
               height={100}
               alt=" brand product"
-              className="w-full aspect-video object-contain "
+              className="w-full aspect-video object-contain px-1"
             />
           </Link>
         ))}

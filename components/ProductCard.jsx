@@ -18,7 +18,10 @@ export default function ProductCard({ item, isNew = false }) {
             />
           </div>
         )}
-        <Link href={`/products/${item.id}`} className="relative w-full aspect-square overflow-hidden block">
+        <Link
+          href={`/products/${item.id}`}
+          className="relative w-full aspect-square flex items-center justify-center overflow-hidden"
+        >
           <Image
             className="object-contain w-full mx-auto transition-transform duration-300  dark:hidden hover:scale-125"
             src={IMAGE_PRODUCT_URL + item.image}

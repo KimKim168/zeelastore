@@ -20,7 +20,7 @@ export default function Filter({ categories, brand }) {
       <section className="lg:hidden block">
         <Sheet modal={false}>
           <SheetTrigger asChild>
-            <FilterIcon className="border p-1 md:p-2 w-8 h-8 md:w-10 md:h-10 rounded-md" />
+            <FilterIcon className="border size-9 p-1 rounded-md" />
           </SheetTrigger>
           <SheetContent className="px-0">
             <SheetHeader>

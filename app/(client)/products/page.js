@@ -11,6 +11,7 @@ import { MyShortButton } from "@/components/my-sort-button";
 import { MyShortCharacter } from "@/components/my-sort-character";
 import { MyPerpageShort } from "@/components/my-perpage-short";
 import MyLoadingAnimation from "@/components/my-loading-animation";
+import SelectedFilters from "@/components/SelectedFilters";
 
 export const metadata = {
   title: "Explore Our Products - Chhayhok.com",
@@ -71,15 +72,15 @@ async function page(props) {
         <div className="w-[240px] hidden lg:block">
           {/* Category */}
           <MyCategoryComponent
-            key={search + categoryId + subCategoryId}
+            key={'categories' + search + categoryId + subCategoryId}
             categories={categories}
           />
           {/*End Category */}
           <hr className="my-5" />
           {/* Search brand */}
-          <SearchBrand brand={brand} />
+          <SearchBrand brand={brand} key={'brand' + brandId} />
           {/*End Search brand */}
-          <hr className="my-5" />
+          <hr className="my-10" />
 
           {/* Filter price */}
           {/* <MyDualRangPrice /> */}
@@ -91,32 +92,36 @@ async function page(props) {
           {/*End Lastest Products */}
         </div>
         {/*End Left Content */}
+
         <div className="flex-1">
-          <div className="flex justify-between gap-2 md:items-center lg:justify-end">
-            <div
-              className="grid items-center grid-cols-2 gap-1 my-4 sm:flex md:gap-2"
-              key={" " + orderBy + orderDir + perPage}
-            >
-              <MyShortButton />
-              {/* <MyShortCharacter /> */}
-              <MyPerpageShort />
-            </div>
-            <div
-              className="flex my-4"
-              key={
-                "filter_key" +
-                categoryId +
-                subCategoryId +
-                brandId +
-                perPage +
-                page +
-                orderBy +
-                orderDir +
-                search
-              }
-            >
-              {/* <MyBreadCrumbShop /> */}
-              <Filter categories={categories} brand={brand} />
+          <div className="w-full flex flex-col lg:flex-row lg:items-center flex-wrap gap-1 my-2 mt-2 lg:mt-2">
+            <SelectedFilters />
+            <div className="flex flex-1 gap-2 items-center justify-end">
+              <div
+                className="grid items-center grid-cols-2 gap-1 my-4 sm:flex md:gap-2"
+                key={" " + orderBy + orderDir + perPage}
+              >
+                <MyShortButton />
+                {/* <MyShortCharacter /> */}
+                <MyPerpageShort />
+              </div>
+              <div
+                className="flex my-4 lg:hidden"
+                key={
+                  "filter_key" +
+                  categoryId +
+                  subCategoryId +
+                  brandId +
+                  perPage +
+                  page +
+                  orderBy +
+                  orderDir +
+                  search
+                }
+              >
+                {/* <MyBreadCrumbShop /> */}
+                <Filter key={'categories' + search + categoryId + subCategoryId + 'brand' + brandId} categories={categories} brand={brand} />
+              </div>
             </div>
           </div>
           {/* Right Content */}

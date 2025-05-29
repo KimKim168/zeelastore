@@ -7,18 +7,6 @@ import { IMAGE_LINKS_URL } from "@/env";
 function MyContactFooter({ resultContact }) {
   return (
     <div className="space-y-4">
-      {/* Address */}
-      <div className="flex items-start gap-3">
-        <Image
-          src="/assets/images/location.png"
-          width={24}
-          height={24}
-          alt="Location icon representing address"
-          className="w-6 h-6"
-        />
-        <p className="text-gray-600 text-sm">{resultContact.address}</p>
-      </div>
-
       {/* Phone */}
       <div className="flex items-start gap-3">
         <Image
@@ -41,6 +29,18 @@ function MyContactFooter({ resultContact }) {
           className="w-6 h-6"
         />
         <p className="text-gray-600 text-sm">{resultContact.email}</p>
+      </div>
+
+      {/* Address */}
+      <div className="flex items-start gap-3">
+        <Image
+          src="/assets/images/location.png"
+          width={24}
+          height={24}
+          alt="Location icon representing address"
+          className="w-6 h-6"
+        />
+        <p className="text-gray-600 text-sm">{resultContact.address}</p>
       </div>
     </div>
   );

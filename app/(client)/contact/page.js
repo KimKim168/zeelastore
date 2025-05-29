@@ -2,6 +2,8 @@ import React from "react";
 
 import MySocialMedia from "@/components/my-social-media";
 import { BASE_API_URL } from "@/env";
+import ContactForm from "@/components/contact-form";
+import MyContactLinks from "@/components/my-contact-links";
 
 export const metadata = {
   title: "Explore Our Contact - Chhayhok.com",
@@ -42,8 +44,21 @@ const page = async () => {
   });
   const resultLink = await responeLink.json();
   return (
-    <div className="min-h-[50vh] max-w-screen-2xl mb-10 mx-auto px-4 sm:px-6 lg:px-20 mt-5">
-      <MySocialMedia resultContact={resultContact} resultLink={resultLink} />
+    <div className="min-h-[50vh] max-w-screen-2xl mb-10 mx-auto px-4 sm:px-6 lg:px-20 mt-6">
+      <div className="flex flex-col lg:flex-row gap-10">
+        <div className="flex-1">
+          <ContactForm />
+        </div>
+        <div className="flex-1">
+          <MySocialMedia
+            resultContact={resultContact}
+            resultLink={resultLink}
+          />
+        </div>
+      </div>
+      <div className="mt-20">
+        <MyContactLinks resultLink={resultLink} />
+      </div>
     </div>
   );
 };

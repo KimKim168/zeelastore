@@ -2,6 +2,7 @@
 import React, { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import { RainbowButton } from "./rainbow-button";
+import Link from "next/link";
 // import MyAllCategory from "./my-all-categories";
 
 function MyNavigation({ resultCate }) {
@@ -24,18 +25,18 @@ function MyNavigation({ resultCate }) {
               </a> */}
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary-dark to-primary rounded-xl blur-lg opacity-30 group-hover:opacity-90 transition duration-700 group-hover:duration-300"></div>
-                <a
+                <Link
                   href="/products"
                   className="block font-bold text-primary group-hover:text-primary-dark transition duration-200"
                 >
                   <RainbowButton className="font-bold">
                     Special Offer
                   </RainbowButton>
-                </a>
+                </Link>
               </div>
             </li>
             <li>
-              <a
+              <Link
                 href="/"
                 className={`px-2 py-2 rounded ${
                   pathname === "/"
@@ -44,10 +45,10 @@ function MyNavigation({ resultCate }) {
                 }`}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/products"
                 className={`px-2 py-2 rounded ${
                   pathname === "/products"
@@ -56,19 +57,7 @@ function MyNavigation({ resultCate }) {
                 }`}
               >
                 Products
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className={`px-2 py-2 rounded ${
-                  pathname === "/contact"
-                    ? "underline  underline-offset-4  text-primary font-semibold"
-                    : "text-black hover:text-primary"
-                }`}
-              >
-                Contact Us
-              </a>
+              </Link>
             </li>
 
             {/* <li>
@@ -83,9 +72,20 @@ function MyNavigation({ resultCate }) {
                 videos
               </a>
             </li> */}
-
             <li>
-              <a
+              <Link
+                href="/support"
+                className={`px-2 py-2 rounded ${
+                  pathname === "/support"
+                    ? "underline  underline-offset-4  text-primary font-semibold"
+                    : "text-black hover:text-primary"
+                }`}
+              >
+                Support
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/about"
                 className={`px-2 py-2 rounded ${
                   pathname === "/about"
@@ -94,7 +94,31 @@ function MyNavigation({ resultCate }) {
                 }`}
               >
                 About Us
-              </a>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className={`px-2 py-2 rounded ${
+                  pathname === "/contact"
+                    ? "underline  underline-offset-4  text-primary font-semibold"
+                    : "text-black hover:text-primary"
+                }`}
+              >
+                Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/resources"
+                className={`px-2 py-2 rounded ${
+                  pathname === "/resources"
+                    ? "underline  underline-offset-4  text-primary font-semibold"
+                    : "text-black hover:text-primary"
+                }`}
+              >
+                Resource
+              </Link>
             </li>
           </ul>
           {/* <p className="hidden xl:flex">

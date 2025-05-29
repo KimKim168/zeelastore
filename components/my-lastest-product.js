@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { IMAGE_PRODUCT_URL, BASE_API_URL } from "@/env"; // Ensure these are correctly imported
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 function MylastestProduct() {
   const [products, setProducts] = useState([]);
@@ -38,10 +39,25 @@ function MylastestProduct() {
 
   return (
     <div>
-      <p className="p-2 text-lg text-center text-white rounded-md background-gradient">
+      {/* <p className="p-2 text-lg text-center text-white rounded-md background-gradient">
         New Arrivals
-      </p>
-      <div className="pt-2 bg-gray-50">
+      </p> */}
+      <Link href={`/products`}>
+        <div
+          className={cn(
+            "group relative w-full inline-flex h-11 animate-rainbow items-center justify-center p-[0.5px] border-0 bg-[length:200%] font-medium text-primary-foreground transition-colors [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+            // light mode colors
+            "z-10 bg-white bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]"
+          )}
+        >
+          <div
+            className={`bg-white/90 text-center backdrop-blur-md text-lg sm:text-lg md:text-xl font-bold text-gray-600 w-full h-full px-7 py-2`}
+          >
+            New Arrivals
+          </div>
+        </div>
+      </Link>
+      <div className="pt-2 bg-gray-700/5">
         {products.map((item) => (
           <Link href={`/products/${item.id}`} key={item.id}>
             <div

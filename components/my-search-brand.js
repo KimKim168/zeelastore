@@ -43,12 +43,12 @@ export function SearchBrand({ brand }) {
   };
   return (
     <div>
-      <p className="text-lg text-start font-bold text-blue rounded-md ">
+      <p className="text-lg text-start font-bold text-primary rounded-md ">
         Brands
       </p>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <div className="bg-gradient-to-r bg-[#48bd33] p-[0.5px] rounded-md">
+          <div className="bg-gradient-to-r bg-primary p-[0.5px] rounded-md">
             <Button
               variant="add"
               role="combobox"

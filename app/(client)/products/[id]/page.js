@@ -92,7 +92,7 @@ export default async function MyProduct({ params }) {
               />
             </div>
 
-            <div className=" sm:col-span-12 md:col-span-7 text-blue xl:ml-5">
+            <div className=" sm:col-span-12 md:col-span-7 text-primary xl:ml-5">
               <div>
                 <p className="text-lg font-semibold md:text-xl">
                   {result?.title}
@@ -180,7 +180,7 @@ export default async function MyProduct({ params }) {
                   {resultLink?.map(
                     (item) =>
                       item?.link_in_product_detail == 1 && (
-                        <div key={item.id} className="bg-gradient-to-r bg-[#48bd33] p-[0.5px] rounded-md">
+                        <div key={item.id} className="bg-gradient-to-r bg-primary p-[0.5px] rounded-md">
                           <Link
                             key={item.id}
                             href={item.link}
@@ -219,7 +219,7 @@ export default async function MyProduct({ params }) {
           )}
           {/*End Content utttom */}
         </div>
-        {/* <div className="flex items-center justify-between w-full pb-0 mt-5 mb-8 border-b-2 hover:no-underline border-blue-bold"></div> */}
+        {/* <div className="flex items-center justify-between w-full pb-0 mt-5 mb-8 border-b-2 hover:no-underline border-primary-bold"></div> */}
       </section>
       {resultProductRelated?.data?.length > 0 && (
         <MyRelatedProduct

@@ -13,6 +13,7 @@ import { IMAGE_SLIDES_URL } from "@/env";
 import { Card, CardContent } from "./ui/card";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
+import HeroButton from "./hero-button";
 
 export default function MySlider({ imagesTop, imagesBottom }) {
   const plugin = useRef(
@@ -37,47 +38,63 @@ export default function MySlider({ imagesTop, imagesBottom }) {
 
   return (
     <div className="px-2 mx-auto mt-2 max-w-screen-2xl xl:px-20">
+      <div className="relative w-full max-w-[1380px] mx-auto overflow-hidden bg-black object-cover">
+        <Image
+          alt=""
+          width={1920}
+          height={1080}
+          className="w-full aspect-[21/9] object-cover"
+          src={`/hero-banner-2.png`}
+        />
+        <span className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10">
+          <HeroButton link={"/products"} title="See All Products" />
+        </span>
+      </div>
       {/* Top Carousel */}
       <Carousel plugins={[plugin.current]} setApi={setApi}>
-        <CarouselContent>
-          {imagesTop.map((item, index) => (
-            <CarouselItem key={index} className="p-0">
+        <CarouselContent className="-ml-3">
+          {imagesBottom.map((item, index) => (
+            <CarouselItem key={index} className="pl-3 basis-1/2 lg:basis-1/4">
               <Link className="relative group block" href={item.link || "#"}>
                 <Image
                   src={IMAGE_SLIDES_URL + item.image}
                   alt={`Slide ${index + 1}`}
                   width={2100}
                   height={1200}
-                  className="w-full object-cover aspect-[21/9] transition-all duration-300 hover:brightness-90"
+                  className="w-full object-cover aspect-[4/3] transition-all duration-300 hover:scale-105"
                 />
-                <p className="absolute bottom-5 right-5 bg-black/70 text-white text-xs sm:text-sm px-3 py-1.5 rounded-lg transition-all duration-300 group-hover:bg-blue-600">
+                {/* <p className="absolute bottom-5 right-5 bg-black/70 text-white text-xs sm:text-sm px-3 py-1.5 rounded-lg transition-all duration-300 group-hover:bg-primary-600">
                   Learn More
-                </p>
+                </p> */}
               </Link>
             </CarouselItem>
           ))}
         </CarouselContent>
 
-        <CarouselPrevious />
-        <CarouselNext />
-
-        {/* Dot Indicators */}
-        <div className="absolute flex items-center justify-center space-x-2 sm:space-x-3 transform -translate-x-1/2 bottom-4 left-1/2">
-          {imagesTop.map((_, index) => (
-            <div
-              key={index}
-              className={`transition-all duration-300 ${
-                currentIndex === index
-                  ? "h-1.5 w-6 sm:w-8 bg-blue-600 scale-125 shadow-lg"
-                  : "h-1.5 w-3 bg-gray-400 opacity-70"
-              } rounded-full`}
-            />
-          ))}
+        <div className="absolute flex items-center justify-center gap-14 xl:gap-3 transform -translate-x-1/2 -bottom-4 lg:-bottom-8 left-1/2">
+          <span>
+            <CarouselPrevious />
+          </span>
+          <div className="space-x-2 flex items-center justify-center sm:space-x-3">
+            {imagesBottom.map((_, index) => (
+              <span
+                key={index}
+                className={`transition-all duration-300 ${
+                  currentIndex === index
+                    ? "h-1.5 w-6 sm:w-8 bg-primary scale-125 shadow-lg"
+                    : "h-1.5 w-3 bg-gray-400 opacity-70"
+                } rounded-full`}
+              />
+            ))}
+          </div>
+          <span>
+            <CarouselNext />
+          </span>
         </div>
       </Carousel>
 
       {/* Bottom Carousel */}
-      <div className="mx-auto mt-2">
+      {/* <div className="mx-auto mt-2">
         <Carousel opts={{ align: "start" }}>
           <CarouselContent className="-ml-2">
             {imagesBottom.map((item, index) => (
@@ -92,7 +109,7 @@ export default function MySlider({ imagesTop, imagesBottom }) {
                         height={900}
                         className="aspect-[21/9] object-cover hover:cursor-pointer"
                       />
-                      <p className="absolute whitespace-nowrap bottom-4 right-4 bg-black/70 text-white text-sm px-4 py-2 rounded-lg transition-all duration-300 opacity-0 group-hover:opacity-100 hover:bg-blue-600">
+                      <p className="absolute whitespace-nowrap bottom-4 right-4 bg-black/70 text-white text-sm px-4 py-2 rounded-lg transition-all duration-300 opacity-0 group-hover:opacity-100 hover:bg-primary-600">
                         Learn More
                       </p>
                     </Link>
@@ -104,7 +121,7 @@ export default function MySlider({ imagesTop, imagesBottom }) {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-      </div>
+      </div> */}
     </div>
   );
 }

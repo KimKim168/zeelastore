@@ -11,10 +11,12 @@ const HomeHeader = async () => {
   });
   const resultCate = await respone.json();
 
-  const responeContact = await fetch(`${BASE_API_URL}/contact`, {next: {revalidate: 3600}});
+  const responeContact = await fetch(`${BASE_API_URL}/contact`, {
+    next: { revalidate: 3600 },
+  });
   const resultContact = await responeContact.json();
   return (
-    <div>
+    <div className="bg-white/50 backdrop-blur-md sticky top-0 z-50">
       <MyHeader resultCate={resultCate} resultContact={resultContact} />
       <MyNavigation resultCate={resultCate} />
     </div>

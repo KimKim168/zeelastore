@@ -22,7 +22,7 @@ function MyDualRangePrice() {
   return (
     <div>
       <div className="mb-10">
-        <p className="text-lg font-bold rounded-md text-start text-blue ">
+        <p className="text-lg font-bold rounded-md text-start text-primary ">
           Price
         </p>
       </div>
@@ -41,7 +41,7 @@ function MyDualRangePrice() {
           onClick={() => handleSelect(values)}
           variant="add"
           type="submit"
-          className="w-full h-10 px-4 rounded shadow-transparent hover:text-blue-900 hover:font-bold hover:bg-gray-50"
+          className="w-full h-10 px-4 rounded shadow-transparent hover:text-primary hover:font-bold hover:bg-gray-50"
         >
           Apply Filter
         </Button>

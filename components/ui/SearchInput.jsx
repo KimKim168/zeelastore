@@ -27,7 +27,7 @@ export default function SearchInput() {
     <>
       <Suspense>
         <form action={handleSearch}>
-          <div className="flex items-center min-w-[500px] xl:max-w-[500px] justify-between bg-white border ">
+          <div className="flex items-center xl:max-w-full justify-between bg-white border ">
             <div className="flex flex-1 w-full items-center gap-2 ml-2">
               <Search className="text-gray-400 " size={20} />
               <input
@@ -42,7 +42,7 @@ export default function SearchInput() {
             </div>
             <button
               type="submit"
-              className="bg-blue-900 hidden min-[280px]:block text-white py-1 px-2 mr-1"
+              className="bg-primary hidden min-[280px]:block text-white py-1 px-2 mr-1"
             >
               Search
             </button>

@@ -26,7 +26,7 @@ export default async function MyListProducts() {
           (category) =>
             category.books?.length > 3 && (
               <div key={category.id}>
-                {/* <div className="flex items-center justify-between pb-1 mt-8 mb-4 border-b-2 border-blue-bold">
+                {/* <div className="flex items-center justify-between pb-1 mt-8 mb-4 border-b-2 border-primary-bold">
                   <p className="text-[12px] sm:text-[16px] md:text-[17px] border-double shadow-md  text-white border-x-[5px] background-gradient1 rounded-tl-full rounded-br-full px-8 py-1">
                     {category.name}
                   </p>

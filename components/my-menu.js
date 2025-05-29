@@ -51,8 +51,8 @@ function MyMenu({ resultCate, resultContact }) {
                   href="/"
                   className={`py-2 rounded ${
                     pathname === "/"
-                      ? "underline underline-offset-4 text-blue font-semibold"
-                      : "text-black hover:text-blue-500"
+                      ? "underline underline-offset-4 text-primary font-semibold"
+                      : "text-black hover:text-primary-500"
                   }`}
                 >
                   Home
@@ -63,8 +63,8 @@ function MyMenu({ resultCate, resultContact }) {
                   href="/products"
                   className={`py-2 rounded ${
                     pathname === "/products"
-                      ? "underline underline-offset-4 text-blue font-semibold"
-                      : "text-black hover:text-blue-500"
+                      ? "underline underline-offset-4 text-primary font-semibold"
+                      : "text-black hover:text-primary-500"
                   }`}
                 >
                   Products
@@ -75,8 +75,8 @@ function MyMenu({ resultCate, resultContact }) {
                   href="/contact"
                   className={`py-2 rounded ${
                     pathname === "/contact"
-                      ? "underline underline-offset-4 text-blue font-semibold"
-                      : "text-black hover:text-blue-500"
+                      ? "underline underline-offset-4 text-primary font-semibold"
+                      : "text-black hover:text-primary-500"
                   }`}
                 >
                   Contact Us
@@ -93,8 +93,8 @@ function MyMenu({ resultCate, resultContact }) {
                   href="/video-gallery"
                   className={`py-2 rounded ${
                     pathname === "/video-gallery"
-                      ? "underline underline-offset-4 text-blue font-semibold"
-                      : "text-black hover:text-blue-500"
+                      ? "underline underline-offset-4 text-primary font-semibold"
+                      : "text-black hover:text-primary-500"
                   }`}
                 >
                   Videos
@@ -105,8 +105,8 @@ function MyMenu({ resultCate, resultContact }) {
                   href="/about"
                   className={`py-2 rounded ${
                     pathname === "/about"
-                      ? "underline underline-offset-4 text-blue font-semibold"
-                      : "text-black hover:text-blue-500"
+                      ? "underline underline-offset-4 text-primary font-semibold"
+                      : "text-black hover:text-primary-500"
                   }`}
                 >
                   About Us

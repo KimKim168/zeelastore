@@ -96,7 +96,7 @@ export default function MyVideoGallery({ className, videos }) {
                 <Play size={24} />
               </span>
             </div>
-            {/* <div className="mt-1 text-sm font-medium text-center text-gray-700 group-hover:text-blue-500">
+            {/* <div className="mt-1 text-sm font-medium text-center text-gray-700 group-hover:text-primary-500">
               {item.title}
             </div> */}
           </div>

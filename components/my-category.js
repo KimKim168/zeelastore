@@ -58,7 +58,7 @@ function MyCategoryComponent({ categories }) {
           className={`${
             currentCategoryId == null &&
             "underline text-white text-center background-gradient font-bold bg-primary group text-primary-foreground hover:text-primary"
-          } hover:bg-blue-300/10 p-2 py-2 rounded items-center flex gap-1 w-full text-[16px] hover:underline`}
+          } hover:bg-primary-300/10 p-2 py-2 rounded items-center flex gap-1 w-full text-[16px] hover:underline`}
         >
           <AlignJustifyIcon />
           All Categories

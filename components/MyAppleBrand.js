@@ -71,7 +71,7 @@ export default function MyAppleBrand() {
     <>
       <section className="max-w-screen-2xl  mx-auto px-2 xl:px-20 py-5">
         <div>
-          <div className="flex justify-between items-center border-b-2 pb-1 border-blue-bold  mb-4">
+          <div className="flex justify-between items-center border-b-2 pb-1 border-primary-bold  mb-4">
             <p className="text-[12px] sm:text-[16px] md:text-[17px] border-double shadow-md  text-white border-x-[5px] background-gradient1 rounded-tl-full rounded-br-full px-8 py-1">
               Laptop Asus
             </p>
@@ -103,7 +103,7 @@ export default function MyAppleBrand() {
                     className="pl-1 basis-1/2  sm:basis-1/3 md:basis-1/4 xl:basis-1/5 2xl:basis-1/6"
                   >
                     {/* Product Card */}
-                    <div className=" border mx-2 h-full border-blue bg-white p-4  dark:border-gray-700 dark:bg-gray-800">
+                    <div className=" border mx-2 h-full border-primary bg-white p-4  dark:border-gray-700 dark:bg-gray-800">
                       <div>
                         <a href="/products">
                           <Image
@@ -135,7 +135,7 @@ export default function MyAppleBrand() {
                   </div> */}
                         </div>
                         {/* <div className="flex mt-3">
-                  <p className="text-blue mr-1">Rate:</p>
+                  <p className="text-primary mr-1">Rate:</p>
                   <div className="flex overflow-hidden">
                     <StarIcon width="16" className="md:ml-2 text-yellow-400" />
                     <StarIcon width="16" className="md:ml-2 text-yellow-400" />

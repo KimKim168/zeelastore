@@ -21,7 +21,7 @@ const MyBreadCrumbShop = ({ result }) => {
             <BreadcrumbSeparator />
 
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-blue">Scanner</BreadcrumbPage>
+              <BreadcrumbPage className="text-primary">Scanner</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

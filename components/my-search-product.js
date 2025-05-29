@@ -10,13 +10,14 @@ import {
 } from "@/components/ui/sheet";
 import SearchInput from "./ui/SearchInput";
 import { Search } from "lucide-react";
+import ExpandHoverButton from "./expand-hover-button";
 
 export function SearchProduct() {
   return (
     <Sheet modal={false}>
       {/* Trigger to open the sheet */}
-      <SheetTrigger className="bg-white p-1.5 rounded-md">
-        <Search />
+      <SheetTrigger>
+        <ExpandHoverButton icon={<Search />} title="Search Products" />
       </SheetTrigger>
       {/* Sheet content */}
       <SheetContent side="top">

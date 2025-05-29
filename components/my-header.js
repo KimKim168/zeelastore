@@ -10,53 +10,56 @@ import { APP_LOGO, BASE_BACKEND_URL } from "@/env";
 const MyHeader = ({ resultCate, resultContact }) => {
   return (
     <>
-      <header className="py-3 background-gradient">
+      <header>
         {/* <p className="text-[10px] px-2  text-white  xl:hidden">
           Pend $120 more and get free shipping!
         </p> */}
-        <div className="px-2 mx-auto max-w-screen-2xl xl:px-20 md:p-3">
-          <div className="grid items-center justify-between grid-cols-12 gap-3">
-            <div className="col-span-8 md:col-span-2 xl:col-span-1">
+        <div className="px-2 mx-auto max-w-screen-2xl xl:px-20">
+          <div className="flex items-center justify-between gap-3">
+            <div className="col-span-8 md:col-span-2 xl:col-span-1 ">
               <Link href="/">
                 <Image
                   src={APP_LOGO}
                   width={200}
                   height={200}
                   alt="logo"
-                  className="h-16 w-16 object-cover"
+                  className="h-16 w-16 object-contain"
                 />
               </Link>
             </div>
-            <div className="flex items-center justify-end col-span-4 space-x-2 md:hidden">
-              {/* <div className="md:hidden bg-white p-[5px] rounded-sm">
-                <ShoppingCartIcon />
-              </div> */}
-              <SearchProduct />
-
-              {/* Menu */}
-              {/* <MyMenu resultCate={resultCate} resultContact={resultContact} /> */}
-              <Suspense>
-                <MyHomeModal categories={resultCate} />
-              </Suspense>
-
-              {/*End Menu */}
+            <div className="hidden md:block">
+              <div className="text-foreground text-sm flex gap-3 md:text-[16px] items-center ">
+                <a
+                  href={`/contact`}
+                  className="hover:underline whitespace-nowrap flex items-center"
+                >
+                  Visit our showroom
+                </a>
+                <span>|</span>
+                <span className="whitespace-nowrap flex items-center">
+                  Free Delivery to 25 provinces
+                </span>
+              </div>
             </div>
-            <div className="hidden col-span-7 md:grid xl:col-span-9 place-items-center">
+
+            {/* <div className="hidden col-span-7 md:grid xl:col-span-9 place-items-center">
               <Suspense>
                 <SearchInput className="flex-1" />
               </Suspense>
-            </div>
-            <div className="justify-end hidden space-x-4 sm:col-span-3 xl:col-span-2 md:flex text-nowrap ">
-              <div className="text-white text-sm md:text-[16px] flex items-center ">
-                <PhoneCallIcon className="w-4 mr-1 md:mr-2 md:w-5"></PhoneCallIcon>
-                <a href={`tel:${resultContact.phone}`} className="hover:underline">{resultContact.phone}</a>
-              </div>
-              <div className="flex items-center space-x-4 overflow-hidden text-white">
-                {/* <Link href={BASE_BACKEND_URL}>
-                  <User className=" min-w-5"></User>
-                </Link> */}
-
-                {/* <MyLanguage /> */}
+            </div> */}
+            <div>
+              <div className="text-foreground text-sm md:text-[16px] flex items-center gap-4">
+                <a
+                  href={`tel:${resultContact.phone}`}
+                  className="hover:underline whitespace-nowrap flex items-center"
+                >
+                  <PhoneCallIcon className="w-4 mr-1 md:mr-2 md:w-5"></PhoneCallIcon>
+                  {resultContact.phone}
+                </a>
+                <SearchProduct />
+                <Suspense>
+                  <MyHomeModal categories={resultCate} />
+                </Suspense>
               </div>
             </div>
           </div>

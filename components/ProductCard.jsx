@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function ProductCard({ item, isNew = false }) {
   return (
-    <div className="p-[0.5px] bg-gradient-to-r bg-[#48bd33] h-full overflow-hidden ">
+    <div className="p-[0.5px] bg-gradient-to-r bg-primary h-full overflow-hidden ">
       <div className="bg-white flex flex-col dark:bg-gray-900 h-full overflow-hidden relative">
         {isNew && (
           <div className="absolute top-0 left-1 z-10 ">
@@ -18,9 +18,9 @@ export default function ProductCard({ item, isNew = false }) {
             />
           </div>
         )}
-        <Link href={`/products/${item.id}`} className="relative block">
+        <Link href={`/products/${item.id}`} className="relative w-full aspect-square overflow-hidden block">
           <Image
-            className="object-contain w-full mx-auto transition-transform duration-300 border-b aspect-square dark:hidden hover:scale-105"
+            className="object-contain w-full mx-auto transition-transform duration-300  dark:hidden hover:scale-125"
             src={IMAGE_PRODUCT_URL + item.image}
             width={600}
             height={600}

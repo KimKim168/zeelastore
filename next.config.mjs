@@ -5,6 +5,9 @@ const nextConfig = {
       {
         hostname: "chhayhok.brolong.pro",
       },
+      {
+        hostname: "images.pexels.com",
+      },
     ],
     unoptimized: false,
   },

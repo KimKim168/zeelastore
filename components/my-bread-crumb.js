@@ -20,7 +20,7 @@ const MyBreadCrumb = ({ result }) => {
             <BreadcrumbSeparator />
 
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-blue">{result}</BreadcrumbPage>
+              <BreadcrumbPage className="text-primary">{result}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

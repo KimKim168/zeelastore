@@ -1,26 +1,41 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 const HeaderWithLink = ({ title, href }) => {
   return (
     <div className="flex flex-col pb-1 mt-12 mb-2">
       <div className="flex items-center justify-between">
-        <p className="text-[#48bd33] font-bold text-lg sm:text-lg md:text-xl tracking-wide py-1 text-center">
+        {/* <p className="text-primary font-bold text-lg sm:text-lg md:text-xl tracking-wide py-1 text-center">
           {title}
-        </p>
+        </p> */}
+        <span className="translate-y-[1px] -translate-x-[1px]">
+          <div
+            className={cn(
+              "group relative inline-flex h-11 animate-rainbow items-center justify-center p-[1px] border-0 bg-[length:200%] font-medium text-primary-foreground transition-colors [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+
+              // light mode colors
+              "z-10 bg-white bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]"
+            )}
+          >
+            <div className="bg-white text-lg sm:text-lg md:text-xl font-bold text-primaryDark w-full h-full px-7 py-2 ">
+              {title}
+            </div>
+          </div>
+        </span>
 
         {href && (
           <Link
             href={href}
-            className="text-sm sm:text-base hover:translate-x-2 transition-all duration-500 md:text-lg bg-gradient-to-r bg-[#48bd33] bg-clip-text text-transparent font-medium tracking-wide py-1"
+            className="text-sm sm:text-base hover:translate-x-2 transition-all duration-500 md:text-lg bg-gradient-to-r bg-primary bg-clip-text text-transparent font-medium tracking-wide py-1"
           >
             View More &gt;
           </Link>
         )}
       </div>
 
-      <div className="h-[2px] w-full bg-gradient-to-r bg-[#48bd33] rounded"></div>
+      <div className="h-[2px] w-full bg-gradient-to-r bg-primary rounded"></div>
     </div>
   );
 };

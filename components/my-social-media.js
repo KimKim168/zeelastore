@@ -62,7 +62,7 @@ function MySocialMedia({ resultContact, resultLink }) {
               rel="noopener noreferrer"
               title={`Visit ${item.name}`}
               aria-label={`Link to ${item.name}`}
-              className="flex items-center gap-2 p-3 rounded-lg bg-gray-100 hover:bg-blue-100 hover:shadow-md transition-all duration-150"
+              className="flex items-center gap-2 p-3 rounded-lg bg-gray-100 hover:bg-primary-100 hover:shadow-md transition-all duration-150"
             >
               <Image
                 src={`${IMAGE_LINKS_URL}${item.image}`}

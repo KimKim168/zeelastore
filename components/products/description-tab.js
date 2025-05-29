@@ -14,7 +14,7 @@ const DescriptionTab = ({ description }) => {
     <>
       {/* <Tabs defaultValue="Specification" className=" mt-10">
         <TabsList className="grid grid-cols-2 bg-white ">
-          <p className="text-sm md:text-lg underline text-blue underline-offset-4">
+          <p className="text-sm md:text-lg underline text-primary underline-offset-4">
             Specification
           </p>
         </TabsList>
@@ -39,7 +39,7 @@ const DescriptionTab = ({ description }) => {
           </Card>
         </TabsContent>
         <TabsContent value="Overview">
-          <Card className="shadow-none border-r-0 border-t-0 border-l-2 border-b-0 border-blue">
+          <Card className="shadow-none border-r-0 border-t-0 border-l-2 border-b-0 border-primary">
             <CardContent className="space-y-2">New Arrivals</CardContent>
           </Card>
         </TabsContent>
@@ -54,12 +54,12 @@ const DescriptionTab = ({ description }) => {
           {/* Trigger Section */}
           <div>
             <AccordionTrigger className="w-full hover:no-underline pb-0 flex justify-between items-center">
-              <p className="text-[#48bd33] font-bold text-lg sm:text-lg md:text-xl tracking-wide py-1 text-center">
+              <p className="text-primary font-bold text-lg sm:text-lg md:text-xl tracking-wide py-1 text-center">
                 Description
               </p>
-              <ArrowUpDown className="text-[#48bd33]" />
+              <ArrowUpDown className="text-primary" />
             </AccordionTrigger>
-            <div className="h-[2px] w-full bg-gradient-to-r bg-[#48bd33] rounded mb-6"></div>
+            <div className="h-[2px] w-full bg-gradient-to-r bg-primary rounded mb-6"></div>
           </div>
 
           {/* Content Section */}

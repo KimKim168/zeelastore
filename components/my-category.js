@@ -6,11 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Link from "next/link";
 import {
   AlignJustifyIcon,
-  ArrowRight,
-  ChevronsRightIcon,
   Dot,
 } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";

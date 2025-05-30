@@ -3,14 +3,12 @@ import React from "react";
 import {
   Sheet,
   SheetContent,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import MyCategoryComponent from "./my-category";
 import { SearchBrand } from "./my-search-brand";
-import MyDualRangPrice from "./my-dual-range-price";
 import MylastestProduct from "./my-lastest-product";
 import { FilterIcon } from "lucide-react";
 

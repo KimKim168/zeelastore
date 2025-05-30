@@ -9,10 +9,9 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { ChevronsDown, ChevronsRight, LucideChevronDown } from "lucide-react";
+import { ChevronsRight } from "lucide-react";
 import {
   BASE_API_URL,
   IMAGE_LINKS_URL,

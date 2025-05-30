@@ -34,13 +34,88 @@ export default async function MyFooter() {
               />
 
               <div
-                className=" w-auto md:w-96 md:mt-5 text-base"
-                dangerouslySetInnerHTML={{ __html: footerData.description }}
+                className=" w-auto prose prose-p:p-0 prose-p:m-0"
+                dangerouslySetInnerHTML={{
+                  __html: `
+<div>
+  <strong>⏰ Opening Hours</strong>
+  <p>Monday - Sunday</p>
+  <p>8:00 AM — 5:30 PM</p>
+</div> 
+                  `,
+                }}
               ></div>
             </a>
           </div>
-          <div className="flex-1 space-y-4">
-            <MyContactFooter resultContact={resultContact} />
+          <div className="flex-1 lg:flex justify-center w-full space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Contacts</h3>
+              <div
+                className=" w-auto prose prose-p:p-0 prose-p:m-0"
+                dangerouslySetInnerHTML={{
+                  __html: `
+<div>
+  <strong>📍 Sales Showroom</strong>
+  <p>☎️ 093 667 229</p>
+  <p>☎️ 071 345 908</p>
+
+  <strong>🔧 Technical Support</strong>
+  <p>📞 010 225 774</p>
+  <p>📞 092 688 339</p>
+</div>
+                  `,
+                }}
+              ></div>
+            </div>
+          </div>
+          <div className="flex-1 lg:flex justify-center w-full space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+              <ul className="space-y-1">
+                <li>
+                  <Link href="/" className="text-gray-600 hover:underline">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/products"
+                    className="text-gray-600 hover:underline"
+                  >
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/support"
+                    className="text-gray-600 hover:underline"
+                  >
+                    Support
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-gray-600 hover:underline">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-gray-600 hover:underline"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/resources"
+                    className="text-gray-600 hover:underline"
+                  >
+                    Resource
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="flex-1 space-y-4">
             <MySocialMediaFooter

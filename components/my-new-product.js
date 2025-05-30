@@ -9,9 +9,9 @@ export default async function MyNewProduct() {
 
   return (
     <>
-      <div className="px-2 pt-5 mx-auto max-w-screen-2xl xl:px-20">
+      <div className="px-2 mx-auto max-w-screen-2xl xl:px-20">
         <div>
-          <HeaderWithLink title="New Arrivals" href={`/products`} />
+          <HeaderWithLink className='lg:mt-[0px]' title="New Arrivals" href={`/products`} />
         </div>
 
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 xl:grid-cols-6">

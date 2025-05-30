@@ -41,7 +41,7 @@ async function page() {
         <h1 className="text-xl text-center xl:text-2xl">{result.name}</h1>
         <div
           dangerouslySetInnerHTML={{ __html: result.description }}
-          className="text-justify"
+          className="prose max-w-none"
         ></div>
       </div>
     </>

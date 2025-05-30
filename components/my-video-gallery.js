@@ -92,7 +92,7 @@ export default function MyVideoGallery({ className, videos }) {
                 alt=""
                 className="object-cover w-full transition-all duration-300 transform aspect-video group-hover:scale-105"
               />
-              <span className="absolute bg-black/50 border-[0.5px] -translate-x-1/2 group-hover:bg-primary bg-primary/80 rounded-full p-1.5 -translate-y-1/2 text-white top-[50%] left-[50%]">
+              <span className="absolute bg-black/50 border-[1px] -translate-x-1/2 group-hover:bg-primary bg-primary/80 rounded-full p-1.5 -translate-y-1/2 text-white top-[50%] left-[50%]">
                 <Play size={24} />
               </span>
             </div>

@@ -16,9 +16,8 @@ const HomeHeader = async () => {
   });
   const resultContact = await responeContact.json();
   return (
-    <div className="bg-white/50 backdrop-blur-md sticky top-0 z-50">
+    <div className="bg-white/55 border-b backdrop-blur-md sticky top-0 z-50">
       <MyHeader resultCate={resultCate} resultContact={resultContact} />
-      <MyNavigation resultCate={resultCate} />
     </div>
   );
 };

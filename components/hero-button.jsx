@@ -5,7 +5,7 @@ import { Button } from "./moving-border";
 const HeroButton = ({ title, link }) => {
   return (
     <div>
-      <div className="max-w-md mx-auto space-y-6 flex justify-center relative">
+      <div className="max-w-md mx-auto flex justify-center relative">
         <div className="absolute -inset-1 bg-gradient-to-r from-primary-dark to-primary rounded-xl blur-lg opacity-30 group-hover:opacity-90 transition duration-700 group-hover:duration-300"></div>
 
         <Link

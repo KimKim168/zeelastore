@@ -50,7 +50,7 @@ export function SearchBrand({ brand }) {
       </p>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <div className="bg-gradient-to-r bg-primary p-[0.5px] rounded-md">
+          <div className="bg-gradient-to-r bg-primary p-[1px] rounded-md">
             <Button
               variant="add"
               role="combobox"

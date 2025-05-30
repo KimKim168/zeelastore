@@ -17,7 +17,7 @@ export default async function MyBrands() {
           <Link
             href={`/products?brandId=${item.id}`}
             key={item.id}
-            className="hover:shadow-[5px_5px_0px_0px_rgba(72,189,51)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 border-primary border-[0.5px] bg-white"
+            className="hover:shadow-[5px_5px_0px_0px_rgba(72,189,51)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-300 border-primary border-[1px] bg-white"
           >
             <Image
               src={IMAGE_BRAND_URL + item.image}

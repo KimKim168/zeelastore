@@ -61,7 +61,7 @@ export default function MyOrderWithTelegram({ id }) {
     <>
       <Dialog open={openDialog} onOpenChange={(state) => setOpenDialog(state)}>
         <DialogTrigger asChild>
-          <div className="bg-gradient-to-r bg-primary p-[0.5px] rounded-md">
+          <div className="bg-gradient-to-r bg-primary p-[1px] rounded-md">
             <button
               onClick={() => setOpenDialog(true)}
               className="flex items-center justify-center w-full gap-1 p-1 bg-white dark:bg-gray-900 rounded-md sm:p-2 md:gap-2"

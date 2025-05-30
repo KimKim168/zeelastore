@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function ProductCard({ item, isNew = false }) {
   return (
-    <div className="p-[0.5px] bg-gradient-to-r bg-primary h-full overflow-hidden ">
+    <div className="p-[1px] bg-primary/50 h-full overflow-hidden ">
       <div className="bg-white flex flex-col dark:bg-gray-900 h-full overflow-hidden relative">
         {isNew && (
           <div className="absolute top-0 left-1 z-10 ">

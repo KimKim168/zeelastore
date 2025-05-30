@@ -203,6 +203,42 @@ export default async function MyProduct({ params }) {
                       </ul>
                     </li> */}
                     <li>
+                      <div className="space-y-4">
+                        <div>
+                          <div className="col-span-6 text-gray-600 mt-2 flex gap-2 items-center text-lg font-semibold md:text-xl">
+                            Key Specifications
+                          </div>
+                          <div
+                            className="font-normal text-gray-500"
+                            dangerouslySetInnerHTML={{
+                              __html: `<div class="pc-specs">
+                        <ul>
+                          <li><span>Processor:</span> Intel Core i7-13700K (16-Core, up to 5.4 GHz)</li>
+                          <li><span>Motherboard:</span> ASUS ROG Strix Z790-E Gaming WiFi</li>
+                          <li><span>Graphics Card:</span> NVIDIA GeForce RTX 4080 16GB GDDR6X</li>
+                          <li><span>Memory:</span> 32GB DDR5 6000MHz (2 x 16GB)</li>
+                          <li><span>Storage:</span> 1TB NVMe Gen4 SSD + 2TB HDD 7200RPM</li>
+                          <li><span>Power Supply:</span> 850W 80+ Gold Fully Modular</li>
+                          <li><span>Cooling:</span> Corsair iCUE H150i Elite Capellix Liquid Cooler</li>
+                          <li><span>Case:</span> NZXT H710 Mid-Tower ATX (Tempered Glass)</li>
+                          <li><span>Operating System:</span> Windows 11 Pro 64-bit</li>
+                          <li><span>Connectivity:</span> Wi-Fi 6E, Bluetooth 5.3, 2.5G LAN</li>
+                        </ul>
+                      </div>
+                      `,
+                            }}
+                          />
+                        </div>
+
+                        <div className="col-span-6 text-gray-600 text-lg font-semibold md:text-xl">
+                          Colors :{" "}
+                          <span className="text-base text-gray-500 font-normal">
+                            Gray, Blue, White, Gold
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
                       <ul className="flex items-center justify-start gap-5 text-lg font-semibold md:text-xl">
                         <li className="col-span-6 text-gray-600">Price:</li>
                         <li className="col-span-6 text-color">
@@ -239,7 +275,7 @@ export default async function MyProduct({ params }) {
                       item?.link_in_product_detail == 1 && (
                         <div
                           key={item.id}
-                          className="bg-gradient-to-r bg-primary p-[0.5px] rounded-md"
+                          className="bg-gradient-to-r bg-primary p-[1px] rounded-md"
                         >
                           <Link
                             key={item.id}
@@ -264,35 +300,6 @@ export default async function MyProduct({ params }) {
                 </div>
 
                 {/*End Socail */}
-              </div>
-
-              <div className="my-12">
-                <div className="col-span-6 text-gray-600 text-lg font-semibold md:text-xl">
-                  Colors : <span className="text-base text-gray-500 font-normal">Gray, Blue, White, Gold</span>
-                </div>
-                <div className="col-span-6 text-gray-600 mt-2 flex gap-2 items-center text-lg font-semibold md:text-xl">
-                  Tech specs
-                </div>
-                <div
-                  className="font-normal text-gray-500"
-                  dangerouslySetInnerHTML={{
-                    __html: `<div class="pc-specs">
-                        <ul>
-                          <li><span>Processor:</span> Intel Core i7-13700K (16-Core, up to 5.4 GHz)</li>
-                          <li><span>Motherboard:</span> ASUS ROG Strix Z790-E Gaming WiFi</li>
-                          <li><span>Graphics Card:</span> NVIDIA GeForce RTX 4080 16GB GDDR6X</li>
-                          <li><span>Memory:</span> 32GB DDR5 6000MHz (2 x 16GB)</li>
-                          <li><span>Storage:</span> 1TB NVMe Gen4 SSD + 2TB HDD 7200RPM</li>
-                          <li><span>Power Supply:</span> 850W 80+ Gold Fully Modular</li>
-                          <li><span>Cooling:</span> Corsair iCUE H150i Elite Capellix Liquid Cooler</li>
-                          <li><span>Case:</span> NZXT H710 Mid-Tower ATX (Tempered Glass)</li>
-                          <li><span>Operating System:</span> Windows 11 Pro 64-bit</li>
-                          <li><span>Connectivity:</span> Wi-Fi 6E, Bluetooth 5.3, 2.5G LAN</li>
-                        </ul>
-                      </div>
-                      `,
-                  }}
-                />
               </div>
 
               {/* Add to wishlist */}

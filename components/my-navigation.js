@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import { RainbowButton } from "./rainbow-button";
 import Link from "next/link";
+import { SearchProduct } from "./my-search-product";
 // import MyAllCategory from "./my-all-categories";
 
 function MyNavigation({ resultCate }) {
@@ -10,13 +11,13 @@ function MyNavigation({ resultCate }) {
   const pathname = usePathname();
   return (
     <>
-      <div className="w-full border-b shadow-sm">
-        <div className="hidden md:flex justify-between text-[10px] sm:text-sm md:text-[16] items-center max-w-screen-2xl mx-auto xl:px-20 ">
-          <ul className="flex items-center space-x-3 font-medium lg:flex-row lg:space-x-5 lg:mt-0">
-            <li className=" md:py-3">
+      <div className="w-full lg:mt-3 flex justify-between items-center">
+        <div className="hidden lg:flex justify-between text-base whitespace-nowrap lg:text-lg items-center">
+          <ul className="flex items-center space-x-3 font-medium lg:flex-row lg:space-x-5">
+            <li>
               {/* <a
                 href="#"
-                className="flex items-center p-2 text-black rounded text-nowrap bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                className="flex items-center p-2 text-black rounded text-nowrap bg-primary-700 lg:bg-transparent lg:text-primaryDark-700 lg:p-0 dark:text-white"
                 aria-current="page"
               >
                 <Suspense>
@@ -27,7 +28,7 @@ function MyNavigation({ resultCate }) {
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary-dark to-primary rounded-xl blur-lg opacity-30 group-hover:opacity-90 transition duration-700 group-hover:duration-300"></div>
                 <Link
                   href="/products"
-                  className="block font-bold text-primary group-hover:text-primary-dark transition duration-200"
+                  className="block font-bold text-primaryDark group-hover:text-primaryDarkDark transition duration-200"
                 >
                   <RainbowButton className="font-bold">
                     Special Offer
@@ -40,8 +41,8 @@ function MyNavigation({ resultCate }) {
                 href="/"
                 className={`px-2 py-2 rounded ${
                   pathname === "/"
-                    ? "underline  underline-offset-4  text-primary font-semibold"
-                    : "text-black hover:text-primary"
+                    ? "underline  underline-offset-4  text-primaryDark font-semibold"
+                    : "text-black hover:text-primaryDark"
                 }`}
               >
                 Home
@@ -52,8 +53,8 @@ function MyNavigation({ resultCate }) {
                 href="/products"
                 className={`px-2 py-2 rounded ${
                   pathname === "/products"
-                    ? "underline  underline-offset-4  text-primary font-semibold"
-                    : "text-black hover:text-primary"
+                    ? "underline  underline-offset-4  text-primaryDark font-semibold"
+                    : "text-black hover:text-primaryDark"
                 }`}
               >
                 Products
@@ -65,8 +66,8 @@ function MyNavigation({ resultCate }) {
                 href="/video-gallery"
                 className={`px-2 py-2 rounded ${
                   pathname === "/video-gallery"
-                    ? "underline  underline-offset-4  text-primary font-semibold"
-                    : "text-black hover:text-primary"
+                    ? "underline  underline-offset-4  text-primaryDark font-semibold"
+                    : "text-black hover:text-primaryDark"
                 }`}
               >
                 videos
@@ -77,8 +78,8 @@ function MyNavigation({ resultCate }) {
                 href="/support"
                 className={`px-2 py-2 rounded ${
                   pathname === "/support"
-                    ? "underline  underline-offset-4  text-primary font-semibold"
-                    : "text-black hover:text-primary"
+                    ? "underline  underline-offset-4  text-primaryDark font-semibold"
+                    : "text-black hover:text-primaryDark"
                 }`}
               >
                 Support
@@ -89,8 +90,8 @@ function MyNavigation({ resultCate }) {
                 href="/about"
                 className={`px-2 py-2 rounded ${
                   pathname === "/about"
-                    ? "underline  underline-offset-4  text-primary font-semibold"
-                    : "text-black hover:text-primary"
+                    ? "underline  underline-offset-4  text-primaryDark font-semibold"
+                    : "text-black hover:text-primaryDark"
                 }`}
               >
                 About Us
@@ -101,8 +102,8 @@ function MyNavigation({ resultCate }) {
                 href="/contact"
                 className={`px-2 py-2 rounded ${
                   pathname === "/contact"
-                    ? "underline  underline-offset-4  text-primary font-semibold"
-                    : "text-black hover:text-primary"
+                    ? "underline  underline-offset-4  text-primaryDark font-semibold"
+                    : "text-black hover:text-primaryDark"
                 }`}
               >
                 Contact Us
@@ -113,8 +114,8 @@ function MyNavigation({ resultCate }) {
                 href="/resources"
                 className={`px-2 py-2 rounded ${
                   pathname === "/resources"
-                    ? "underline  underline-offset-4  text-primary font-semibold"
-                    : "text-black hover:text-primary"
+                    ? "underline  underline-offset-4  text-primaryDark font-semibold"
+                    : "text-black hover:text-primaryDark"
                 }`}
               >
                 Resource
@@ -125,6 +126,9 @@ function MyNavigation({ resultCate }) {
             Pend $120 more and get free shipping!
           </p> */}
         </div>
+        <span className="hidden lg:inline">
+          <SearchProduct />
+        </span>
       </div>
     </>
   );

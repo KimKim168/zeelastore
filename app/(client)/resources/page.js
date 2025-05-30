@@ -31,7 +31,7 @@ const Page = () => {
 
       <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
-          <Card key={i} className="shadow-none overflow-hidden rounded-md border-[0.5px]">
+          <Card key={i} className="shadow-none overflow-hidden rounded-md border-[1px]">
             <CardHeader className="p-0">
               <div className="aspect-video bg-muted w-full border-b" />
             </CardHeader>

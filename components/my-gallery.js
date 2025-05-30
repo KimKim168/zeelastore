@@ -39,7 +39,24 @@ const MyImageGallery = ({ photos }) => {
       </div>
 
       {/* Thumbnails for the rest of the images */}
-      <div className="grid grid-cols-5 gap-2">
+      <div className="flex flex-wrap justify-center gap-2 w-full">
+        {photos.slice(1).map((photo, index) => (
+          <div key={index} className="w-[calc(20%-0.5rem)] max-w-[120px]">
+            <Image
+              width={500}
+              height={500}
+              src={photo}
+              alt={`Image ${index + 2}`}
+              className="w-full aspect-square border object-cover cursor-pointer rounded-lg"
+              onClick={() => {
+                setCurrentIndex(index + 1);
+                setOpen(true);
+              }}
+            />
+          </div>
+        ))}
+      </div>
+      {/* <div className="grid grid-cols-5 gap-2">
         {photos.slice(1).map((photo, index) => (
           <Image
             width={500}
@@ -54,7 +71,7 @@ const MyImageGallery = ({ photos }) => {
             }}
           />
         ))}
-      </div>
+      </div> */}
 
       <Lightbox
         open={open}

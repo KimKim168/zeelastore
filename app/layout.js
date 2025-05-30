@@ -42,7 +42,9 @@ export default function RootLayout({ children }) {
         {/* Footer */}
 
         <MyFooter />
-        <BottomMobileNav />
+        <Suspense fallback={<MyLoadingAnimation />}>
+          <BottomMobileNav />
+        </Suspense>
 
         {/*End Footer */}
       </body>

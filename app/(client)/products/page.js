@@ -1,5 +1,4 @@
 import MyCategoryComponent from "@/components/my-category";
-import MyDualRangPrice from "@/components/my-dual-range-price";
 import MylastestProduct from "@/components/my-lastest-product";
 
 import React, { Suspense } from "react";
@@ -8,39 +7,38 @@ import { SearchBrand } from "@/components/my-search-brand";
 import { BASE_API_URL } from "@/env";
 import MyDataList from "./components/my-data-list";
 import { MyShortButton } from "@/components/my-sort-button";
-import { MyShortCharacter } from "@/components/my-sort-character";
 import { MyPerpageShort } from "@/components/my-perpage-short";
 import MyLoadingAnimation from "@/components/my-loading-animation";
 import SelectedFilters from "@/components/SelectedFilters";
 
-export const metadata = {
-  title: "Explore Our Products - Chhayhok.com",
-  icons: {
-    icon: "/assets/images/chhayhokLogo.png",
-    shortcut: "/assets/images/chhayhokLogo.png",
-    apple: "/assets/images/chhayhokLogo.png",
-  },
-  openGraph: {
-    title: "Chhayhok - Products",
-    description: "Discover products and categories on Chhayhok.",
-    url: "https://chhayhok.com/products",
-    siteName: "Chhayhok",
-    images: [
-      {
-        url: "/assets/images/product11.png", // Path to your image
-        width: 1200,
-        height: 630,
-        alt: "Chhayhok Products Page Image",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Chhayhok - Products",
-    description: "Discover products and categories on Chhayhok.",
-    images: ["/assets/images/product11.png"], // Path to your image
-  },
-};
+// export const metadata = {
+//   title: "Explore Our Products - Chhayhok.com",
+//   icons: {
+//     icon: "/assets/images/chhayhokLogo.png",
+//     shortcut: "/assets/images/chhayhokLogo.png",
+//     apple: "/assets/images/chhayhokLogo.png",
+//   },
+//   openGraph: {
+//     title: "Chhayhok - Products",
+//     description: "Discover products and categories on Chhayhok.",
+//     url: "https://chhayhok.com/products",
+//     siteName: "Chhayhok",
+//     images: [
+//       {
+//         url: "/assets/images/product11.png", // Path to your image
+//         width: 1200,
+//         height: 630,
+//         alt: "Chhayhok Products Page Image",
+//       },
+//     ],
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "Chhayhok - Products",
+//     description: "Discover products and categories on Chhayhok.",
+//     images: ["/assets/images/product11.png"], // Path to your image
+//   },
+// };
 
 async function page(props) {
   const searchParams = await props.searchParams;
@@ -72,13 +70,13 @@ async function page(props) {
         <div className="w-[240px] hidden lg:block">
           {/* Category */}
           <MyCategoryComponent
-            key={'categories' + search + categoryId + subCategoryId}
+            key={"categories" + search + categoryId + subCategoryId}
             categories={categories}
           />
           {/*End Category */}
           <hr className="my-5" />
           {/* Search brand */}
-          <SearchBrand brand={brand} key={'brand' + brandId} />
+          <SearchBrand brand={brand} key={"brand" + brandId} />
           {/*End Search brand */}
           <hr className="my-10" />
 
@@ -95,7 +93,11 @@ async function page(props) {
 
         <div className="flex-1">
           <div className="w-full flex flex-col lg:flex-row lg:items-center flex-wrap gap-1 my-2 mt-2 lg:mt-2">
-            <SelectedFilters />
+            <Suspense
+              fallback={<MyLoadingAnimation />}
+            >
+              <SelectedFilters />
+            </Suspense>
             <div className="flex flex-1 gap-2 items-center justify-end">
               <div
                 className="grid items-center grid-cols-2 gap-1 my-4 sm:flex md:gap-2"
@@ -120,7 +122,18 @@ async function page(props) {
                 }
               >
                 {/* <MyBreadCrumbShop /> */}
-                <Filter key={'categories' + search + categoryId + subCategoryId + 'brand' + brandId} categories={categories} brand={brand} />
+                <Filter
+                  key={
+                    "categories" +
+                    search +
+                    categoryId +
+                    subCategoryId +
+                    "brand" +
+                    brandId
+                  }
+                  categories={categories}
+                  brand={brand}
+                />
               </div>
             </div>
           </div>

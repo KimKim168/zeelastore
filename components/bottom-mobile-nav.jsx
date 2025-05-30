@@ -14,15 +14,22 @@ import {
   TagsIcon,
   UserIcon,
 } from "lucide-react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export function BottomMobileNav({ className }) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const items = [
     { name: "Home", url: "/", icon: HomeIcon },
     { name: "Products", url: "/products", icon: MonitorSmartphone },
-    { name: "Special Offer", url: "/products", icon: TagsIcon },
-    { name: "Contact", url: "/contact#contact-information", icon: PhoneCallIcon },
+    { name: "Special Offer", url: "/products?special-offer=1", icon: TagsIcon },
+    {
+      name: "Contact",
+      url: "/contact",
+      icon: PhoneCallIcon,
+    },
   ];
-  const [activeTab, setActiveTab] = useState(items[0].name);
+  const [activeTab, setActiveTab] = useState(items[0].url);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -38,14 +45,30 @@ export function BottomMobileNav({ className }) {
   return (
     <div
       className={cn(
-        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-4 sm:pt-4",
         className
       )}
     >
-      <div className="flex items-center gap-2 sm:hidden bg-white/40 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="flex items-center sm:hidden bg-white/40 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon;
-          const isActive = activeTab === item.name;
+          let isActive = false;
+          if (item.url.startsWith("/products")) {
+            // Both tabs share the path /products
+            if (item.name === "Products") {
+              // Active if path is /products AND no special-offer param
+              isActive =
+                pathname === "/products" && !searchParams.has("special-offer");
+            } else if (item.name === "Special Offer") {
+              // Active if path is /products AND special-offer=1
+              isActive =
+                pathname === "/products" &&
+                searchParams.get("special-offer") === "1";
+            }
+          } else {
+            // default active check for others, just match pathname
+            isActive = pathname === item.url;
+          }
 
           return (
             <Link

@@ -49,7 +49,7 @@ const page = async () => {
         <div className="flex-1">
           <ContactForm />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 scroll-mt-10" id="contact-information">
           <MySocialMedia
             resultContact={resultContact}
             resultLink={resultLink}

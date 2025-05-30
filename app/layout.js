@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import MyLoadingAnimation from "@/components/my-loading-animation";
 import HomeHeader from "./components/home-header";
 import MyFloatTelegram from "@/components/my-float-telegram";
+import { BottomMobileNav } from "@/components/bottom-mobile-nav";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
         {/* Footer */}
 
         <MyFooter />
+        <BottomMobileNav />
 
         {/*End Footer */}
       </body>

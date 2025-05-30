@@ -5,14 +5,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
-  BriefcaseIcon,
-  FileTextIcon,
   HomeIcon,
   MonitorSmartphone,
-  PercentIcon,
   PhoneCallIcon,
   TagsIcon,
-  UserIcon,
 } from "lucide-react";
 import { usePathname, useSearchParams } from "next/navigation";
 

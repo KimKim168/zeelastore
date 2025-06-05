@@ -38,7 +38,7 @@ async function page() {
   return (
     <>
       <div className="min-h-[50vh] max-w-screen-2xl px-2 xl:px-20 mx-auto mt-5 mb-5">
-        <h1 className="text-xl text-center xl:text-2xl">{result.name}</h1>
+        {/* <h1 className="text-xl text-center xl:text-2xl">{result.name}</h1> */}
         <div
           dangerouslySetInnerHTML={{ __html: result.description }}
           className="prose max-w-none"

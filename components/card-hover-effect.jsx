@@ -1,4 +1,5 @@
 "use client";
+import { APP_LOGO, IMAGE_CATE_URL } from "@/env";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
@@ -12,7 +13,10 @@ export const HoverEffect = ({ items, className }) => {
     <>
       {items.map((item, idx) => (
         <Link
-          href={item?.link}
+          href={
+            `/products?categoryId=${item?.id}&category=${item?.name}&page=1` ||
+            ""
+          }
           key={item?.name}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
@@ -37,20 +41,32 @@ export const HoverEffect = ({ items, className }) => {
             )}
           </AnimatePresence>
           <div className="relative group z-10 overflow-hidden cursor-pointer rounded-2xl shadow-lg">
-            <Image
-              src={item.imageUrl}
-              alt={item.name}
-              className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-125"
-              width={600}
-              height={600}
-            />
+            {item.banner ? (
+              <Image
+                src={IMAGE_CATE_URL + item.banner}
+                alt={item.name}
+                className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-125"
+                width={600}
+                height={600}
+              />
+            ) : (
+              <div className="w-full aspect-square h-full p-10 bg-gray-400">
+                <Image
+                  src={APP_LOGO}
+                  alt={item.name}
+                  className="w-full aspect-square opacity-50 object-contain transition-transform duration-500 group-hover:scale-125"
+                  width={600}
+                  height={600}
+                />
+              </div>
+            )}
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-500"></div>
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition duration-500"></div>
 
             {/* Text */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <h3 className="text-white text-xl lg:text-2xl font-semibold drop-shadow-lg text-center px-2 lg:px-8">
+              <h3 className="text-white text-2xl lg:text-3xl font-semibold drop-shadow-lg text-center px-2 lg:px-8">
                 {item.name}
               </h3>
             </div>

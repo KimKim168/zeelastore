@@ -1,8 +1,10 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { IMAGE_LINKS_URL } from "@/env";
+import Link from "next/link";
 
-function MySocialMedia({ resultContact }) {
+function MySocialMedia({ resultContact, resultLink }) {
   return (
     <div className="w-full max-w-screen-xl mx-auto">
       {/* Contact Information Section */}
@@ -14,22 +16,28 @@ function MySocialMedia({ resultContact }) {
         {/* Contact Details */}
         <div className="space-y-4">
           {/* Phone */}
-          <div className="flex items-start gap-3">
-            <p className="text-gray-600 flex items-center text-sm whitespace-nowrap gap-2 w-[100px] shrink-0 border-r ">
-              <Image
-                src="/assets/images/telephone.png"
-                width={24}
-                height={24}
-                alt="Phone icon representing contact number"
-                className="w-6 h-6"
-              />
-              Phone
-            </p>
+          {resultLink?.length > 0 &&
+            resultLink.map((item) => (
+              <Link
+                href={item.link || "#"}
+                key={item.id}
+                className={`flex items-center gap-2 ${
+                  item.link ? "hover:underline underline-offset-4" : ""
+                }`}
+              >
+                <Image
+                  src={`${IMAGE_LINKS_URL}${item.image}`}
+                  width={512}
+                  height={512}
+                  alt={`${item.name} icon`}
+                  className="size-5"
+                />
 
-            <p className="text-gray-600 text-sm">{resultContact.phone}</p>
-          </div>
+                <p className="text-gray-600 text-sm">{item.name}</p>
+              </Link>
+            ))}
 
-          {/* Email */}
+          {/* Email
           <div className="flex items-start gap-3">
             <p className="text-gray-600 flex items-center text-sm whitespace-nowrap gap-2 w-[100px] shrink-0 border-r ">
               <Image
@@ -44,7 +52,6 @@ function MySocialMedia({ resultContact }) {
             <p className="text-gray-600 text-sm">{resultContact.email}</p>
           </div>
 
-          {/* Address */}
           <div className="flex items-start gap-3">
             <p className="text-gray-600 flex items-center text-sm whitespace-nowrap gap-2 w-[100px] shrink-0 border-r ">
               <Image
@@ -57,7 +64,7 @@ function MySocialMedia({ resultContact }) {
               Address
             </p>
             <p className="text-gray-600 text-sm">{resultContact.address}</p>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-10">
@@ -71,7 +78,7 @@ function MySocialMedia({ resultContact }) {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Google Map Location"
-            className="w-full h-64 rounded-lg"
+            className="w-full h-80 rounded-lg"
           ></iframe>
         </div>
       </div>

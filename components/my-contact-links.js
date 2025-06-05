@@ -9,7 +9,7 @@ function MyContactLinks({ resultLink }) {
     <div>
       {/* Social Links */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-        {resultLink.slice(2,10).map((item) => (
+        {resultLink.map((item) => (
           <a
             key={item.id}
             href={item.link}

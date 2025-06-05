@@ -34,15 +34,10 @@ export default async function MyFooter() {
               />
 
               <div
-                className=" w-auto prose prose-p:p-0 prose-p:m-0"
+                // className=" w-auto prose prose-p:p-0 prose-p:m-0"
+                className="text-gray-600"
                 dangerouslySetInnerHTML={{
-                  __html: `
-<div>
-  <strong>⏰ Opening Hours</strong>
-  <p>Monday - Sunday</p>
-  <p>8:00 AM — 5:30 PM</p>
-</div> 
-                  `,
+                  __html: footerData.description,
                 }}
               ></div>
             </a>
@@ -51,19 +46,10 @@ export default async function MyFooter() {
             <div>
               <h3 className="text-lg font-semibold mb-3">Contacts</h3>
               <div
-                className=" w-auto prose prose-p:p-0 prose-p:m-0"
+                // className=" w-auto prose prose-p:p-0 prose-p:m-0"
+                className="text-gray-600"
                 dangerouslySetInnerHTML={{
-                  __html: `
-<div>
-  <strong>📍 Sales Showroom</strong>
-  <p>☎️ 093 667 229</p>
-  <p>☎️ 071 345 908</p>
-
-  <strong>🔧 Technical Support</strong>
-  <p>📞 010 225 774</p>
-  <p>📞 092 688 339</p>
-</div>
-                  `,
+                  __html: footerData.description_kh,
                 }}
               ></div>
             </div>
@@ -120,11 +106,11 @@ export default async function MyFooter() {
           <div className="flex-1 space-y-4">
             <MySocialMediaFooter
               resultContact={resultContact}
-              resultLink={resultLink.slice(0, 4)}
+              resultLink={resultLink.filter((item) => item.type === "contact")}
             />
             <MySocialMediaFooter
               resultContact={resultContact}
-              resultLink={resultLink.slice(4, 8)}
+              resultLink={resultLink.filter((item) => item.type === "social")}
             />
           </div>
           {/* <div className="flex-1">

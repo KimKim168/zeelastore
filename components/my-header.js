@@ -23,7 +23,7 @@ const MyHeader = ({ resultCate, resultContact }) => {
                 width={512}
                 height={512}
                 alt="logo"
-                className="w-[94px] py-2 lg:w-[140px] object-contain"
+                className="w-[64px] py-2 lg:w-[140px] object-contain"
               />
             </Link>
             <div className="flex flex-col flex-1">
@@ -32,9 +32,10 @@ const MyHeader = ({ resultCate, resultContact }) => {
                   <div className="text-foreground text-lg flex gap-3 items-center ">
                     <a
                       href={`/contact`}
-                      className="underline underline-offset-4 whitespace-nowrap flex items-center"
+                      className="whitespace-nowrap flex items-center"
                     >
                       Visit our showroom
+                      <span className="underline underline-offset-4 ml-1">here</span>
                     </a>
                     <span>|</span>
                     <span className="whitespace-nowrap flex items-center">

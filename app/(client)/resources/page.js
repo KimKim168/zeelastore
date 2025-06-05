@@ -1,11 +1,41 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { PlayIcon, Search } from "lucide-react";
+import React, { Suspense } from "react";
+import Filter from "@/components/my-filter";
+import { BASE_API_URL } from "@/env";
+import MyDataList from "./components/my-data-list";
+import { MyShortButton } from "@/components/my-sort-button";
+import { MyPerpageShort } from "@/components/my-perpage-short";
+import MyLoadingAnimation from "@/components/my-loading-animation";
+import SelectedFilters from "@/components/SelectedFilters";
+import { Search } from "lucide-react";
+import { BlogCategorySelect } from "@/components/blog-categories-select";
 
-const Page = () => {
+async function page(props) {
+  const searchParams = await props.searchParams;
+  const search = searchParams.search || "";
+  const categoryId = searchParams.categoryId || "";
+  const specialOffer = searchParams.specialOffer || "";
+  const subCategoryId = searchParams?.subCategoryId || "";
+  const orderBy = searchParams?.orderBy || "";
+  const orderDir = searchParams?.orderDir || "";
+  const perPage = searchParams?.perPage || "";
+  const page = searchParams?.page || "";
+  const brandId = searchParams?.brandId || "";
+  const priceFrom = searchParams?.priceFrom || "";
+  const priceTo = searchParams?.priceTo || "";
+
+  const respone = await fetch(`${BASE_API_URL}/categories?withSub=2`, {
+    next: { revalidate: 600 },
+  });
+  const categories = await respone.json();
+  const resBrand = await fetch(`${BASE_API_URL}/brands`, {
+    next: { revalidate: 600 },
+  });
+  const brand = await resBrand.json();
+  // console.log(categories);
+
   return (
-    <div className="min-h-[50vh] max-w-screen-2xl px-2 xl:px-20 mx-auto mt-5 mb-5">
-      <div className="flex flex-wrap gap-2 items-end justify-between">
+    <div className="min-h-[50vh] max-w-screen-2xl mb-10 mx-auto px-2 xl:px-20 ">
+      <div className="flex flex-wrap gap-2 items-end justify-between mt-6">
         <h2 className="text-3xl font-bold tracking-tight">Resources</h2>
         <form className="flex w-full lg:w-auto min-w-[400px] max-w-full">
           <input
@@ -17,37 +47,91 @@ const Page = () => {
             type="submit"
             className="bg-primary text-white px-4 rounded-l-none rounded-r-md hover:bg-primary/90"
           >
-            <Search size={18} />
+            <Search size={24} />
           </button>
         </form>
       </div>
 
-      <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
-          <Card key={i} className="shadow-none overflow-hidden rounded-md border-[1px]">
-            <CardHeader className="p-0">
-              <div className="aspect-video bg-muted w-full border-b" />
-            </CardHeader>
-            <CardContent className="pb-6 flex flex-col justify-between items-start">
-              <div>
-                <h3 className="text-xl font-bold tracking-tight line-clamp-3">
-                  A beginner&apos;s guide to blackchain for engineers
-                </h3>
-                {/* <p className="mt-2 text-muted-foreground line-clamp-3">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse varius enim in eros.
-                </p> */}
+      <div className="flex gap-4">
+        <div className="flex-1">
+          <div className="w-full flex flex-col lg:flex-row lg:items-center flex-wrap gap-1 my-2 mt-2 lg:mt-2">
+            <Suspense fallback={<MyLoadingAnimation />}>
+              <SelectedFilters />
+            </Suspense>
+            <div className="flex flex-1 gap-2 items-center justify-end">
+              <div
+                className="grid items-center grid-cols-2 gap-1 my-4 sm:flex md:gap-2"
+                key={" " + orderBy + orderDir + perPage}
+              >
+                <MyShortButton />
+                {/* <MyShortCharacter /> */}
+                <BlogCategorySelect />
               </div>
+              <div
+                className="flex my-4 lg:hidden"
+                key={
+                  "filter_key" +
+                  categoryId +
+                  subCategoryId +
+                  brandId +
+                  perPage +
+                  page +
+                  orderBy +
+                  orderDir +
+                  search
+                }
+              >
+                {/* <MyBreadCrumbShop /> */}
+                <Filter
+                  key={
+                    "categories" +
+                    search +
+                    categoryId +
+                    subCategoryId +
+                    "brand" +
+                    brandId
+                  }
+                  categories={categories}
+                  brand={brand}
+                />
+              </div>
+            </div>
+          </div>
+          {/* Right Content */}
+          <Suspense
+            key={
+              "products_list_key" +
+              categoryId +
+              subCategoryId +
+              brandId +
+              perPage +
+              page +
+              orderBy +
+              orderDir +
+              search
+            }
+            fallback={<MyLoadingAnimation />}
+          >
+            <MyDataList
+              subCategoryId={subCategoryId}
+              perPage={perPage}
+              page={page}
+              orderDir={orderDir}
+              orderBy={orderBy}
+              priceFrom={priceFrom}
+              priceTo={priceTo}
+              brandId={brandId}
+              categoryId={categoryId}
+              search={search}
+              specialOffer={specialOffer}
+            />
+          </Suspense>
 
-              <Button variant='outline' className="mt-6 shadow-none border-primary text-primary">
-                <PlayIcon /> Watch Video
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
+          {/*End Right Content */}
+        </div>
       </div>
     </div>
   );
-};
+}
 
-export default Page;
+export default page;

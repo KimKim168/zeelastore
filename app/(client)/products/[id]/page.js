@@ -102,7 +102,9 @@ export default async function MyProduct({ params }) {
                   <ChevronsRight />
                 </BreadcrumbSeparator>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href={`/products?categoryId=${category?.id}`}>
+                  <BreadcrumbLink
+                    href={`/products?categoryId=${category?.id}&category=${category?.name}`}
+                  >
                     {category?.name}
                   </BreadcrumbLink>
                 </BreadcrumbItem>
@@ -115,7 +117,7 @@ export default async function MyProduct({ params }) {
                 </BreadcrumbSeparator>
                 <BreadcrumbItem>
                   <BreadcrumbLink
-                    href={`/products?subCategoryId=${sub_category?.id}&categoryId=${category?.id}`}
+                    href={`/products?subCategoryId=${sub_category?.id}&categoryId=${category?.id}&category=${category?.name}&subCategory=${sub_category?.name}`}
                   >
                     {sub_category?.name}
                   </BreadcrumbLink>
@@ -128,7 +130,9 @@ export default async function MyProduct({ params }) {
                   <ChevronsRight />
                 </BreadcrumbSeparator>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href={`/products?brandId=${brand?.id}`}>
+                  <BreadcrumbLink
+                    href={`/products?brandId=${brand?.id}&brand=${brand?.name}`}
+                  >
                     {brand?.name}
                   </BreadcrumbLink>
                 </BreadcrumbItem>
@@ -203,43 +207,33 @@ export default async function MyProduct({ params }) {
                     </li> */}
                     <li>
                       <div className="space-y-4">
-                        <div>
-                          <div className="col-span-6 text-gray-600 mt-2 flex gap-2 items-center text-lg font-semibold md:text-xl">
-                            Key Specifications
+                        {result?.short_description && (
+                          <div>
+                            <div className="col-span-6 text-black mt-2 flex gap-2 items-center text-base font-semibold md:text-lg">
+                              Key Specifications
+                            </div>
+                            <div
+                              className="font-normal text-gray-500 whitespace-pre-line text-sm md:text-base"
+                              dangerouslySetInnerHTML={{
+                                __html: result?.short_description,
+                              }}
+                            />
                           </div>
-                          <div
-                            className="font-normal text-gray-500"
-                            dangerouslySetInnerHTML={{
-                              __html: `<div class="pc-specs">
-                        <ul>
-                          <li><span>Processor:</span> Intel Core i7-13700K (16-Core, up to 5.4 GHz)</li>
-                          <li><span>Motherboard:</span> ASUS ROG Strix Z790-E Gaming WiFi</li>
-                          <li><span>Graphics Card:</span> NVIDIA GeForce RTX 4080 16GB GDDR6X</li>
-                          <li><span>Memory:</span> 32GB DDR5 6000MHz (2 x 16GB)</li>
-                          <li><span>Storage:</span> 1TB NVMe Gen4 SSD + 2TB HDD 7200RPM</li>
-                          <li><span>Power Supply:</span> 850W 80+ Gold Fully Modular</li>
-                          <li><span>Cooling:</span> Corsair iCUE H150i Elite Capellix Liquid Cooler</li>
-                          <li><span>Case:</span> NZXT H710 Mid-Tower ATX (Tempered Glass)</li>
-                          <li><span>Operating System:</span> Windows 11 Pro 64-bit</li>
-                          <li><span>Connectivity:</span> Wi-Fi 6E, Bluetooth 5.3, 2.5G LAN</li>
-                        </ul>
-                      </div>
-                      `,
-                            }}
-                          />
-                        </div>
+                        )}
 
-                        <div className="col-span-6 text-gray-600 text-lg font-semibold md:text-xl">
-                          Colors :{" "}
-                          <span className="text-base text-gray-500 font-normal">
-                            Gray, Blue, White, Gold
-                          </span>
-                        </div>
+                        {result?.format && (
+                          <div className="col-span-6 text-black text-lg font-semibold md:text-xl">
+                            Colors :{" "}
+                            <span className="text-base text-gray-500 font-normal">
+                              {result?.format}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </li>
                     <li>
-                      <ul className="flex items-center justify-start gap-5 text-lg font-semibold md:text-xl">
-                        <li className="col-span-6 text-gray-600">Price:</li>
+                      <ul className="flex items-center justify-start gap-5 mt-4 text-lg font-semibold md:text-xl">
+                        <li className="col-span-6 text-black">Price:</li>
                         <li className="col-span-6 text-color">
                           {result.discount ? (
                             <div className="flex items-center justify-end gap-2">

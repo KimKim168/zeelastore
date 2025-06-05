@@ -19,7 +19,7 @@ export function BottomMobileNav({ className }) {
   const items = [
     { name: "Home", url: "/", icon: HomeIcon },
     { name: "Products", url: "/products", icon: MonitorSmartphone },
-    { name: "Special Offer", url: "/products?special-offer=1", icon: TagsIcon },
+    { name: "Special Offer", url: "/products?specialOffer=1", icon: TagsIcon },
     {
       name: "Contact",
       url: "/contact",
@@ -54,15 +54,15 @@ export function BottomMobileNav({ className }) {
             if (item.url.startsWith("/products")) {
               // Both tabs share the path /products
               if (item.name === "Products") {
-                // Active if path is /products AND no special-offer param
+                // Active if path is /products AND no specialOffer param
                 isActive =
                   pathname === "/products" &&
-                  !searchParams.has("special-offer");
+                  !searchParams.has("specialOffer");
               } else if (item.name === "Special Offer") {
-                // Active if path is /products AND special-offer=1
+                // Active if path is /products AND specialOffer=1
                 isActive =
                   pathname === "/products" &&
-                  searchParams.get("special-offer") === "1";
+                  searchParams.get("specialOffer") === "1";
               }
             } else {
               // default active check for others, just match pathname

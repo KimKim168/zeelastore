@@ -31,6 +31,7 @@ export default function SearchInput() {
             <div className="flex flex-1 w-full items-center gap-2 ml-2">
               <Search className="text-gray-400 " size={20} />
               <input
+                autoFocus
                 type="text"
                 placeholder="Search Products..."
                 value={inputValue}

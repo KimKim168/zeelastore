@@ -44,6 +44,7 @@ async function page(props) {
   const searchParams = await props.searchParams;
   const search = searchParams.search || "";
   const categoryId = searchParams.categoryId || "";
+  const specialOffer = searchParams.specialOffer || "";
   const subCategoryId = searchParams?.subCategoryId || "";
   const orderBy = searchParams?.orderBy || "";
   const orderDir = searchParams?.orderDir || "";
@@ -163,6 +164,7 @@ async function page(props) {
               brandId={brandId}
               categoryId={categoryId}
               search={search}
+              specialOffer={specialOffer}
             />
           </Suspense>
 

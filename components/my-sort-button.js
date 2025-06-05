@@ -61,7 +61,7 @@ export function MyShortButton() {
           aria-expanded={open}
           className="min-w-[90px] px-2 gap-1 md:gap-2 md:px-4 max-w-[130px] md:min-w-[150px] md:max-w-[400px] justify-between md:py-5"
         >
-          <span className="text-[10px] md:text-sm">
+          <span className="text-sm">
             <span className={`${value ? "text-primary font-bold" : ""}`}>
               {value || "Sort By"}
             </span>

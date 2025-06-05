@@ -21,65 +21,37 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const framework = [
   {
-    label: "10",
-    value: "10",
+    label: "All Resources",
+    value: "",
   },
   {
-    label: "20",
-    value: "20",
+    label: "Article",
+    value: "Article",
   },
   {
-    label: "30",
-    value: "30",
-  },
-  {
-    label: "40",
-    value: "40",
-  },
-  {
-    label: "50",
-    value: "50",
-  },
-  {
-    label: "60",
-    value: "60",
-  },
-  {
-    label: "70",
-    value: "70",
-  },
-  {
-    label: "80",
-    value: "80",
-  },
-  {
-    label: "90",
-    value: "90",
-  },
-  {
-    label: "100",
-    value: "100",
+    label: "Video",
+    value: "Video",
   },
 ];
 
-export function MyPerpageShort() {
+export function BlogCategorySelect() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const selectedPerPage = searchParams.get("perPage");
+  const selectedPerPage = searchParams.get("type");
   const selectedPerPageObj = framework.find(
     (item) => item.value == selectedPerPage
   );
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState(selectedPerPageObj?.label || " ");
+  const [value, setValue] = React.useState(selectedPerPageObj?.label || "");
 
   const handleSelect = (selectedValue) => {
     const params = new URLSearchParams(searchParams);
     if (selectedValue) {
-      params.set("perPage", selectedValue);
+      params.set("type", selectedValue);
     } else {
-      params.delete("perPage");
+      params.delete("type");
     }
     replace(`${pathname}?${params.toString()}`);
   };
@@ -95,9 +67,8 @@ export function MyPerpageShort() {
         >
           <span className="text-sm">
             <span className={`${value ? "text-primary font-bold" : ""}`}>
-              {value || "Select"}
-            </span>{" "}
-            Per Page
+              {value || "All Resource"}
+            </span>
           </span>
           <ChevronsUpDown className="opacity-50" />
         </Button>
@@ -118,11 +89,11 @@ export function MyPerpageShort() {
                   }}
                   className="text-[10px] md:text-sm"
                 >
-                  {item.label} Per Page
+                  {item.label}
                   <Check
                     className={cn(
                       "ml-auto",
-                      value === item.value ? "opacity-100" : "opacity-0"
+                      value == item.value ? "opacity-100" : "opacity-0"
                     )}
                   />
                 </CommandItem>

@@ -3,6 +3,7 @@ import { DribbbleIcon, TwitchIcon, TwitterIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { HoverEffect } from "./card-hover-effect";
+import { BASE_API_URL } from "@/env";
 
 const items = [
   {
@@ -55,18 +56,26 @@ const items = [
   },
 ];
 
-const CategoryCards = () => {
+const CategoryCards = async () => {
+  const respone = await fetch(
+    `${BASE_API_URL}/categories?withSub=2&limit=8&orderBy=order_index&orderDir=asc`,
+    {
+      next: { revalidate: 600 },
+    }
+  );
+  const categories = await respone.json();
+
   return (
     <div className="px-2 mx-auto max-w-screen-2xl xl:px-20 mt-20">
       <div className="text-center max-w-2xl mx-auto">
-        <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
+        <h2 className="mt-3 text-3xl sm:text-5xl font-bold tracking-tight">
           Checkout our products
         </h2>
       </div>
 
       <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 my-10">
-        <HoverEffect items={items} />
-      </div> 
+        <HoverEffect items={categories} />
+      </div>
     </div>
   );
 };

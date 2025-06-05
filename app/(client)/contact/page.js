@@ -46,18 +46,18 @@ const page = async () => {
   return (
     <div className="min-h-[50vh] max-w-screen-2xl mb-10 mx-auto px-4 sm:px-6 lg:px-20 mt-6">
       <div className="flex flex-col lg:flex-row gap-10">
-        <div className="flex-1">
+        <div className="flex-1 order-3 lg:order-1">
           <ContactForm />
         </div>
-        <div className="flex-1 scroll-mt-10" id="contact-information">
+        <div className="flex-1 order-2 scroll-mt-10" id="contact-information">
           <MySocialMedia
             resultContact={resultContact}
-            resultLink={resultLink}
+            resultLink={resultLink.filter((item) => item.type === "contact_info")}
           />
         </div>
       </div>
       <div className="mt-20">
-        <MyContactLinks resultLink={resultLink} />
+        <MyContactLinks resultLink={resultLink.filter((item) => item.type === "contact" || item.type === "social")} />
       </div>
     </div>
   );

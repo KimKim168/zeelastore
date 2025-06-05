@@ -37,6 +37,7 @@ export function SearchBrand({ brand }) {
     if (selectedValue) {
       params.set("brandId", selectedValue);
       params.set("brand", brand);
+      params.set("page", 1);
     } else {
       params.delete("brandId");
       params.delete("brand");

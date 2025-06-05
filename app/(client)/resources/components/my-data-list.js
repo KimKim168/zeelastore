@@ -1,5 +1,5 @@
 import MyPagination from "@/components/my-pagination";
-import ProductCard from "@/components/ProductCard";
+import BlogCard from "@/components/BlogCard";
 import { BASE_API_URL } from "@/env";
 import { ListX } from "lucide-react";
 import React from "react";
@@ -18,7 +18,7 @@ export default async function MyDataList({
   specialOffer,
 }) {
   const res = await fetch(
-    `${BASE_API_URL}/products?search=${search}&categoryId=${categoryId}&subCategoryId=${subCategoryId}&brandId=${brandId}&priceFrom=${priceFrom}&priceTo=${priceTo}&orderBy=${orderBy}&orderDir=${orderDir}&perPage=${perPage}&page=${page}&specialOffer=${specialOffer}`,
+    `${BASE_API_URL}/news?search=${search}&categoryId=${categoryId}&subCategoryId=${subCategoryId}&orderBy=${orderBy}&orderDir=${orderDir}&perPage=${perPage}&page=${page}`,
     { next: { revalidate: 600 } }
   );
   const result = await res.json();
@@ -36,10 +36,10 @@ export default async function MyDataList({
             <ListX /> No Data
           </p>
         )}
-        <div className="grid grid-cols-2 gap-2 mb-4 sm:grid-cols-3 md:grid-cols-4 md:mb-8 lg:grid-cols-5 ">
+        <div className="grid grid-cols-2 gap-2 mb-4 sm:grid-cols-2 md:grid-cols-2 md:mb-8 lg:grid-cols-4 ">
           <>
             {products?.map((item) => (
-              <ProductCard key={item.id} item={item} />
+              <BlogCard key={item.id} item={item} />
             ))}
           </>
         </div>

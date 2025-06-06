@@ -14,7 +14,7 @@ function MyContactTopNav({ resultLink }) {
           rel="noopener noreferrer"
           title={`Visit ${item.name}`}
           aria-label={`Link to ${item.name}`}
-          className="hover:underline underline-offset-4 flex gap-1 items-center transition-all duration-300"
+          className="hover:underline underline-offset-4 text-base flex gap-1 items-center transition-all duration-300"
         >
           {item.image && (
             <Image

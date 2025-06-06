@@ -31,7 +31,7 @@ const MyHeader = ({ resultCate, resultContact }) => {
             <div className="flex flex-col flex-1">
               <div className="flex justify-end lg:justify-between w-full">
                 <div className="hidden lg:block">
-                  <div className="text-foreground text-lg flex gap-3 items-center ">
+                  <div className="text-foreground text-base flex gap-3 items-center ">
                     <Link
                       href={`/contact`}
                       className="whitespace-nowrap flex items-center"

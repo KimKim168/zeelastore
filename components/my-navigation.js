@@ -13,7 +13,7 @@ function MyNavigation({ resultCate }) {
   return (
     <>
       <div className="w-full lg:mt-3 flex justify-between items-center">
-        <div className="hidden lg:flex justify-between text-base whitespace-nowrap lg:text-lg items-center">
+        <div className="hidden lg:flex justify-between text-sm whitespace-nowrap lg:text-base items-center">
           <ul className="flex items-center space-x-3 font-medium lg:flex-row lg:space-x-5">
             <li>
               {/* <a

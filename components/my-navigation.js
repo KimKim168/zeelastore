@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { RainbowButton } from "./rainbow-button";
 import Link from "next/link";
 import { SearchProduct } from "./my-search-product";
+import SpecialOfferButton from "./SpecialOfferButton";
 // import MyAllCategory from "./my-all-categories";
 
 function MyNavigation({ resultCate }) {
@@ -24,17 +25,7 @@ function MyNavigation({ resultCate }) {
                   <MyAllCategory resultCate={resultCate} />
                 </Suspense>
               </a> */}
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary-dark to-primary rounded-xl blur-lg opacity-30 group-hover:opacity-90 transition duration-700 group-hover:duration-300"></div>
-                <Link
-                  href="/products?specialOffer=1"
-                  className="block font-bold text-primaryDark group-hover:text-primaryDarkDark transition duration-200"
-                >
-                  <RainbowButton className="font-bold">
-                    Special Offer
-                  </RainbowButton>
-                </Link>
-              </div>
+              <SpecialOfferButton />
             </li>
             <li>
               <Link
@@ -126,9 +117,9 @@ function MyNavigation({ resultCate }) {
             Pend $120 more and get free shipping!
           </p> */}
         </div>
-        <span className="hidden lg:inline">
+        <div className="hidden lg:inline">
           <SearchProduct />
-        </span>
+        </div>
       </div>
     </>
   );

@@ -6,18 +6,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MyHomeSidebar } from "./my-home-sidebar";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { ScrollArea } from "./ui/scroll-area";
 import { Button } from "./ui/button";
 import { AlignLeft, Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
+import SpecialOfferButton from "./SpecialOfferButton";
 
 const MyHomeModal = ({ categories }) => {
   const searchParams = useSearchParams();
@@ -46,8 +40,9 @@ const MyHomeModal = ({ categories }) => {
           <SheetHeader>
             <SheetTitle>Menu</SheetTitle>
           </SheetHeader>
-          <ScrollArea className="h-full pr-3">
-            <div className="pt-2">
+          <ScrollArea className="h-full px-2">
+            <div className="pt-8">
+              <SpecialOfferButton />
               {/* <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="w-full p-2 py-2 mb-1 text-lg font-semibold border-b-2 hover:bg-primary hover:text-primary-foreground">
@@ -67,7 +62,7 @@ const MyHomeModal = ({ categories }) => {
                 >
                   <Link
                     href="/"
-                    className="block w-full p-2 font-semibold rounded-md hover:bg-primary hover:text-primary-foreground"
+                    className="block w-full p-2 font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground"
                   >
                     Home
                   </Link>
@@ -79,21 +74,21 @@ const MyHomeModal = ({ categories }) => {
                 >
                   <Link
                     href="/products"
-                    className="block w-full p-2 font-semibold rounded-md hover:bg-primary hover:text-primary-foreground"
+                    className="block w-full p-2 font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground"
                   >
                     Products
                   </Link>
                 </li>
                 <li
                   className={`${
-                    pathName == "/contact" && "underline underline-offset-4"
+                    pathName == "/support" && "underline underline-offset-4"
                   }`}
                 >
                   <Link
-                    href="/contact"
-                    className="block w-full p-2 font-semibold rounded-md hover:bg-primary hover:text-primary-foreground"
+                    href="/support"
+                    className="block w-full p-2 font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground"
                   >
-                    Contact Us
+                    Support
                   </Link>
                 </li>
                 <li
@@ -103,12 +98,51 @@ const MyHomeModal = ({ categories }) => {
                 >
                   <Link
                     href="/about"
-                    className="block w-full p-2 font-semibold rounded-md hover:bg-primary hover:text-primary-foreground"
+                    className="block w-full p-2 font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground"
                   >
                     About Us
                   </Link>
                 </li>
+                <li
+                  className={`${
+                    pathName == "/contact" && "underline underline-offset-4"
+                  }`}
+                >
+                  <Link
+                    href="/contact"
+                    className="block w-full p-2 font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground"
+                  >
+                    Contact Us
+                  </Link>
+                </li>
+                <li
+                  className={`${
+                    pathName == "/resources" && "underline underline-offset-4"
+                  }`}
+                >
+                  <Link
+                    href="/resources"
+                    className="block w-full p-2 font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground"
+                  >
+                    Resource
+                  </Link>
+                </li>
               </ul>
+              <hr className="mt-10 mb-2" />
+              <div className="text-foreground text-lg flex-col flex gap-3 items-center ">
+                <Link
+                  href={`/contact`}
+                  className="whitespace-nowrap flex items-center"
+                >
+                  Visit our showroom
+                  <span className="underline underline-offset-4 ml-1">
+                    here
+                  </span>
+                </Link>
+                <span className="whitespace-nowrap flex items-center">
+                  Free Delivery to 25 provinces
+                </span>
+              </div>
             </div>
           </ScrollArea>
         </SheetContent>

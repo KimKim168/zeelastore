@@ -268,19 +268,19 @@ export default async function MyProduct({ params }) {
                       item?.link_in_product_detail == 1 && (
                         <div
                           key={item.id}
-                          className="bg-gradient-to-r bg-primary p-[1px] rounded-md"
+                          className="border border-primary hover:scale-110 transition-all duration-300 rounded-md overflow-hidden"
                         >
                           <Link
                             key={item.id}
                             href={item.link}
                             target="_blank"
-                            className="flex items-center justify-center w-full gap-1 p-1 bg-white dark:bg-gray-900 rounded-md sm:p-2 md:gap-2"
+                            className="flex items-center justify-center w-full gap-1 p-1 bg-white dark:bg-gray-900 md:gap-2"
                           >
                             <Image
                               src={IMAGE_LINKS_URL + item.image}
                               width={600}
                               height={600}
-                              className="w-7 xl:w-10"
+                              className="size-7 xl:size-10 p-1"
                               alt="image"
                             />
                             <span className="text-[10px] sm:text-[10px] xl:text-[13px]">

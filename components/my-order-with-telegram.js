@@ -61,16 +61,16 @@ export default function MyOrderWithTelegram({ id }) {
     <>
       <Dialog open={openDialog} onOpenChange={(state) => setOpenDialog(state)}>
         <DialogTrigger asChild>
-          <div className="bg-gradient-to-r bg-primary p-[1px] rounded-md">
+          <div className="border border-primary rounded-md hover:scale-110 transition-all duration-300">
             <button
               onClick={() => setOpenDialog(true)}
-              className="flex items-center justify-center w-full gap-1 p-1 bg-white dark:bg-gray-900 rounded-md sm:p-2 md:gap-2"
+              className="flex items-center justify-center w-full gap-1 p-1 bg-white dark:bg-gray-900 rounded-md md:gap-2"
             >
               <Image
                 src={`/assets/images/telegram.png`}
                 width={600}
                 height={600}
-                className="w-7 xl:w-10"
+                className="size-7 xl:size-10 p-1"
                 alt="image"
               />
               <span className="text-start text-[10px] sm:text-[10px] xl:text-[13px]">

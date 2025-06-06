@@ -12,7 +12,7 @@ export default function ExpandHoverButton({
 
   return (
     <motion.div
-      initial={{ width: defaultHover ? 180 : 35, height: 35 }}
+      initial={{ width: defaultHover ? 180 : 37, height: 37 }}
       whileHover={{ width: 180 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(defaultHover ? true : false)}

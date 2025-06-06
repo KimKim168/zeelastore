@@ -69,7 +69,7 @@ export function MyShortButton() {
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="max-w-[130px] md:max-w-[200px] p-0">
+      <PopoverContent className="max-w-[150px] md:max-w-[200px] p-0">
         <Command>
           <CommandList>
             <CommandEmpty>No options found.</CommandEmpty>
@@ -83,7 +83,7 @@ export function MyShortButton() {
                     handleSelect(item.orderBy, item.orderDir);
                     setOpen(false);
                   }}
-                  className="text-[10px] md:text-sm"
+                  className="whitespace-nowrap text-sm"
                 >
                   {item.label}
                   <Check

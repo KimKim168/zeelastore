@@ -102,7 +102,7 @@ export function MyPerpageShort() {
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="max-w-[130px] md:max-w-[150px] p-0">
+      <PopoverContent className="max-w-[150px] md:max-w-[150px] p-0">
         <Command>
           <CommandList>
             <CommandEmpty>No options found.</CommandEmpty>
@@ -116,7 +116,7 @@ export function MyPerpageShort() {
                     handleSelect(item.value);
                     setOpen(false);
                   }}
-                  className="text-[10px] md:text-sm"
+                  className="text-sm whitespace-nowrap"
                 >
                   {item.label} Per Page
                   <Check

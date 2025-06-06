@@ -32,7 +32,7 @@ const MyHeader = ({ resultCate, resultContact }) => {
               <div className="flex justify-end lg:justify-between w-full">
                 <div className="hidden lg:block">
                   <div className="text-foreground text-lg flex gap-3 items-center ">
-                    <a
+                    <Link
                       href={`/contact`}
                       className="whitespace-nowrap flex items-center"
                     >
@@ -40,7 +40,7 @@ const MyHeader = ({ resultCate, resultContact }) => {
                       <span className="underline underline-offset-4 ml-1">
                         here
                       </span>
-                    </a>
+                    </Link>
                     <span>|</span>
                     <span className="whitespace-nowrap flex items-center">
                       Free Delivery to 25 provinces

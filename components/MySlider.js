@@ -103,7 +103,7 @@ export default function MySlider({ imagesTop, imagesBottom }) {
             ))}
           </CarouselContent>
 
-          <div className="absolute flex items-center justify-center gap-14 xl:gap-3 transform -translate-x-1/2 -bottom-4 lg:-bottom-8 left-1/2">
+          <div className="absolute flex items-center justify-center gap-14 xl:gap-3 transform -translate-x-1/2 -bottom-8 lg:-bottom-8 left-1/2">
             <span>
               <CarouselPrevious />
             </span>

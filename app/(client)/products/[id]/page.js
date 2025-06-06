@@ -35,17 +35,17 @@ export async function generateMetadata({ params }) {
   return {
     title: `${product.title}`,
     description,
-    // description: `${product.description} `,
-
     openGraph: {
       title: `${product.title}`,
       description: description,
       url: `https://chhayhok.com/products/${id}`,
       images: [
-        `${IMAGE_PRODUCT_URL}${product.image}`,
-        // ...product.images.map(
-        //   (img) => `${MULTI_IMAGE_PRODUCT_URL}${img.image}`
-        // ),
+        {
+          url: `${IMAGE_PRODUCT_URL}${product.image}`,
+          width: 1200, // optional — add real dimensions if you know them
+          height: 630, // optional
+          alt: product.title,
+        },
       ],
     },
   };

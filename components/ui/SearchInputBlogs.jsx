@@ -43,7 +43,6 @@ export default function SearchInputBlogs() {
           onChange={(e) => setInputValue(e.target.value)}
           className="flex-1 px-4 py-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary"
           aria-label="blog_search"
-          autoFocus
         />
         <button
           type="submit"

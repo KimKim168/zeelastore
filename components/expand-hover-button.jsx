@@ -3,17 +3,21 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
-export default function ExpandHoverButton({ title, icon }) {
-  const [isHovered, setIsHovered] = React.useState(false);
+export default function ExpandHoverButton({
+  title,
+  icon,
+  defaultHover = false,
+}) {
+  const [isHovered, setIsHovered] = React.useState(defaultHover);
 
   return (
     <motion.div
-      initial={{ width: 35, height: 35 }}
+      initial={{ width: defaultHover ? 180 : 35, height: 35 }}
       whileHover={{ width: 180 }}
       onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
+      onHoverEnd={() => setIsHovered(defaultHover ? true : false)}
       transition={{ duration: 0.3 }}
-      className="bg-primary flex items-center justify-center overflow-hidden relative"
+      className="bg-primary flex items-center py-1 hover:bg-primaryDark justify-center overflow-hidden relative"
       style={{ borderRadius: 32 }}
     >
       <motion.div

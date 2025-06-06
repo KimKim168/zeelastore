@@ -8,11 +8,11 @@ export default async function MyBrands() {
   return (
     <div className="px-2 mx-auto max-w-screen-2xl xl:px-20 mt-20">
       <div className="text-center max-w-2xl mx-auto mt-20">
-        <h2 className="mt-3 text-3xl sm:text-5xl font-bold tracking-tight">
+        <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
           Our Partners
         </h2>
       </div>
-      <div className="grid grid-cols-4 sm:grid-cols-6 xl:grid-cols-8 gap-2 py-10">
+      <div className="grid grid-cols-4 sm:grid-cols-6 xl:grid-cols-8 gap-2 my-10 mt-8">
         {brandData?.map((item) => (
           <Link
             href={`/products?brandId=${item.id}&brand=${item.name}`}

@@ -11,7 +11,7 @@ const HomeHeader = async () => {
   });
   const resultCate = await respone.json();
 
-  const responeContact = await fetch(`${BASE_API_URL}/contact`, {
+  const responeContact = await fetch(`${BASE_API_URL}/links`, {
     next: { revalidate: 3600 },
   });
   const resultContact = await responeContact.json();

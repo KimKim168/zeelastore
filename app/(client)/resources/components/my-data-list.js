@@ -15,10 +15,10 @@ export default async function MyDataList({
   orderDir,
   perPage,
   page,
-  specialOffer,
+  type,
 }) {
   const res = await fetch(
-    `${BASE_API_URL}/news?search=${search}&categoryId=${categoryId}&subCategoryId=${subCategoryId}&orderBy=${orderBy}&orderDir=${orderDir}&perPage=${perPage}&page=${page}`,
+    `${BASE_API_URL}/news?search=${search}&type=${type}&categoryId=${categoryId}&subCategoryId=${subCategoryId}&orderBy=${orderBy}&orderDir=${orderDir}&perPage=${perPage}&page=${page}`,
     { next: { revalidate: 600 } }
   );
   const result = await res.json();

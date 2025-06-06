@@ -14,6 +14,7 @@ import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
 import HeroButton from "./hero-button";
 import { cn } from "@/lib/utils";
+import { StarBorder } from "./star-border";
 
 export default function MySlider({ imagesTop, imagesBottom }) {
   const plugin = useRef(
@@ -56,21 +57,23 @@ export default function MySlider({ imagesTop, imagesBottom }) {
             src={`/hero-banner-2.png`}
           />
         )}
-        {/* <div className="bg-black/30 absolute top-0 left-0 bottom-0 right-0"></div> */}
+        {/* <div className="bg-black/20 absolute top-0 left-0 bottom-0 right-0"></div> */}
         <span className="absolute left-1/2 -translate-x-1/2 translate-y-1/4 lg:translate-y-1/2 top-1/2 z-10">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary-dark to-primary rounded-xl blur-lg opacity-30 group-hover:opacity-90 transition duration-700 group-hover:duration-300"></div>
+            {/* <div className="before:absolute before:left-1/2 before:top-1/2 before:z-0 before:h-10 before:w-4/5 before:-translate-x-1/2 before:-translate-y-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(140,80%,45%),hsl(140,90%,65%),hsl(0,80%,50%),hsl(140,90%,65%),hsl(140,80%,45%))] before:bg-[length:200%] before:[filter:blur(calc(0.8*1rem))]"></div> */}
             <div
               className={cn(
-                "group relative inline-flex animate-rainbow items-center justify-center p-[2px] border-0 bg-[length:200%] font-medium text-primary-foreground transition-colors [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
-                // light mode colors
-                "z-10 bg-white/10 bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]"
+                "group relative inline-flex animate-rainbow items-center justify-center p-[0px] border-0 bg-[length:200%] font-medium text-primary-foreground transition-colors [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+                "z-10 bg-[linear-gradient(90deg,hsl(140,80%,45%),hsl(140,90%,65%),hsl(0,80%,50%),hsl(140,90%,65%),hsl(140,80%,45%))] animate-gradient-x"
               )}
             >
               <HeroButton link={"/products"} title="See All Products" />
             </div>
           </div>
         </span>
+        {/* <div className="bg-white py-8 ">
+          <StarBorder>Theme-aware Border</StarBorder>
+        </div> */}
       </div>
       <div className="px-2 mt-3 mx-auto">
         {/* Top Carousel */}
@@ -82,7 +85,7 @@ export default function MySlider({ imagesTop, imagesBottom }) {
                 className="pl-3 basis-1/2 lg:basis-1/4 "
               >
                 <Link
-                  className="relative overflow-hidden border border-primary/50 group block"
+                  className="relative overflow-hidden group block"
                   href={item.link || "#"}
                 >
                   <Image

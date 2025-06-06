@@ -17,7 +17,22 @@ export function SearchProduct() {
     <Sheet modal={false}>
       {/* Trigger to open the sheet */}
       <SheetTrigger>
-        <ExpandHoverButton icon={<Search />} title="Search Products" />
+        <>
+          {/* <span className="lg:hidden">
+            <ExpandHoverButton
+              icon={<Search />}
+              title="Search Products"
+              defaultHover={false}
+            />
+          </span> */}
+          {/* <span className="hidden lg:inline"> */}
+          <ExpandHoverButton
+            icon={<Search />}
+            title="Search Products"
+            defaultHover={true}
+          />
+          {/* </span> */}
+        </>
       </SheetTrigger>
       {/* Sheet content */}
       <SheetContent side="top">

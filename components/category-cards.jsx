@@ -68,12 +68,12 @@ const CategoryCards = async () => {
   return (
     <div className="px-2 mx-auto max-w-screen-2xl xl:px-20 mt-20">
       <div className="text-center max-w-2xl mx-auto">
-        <h2 className="mt-3 text-3xl sm:text-5xl font-bold tracking-tight">
+        <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
           Checkout our products
         </h2>
       </div>
 
-      <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 my-10">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 my-10 mt-8">
         <HoverEffect items={categories} />
       </div>
     </div>

@@ -35,7 +35,7 @@ const MyHomeModal = ({ categories }) => {
       >
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="lg:hidden ">
-            <AlignLeft className="h-[1.5rem] w-[1.5rem] " />
+            <AlignLeft className="size-[1.4rem]" />
             <span className="sr-only">Menu</span>
           </Button>
         </SheetTrigger>
@@ -48,7 +48,7 @@ const MyHomeModal = ({ categories }) => {
           </SheetHeader>
           <ScrollArea className="h-full pr-3">
             <div className="pt-2">
-              <Accordion type="single" collapsible>
+              {/* <Accordion type="single" collapsible>
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="w-full p-2 py-2 mb-1 text-lg font-semibold border-b-2 hover:bg-primary hover:text-primary-foreground">
                     Categories
@@ -57,7 +57,7 @@ const MyHomeModal = ({ categories }) => {
                     <MyHomeSidebar isModal={true} categories={categories} />
                   </AccordionContent>
                 </AccordionItem>
-              </Accordion>
+              </Accordion> */}
 
               <ul className="w-full py-2">
                 <li

@@ -7,6 +7,8 @@ import MyHomeModal from "./my-home-modal";
 import { Suspense } from "react";
 import { APP_LOGO, BASE_BACKEND_URL } from "@/env";
 import MyNavigation from "./my-navigation";
+import MySocialMediaFooter from "./my-social-media-footer";
+import MyContactTopNav from "./my-contact-top-nav";
 
 const MyHeader = ({ resultCate, resultContact }) => {
   return (
@@ -35,7 +37,9 @@ const MyHeader = ({ resultCate, resultContact }) => {
                       className="whitespace-nowrap flex items-center"
                     >
                       Visit our showroom
-                      <span className="underline underline-offset-4 ml-1">here</span>
+                      <span className="underline underline-offset-4 ml-1">
+                        here
+                      </span>
                     </a>
                     <span>|</span>
                     <span className="whitespace-nowrap flex items-center">
@@ -46,28 +50,13 @@ const MyHeader = ({ resultCate, resultContact }) => {
                 <div>
                   <div className="text-foreground text-lg flex items-center gap-4">
                     <span className="hidden lg:flex gap-4">
-                      <a
-                        href={`tel:${resultContact.phone}`}
-                        className="hover:underline whitespace-nowrap flex items-center"
-                      >
-                        <PhoneCallIcon className="w-4 mr-1 md:mr-2 md:w-5"></PhoneCallIcon>
-                        {resultContact.phone}
-                      </a>
-                      <a
-                        href={`tel:${resultContact.phone}`}
-                        className="hover:underline whitespace-nowrap flex items-center"
-                      >
-                        <PhoneCallIcon className="w-4 mr-1 md:mr-2 md:w-5"></PhoneCallIcon>
-                        {resultContact.phone}
-                      </a>
-                      <a
-                        href={`tel:${resultContact.phone}`}
-                        className="hover:underline whitespace-nowrap flex items-center"
-                      >
-                        <PhoneCallIcon className="w-4 mr-1 md:mr-2 md:w-5"></PhoneCallIcon>
-                        {resultContact.phone}
-                      </a>
+                      <MyContactTopNav
+                        resultLink={resultContact.filter(
+                          (item) => item.type === "contact_top_bar"
+                        )}
+                      />
                     </span>
+
                     <span className="lg:hidden">
                       <SearchProduct />
                     </span>

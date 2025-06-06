@@ -103,7 +103,7 @@ export default async function ResourceDetail({ params }) {
           </Breadcrumb>
           {/* <MyBreadCrumb result={result?.title} /> */}
           <div className="mt-3">
-            <p className="text-2xl font-semibold md:text-4xl">{result?.name}</p>
+            <p className="text-2xl font-semibold md:text-3xl mb-8">{result?.name}</p>
             <div className="flex justify-center">
               <Image
                 src={`${IMAGE_NEWS_URL}${result?.image}`}

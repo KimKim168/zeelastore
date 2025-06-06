@@ -124,7 +124,7 @@ const MyHomeModal = ({ categories }) => {
                     href="/resources"
                     className="block w-full p-2 font-semibold rounded-lg hover:bg-primary hover:text-primary-foreground"
                   >
-                    Resource
+                    Resources
                   </Link>
                 </li>
               </ul>

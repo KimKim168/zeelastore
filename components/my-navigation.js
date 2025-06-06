@@ -109,7 +109,7 @@ function MyNavigation({ resultCate }) {
                     : "text-black hover:text-primaryDark"
                 }`}
               >
-                Resource
+                Resources
               </Link>
             </li>
           </ul>

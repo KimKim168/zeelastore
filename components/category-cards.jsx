@@ -69,7 +69,7 @@ const CategoryCards = async () => {
     <div className="px-2 mx-auto max-w-screen-2xl xl:px-20 mt-20">
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">
-          Checkout our products
+          Explore More Products
         </h2>
       </div>
 

@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "chhayhok.brolong.pro",
+        hostname: "admin-chhayhok.corasolution.com",
       },
       {
         hostname: "images.pexels.com",

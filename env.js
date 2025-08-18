@@ -1,5 +1,5 @@
-const BASE_BACKEND_URL = "https://admin-chhayhok.corasolution.com";
-const APP_URL = "https://admin-chhayhok.corasolution.com/";
+const BASE_BACKEND_URL = "https://admin.chhayhok.com";
+const APP_URL = "https://admin.chhayhok.com/";
 
 const IS_SHOW_KID_BOOKS = true;
 const EXCHANGE_RATE = 4100;

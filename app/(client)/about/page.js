@@ -1,4 +1,3 @@
-import MyLoadingAnimation from "@/components/my-loading-animation";
 import { BASE_API_URL } from "@/env";
 
 // export const metadata = {

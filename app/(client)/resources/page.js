@@ -1,12 +1,6 @@
 import React, { Suspense } from "react";
-import Filter from "@/components/my-filter";
-import { BASE_API_URL } from "@/env";
 import MyDataList from "./components/my-data-list";
-import { MyShortButton } from "@/components/my-sort-button";
-import { MyPerpageShort } from "@/components/my-perpage-short";
 import MyLoadingAnimation from "@/components/my-loading-animation";
-import SelectedFilters from "@/components/SelectedFilters";
-import { Search } from "lucide-react";
 import { BlogCategorySelect } from "@/components/blog-categories-select";
 import { MyShortButtonBlog } from "@/components/my-sort-button-blogs";
 import SearchInputBlogs from "@/components/ui/SearchInputBlogs";
